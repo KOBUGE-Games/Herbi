@@ -1,0 +1,148 @@
+[gd_scene load_steps=14 format=1]
+
+[ext_resource path="res://scripts/player.gd" type="Script" id=7]
+[ext_resource path="res://scripts/world.gd" type="Script" id=1]
+[ext_resource path="res://scripts/enemy.gd" type="Script" id=4]
+[ext_resource path="res://graphics/characters/frog/sprite_1.png" type="Texture" id=5]
+[ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=9]
+[ext_resource path="res://graphics/characters/frog/sprite_2.png" type="Texture" id=6]
+[ext_resource path="res://graphics/characters/dog/sprite_1.png" type="Texture" id=8]
+[ext_resource path="res://scenes/tilesets/tileset.xml" type="TileSet" id=2]
+[ext_resource path="res://scenes/tilesets/items/item_watermelon.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0
+extents = Vector2( 17, 18 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+frames = [ ExtResource( 5 ), ExtResource( 6 ) ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0
+extents = Vector2( 8, 21 )
+
+[sub_resource type="SpriteFrames" id=4]
+
+frames = [ ExtResource( 8 ), ExtResource( 9 ) ]
+
+[node name="world" type="Node2D"]
+
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D", "__editor_plugin_states__":{ "2D":{ "ofs":Vector2( 99.4147, -237.208 ), "snap_grid":true, "snap_offset":Vector2( 0, 0 ), "snap_pixel":false, "snap_relative":false, "snap_rotation":false, "snap_rotation_offset":0, "snap_rotation_step":0.261799, "snap_show_grid":true, "snap_step":Vector2( 32, 32 ), "zoom":0.999999 }, "3D":{ "ambient_light_color":Color( 0.15, 0.15, 0.15, 1 ), "default_light":true, "default_srgb":false, "deflight_rot_x":0.942478, "deflight_rot_y":0.628319, "fov":45, "show_grid":true, "show_origin":true, "viewport_mode":1, "viewports":[ { "distance":4, "listener":true, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 } ], "zfar":500, "znear":0.1 }, "Anim":{ "visible":false } }, "__editor_run_settings__":{ "custom_args":"-l $scene", "run_mode":0 } }
+
+[node name="TileMap" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 32, 32 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1
+collision/bounce = 0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 131077, 0, 131078, 1, 131079, 1, 131080, 1, 131081, 1, 131082, 1, 131083, 1, 131084, 1, 131085, 1, 131086, 1, 131087, 2, 327682, 0, 327683, 1, 327684, 1, 327685, 1, 327686, 1, 327687, 1, 327688, 1, 327689, 1, 327690, 1, 327691, 1, 327692, 1, 327693, 1, 327694, 1, 327695, 1, 327696, 1, 327697, 2, 524288, 0, 524289, 2, 589826, 0, 589827, 1, 589828, 2, 655365, 0, 655366, 1, 655367, 2, 720903, 0, 720904, 1, 720905, 2, 720912, 3, 720913, 3, 720914, 3, 786440, 0, 786441, 1, 786442, 1, 786443, 2, 786448, 4, 786449, 4, 786450, 4, 851979, 0, 851980, 1, 851981, 2, 851984, 4, 851985, 4, 851986, 4, 917504, 1, 917505, 1, 917506, 1, 917507, 1, 917508, 1, 917509, 1, 917510, 1, 917511, 1, 917512, 1, 917513, 1, 917514, 1, 917515, 1, 917516, 1, 917517, 1, 917518, 1, 917519, 1, 917520, 1, 917521, 1, 917522, 1, 917523, 1 )
+
+[node name="world_end" type="Position2D" parent="."]
+
+transform/pos = Vector2( 656, 464 )
+transform/scale = Vector2( 1.6, 1.6 )
+
+[node name="items" type="Node" parent="."]
+
+[node name="item_watermelon" parent="items" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 432, 48 )
+
+[node name="item_watermelon1" parent="items" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 304, 48 )
+
+[node name="enemy_1" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 128, 140 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 4 )
+__meta__ = { "_editor_collapsed":true }
+
+[node name="sprites" type="AnimatedSprite" parent="enemy_1"]
+
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_1"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="check_down" type="RayCast2D" parent="enemy_1"]
+
+enabled = true
+cast_to = Vector2( 0, 32 )
+layer_mask = 1
+type_mask = 15
+
+[node name="player" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( 192, 32 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 7 )
+__meta__ = { "_editor_collapsed":true }
+
+[node name="sprites" type="AnimatedSprite" parent="player"]
+
+frames = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = 0
+limit/top = 0
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="check_right" type="RayCast2D" parent="player"]
+
+enabled = true
+cast_to = Vector2( 16, 0 )
+layer_mask = 1
+type_mask = 15
+
+
