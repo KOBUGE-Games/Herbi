@@ -1,0 +1,8 @@
+[gd_scene format=1]
+
+[node name="world_end" type="Position2D"]
+
+transform/pos = Vector2( 1232, 592 )
+transform/scale = Vector2( 1.6, 1.6 )
+
+
