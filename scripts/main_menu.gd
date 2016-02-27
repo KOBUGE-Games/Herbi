@@ -6,4 +6,4 @@ func _ready():
 	global.lives = 3
 
 func _on_play_pressed():
-	get_tree().change_scene("res://scenes/main.tscn")
+	get_tree().change_scene("res://scenes/between.tscn")
