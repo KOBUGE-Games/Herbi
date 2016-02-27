@@ -6,7 +6,7 @@
 [ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=4]
 [ext_resource path="res://scenes/misc/world_end.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=6]
-[ext_resource path="res://graphics/items/diamond_red.png" type="Texture" id=7]
+[ext_resource path="res://graphics/hud/diamond.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -20,7 +20,7 @@ frames = [ ExtResource( 3 ), ExtResource( 4 ) ]
 [node name="world" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="player" type="KinematicBody2D" parent="."]
 
@@ -103,14 +103,14 @@ max_lines_visible = -1
 
 [node name="sprite_diamonds" type="Sprite" parent="hud"]
 
-transform/pos = Vector2( 320, 15.0316 )
+transform/pos = Vector2( 320, 14 )
 texture = ExtResource( 7 )
 
 [node name="diamonds" type="Label" parent="hud"]
 
-margin/left = 348.0
+margin/left = 336.0
 margin/top = 6.0
-margin/right = 445.0
+margin/right = 433.0
 margin/bottom = 25.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
