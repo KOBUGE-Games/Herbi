@@ -52,7 +52,7 @@ func _fixed_process(delta):
 			if not jumping:
 				animation_walk()
 			get_node("sprites").set_flip_h(true)
-	elif walk_right and get_pos().x < get_node("/root/world").world_end.x-32:
+	elif walk_right and get_pos().x < global.level_size[global.level-1][0]-16:
 		if (velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED):
 			force.x += WALK_FORCE
 			stop = false

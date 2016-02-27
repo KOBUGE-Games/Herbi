@@ -11,9 +11,9 @@ var shield = false
 func _ready():
 	add_child(level.instance())
 	camera = get_node("player/Camera2D")
-	world_end = get_node("world_end").get_pos()-Vector2(16,4)
-	camera.set_limit(MARGIN_RIGHT, world_end.x)
-	camera.set_limit(MARGIN_BOTTOM, world_end.y)
+	get_node("player").set_pos(global.player_pos[global.level-1])
+	camera.set_limit(MARGIN_RIGHT, global.level_size[global.level-1][0])
+	camera.set_limit(MARGIN_BOTTOM, global.level_size[global.level-1][1])
 	update_lives(0)
 	
 func update_score(amount):
