@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=1]
+
+[node name="game_won" type="Node2D"]
+
+__meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="Label" type="Label" parent="."]
+
+margin/right = 640.0
+margin/bottom = 480.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 1 )
+text = "Yaaay !!!\nYou completed all levels.\n\nFollow\nhttps://github.com/alketii/Herbi\nfor more levels and updates.\n\nThank you very much for playing."
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+

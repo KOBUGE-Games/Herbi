@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://scripts/enemy.gd" type="Script" id=1]
+[ext_resource path="res://graphics/characters/bear/sprite_1.png" type="Texture" id=2]
+[ext_resource path="res://graphics/characters/bear/sprite_2.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+frames = [ ExtResource( 2 ), ExtResource( 3 ) ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 17, 17 )
+
+[node name="enemy_1" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+speed = 3
+
+[node name="sprites" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 2 )
+
+[node name="check_down" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, 32 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Area2D" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
+
+

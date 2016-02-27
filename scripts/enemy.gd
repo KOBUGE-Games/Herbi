@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var walk_right = true
+export var speed = 2
 onready var player = get_node("/root/world/player")
 
 func _ready():
@@ -23,9 +24,9 @@ func _fixed_process(delta):
 
 	#do movement
 	if walk_right:
-		move(Vector2(2,0))
+		move(Vector2(speed,0))
 	else:
-		move(Vector2(-2,0))
+		move(Vector2(-speed,0))
 		
 	if is_colliding():
 		get_node("sprites").set_flip_h(walk_right)

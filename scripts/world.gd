@@ -47,7 +47,12 @@ func add_diamond():
 func collect_diamond():
 	collected_diamonds += 1
 	if collected_diamonds == diamonds:
-		global.level += 1
+		if global.level == global.total_levels:
+			get_tree().change_scene("res://scenes/game_won.tscn")
+		else:
+			global.level += 1
+			get_tree().reload_current_scene()
+		
 	get_node("hud/diamonds").set_text(str(collected_diamonds)+"/"+str(diamonds))
 
 func _on_shield_timeout():
