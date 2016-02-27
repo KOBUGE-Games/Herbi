@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=10 format=1]
 
-[ext_resource path="res://scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
-[ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=4]
+[ext_resource path="res://scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://graphics/characters/dog/sprite_1.png" type="Texture" id=3]
+[ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=4]
 [ext_resource path="res://scenes/misc/world_end.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=6]
+[ext_resource path="res://graphics/items/diamond_red.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0
+custom_solver_bias = 0.0
 extents = Vector2( 8, 21 )
 
 [sub_resource type="SpriteFrames" id=2]
@@ -18,7 +20,7 @@ frames = [ ExtResource( 3 ), ExtResource( 4 ) ]
 [node name="world" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D", "__editor_plugin_states__":{ "2D":{ "ofs":Vector2( -126.471, -519.117 ), "snap_grid":true, "snap_offset":Vector2( 0, 0 ), "snap_pixel":false, "snap_relative":false, "snap_rotation":false, "snap_rotation_offset":0, "snap_rotation_step":0.261799, "snap_show_grid":true, "snap_step":Vector2( 32, 32 ), "zoom":0.54036 }, "3D":{ "ambient_light_color":Color( 0.15, 0.15, 0.15, 1 ), "default_light":true, "default_srgb":false, "deflight_rot_x":0.942478, "deflight_rot_y":0.628319, "fov":45, "show_grid":true, "show_origin":true, "viewport_mode":1, "viewports":[ { "distance":4, "listener":true, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 } ], "zfar":500, "znear":0.1 }, "Anim":{ "visible":false } }, "__editor_run_settings__":{ "custom_args":"-l $scene", "run_mode":0 } }
+__meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="player" type="KinematicBody2D" parent="."]
 
@@ -57,7 +59,7 @@ limit/bottom = 10000000
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
 smoothing/enable = false
-smoothing/speed = 5
+smoothing/speed = 5.0
 drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
@@ -73,5 +75,50 @@ type_mask = 15
 [node name="world_end" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1680, 752 )
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="items" type="Label" parent="hud"]
+
+margin/left = 532.0
+margin/top = 6.0
+margin/right = 629.0
+margin/bottom = 25.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="lives" type="Node" parent="hud"]
+
+[node name="sprite_diamonds" type="Sprite" parent="hud"]
+
+transform/pos = Vector2( 320, 15.0316 )
+texture = ExtResource( 7 )
+
+[node name="diamonds" type="Label" parent="hud"]
+
+margin/left = 348.0
+margin/top = 6.0
+margin/right = 445.0
+margin/bottom = 25.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

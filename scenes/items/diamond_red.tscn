@@ -1,16 +1,15 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://graphics/items/watermelon.png" type="Texture" id=1]
-[ext_resource path="res://scripts/item.gd" type="Script" id=2]
+[ext_resource path="res://graphics/items/diamond_red.png" type="Texture" id=1]
+[ext_resource path="res://scripts/diamond.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15, 15 )
+extents = Vector2( 16, 16 )
 
-[node name="item_watermelon" type="Sprite"]
+[node name="diamond_red" type="Sprite"]
 
-transform/pos = Vector2( 16, 80 )
 texture = ExtResource( 1 )
 __meta__ = { "__editor_plugin_screen__":"Script" }
 

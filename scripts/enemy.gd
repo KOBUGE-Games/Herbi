@@ -25,5 +25,6 @@ func _fixed_process(delta):
 	if is_colliding():
 		if get_collider().get_name() == "player":
 			queue_free()
+			get_node("/root/world").update_lives(-1)
 		get_node("sprites").set_flip_h(walk_right)
 		walk_right = !walk_right
