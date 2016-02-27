@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/misc/world_end.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=6]
 [ext_resource path="res://graphics/hud/diamond.png" type="Texture" id=7]
+[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -20,7 +21,7 @@ frames = [ ExtResource( 3 ), ExtResource( 4 ) ]
 [node name="world" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="player" type="KinematicBody2D" parent="."]
 
@@ -120,5 +121,25 @@ text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 8 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="shield" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="shield" to="." method="_on_shield_timeout"]
 
 

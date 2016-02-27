@@ -1,6 +1,6 @@
 extends Area2D
 
-const score = 1
+export var score = 1
 
 func _ready():
 	pass
