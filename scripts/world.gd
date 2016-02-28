@@ -14,6 +14,7 @@ func _ready():
 	update_lives(0)
 	
 func update_score(amount):
+	get_node("SamplePlayer2D").play("melon")
 	global.score += amount
 	if global.score == 100:
 		update_lives(1)
@@ -21,6 +22,9 @@ func update_score(amount):
 	get_node("hud/items").set_text(str(global.score))
 	
 func update_lives(amount):
+	#NEEDS FIX
+	if amount == 1:
+		get_node("SamplePlayer2D").play("healthgain")
 	if not shield:
 		global.lives += amount
 		if global.lives > 0:
@@ -28,6 +32,7 @@ func update_lives(amount):
 				shield = true
 				get_node("player").set_opacity(0.5)
 				get_node("shield").start()
+				get_node("SamplePlayer2D").play("damage")
 			for el in get_node("hud/lives").get_children():
 				el.queue_free()
 			for i in range(global.lives):
@@ -42,6 +47,7 @@ func add_diamond():
 	get_node("hud/diamonds").set_text("0/"+str(diamonds))
 	
 func collect_diamond():
+	get_node("SamplePlayer2D").play("pick")
 	collected_diamonds += 1
 	if collected_diamonds == diamonds:
 		if global.level == global.total_levels:

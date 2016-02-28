@@ -1,26 +1,21 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://scripts/item.gd" type="Script" id=1]
-[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=2]
-[ext_resource path="res://graphics/items/watermelon.png" type="Texture" id=3]
+[ext_resource path="res://graphics/items/watermelon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 15, 15 )
 
-[sub_resource type="SampleLibrary" id=2]
-
-samples/pop = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
-
 [node name="item_watermelon" type="Node2D"]
 
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="Area2D" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -32,24 +27,13 @@ score = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="SamplePlayer2D" type="SamplePlayer2D" parent="."]
-
-params/volume_db = 0.0
-params/pitch_scale = 1.0
-params/attenuation/min_distance = 1.0
-params/attenuation/max_distance = 2048.0
-params/attenuation/distance_exp = 1.0
-config/polyphony = 1
-config/samples = SubResource( 2 )
-config/pitch_random = 0.0
-
 [node name="Sprite" type="Sprite" parent="."]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [connection signal="body_enter" from="Area2D" to="Area2D" method="_on_Area2D_body_enter"]
 
