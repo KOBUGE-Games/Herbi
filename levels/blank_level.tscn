@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scenes/misc/world_end.tscn" type="PackedScene" id=1][ext_resource path="res://scenes/items/meat.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/tiles/spikes.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/tiles/lift.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/enemies/bear.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/tiles/oneway_left.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/tiles/stone.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/enemies/monkey.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/tiles/oneway_right.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/tiles/dirt_left.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/tiles/dirt_center.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/tiles/dirt_right.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/tiles/dirt_mid.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/tiles/oneway_mid.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/tiles/oneway_center.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/items/item_watermelon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/items/diamond_red.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/enemies/enemy_1.tscn" type="PackedScene" id=10]
+
+[node name="level" type="Node2D"]
+
+__meta__ = { "__editor_plugin_screen__":"2D", "__editor_plugin_states__":{ "2D":{ "ofs":Vector2( 0, 0 ), "snap_grid":true, "snap_offset":Vector2( 0, 0 ), "snap_pixel":false, "snap_relative":false, "snap_rotation":false, "snap_rotation_offset":0, "snap_rotation_step":0.261799, "snap_show_grid":true, "snap_step":Vector2( 32, 32 ), "zoom":1 }, "3D":{ "ambient_light_color":Color( 0.15, 0.15, 0.15, 1 ), "default_light":true, "default_srgb":false, "deflight_rot_x":0.942478, "deflight_rot_y":0.628319, "fov":45, "show_grid":true, "show_origin":true, "viewport_mode":1, "viewports":[ { "distance":4, "listener":true, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 } ], "zfar":500, "znear":0.1 }, "Anim":{ "visible":false } }, "__editor_run_settings__":{ "custom_args":"-l $scene", "run_mode":0 } }
+
+[node name="lower" type="Node" parent="."]
+
+[node name="center" type="Node" parent="."]
+
+[node name="upper" type="Node" parent="."]
+
+[node name="world_end" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 640, 480 )
+
