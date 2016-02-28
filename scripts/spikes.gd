@@ -7,4 +7,4 @@ func _ready():
 
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
-		get_node("/root/world").update_lives(-1)
+		get_node("/root/world").remove_life()

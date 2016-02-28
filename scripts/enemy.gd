@@ -35,5 +35,5 @@ func _fixed_process(delta):
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
 		if player.get_pos().y+32 > get_pos().y:
-			get_node("/root/world").update_lives(-1)
+			get_node("/root/world").remove_life()
 		queue_free()

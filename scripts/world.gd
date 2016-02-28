@@ -13,7 +13,7 @@ func _ready():
 	add_child(level.instance())
 	get_node("hud/items").set_text(str(global.score))
 	get_node("player").set_pos(global.player_pos[global.level-1])
-	update_lives(0)
+	update_lifes()
 	start_score = global.score
 	start_lives = global.lives
 	if global.music:
@@ -28,26 +28,30 @@ func update_score(amount):
 		global.score = 0
 	get_node("hud/items").set_text(str(global.score))
 	
-func update_lives(amount):
-	#NEEDS FIX
-	if amount == 1:
-		get_node("SamplePlayer2D").play("healthgain")
+func add_life():
+	global.lives += 1
+	get_node("SamplePlayer2D").play("healthgain")
+	update_lifes()
+	
+func remove_life():
 	if not shield:
-		global.lives += amount
-		if global.lives > 0:
-			if amount == -1:
-				shield = true
-				get_node("player").set_opacity(0.5)
-				get_node("shield").start()
-				get_node("SamplePlayer2D").play("damage")
-			for el in get_node("hud/lives").get_children():
-				el.queue_free()
-			for i in range(global.lives):
-				var live = pLive.instance()
-				live.set_pos(Vector2(16+i*32,16))
-				get_node("hud/lives").add_child(live)
-		else:
-			get_tree().change_scene("res://scenes/main_menu.tscn")
+		global.lives -= 1
+		shield = true
+		get_node("player").set_opacity(0.5)
+		get_node("shield").start()
+		get_node("SamplePlayer2D").play("damage")
+		update_lifes()
+	
+func update_lifes():
+	if global.lives > 0:
+		for el in get_node("hud/lives").get_children():
+			el.queue_free()
+		for i in range(global.lives):
+			var live = pLive.instance()
+			live.set_pos(Vector2(16+i*32,16))
+			get_node("hud/lives").add_child(live)
+	else:
+		get_tree().change_scene("res://scenes/main_menu.tscn")
 		
 func add_diamond():
 	diamonds += 1
