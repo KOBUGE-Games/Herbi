@@ -12,7 +12,6 @@ func _ready():
 	add_child(level.instance())
 	camera = get_node("player/Camera2D")
 	get_node("hud/items").set_text(str(global.score))
-	get_node("StreamPlayer").set_volume(1)
 	get_node("player").set_pos(global.player_pos[global.level-1])
 	camera.set_limit(MARGIN_RIGHT, global.level_size[global.level-1][0])
 	camera.set_limit(MARGIN_BOTTOM, global.level_size[global.level-1][1])

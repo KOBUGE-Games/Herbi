@@ -1,9 +1,10 @@
-extends Area2D
+extends Node2D
 
 func _ready():
 	get_node("/root/world").add_diamond()
 
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
-		get_parent().queue_free()
+		get_node("SamplePlayer2D").play("pick")
+		queue_free()
 		get_node("/root/world").collect_diamond()
