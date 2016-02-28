@@ -88,3 +88,18 @@ func _input(event):
 				get_node("StreamPlayer").stop()
 		elif event.scancode == KEY_F9:
 			get_tree().quit()
+		
+		# DEBUG MODE
+		if global.debug:
+			if event.scancode == KEY_D:
+				if global.level < global.total_levels:
+					global.level += 1
+					get_tree().change_scene("res://scenes/main.tscn")
+			elif event.scancode == KEY_A:
+				if global.level > 1:
+					global.level -= 1
+					get_tree().change_scene("res://scenes/main.tscn")
+			elif event.scancode == KEY_W:
+				add_life()
+			elif event.scancode == KEY_S:
+				remove_life()

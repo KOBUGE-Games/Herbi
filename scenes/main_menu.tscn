@@ -19,12 +19,30 @@ texture = ExtResource( 2 )
 margin/left = 5.0
 margin/top = 156.0
 margin/right = 634.0
-margin/bottom = 428.0
+margin/bottom = 323.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
-text = "SPACE = Start Game\nF2 = Restart Level\nESCAPE = Main Menu\nF3 = Toggle Music\nF9 = Quit"
+text = "SPACE = Start Game\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_info" type="Label" parent="."]
+
+visibility/visible = false
+margin/left = 6.0
+margin/top = 303.0
+margin/right = 635.0
+margin/bottom = 470.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 3 )
+text = "*** DEBUG MODE ***\nT = Load level_0.tscn\nD = Next Level\nA = Previous Level\nW = +1 Life\nS = -1 Life"
 align = 1
 valign = 1
 percent_visible = 1.0
