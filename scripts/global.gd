@@ -9,4 +9,4 @@ var sounds = true
 var total_levels = 4
 
 func _ready():
-	pass
+	randomize()
