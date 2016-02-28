@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/enemies/bear.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/enemies/monkey.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/tiles/stone.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/decor/decor_1.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/misc/player_pos.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/tiles/dirt_left.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/tiles/dirt_center.tscn" type="PackedScene" id=2]
@@ -610,6 +611,10 @@ transform/pos = Vector2( 240, 304 )
 [node name="player_pos_2" parent="upper" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 80, 432 )
+
+[node name="decor_1_3" parent="upper" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 368, 432 )
 
 [node name="world_end" parent="." instance=ExtResource( 1 )]
 
