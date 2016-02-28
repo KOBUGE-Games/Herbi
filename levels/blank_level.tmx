@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" name="tiles" tilewidth="34" tileheight="42" tilecount="14" columns="0">
+ <tileset firstgid="1" name="tiles" tilewidth="34" tileheight="42" tilecount="16" columns="0">
   <tile id="0">
    <properties>
     <property name="scene" value="res://scenes/tiles/dirt_center.tscn"/>
@@ -84,6 +84,18 @@
     <property name="scene" value="res://scenes/tiles/stone.tscn"/>
    </properties>
    <image width="32" height="32" source="../graphics/tiles/stone_1.png"/>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/oneway_left.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt2_left.png"/>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/oneway_right.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt2_right.png"/>
   </tile>
  </tileset>
  <layer name="lower" width="20" height="15">
