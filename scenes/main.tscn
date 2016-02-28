@@ -20,7 +20,7 @@ frames = [ ExtResource( 3 ), ExtResource( 4 ) ]
 [node name="world" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="player" type="KinematicBody2D" parent="."]
 
@@ -34,7 +34,6 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 2 )
-__meta__ = { "_editor_collapsed":true }
 
 [node name="sprites" type="AnimatedSprite" parent="player"]
 

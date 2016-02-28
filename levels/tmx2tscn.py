@@ -2,6 +2,7 @@
 tmx2tscn
 Copyright: Alket Rexhepi - https://github.com/alketii
 License: https://opensource.org/licenses/MIT
+WARNING: This script is modified to better fit Herbie - On the loose
 """
 import sys, json
 
@@ -63,9 +64,14 @@ f.write('[gd_scene load_steps=3 format=1]\n\n')
 
 # Get external scenes (as defined in Custom Properties at tmx) and assign ids.
 tile_id = 0
+
+# Write world_end external resource
+f.write('[ext_resource path="res://scenes/misc/world_end.tscn" type="PackedScene" id=1]')
+
 for tile in tile_properties:
-    tile_id = int(tile)+1
+    tile_id = int(tile)+2
     f.write('[ext_resource path="'+tile_properties[tile]['scene']+'" type="PackedScene" id='+str(tile_id)+']\n')
+
 f.write('\n')
 
 # Write Root Node
@@ -86,13 +92,16 @@ for layer in data['layers']:
     for y in range(map_height):
         for x in range(map_width):
             if layers_data[tile_count] > 0:
-                f.write('[node name="tile_'+str(tile_count_used)+'" parent="'+layer_name+'" instance=ExtResource( '+str(layers_data[tile_count])+' )]\n\ntransform/pos = Vector2( '+str(tile_x+origin_offset_x)+', '+str(tile_y+origin_offset_y)+' )\n\n')
+                f.write('[node name="tile_'+str(tile_count_used)+'" parent="'+layer_name+'" instance=ExtResource( '+str(layers_data[tile_count]+1)+' )]\n\ntransform/pos = Vector2( '+str(tile_x+origin_offset_x)+', '+str(tile_y+origin_offset_y)+' )\n\n')
                 tile_count_used += 1
             tile_count += 1
             tile_x += tile_width
 
         tile_x = 0
         tile_y += tile_height
+
+# Write world end
+f.write('[node name="world_end" parent="." instance=ExtResource( 1 )]\n\ntransform/pos = Vector2( '+str(map_width*tile_width)+', '+str(map_height*tile_height)+' )\n\n')
 
 # Close file
 f.close()
