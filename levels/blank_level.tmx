@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" name="tiles" tilewidth="34" tileheight="42" tilecount="16" columns="0">
+ <tileset firstgid="1" name="tiles" tilewidth="34" tileheight="42" tilecount="17" columns="0">
   <tile id="0">
    <properties>
     <property name="scene" value="res://scenes/tiles/dirt_center.tscn"/>
@@ -96,6 +96,12 @@
     <property name="scene" value="res://scenes/tiles/oneway_right.tscn"/>
    </properties>
    <image width="32" height="32" source="../graphics/tiles/dirt2_right.png"/>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="scene" value="res://scenes/enemies/monkey.tscn"/>
+   </properties>
+   <image width="31" height="38" source="../graphics/characters/monkey/sprite_1.png"/>
   </tile>
  </tileset>
  <layer name="lower" width="20" height="15">

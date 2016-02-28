@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" name="tiles" tilewidth="34" tileheight="42" tilecount="14" columns="0">
+ <tileset firstgid="1" name="tiles" tilewidth="34" tileheight="42" tilecount="15" columns="0">
   <tile id="0">
    <properties>
     <property name="scene" value="res://scenes/tiles/dirt_center.tscn"/>
@@ -85,6 +85,12 @@
    </properties>
    <image width="32" height="32" source="../graphics/tiles/stone_1.png"/>
   </tile>
+  <tile id="15">
+   <properties>
+    <property name="scene" value="res://scenes/enemies/monkey.tscn"/>
+   </properties>
+   <image width="31" height="38" source="../graphics/characters/monkey/sprite_1.png"/>
+  </tile>
  </tileset>
  <layer name="lower" width="40" height="20">
   <data encoding="csv">
@@ -117,7 +123,7 @@
 0,0,0,0,0,0,0,0,0,0,0,10,0,9,0,0,0,0,0,10,0,13,0,0,0,13,0,10,0,0,0,0,0,0,0,0,0,0,0,0,
 3,3,3,3,3,4,11,11,11,2,3,3,3,4,11,11,11,2,3,3,3,4,11,11,11,2,3,3,3,4,0,0,0,2,3,3,3,3,3,3,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,0,0,0,0,0,0,16,0,0,0,0,0,16,0,0,0,0,0,16,0,
 0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
 0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,

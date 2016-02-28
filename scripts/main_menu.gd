@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	global.level = 3
+	global.level = 1
 	global.score = 0
 	global.lives = 3
 	set_process_input(true)
