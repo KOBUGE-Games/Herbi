@@ -12,7 +12,6 @@ var start_lives = 0
 func _ready():
 	add_child(level.instance())
 	get_node("hud/items").set_text(str(global.score))
-	get_node("player").set_pos(global.player_pos[global.level-1])
 	update_lifes()
 	start_score = global.score
 	start_lives = global.lives

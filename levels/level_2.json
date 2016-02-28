@@ -23,7 +23,7 @@
          "y":0
         }, 
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":15,
          "name":"upper",
          "opacity":1,
@@ -44,7 +44,7 @@
          "margin":0,
          "name":"tiles",
          "spacing":0,
-         "tilecount":14,
+         "tilecount":15,
          "tileheight":42,
          "tileproperties":
             {
@@ -75,6 +75,10 @@
              "14":
                 {
                  "scene":"res:\/\/scenes\/tiles\/stone.tscn"
+                },
+             "15":
+                {
+                 "scene":"res:\/\/scenes\/misc\/player_pos.tscn"
                 },
              "2":
                 {
@@ -132,6 +136,10 @@
                  "scene":"string"
                 },
              "14":
+                {
+                 "scene":"string"
+                },
+             "15":
                 {
                  "scene":"string"
                 },
@@ -193,6 +201,221 @@
              "14":
                 {
                  "image":"..\/graphics\/tiles\/stone_1.png"
+                },
+             "15":
+                {
+                 "image":"..\/graphics\/characters\/dog\/sprite_1.png"
+                },
+             "2":
+                {
+                 "image":"..\/graphics\/tiles\/dirt_mid.png"
+                },
+             "3":
+                {
+                 "image":"..\/graphics\/tiles\/dirt_right.png"
+                },
+             "4":
+                {
+                 "image":"..\/graphics\/tiles\/dirt2_center.png"
+                },
+             "5":
+                {
+                 "image":"..\/graphics\/tiles\/dirt2_mid.png"
+                },
+             "6":
+                {
+                 "image":"..\/graphics\/items\/watermelon.png"
+                },
+             "8":
+                {
+                 "image":"..\/graphics\/characters\/frog\/sprite_2.png"
+                },
+             "9":
+                {
+                 "image":"..\/graphics\/items\/diamond_red.png"
+                }
+            },
+         "tilewidth":34
+        }, 
+        {
+         "columns":0,
+         "firstgid":17,
+         "margin":0,
+         "name":"tiles",
+         "spacing":0,
+         "tilecount":16,
+         "tileheight":42,
+         "tileproperties":
+            {
+             "0":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/dirt_center.tscn"
+                },
+             "1":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/dirt_left.tscn"
+                },
+             "10":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/spikes.tscn"
+                },
+             "11":
+                {
+                 "scene":"res:\/\/scenes\/items\/meat.tscn"
+                },
+             "12":
+                {
+                 "scene":"res:\/\/scenes\/enemies\/bear.tscn"
+                },
+             "13":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/lift.tscn"
+                },
+             "14":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/stone.tscn"
+                },
+             "15":
+                {
+                 "scene":"res:\/\/scenes\/enemies\/monkey.tscn"
+                },
+             "16":
+                {
+                 "scene":"res:\/\/scenes\/misc\/player_pos.tscn"
+                },
+             "2":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/dirt_mid.tscn"
+                },
+             "3":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/dirt_right.tscn"
+                },
+             "4":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/oneway_center.tscn"
+                },
+             "5":
+                {
+                 "scene":"res:\/\/scenes\/tiles\/oneway_mid.tscn"
+                },
+             "6":
+                {
+                 "scene":"res:\/\/scenes\/items\/item_watermelon.tscn"
+                },
+             "8":
+                {
+                 "scene":"res:\/\/scenes\/enemies\/enemy_1.tscn"
+                },
+             "9":
+                {
+                 "scene":"res:\/\/scenes\/items\/diamond_red.tscn"
+                }
+            },
+         "tilepropertytypes":
+            {
+             "0":
+                {
+                 "scene":"string"
+                },
+             "1":
+                {
+                 "scene":"string"
+                },
+             "10":
+                {
+                 "scene":"string"
+                },
+             "11":
+                {
+                 "scene":"string"
+                },
+             "12":
+                {
+                 "scene":"string"
+                },
+             "13":
+                {
+                 "scene":"string"
+                },
+             "14":
+                {
+                 "scene":"string"
+                },
+             "15":
+                {
+                 "scene":"string"
+                },
+             "16":
+                {
+                 "scene":"string"
+                },
+             "2":
+                {
+                 "scene":"string"
+                },
+             "3":
+                {
+                 "scene":"string"
+                },
+             "4":
+                {
+                 "scene":"string"
+                },
+             "5":
+                {
+                 "scene":"string"
+                },
+             "6":
+                {
+                 "scene":"string"
+                },
+             "8":
+                {
+                 "scene":"string"
+                },
+             "9":
+                {
+                 "scene":"string"
+                }
+            },
+         "tiles":
+            {
+             "0":
+                {
+                 "image":"..\/graphics\/tiles\/dirt_center.png"
+                },
+             "1":
+                {
+                 "image":"..\/graphics\/tiles\/dirt_left.png"
+                },
+             "10":
+                {
+                 "image":"..\/graphics\/tiles\/spikes.png"
+                },
+             "11":
+                {
+                 "image":"..\/graphics\/items\/meat.png"
+                },
+             "12":
+                {
+                 "image":"..\/graphics\/characters\/bear\/sprite_1.png"
+                },
+             "13":
+                {
+                 "image":"..\/graphics\/tiles\/lift_1.png"
+                },
+             "14":
+                {
+                 "image":"..\/graphics\/tiles\/stone_1.png"
+                },
+             "15":
+                {
+                 "image":"..\/graphics\/characters\/monkey\/sprite_1.png"
+                },
+             "16":
+                {
+                 "image":"..\/graphics\/characters\/dog\/sprite_1.png"
                 },
              "2":
                 {
