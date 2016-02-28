@@ -44,7 +44,7 @@
          "margin":0,
          "name":"tiles",
          "spacing":0,
-         "tilecount":14,
+         "tilecount":15,
          "tileheight":42,
          "tileproperties":
             {
@@ -75,6 +75,10 @@
              "14":
                 {
                  "scene":"res:\/\/scenes\/tiles\/stone.tscn"
+                },
+             "15":
+                {
+                 "scene":"res:\/\/scenes\/enemies\/monkey.tscn"
                 },
              "2":
                 {
@@ -132,6 +136,10 @@
                  "scene":"string"
                 },
              "14":
+                {
+                 "scene":"string"
+                },
+             "15":
                 {
                  "scene":"string"
                 },
@@ -193,6 +201,10 @@
              "14":
                 {
                  "image":"..\/graphics\/tiles\/stone_1.png"
+                },
+             "15":
+                {
+                 "image":"..\/graphics\/characters\/monkey\/sprite_1.png"
                 },
              "2":
                 {

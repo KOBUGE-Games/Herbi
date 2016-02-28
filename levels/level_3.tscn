@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/tiles/spikes.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/tiles/lift.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/enemies/bear.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/enemies/monkey.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/tiles/stone.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/tiles/dirt_left.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/tiles/dirt_center.tscn" type="PackedScene" id=2]
@@ -85,11 +86,7 @@ transform/pos = Vector2( 880, 528 )
 
 transform/pos = Vector2( 912, 528 )
 
-[node name="tile_17" parent="lower" instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 304, 752 )
-
-[node name="tile_18" parent="lower" instance=ExtResource( 12 )]
+[node name="tile_17" parent="lower" instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 1072, 752 )
 
@@ -885,23 +882,23 @@ transform/pos = Vector2( 1008, 656 )
 
 transform/pos = Vector2( 1040, 656 )
 
-[node name="tile_63" parent="upper" instance=ExtResource( 16 )]
+[node name="tile_63" parent="upper" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 176, 720 )
+
+[node name="tile_64" parent="upper" instance=ExtResource( 16 )]
 
 transform/pos = Vector2( 1104, 720 )
 
-[node name="tile_64" parent="upper" instance=ExtResource( 13 )]
+[node name="tile_65" parent="upper" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1328, 720 )
 
-[node name="tile_65" parent="upper" instance=ExtResource( 12 )]
-
-transform/pos = Vector2( 16, 752 )
-
-[node name="tile_66" parent="upper" instance=ExtResource( 4 )]
+[node name="tile_66" parent="upper" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 48, 752 )
 
-[node name="tile_67" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_67" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 80, 752 )
 
@@ -909,7 +906,7 @@ transform/pos = Vector2( 80, 752 )
 
 transform/pos = Vector2( 112, 752 )
 
-[node name="tile_69" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_69" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 144, 752 )
 
@@ -917,7 +914,7 @@ transform/pos = Vector2( 144, 752 )
 
 transform/pos = Vector2( 176, 752 )
 
-[node name="tile_71" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_71" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 208, 752 )
 
@@ -925,7 +922,7 @@ transform/pos = Vector2( 208, 752 )
 
 transform/pos = Vector2( 240, 752 )
 
-[node name="tile_73" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_73" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 272, 752 )
 
@@ -933,7 +930,7 @@ transform/pos = Vector2( 272, 752 )
 
 transform/pos = Vector2( 304, 752 )
 
-[node name="tile_75" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_75" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 336, 752 )
 
@@ -941,15 +938,15 @@ transform/pos = Vector2( 336, 752 )
 
 transform/pos = Vector2( 368, 752 )
 
-[node name="tile_77" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_77" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 400, 752 )
 
-[node name="tile_78" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_78" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 432, 752 )
 
-[node name="tile_79" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_79" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 464, 752 )
 
@@ -957,23 +954,23 @@ transform/pos = Vector2( 464, 752 )
 
 transform/pos = Vector2( 496, 752 )
 
-[node name="tile_81" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_81" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 528, 752 )
 
-[node name="tile_82" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_82" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 560, 752 )
 
-[node name="tile_83" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_83" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 592, 752 )
 
-[node name="tile_84" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_84" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 624, 752 )
 
-[node name="tile_85" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_85" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 656, 752 )
 
@@ -985,11 +982,11 @@ transform/pos = Vector2( 688, 752 )
 
 transform/pos = Vector2( 720, 752 )
 
-[node name="tile_88" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_88" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 752, 752 )
 
-[node name="tile_89" parent="upper" instance=ExtResource( 12 )]
+[node name="tile_89" parent="upper" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 784, 752 )
 
@@ -1001,31 +998,27 @@ transform/pos = Vector2( 816, 752 )
 
 transform/pos = Vector2( 848, 752 )
 
-[node name="tile_92" parent="upper" instance=ExtResource( 4 )]
+[node name="tile_92" parent="upper" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 880, 752 )
 
-[node name="tile_93" parent="upper" instance=ExtResource( 12 )]
-
-transform/pos = Vector2( 912, 752 )
-
-[node name="tile_94" parent="upper" instance=ExtResource( 2 )]
+[node name="tile_93" parent="upper" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 944, 752 )
 
-[node name="tile_95" parent="upper" instance=ExtResource( 2 )]
+[node name="tile_94" parent="upper" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 976, 752 )
 
-[node name="tile_96" parent="upper" instance=ExtResource( 2 )]
+[node name="tile_95" parent="upper" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 1008, 752 )
 
-[node name="tile_97" parent="upper" instance=ExtResource( 2 )]
+[node name="tile_96" parent="upper" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 1040, 752 )
 
-[node name="tile_98" parent="upper" instance=ExtResource( 16 )]
+[node name="tile_97" parent="upper" instance=ExtResource( 16 )]
 
 transform/pos = Vector2( 1328, 752 )
 
