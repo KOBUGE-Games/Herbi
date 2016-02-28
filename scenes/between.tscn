@@ -28,7 +28,7 @@ samples/win = { "db":0.0, "pitch":1.0, "sample":ExtResource( 5 ) }
 [node name="between" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="level" parent="." instance=ExtResource( 2 )]
 

@@ -14,21 +14,21 @@ __meta__ = { "__editor_plugin_screen__":"Script" }
 transform/pos = Vector2( 320, 240 )
 texture = ExtResource( 2 )
 
-[node name="play" type="Button" parent="."]
+[node name="Label" type="Label" parent="."]
 
-margin/left = 253.0
-margin/top = 180.0
-margin/right = 380.0
-margin/bottom = 215.0
-focus/ignore_mouse = false
+margin/left = 5.0
+margin/top = 156.0
+margin/right = 634.0
+margin/bottom = 428.0
+focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 2
 custom_fonts/font = ExtResource( 3 )
-toggle_mode = false
-text = "Play"
-flat = false
-
-[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+text = "SPACE = Start Game\nF2 = Restart Level\nESCAPE = Main Menu\nF3 = Toggle Music\nF9 = Quit"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
