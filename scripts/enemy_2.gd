@@ -32,7 +32,7 @@ func _fixed_process(delta):
 	else:
 		move(Vector2(-movement,0))
 
-	if get_node("check_right").is_colliding():
+	if get_node("check_right").is_colliding() and get_node("check_down").is_colliding():
 		if get_node("check_right").get_collider().get_name() == "player":
 			walk_right = true
 			movement = run
@@ -40,7 +40,7 @@ func _fixed_process(delta):
 		else:
 			movement = speed
 
-	elif get_node("check_left").is_colliding():
+	elif get_node("check_left").is_colliding() and get_node("check_down").is_colliding():
 		if get_node("check_left").get_collider().get_name() == "player":
 			walk_right = false
 			movement = run
