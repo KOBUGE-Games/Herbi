@@ -14,7 +14,7 @@ func _ready():
 	update_lives(0)
 	
 func update_score(amount):
-	get_node("SamplePlayer2D").play("melon")
+	get_node("SamplePlayer2D").play("pop")
 	global.score += amount
 	if global.score == 100:
 		update_lives(1)

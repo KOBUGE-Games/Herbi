@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	get_node("SamplePlayer2D").play("win")
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
