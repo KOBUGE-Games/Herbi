@@ -4,6 +4,7 @@ func _ready():
 	global.level = 1
 	global.score = 0
 	global.lives = 3
+	global.apples = 3
 	if global.debug:
 		get_node("debug_info").show()
 	set_process_input(true)

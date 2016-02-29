@@ -8,13 +8,16 @@ var collected_diamonds = 0
 var shield = false
 var start_score = 0
 var start_lives = 0
+var start_apples = 0
 
 func _ready():
 	add_child(level.instance())
 	get_node("hud/items").set_text(str(global.score))
+	get_node("hud/apples").set_text(str(global.apples))
 	update_lifes()
 	start_score = global.score
 	start_lives = global.lives
+	start_apples = global.apples
 	if global.music:
 		get_node("StreamPlayer").play()
 	set_process_input(true)
@@ -68,6 +71,14 @@ func collect_diamond():
 		
 	get_node("hud/diamonds").set_text(str(collected_diamonds)+"/"+str(diamonds))
 
+func add_apple():
+	global.apples +=1
+	get_node("hud/apples").set_text(str(global.apples))
+
+func remove_apple():
+	global.apples -=1
+	get_node("hud/apples").set_text(str(global.apples))
+
 func _on_shield_timeout():
 	get_node("player").set_opacity(1)
 	shield = false
@@ -79,6 +90,7 @@ func _input(event):
 		elif event.scancode == KEY_F2:
 			global.score = start_score
 			global.lives = start_lives
+			global.apples = start_apples
 			get_tree().change_scene("res://scenes/between.tscn")
 		elif event.scancode == KEY_F3:
 			global.music = !global.music

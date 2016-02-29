@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/tiles/stone.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/decor/decor_1.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/misc/player_pos.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/items/apple_pick.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/tiles/dirt_left.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/tiles/dirt_center.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/tiles/dirt_right.tscn" type="PackedScene" id=5]
@@ -612,7 +613,11 @@ transform/pos = Vector2( 240, 304 )
 
 transform/pos = Vector2( 80, 432 )
 
-[node name="decor_1_3" parent="upper" instance=ExtResource( 19 )]
+[node name="apple_pick_3" parent="upper" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 304, 432 )
+
+[node name="decor_1_4" parent="upper" instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 368, 432 )
 

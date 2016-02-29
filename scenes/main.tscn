@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=1]
+[gd_scene load_steps=28 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
@@ -6,23 +6,24 @@
 [ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=4]
 [ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=5]
 [ext_resource path="res://graphics/hud/diamond.png" type="Texture" id=6]
-[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=7]
-[ext_resource path="res://audio/sounds/1hp.wav" type="Sample" id=8]
-[ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=9]
-[ext_resource path="res://audio/sounds/diamond1.wav" type="Sample" id=10]
-[ext_resource path="res://audio/sounds/diamond2.wav" type="Sample" id=11]
-[ext_resource path="res://audio/sounds/diamond3.wav" type="Sample" id=12]
-[ext_resource path="res://audio/sounds/diamond4.wav" type="Sample" id=13]
-[ext_resource path="res://audio/sounds/ennemy.wav" type="Sample" id=14]
-[ext_resource path="res://audio/sounds/healthgain.wav" type="Sample" id=15]
-[ext_resource path="res://audio/sounds/jump.wav" type="Sample" id=16]
-[ext_resource path="res://audio/sounds/killmonster.wav" type="Sample" id=17]
-[ext_resource path="res://audio/sounds/melon.wav" type="Sample" id=18]
-[ext_resource path="res://audio/sounds/melon1.wav" type="Sample" id=19]
-[ext_resource path="res://audio/sounds/melon2.wav" type="Sample" id=20]
-[ext_resource path="res://audio/sounds/melon3.wav" type="Sample" id=21]
-[ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=22]
-[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=23]
+[ext_resource path="res://graphics/items/apple_green.png" type="Texture" id=7]
+[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=8]
+[ext_resource path="res://audio/sounds/1hp.wav" type="Sample" id=9]
+[ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=10]
+[ext_resource path="res://audio/sounds/diamond1.wav" type="Sample" id=11]
+[ext_resource path="res://audio/sounds/diamond2.wav" type="Sample" id=12]
+[ext_resource path="res://audio/sounds/diamond3.wav" type="Sample" id=13]
+[ext_resource path="res://audio/sounds/diamond4.wav" type="Sample" id=14]
+[ext_resource path="res://audio/sounds/ennemy.wav" type="Sample" id=15]
+[ext_resource path="res://audio/sounds/healthgain.wav" type="Sample" id=16]
+[ext_resource path="res://audio/sounds/jump.wav" type="Sample" id=17]
+[ext_resource path="res://audio/sounds/killmonster.wav" type="Sample" id=18]
+[ext_resource path="res://audio/sounds/melon.wav" type="Sample" id=19]
+[ext_resource path="res://audio/sounds/melon1.wav" type="Sample" id=20]
+[ext_resource path="res://audio/sounds/melon2.wav" type="Sample" id=21]
+[ext_resource path="res://audio/sounds/melon3.wav" type="Sample" id=22]
+[ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=23]
+[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -35,22 +36,22 @@ frames = [ ExtResource( 3 ), ExtResource( 4 ) ]
 
 [sub_resource type="SampleLibrary" id=3]
 
-samples/jump = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
-samples/pop = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
-samples/diamond3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
-samples/ennemy = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
-samples/killmonster = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
-samples/melon1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
-samples/diamond1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
-samples/pick = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
-samples/damage = { "db":0.0, "pitch":1.0, "sample":ExtResource( 9 ) }
-samples/melon3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
-samples/melon = { "db":0.0, "pitch":1.0, "sample":ExtResource( 18 ) }
-samples/1hp = { "db":0.0, "pitch":1.0, "sample":ExtResource( 8 ) }
-samples/melon2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
-samples/diamond2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
-samples/diamond4 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 13 ) }
-samples/healthgain = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
+samples/jump = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
+samples/pop = { "db":0.0, "pitch":1.0, "sample":ExtResource( 24 ) }
+samples/diamond4 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
+samples/ennemy = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
+samples/pick = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
+samples/melon1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
+samples/healthgain = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
+samples/diamond3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 13 ) }
+samples/diamond2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
+samples/melon = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
+samples/melon3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
+samples/1hp = { "db":0.0, "pitch":1.0, "sample":ExtResource( 9 ) }
+samples/melon2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
+samples/diamond1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
+samples/damage = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
+samples/killmonster = { "db":0.0, "pitch":1.0, "sample":ExtResource( 18 ) }
 
 [node name="world" type="Node2D"]
 
@@ -133,15 +134,15 @@ max_lines_visible = -1
 
 [node name="sprite_diamonds" type="Sprite" parent="hud"]
 
-transform/pos = Vector2( 320, 14 )
+transform/pos = Vector2( 228.352, 12.7723 )
 texture = ExtResource( 6 )
 
 [node name="diamonds" type="Label" parent="hud"]
 
-margin/left = 336.0
-margin/top = 6.0
-margin/right = 433.0
-margin/bottom = 25.0
+margin/left = 245.0
+margin/top = 5.0
+margin/right = 342.0
+margin/bottom = 24.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -151,9 +152,29 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="apples" type="Label" parent="hud"]
+
+margin/left = 431.0
+margin/top = 5.0
+margin/right = 528.0
+margin/bottom = 24.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sprite_apples" type="Sprite" parent="hud"]
+
+transform/pos = Vector2( 414.83, 13.3168 )
+texture = ExtResource( 7 )
+
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 7 )
+stream/stream = ExtResource( 8 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0

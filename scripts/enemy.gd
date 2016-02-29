@@ -29,12 +29,8 @@ func _fixed_process(delta):
 		move(Vector2(-speed,0))
 		
 	if is_colliding():
-		if get_collider().is_in_group("apple"):
-			queue_free()
-			get_collider().queue_free()
-		else:
-			get_node("sprites").set_flip_h(walk_right)
-			walk_right = !walk_right
+		get_node("sprites").set_flip_h(walk_right)
+		walk_right = !walk_right
 
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":

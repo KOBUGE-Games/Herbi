@@ -140,12 +140,13 @@ func _fixed_process(delta):
 
 func _input(event):
 	if event.type == InputEvent.KEY && not event.is_echo() && event.is_pressed():
-		if event.scancode == KEY_X:
+		if global.apples > 0 and event.scancode == KEY_X:
 			var apple = pApple.instance()
 			apple.set_pos(get_pos())
 			apple.add_collision_exception_with(self)
 			apple.set_z(2)
 			get_parent().add_child(apple)
+			get_node("/root/world").remove_apple()
 
 func _ready():
 	get_node("check_right").add_exception(self)
