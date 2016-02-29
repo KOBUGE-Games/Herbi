@@ -25,8 +25,10 @@ const SLIDE_STOP_MIN_TRAVEL = 1.0 # One pixel
 var velocity = Vector2()
 var on_air_time = 100
 var jumping = false
+var dir_right = true
 
 var prev_jump_pressed = false
+var pApple = preload("res://scenes/items/apple.tscn")
 
 func animation_walk():
 	if int(get_pos().x) % 50 < 25:
@@ -52,6 +54,7 @@ func _fixed_process(delta):
 			if not jumping:
 				animation_walk()
 			get_node("sprites").set_flip_h(true)
+			dir_right = false
 
 	elif walk_right and get_pos().x < get_node("Camera2D").get_limit(MARGIN_RIGHT)-32:
 		if (velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED):
@@ -60,6 +63,7 @@ func _fixed_process(delta):
 			if not jumping:
 				animation_walk()
 			get_node("sprites").set_flip_h(false)
+			dir_right = true
 			
 	else:
 		get_node("sprites").set_frame(0)
@@ -134,7 +138,16 @@ func _fixed_process(delta):
 	on_air_time += delta
 	prev_jump_pressed = jump
 
+func _input(event):
+	if event.type == InputEvent.KEY && not event.is_echo() && event.is_pressed():
+		if event.scancode == KEY_X:
+			var apple = pApple.instance()
+			apple.set_pos(get_pos())
+			apple.add_collision_exception_with(self)
+			apple.set_z(2)
+			get_parent().add_child(apple)
 
 func _ready():
 	get_node("check_right").add_exception(self)
 	set_fixed_process(true)
+	set_process_input(true)
