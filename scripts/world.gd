@@ -25,8 +25,8 @@ func _ready():
 func update_score(amount):
 	get_node("SamplePlayer2D").play("pop")
 	global.score += amount
-	if global.score == 100:
-		update_lives(1)
+	if global.score == 50:
+		add_life()
 		global.score = 0
 	get_node("hud/items").set_text(str(global.score))
 	
