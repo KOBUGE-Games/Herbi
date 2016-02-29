@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scripts/between.gd" type="Script" id=1]
 [ext_resource path="res://levels/between.tscn" type="PackedScene" id=2]
 [ext_resource path="res://graphics/characters/dog/sprite_1.png" type="Texture" id=3]
 [ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=4]
 [ext_resource path="res://audio/sounds/win.wav" type="Sample" id=5]
+[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -28,7 +29,7 @@ samples/win = { "db":0.0, "pitch":1.0, "sample":ExtResource( 5 ) }
 [node name="between" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="level" parent="." instance=ExtResource( 2 )]
 
@@ -58,6 +59,29 @@ params/attenuation/distance_exp = 1.0
 config/polyphony = 1
 config/samples = SubResource( 3 )
 config/pitch_random = 0.0
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="level" type="Label" parent="hud"]
+
+margin/left = 4.0
+margin/top = 86.0
+margin/right = 639.0
+margin/bottom = 105.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 6 )
+text = "LEVEL 0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_finished"]
 
