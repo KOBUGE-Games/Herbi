@@ -53,7 +53,7 @@ func update_lifes():
 			live.set_pos(Vector2(16+i*32,16))
 			get_node("hud/lives").add_child(live)
 	else:
-		get_tree().change_scene("res://scenes/main_menu.tscn")
+		restart()
 		
 func add_diamond():
 	diamonds += 1
@@ -83,15 +83,18 @@ func _on_shield_timeout():
 	get_node("player").set_opacity(1)
 	shield = false
 	
+func restart():
+		global.score = start_score
+		global.lives = start_lives
+		global.apples = start_apples
+		get_tree().change_scene("res://scenes/between.tscn")
+	
 func _input(event):
 	if event.type == InputEvent.KEY && not event.is_echo() && event.is_pressed():
 		if event.scancode == KEY_ESCAPE:
 			get_tree().change_scene("res://scenes/main_menu.tscn")
 		elif event.scancode == KEY_F2:
-			global.score = start_score
-			global.lives = start_lives
-			global.apples = start_apples
-			get_tree().change_scene("res://scenes/between.tscn")
+			restart()
 		elif event.scancode == KEY_F3:
 			global.music = !global.music
 			if global.music:

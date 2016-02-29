@@ -137,6 +137,10 @@ func _fixed_process(delta):
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
+	
+	if get_pos().y > get_node("Camera2D").get_limit(MARGIN_BOTTOM)+32:
+		queue_free()
+		get_node("/root/world/").restart()
 
 func _input(event):
 	if event.type == InputEvent.KEY && not event.is_echo() && event.is_pressed():

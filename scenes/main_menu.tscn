@@ -7,7 +7,7 @@
 [node name="menu" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="bg" type="Sprite" parent="."]
 
@@ -24,7 +24,7 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
-text = "SPACE = Start Game / Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit"
+text = "SPACE = Start Game / Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit\n\nby @alketii"
 align = 1
 valign = 1
 percent_visible = 1.0
