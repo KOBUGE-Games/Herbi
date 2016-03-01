@@ -2,3 +2,5 @@
 *~
 export.cfg
 .directory
+levels/level_0.tmx
+levels/level_0.tscn
