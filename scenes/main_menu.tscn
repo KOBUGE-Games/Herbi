@@ -7,7 +7,7 @@
 [node name="menu" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="bg" type="Sprite" parent="."]
 
@@ -19,12 +19,12 @@ texture = ExtResource( 2 )
 margin/left = 5.0
 margin/top = 157.0
 margin/right = 634.0
-margin/bottom = 324.0
+margin/bottom = 366.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 3 )
-text = "SPACE = Start Game / Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit\n\nby @alketii"
+text = "SPACE = Start Game / Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit\n\nCoded by @alketii\nAudio by @ObaniGemini\n\nKOBGUE-GAMES | GodotEngine.org"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -34,10 +34,10 @@ max_lines_visible = -1
 [node name="debug_info" type="Label" parent="."]
 
 visibility/visible = false
-margin/left = 6.0
-margin/top = 303.0
-margin/right = 635.0
-margin/bottom = 470.0
+margin/left = 5.0
+margin/top = 342.0
+margin/right = 634.0
+margin/bottom = 509.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
