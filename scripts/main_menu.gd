@@ -10,15 +10,15 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.type == InputEvent.KEY && not event.is_echo() && event.is_pressed():
-		if event.scancode == KEY_SPACE:
+	if not event.is_echo() && event.is_pressed():
+		if event.is_action("jump"):
 			get_tree().change_scene("res://scenes/between.tscn")
-		elif event.scancode == KEY_F2:
+		elif event.is_action("restart"):
 			get_tree().change_scene("res://scenes/between.tscn")
-		elif event.scancode == KEY_F3:
+		elif event.type == InputEvent.KEY && event.scancode == KEY_F3:
 			global.music = !global.music
-		elif event.scancode == KEY_F9:
+		elif event.type == InputEvent.KEY && event.scancode == KEY_F9:
 			get_tree().quit()
-		elif event.scancode == KEY_T && global.debug:
+		elif event.type == InputEvent.KEY && event.scancode == KEY_T && global.debug:
 			global.level = 0
 			get_tree().change_scene("res://scenes/main.tscn")

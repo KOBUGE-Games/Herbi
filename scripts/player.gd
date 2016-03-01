@@ -143,8 +143,8 @@ func _fixed_process(delta):
 		get_node("/root/world/").restart()
 
 func _input(event):
-	if event.type == InputEvent.KEY && not event.is_echo() && event.is_pressed():
-		if global.apples > 0 and event.scancode == KEY_X:
+	if not event.is_echo() && event.is_pressed():
+		if global.apples > 0 and event.is_action("throw"):
 			var apple = pApple.instance()
 			apple.set_pos(get_pos())
 			apple.add_collision_exception_with(self)

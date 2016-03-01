@@ -90,31 +90,32 @@ func restart():
 		get_tree().change_scene("res://scenes/between.tscn")
 	
 func _input(event):
-	if event.type == InputEvent.KEY && not event.is_echo() && event.is_pressed():
-		if event.scancode == KEY_ESCAPE:
+	if not event.is_echo() && event.is_pressed():
+		if event.is_action("ui_cancel"):
 			get_tree().change_scene("res://scenes/main_menu.tscn")
-		elif event.scancode == KEY_F2:
+		elif event.is_action("restart"):
 			restart()
-		elif event.scancode == KEY_F3:
-			global.music = !global.music
-			if global.music:
-				get_node("StreamPlayer").play()
-			else:
-				get_node("StreamPlayer").stop()
-		elif event.scancode == KEY_F9:
-			get_tree().quit()
-		
-		# DEBUG MODE
-		if global.debug:
-			if event.scancode == KEY_D:
-				if global.level < global.total_levels:
-					global.level += 1
-					get_tree().change_scene("res://scenes/main.tscn")
-			elif event.scancode == KEY_A:
-				if global.level > 1:
-					global.level -= 1
-					get_tree().change_scene("res://scenes/main.tscn")
-			elif event.scancode == KEY_W:
-				add_life()
-			elif event.scancode == KEY_S:
-				remove_life()
+		if event.type == InputEvent.KEY:
+			if event.scancode == KEY_F3:
+				global.music = !global.music
+				if global.music:
+					get_node("StreamPlayer").play()
+				else:
+					get_node("StreamPlayer").stop()
+			elif event.scancode == KEY_F9:
+				get_tree().quit()
+
+			# DEBUG MODE
+			if global.debug:
+				if event.scancode == KEY_D:
+					if global.level < global.total_levels:
+						global.level += 1
+						get_tree().change_scene("res://scenes/main.tscn")
+				elif event.scancode == KEY_A:
+					if global.level > 1:
+						global.level -= 1
+						get_tree().change_scene("res://scenes/main.tscn")
+				elif event.scancode == KEY_W:
+					add_life()
+				elif event.scancode == KEY_S:
+					remove_life()
