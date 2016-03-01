@@ -1,185 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="24" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" name="tiles" tilewidth="34" tileheight="42" tilecount="16" columns="0">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="15" tilewidth="32" tileheight="32" backgroundcolor="#4c88b4" nextobjectid="1">
+ <tileset firstgid="1" name="tiles" tilewidth="34" tileheight="42" tilecount="34" columns="0">
   <tile id="0">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/dirt_center.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/tiles/dirt_center.png"/>
-  </tile>
-  <tile id="1">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/dirt_left.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/tiles/dirt_left.png"/>
-  </tile>
-  <tile id="2">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/dirt_mid.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/tiles/dirt_mid.png"/>
-  </tile>
-  <tile id="3">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/dirt_right.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/tiles/dirt_right.png"/>
-  </tile>
-  <tile id="4">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/oneway_center.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/tiles/dirt2_center.png"/>
-  </tile>
-  <tile id="5">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/oneway_mid.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/tiles/dirt2_mid.png"/>
-  </tile>
-  <tile id="6">
-   <properties>
-    <property name="scene" value="res://scenes/items/item_watermelon.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/items/watermelon.png"/>
-  </tile>
-  <tile id="8">
-   <properties>
-    <property name="scene" value="res://scenes/enemies/enemy_1.tscn"/>
-   </properties>
-   <image width="34" height="42" source="../graphics/characters/frog/sprite_2.png"/>
-  </tile>
-  <tile id="9">
-   <properties>
-    <property name="scene" value="res://scenes/items/diamond_red.tscn"/>
-   </properties>
-   <image width="26" height="20" source="../graphics/items/diamond_red.png"/>
-  </tile>
-  <tile id="10">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/spikes.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/tiles/spikes.png"/>
-  </tile>
-  <tile id="11">
-   <properties>
-    <property name="scene" value="res://scenes/items/meat.tscn"/>
-   </properties>
-   <image width="28" height="22" source="../graphics/items/meat.png"/>
-  </tile>
-  <tile id="12">
-   <properties>
-    <property name="scene" value="res://scenes/enemies/bear.tscn"/>
-   </properties>
-   <image width="30" height="38" source="../graphics/characters/bear/sprite_1.png"/>
-  </tile>
-  <tile id="13">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/lift.tscn"/>
-   </properties>
-   <image width="32" height="14" source="../graphics/tiles/lift_1.png"/>
-  </tile>
-  <tile id="14">
-   <properties>
-    <property name="scene" value="res://scenes/tiles/stone.tscn"/>
-   </properties>
-   <image width="32" height="32" source="../graphics/tiles/stone_1.png"/>
-  </tile>
-  <tile id="15">
-   <properties>
-    <property name="scene" value="res://scenes/enemies/monkey.tscn"/>
-   </properties>
-   <image width="31" height="38" source="../graphics/characters/monkey/sprite_1.png"/>
-  </tile>
-  <tile id="16">
    <properties>
     <property name="scene" value="res://scenes/misc/player_pos.tscn"/>
    </properties>
    <image width="34" height="42" source="../graphics/characters/dog/sprite_1.png"/>
   </tile>
+  <tile id="1">
+   <properties>
+    <property name="scene" value="res://scenes/enemies/enemy_1.tscn"/>
+   </properties>
+   <image width="34" height="42" source="../graphics/characters/frog/sprite_1.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="scene" value="res://scenes/enemies/bear.tscn"/>
+   </properties>
+   <image width="30" height="38" source="../graphics/characters/bear/sprite_1.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="scene" value="res://scenes/enemies/monkey.tscn"/>
+   </properties>
+   <image width="31" height="38" source="../graphics/characters/monkey/sprite_1.png"/>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/dirt_center.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt_center.png"/>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/dirt_left.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt_left.png"/>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/dirt_mid.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt_mid.png"/>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/dirt_right.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt_right.png"/>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/oneway_mid_left.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt2_mid_left.png"/>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/oneway_mid_right.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt2_mid_right.png"/>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/oneway_left.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt2_left.png"/>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/oneway_mid.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt2_mid.png"/>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/oneway_right.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt2_right.png"/>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/lift.tscn"/>
+   </properties>
+   <image width="32" height="14" source="../graphics/tiles/lift_1.png"/>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/spikes.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/spikes.png"/>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/grassstone_left.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/grassstone_1.png"/>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/grassstone_mid.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/grassstone_2.png"/>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/grassstone_right.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/grassstone_3.png"/>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/phantom_1.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/phantom_1_1.png"/>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/random_dirt.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/random_dirt_1.png"/>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/stone.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/stone_1.png"/>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="scene" value="res://scenes/decor/decor_1.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/decor/decor_1.png"/>
+  </tile>
+  <tile id="29">
+   <properties>
+    <property name="scene" value="res://scenes/decor/decor_2.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/decor/decor_2.png"/>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="scene" value="res://scenes/decor/decor_3.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/decor/decor_3.png"/>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="scene" value="res://scenes/decor/decor_4.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/decor/decor_4.png"/>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="scene" value="res://scenes/decor/decor_5.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/decor/decor_5.png"/>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="scene" value="res://scenes/decor/decor_6.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/decor/decor_6.png"/>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="scene" value="res://scenes/decor/decor_7.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/decor/decor_7.png"/>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="scene" value="res://scenes/decor/decor_8.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/decor/decor_8.png"/>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="scene" value="res://scenes/items/apple_pick.tscn"/>
+   </properties>
+   <image width="24" height="26" source="../graphics/items/apple.png"/>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="scene" value="res://scenes/items/diamond_red.tscn"/>
+   </properties>
+   <image width="26" height="20" source="../graphics/items/diamond_red.png"/>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="scene" value="res://scenes/items/meat.tscn"/>
+   </properties>
+   <image width="28" height="22" source="../graphics/items/meat.png"/>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="scene" value="res://scenes/items/item_watermelon.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/items/watermelon.png"/>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="scene" value="res://scenes/tiles/oneway_center.tscn"/>
+   </properties>
+   <image width="32" height="32" source="../graphics/tiles/dirt2_center.png"/>
+  </tile>
  </tileset>
- <layer name="lower" width="42" height="24">
+ <layer name="back" width="60" height="15">
   <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+0,17,42,42,42,42,42,42,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16,0,0,0,0,0,0,0,0,0,0,0,0,
+17,42,42,42,42,42,42,42,42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,22,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+17,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,28,28,28,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,16
 </data>
  </layer>
- <layer name="center" width="42" height="24">
+ <layer name="center" width="60" height="15">
   <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,7,0,0,0,0,0,0,9,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-3,3,3,3,11,3,4,0,0,2,3,3,3,3,3,3,3,4,0,7,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,7,0,0,10,0,0,0,0,0,0,0,0,2,3,4,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,6,6,6,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,0,7,0,0,0,0,0,0,0,0,0,0,0,
-0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,7,0,0,5,5,5,5,0,0,10,0,0,0,0,0,0,0,0,0,0,
-0,2,3,3,3,3,3,3,3,4,0,0,0,0,2,3,3,3,3,3,3,3,3,3,3,6,6,6,6,1,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,10,1,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,7,0,7,0,7,0,0,0,0,0,7,0,0,7,0,7,0,7,0,7,0,7,0,7,0,7,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,2,3,3,3,3,3,3,3,3,4,0,0,0,0,0,0,0,0,0,0,0,0,6,6,6,6,1,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
-0,2,4,0,0,0,0,0,0,0,0,0,0,0,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,11,11,11,11,11,11,11,11
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,0,31,0,31,36,31,36,31,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,35,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,19,19,19,20,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,36,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,16,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,16,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,16,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,16,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,16,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,16,
+0,0,0,0,0,0,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,40,40,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,16,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,40,40,40,40,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,42,42,42,16,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,40,40,40,40,40,40,40,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,31,36,31,31,17,42,42,42,16,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="upper" width="42" height="24">
+ <layer name="front" width="60" height="15">
   <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
-0,17,0,0,0,0,0,0,0,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,15,0,0,0,0,10,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,15,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,15,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,1,0,0,0,15,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,10,0,0,0,1,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,10,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,15,0,0,0,0,0,0,15,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,3,3,3,1,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,15,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,15,0,0,0,0,0,0,10,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,15,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,15,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,16,0,0,0,0,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,0,0,0,0,0,0,12,
-11,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,11,11,11,11,11,11,2,4,11,1,1,1,1,0,0,0,0,0,0,0,0,15
+0,0,0,0,0,0,40,40,40,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,40,40,40,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,38,0,0,0,0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,
+0,0,0,38,0,0,40,40,40,40,0,0,37,0,37,0,37,0,0,0,0,0,0,0,0,0,0,0,37,2,0,0,0,0,0,0,3,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,22,0,0,
+0,0,0,0,0,0,40,40,40,40,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,0,0,18,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,20,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,3,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,18,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,20,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,19,19,19,19,19,19,19,19,19,19,19,20,0,0,0,0,0,0,0,0,0,0,0,0,21,0,0,37,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,37,0,37,0,18,19,19,19,19,19,19,19,19,19,19,19,19,19,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,40,0,40,0,40,0,40,0,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,0,0,0,0,0,0,0,0,
+18,19,19,19,19,19,19,19,19,19,20,40,0,40,0,40,0,40,0,40,0,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,40,0,40,0,40,0,40,0,40,4,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,40,40,40,40,0,0,0,0,0,4,0,0,0,0,0,0,0,
+0,0,0,0,0,0,38,0,18,19,19,28,19,19,19,19,19,19,19,19,19,19,28,0,0,0,28,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,20,
+22,22,22,22,22,22,22,22,22,22,22,28,0,0,0,0,0,0,0,0,0,0,28,0,0,0,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
 </map>
