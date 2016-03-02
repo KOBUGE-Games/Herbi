@@ -3,6 +3,7 @@ extends KinematicBody2D
 var walk_right = true
 export var speed = 2
 onready var player = get_node("/root/world/player")
+var player_vy = 0
 
 func _ready():
 	add_to_group("enemies")
@@ -34,6 +35,7 @@ func _fixed_process(delta):
 
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
-		if player.get_pos().y+32 > get_pos().y:
+		player_vy = player.velocity.y
+		if player.get_pos().y+37 > get_pos().y and player_vy <= 0:
 			get_node("/root/world").remove_life()
 		queue_free()
