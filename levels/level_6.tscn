@@ -911,41 +911,41 @@ transform/pos = Vector2( 1232, 464 )
 
 transform/pos = Vector2( 1392, 464 )
 
-[node name="lift_64" parent="second" instance=ExtResource( 22 )]
-
-transform/pos = Vector2( 1552, 464 )
-
-[node name="item_watermelon_65" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_64" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 496, 496 )
 
-[node name="item_watermelon_66" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_65" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 1040, 496 )
 
-[node name="item_watermelon_67" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_66" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 1200, 496 )
 
-[node name="item_watermelon_68" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_67" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 1392, 496 )
 
-[node name="item_watermelon_69" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_68" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 496, 528 )
 
-[node name="item_watermelon_70" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_69" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 624, 528 )
 
-[node name="item_watermelon_71" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_70" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 1008, 528 )
 
-[node name="item_watermelon_72" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_71" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 1392, 528 )
+
+[node name="lift_72" parent="second" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1552, 528 )
 
 [node name="apple_pick_73" parent="second" instance=ExtResource( 38 )]
 
