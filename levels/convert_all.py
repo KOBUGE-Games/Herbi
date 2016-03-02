@@ -11,8 +11,8 @@ current_dir = os.getcwd()+"/"
 for xfile in os.listdir("."):
     if xfile.split(".")[-1] == "tmx":
         xfile = xfile.split(".")[0]
-        if xfile != "between" and xfile != "blank_level":
-            process = subprocess.Popen('/home/robin/tiled/bin/tiled --export-map '+current_dir+xfile+'.tmx '+current_dir+xfile+'.json', shell=True, stdout=subprocess.PIPE)
+        if xfile != "blank_level":
+            process = subprocess.Popen('/home/alket/src/tiled/bin/tiled --export-map '+current_dir+xfile+'.tmx '+current_dir+xfile+'.json', shell=True, stdout=subprocess.PIPE)
             process.wait()
             # Default values for args
             file_input = xfile+".json"
