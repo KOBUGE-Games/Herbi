@@ -39,20 +39,20 @@ frames = [ ExtResource( 4 ), ExtResource( 5 ) ]
 
 samples/jump = { "db":0.0, "pitch":1.0, "sample":ExtResource( 18 ) }
 samples/pop = { "db":0.0, "pitch":1.0, "sample":ExtResource( 25 ) }
-samples/melon1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
-samples/diamond2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 13 ) }
-samples/diamond1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
-samples/pick = { "db":0.0, "pitch":1.0, "sample":ExtResource( 24 ) }
-samples/diamond4 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
-samples/melon3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
-samples/ennemy = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
 samples/damage = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
 samples/healthgain = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
-samples/killmonster = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
-samples/melon2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
+samples/melon3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
+samples/ennemy = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
+samples/diamond1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
+samples/diamond2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 13 ) }
+samples/melon1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
+samples/diamond3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
 samples/melon = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
 samples/1hp = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
-samples/diamond3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
+samples/pick = { "db":0.0, "pitch":1.0, "sample":ExtResource( 24 ) }
+samples/diamond4 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
+samples/killmonster = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
+samples/melon2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
 
 [node name="world" type="Node2D"]
 
@@ -117,6 +117,13 @@ drag_margin/bottom = 0.2
 
 enabled = true
 cast_to = Vector2( 16, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="check_down" type="RayCast2D" parent="player"]
+
+enabled = true
+cast_to = Vector2( 0, 32 )
 layer_mask = 1
 type_mask = 15
 

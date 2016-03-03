@@ -88,6 +88,7 @@ func _fixed_process(delta):
 	motion = move(motion)
 	
 	var floor_velocity = Vector2()
+	var down_ray = get_node("check_down")
 	
 	if is_colliding():
 		# You can check which tile was collision against with this
@@ -121,9 +122,17 @@ func _fixed_process(delta):
 			# Then move again
 			move(motion)
 	
+	elif(down_ray.is_colliding()):
+		var collider = down_ray.get_collider()
+		if collider != null and collider extends StaticBody2D:
+			floor_velocity = collider.get_constant_linear_velocity()
+	
+	#print(floor_velocity)
 	if (floor_velocity != Vector2()):
 		# If floor moves, move with floor
 		move(floor_velocity*delta)
+		if(is_colliding()):
+			revert_motion()
 	
 	if (jumping and velocity.y > 0):
 		# If falling, no longer jumping
@@ -154,5 +163,6 @@ func _input(event):
 
 func _ready():
 	get_node("check_right").add_exception(self)
+	get_node("check_down").add_exception(self)
 	set_fixed_process(true)
 	set_process_input(true)
