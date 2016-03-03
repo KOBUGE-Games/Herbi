@@ -14,7 +14,7 @@ func _ready():
 	get_node("check_right").add_exception(self)
 	get_node("check_left").add_exception(self)
 	set_pos(Vector2(get_pos().x,get_pos().y-4))
-	
+
 func _fixed_process(delta):
 	#toggle direction
 	if !get_node("check_down").is_colliding():
@@ -34,25 +34,46 @@ func _fixed_process(delta):
 		move(Vector2(-movement,0))
 
 	if get_node("check_right").is_colliding() and get_node("check_down").is_colliding():
-		if get_node("check_right").get_collider().get_name() == "player":
-			walk_right = true
-			movement = run
-			get_node("sprites").set_flip_h(!walk_right)
+		player = get_node("check_right").get_collider()
+		if player.get_name() == "player":
+			if has_path_to_target(player.get_pos()):
+				walk_right = true
+				movement = run
+				get_node("sprites").set_flip_h(!walk_right)
 		else:
 			movement = speed
 
 	elif get_node("check_left").is_colliding() and get_node("check_down").is_colliding():
-		if get_node("check_left").get_collider().get_name() == "player":
-			walk_right = false
-			movement = run
-			get_node("sprites").set_flip_h(!walk_right)
+		var player = get_node("check_left").get_collider()
+		if player.get_name() == "player":
+			if has_path_to_target(player.get_pos()):
+				walk_right = false
+				movement = run
+				get_node("sprites").set_flip_h(!walk_right)
 		else:
 			movement = speed
+	
 	else:
 		movement = speed
 		if is_colliding():
 			get_node("sprites").set_flip_h(walk_right)
 			walk_right = !walk_right
+
+func has_path_to_target(target, distance = 30):
+	var current = get_pos()
+	target.y = current.y # Make only horizontal checking
+	
+	var layer_mask = get_node("check_down").get_layer_mask()
+	var type_mask = get_node("check_down").get_type_mask()
+	
+	var direct_state = get_world_2d().get_direct_space_state()
+	var count = current.distance_to(target) / 16
+	for i in range(0, count):
+		var check = current.linear_interpolate(target, i/count)
+		var result = direct_state.intersect_ray(check, check + Vector2(0, distance), [self], layer_mask, type_mask)
+		if !result.has("position"):
+			return false # Can't pass if there is nothing to stand on
+	return true
 
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
