@@ -1299,139 +1299,123 @@ transform/pos = Vector2( 208, 848 )
 
 transform/pos = Vector2( 240, 848 )
 
-[node name="decor_2_86" parent="second" instance=ExtResource( 31 )]
-
-transform/pos = Vector2( 944, 848 )
-
-[node name="item_watermelon_87" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_86" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 976, 848 )
 
-[node name="spikes_88" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_87" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 1104, 848 )
 
-[node name="spikes_89" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_88" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 1136, 848 )
 
-[node name="spikes_90" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_89" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 1168, 848 )
 
-[node name="spikes_91" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_90" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 1200, 848 )
 
-[node name="spikes_92" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_91" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 1232, 848 )
 
-[node name="spikes_93" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_92" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 1264, 848 )
 
-[node name="spikes_94" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_93" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 1296, 848 )
 
-[node name="oneway_mid_right_95" parent="second" instance=ExtResource( 18 )]
+[node name="oneway_mid_right_94" parent="second" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 16, 880 )
 
-[node name="spikes_96" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_95" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 432, 880 )
 
-[node name="spikes_97" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_96" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 464, 880 )
 
-[node name="spikes_98" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_97" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 496, 880 )
 
-[node name="spikes_99" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_98" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 624, 880 )
 
-[node name="spikes_100" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_99" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 656, 880 )
 
-[node name="spikes_101" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_100" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 688, 880 )
 
-[node name="spikes_102" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_101" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 912, 880 )
 
-[node name="spikes_103" parent="second" instance=ExtResource( 23 )]
-
-transform/pos = Vector2( 944, 880 )
-
-[node name="spikes_104" parent="second" instance=ExtResource( 23 )]
-
-transform/pos = Vector2( 976, 880 )
-
-[node name="spikes_105" parent="second" instance=ExtResource( 23 )]
-
-transform/pos = Vector2( 1008, 880 )
-
-[node name="spikes_106" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_102" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 1040, 880 )
 
-[node name="oneway_mid_left_107" parent="second" instance=ExtResource( 17 )]
+[node name="oneway_mid_left_103" parent="second" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 1296, 880 )
 
-[node name="oneway_mid_right_108" parent="second" instance=ExtResource( 18 )]
+[node name="oneway_mid_right_104" parent="second" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 16, 912 )
 
-[node name="oneway_mid_left_109" parent="second" instance=ExtResource( 17 )]
+[node name="oneway_mid_left_105" parent="second" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 240, 912 )
 
-[node name="oneway_mid_left_110" parent="second" instance=ExtResource( 17 )]
+[node name="oneway_mid_left_106" parent="second" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 1296, 912 )
 
-[node name="oneway_mid_right_111" parent="second" instance=ExtResource( 18 )]
+[node name="oneway_mid_right_107" parent="second" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 16, 944 )
 
-[node name="oneway_mid_left_112" parent="second" instance=ExtResource( 17 )]
+[node name="oneway_mid_left_108" parent="second" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 240, 944 )
 
-[node name="oneway_mid_right_113" parent="second" instance=ExtResource( 18 )]
+[node name="oneway_mid_right_109" parent="second" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 432, 944 )
 
-[node name="oneway_mid_left_114" parent="second" instance=ExtResource( 17 )]
+[node name="oneway_mid_left_110" parent="second" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 496, 944 )
 
-[node name="oneway_mid_left_115" parent="second" instance=ExtResource( 17 )]
+[node name="oneway_mid_left_111" parent="second" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 720, 944 )
 
-[node name="oneway_mid_right_116" parent="second" instance=ExtResource( 18 )]
+[node name="oneway_mid_right_112" parent="second" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 912, 944 )
 
-[node name="oneway_mid_left_117" parent="second" instance=ExtResource( 17 )]
+[node name="oneway_mid_left_113" parent="second" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 1040, 944 )
 
-[node name="oneway_mid_right_118" parent="second" instance=ExtResource( 18 )]
+[node name="oneway_mid_right_114" parent="second" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 1104, 944 )
 
-[node name="oneway_mid_left_119" parent="second" instance=ExtResource( 17 )]
+[node name="oneway_mid_left_115" parent="second" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 1296, 944 )
 
