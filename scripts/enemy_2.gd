@@ -34,7 +34,7 @@ func _fixed_process(delta):
 		move(Vector2(-movement,0))
 
 	if get_node("check_right").is_colliding() and get_node("check_down").is_colliding():
-		player = get_node("check_right").get_collider()
+		var player = get_node("check_right").get_collider()
 		if player.get_name() == "player":
 			if has_path_to_target(player.get_pos()):
 				walk_right = true

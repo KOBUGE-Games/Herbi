@@ -1,0 +1,4177 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scenes/misc/world_end.tscn" type="PackedScene" id=1][ext_resource path="res://scenes/tiles/grassstone_right.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/tiles/phantom_1.tscn" type="PackedScene" id=27]
+[ext_resource path="res://scenes/tiles/random_dirt.tscn" type="PackedScene" id=28]
+[ext_resource path="res://scenes/tiles/stone.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/tiles/lift.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/tiles/spikes.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/tiles/grassstone_left.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/tiles/grassstone_mid.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/decor/decor_1.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/decor/decor_2.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/tiles/oneway_center.tscn" type="PackedScene" id=43]
+[ext_resource path="res://scenes/enemies/enemy_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/misc/player_pos.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/enemies/monkey.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/enemies/bear.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/tiles/dirt_center.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/tiles/dirt_mid.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/tiles/dirt_left.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/tiles/dirt_right.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/items/item_watermelon.tscn" type="PackedScene" id=41]
+[ext_resource path="res://scenes/items/meat.tscn" type="PackedScene" id=40]
+[ext_resource path="res://scenes/tiles/oneway_mid_left.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/tiles/oneway_left.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/tiles/oneway_mid_right.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/tiles/oneway_right.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/tiles/oneway_mid.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/decor/decor_4.tscn" type="PackedScene" id=33]
+[ext_resource path="res://scenes/decor/decor_3.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scenes/items/diamond_red.tscn" type="PackedScene" id=39]
+[ext_resource path="res://scenes/items/apple_pick.tscn" type="PackedScene" id=38]
+[ext_resource path="res://scenes/decor/decor_8.tscn" type="PackedScene" id=37]
+[ext_resource path="res://scenes/decor/decor_7.tscn" type="PackedScene" id=36]
+[ext_resource path="res://scenes/decor/decor_6.tscn" type="PackedScene" id=35]
+[ext_resource path="res://scenes/decor/decor_5.tscn" type="PackedScene" id=34]
+
+[node name="level" type="Node2D"]
+
+__meta__ = { "__editor_plugin_screen__":"2D", "__editor_plugin_states__":{ "2D":{ "ofs":Vector2( 0, 0 ), "snap_grid":true, "snap_offset":Vector2( 0, 0 ), "snap_pixel":false, "snap_relative":false, "snap_rotation":false, "snap_rotation_offset":0, "snap_rotation_step":0.261799, "snap_show_grid":true, "snap_step":Vector2( 32, 32 ), "zoom":1 }, "3D":{ "ambient_light_color":Color( 0.15, 0.15, 0.15, 1 ), "default_light":true, "default_srgb":false, "deflight_rot_x":0.942478, "deflight_rot_y":0.628319, "fov":45, "show_grid":true, "show_origin":true, "viewport_mode":1, "viewports":[ { "distance":4, "listener":true, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 } ], "zfar":500, "znear":0.1 }, "Anim":{ "visible":false } }, "__editor_run_settings__":{ "custom_args":"-l $scene", "run_mode":0 } }
+
+[node name="lower" type="Node" parent="."]
+
+[node name="oneway_center_1" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 912 )
+
+[node name="oneway_center_2" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 912 )
+
+[node name="oneway_center_3" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 912 )
+
+[node name="oneway_mid_right_4" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 208, 944 )
+
+[node name="oneway_center_5" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 240, 944 )
+
+[node name="oneway_center_6" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 272, 944 )
+
+[node name="oneway_center_7" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 304, 944 )
+
+[node name="oneway_mid_left_8" parent="lower" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 336, 944 )
+
+[node name="oneway_center_9" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1296, 944 )
+
+[node name="oneway_center_10" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 944 )
+
+[node name="oneway_center_11" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 944 )
+
+[node name="oneway_center_12" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 944 )
+
+[node name="stone_13" parent="lower" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 976 )
+
+[node name="oneway_mid_14" parent="lower" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 176, 976 )
+
+[node name="oneway_mid_15" parent="lower" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 240, 976 )
+
+[node name="oneway_center_16" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 304, 976 )
+
+[node name="oneway_center_17" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1296, 976 )
+
+[node name="oneway_center_18" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 976 )
+
+[node name="oneway_center_19" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 976 )
+
+[node name="oneway_center_20" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 976 )
+
+[node name="oneway_center_21" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 240, 1008 )
+
+[node name="oneway_mid_left_22" parent="lower" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 272, 1008 )
+
+[node name="phantom_1_23" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 976, 1008 )
+
+[node name="phantom_1_24" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1008, 1008 )
+
+[node name="phantom_1_25" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1040, 1008 )
+
+[node name="phantom_1_26" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1072, 1008 )
+
+[node name="oneway_center_27" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1296, 1008 )
+
+[node name="oneway_center_28" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1008 )
+
+[node name="oneway_center_29" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1008 )
+
+[node name="oneway_center_30" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1008 )
+
+[node name="oneway_center_31" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 240, 1040 )
+
+[node name="oneway_mid_left_32" parent="lower" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 272, 1040 )
+
+[node name="phantom_1_33" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 976, 1040 )
+
+[node name="phantom_1_34" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1008, 1040 )
+
+[node name="phantom_1_35" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1040, 1040 )
+
+[node name="phantom_1_36" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1072, 1040 )
+
+[node name="oneway_center_37" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1296, 1040 )
+
+[node name="oneway_center_38" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1328, 1040 )
+
+[node name="oneway_center_39" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1392, 1040 )
+
+[node name="oneway_center_40" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1040 )
+
+[node name="oneway_center_41" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1040 )
+
+[node name="oneway_center_42" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1040 )
+
+[node name="oneway_mid_left_43" parent="lower" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 272, 1072 )
+
+[node name="phantom_1_44" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 976, 1072 )
+
+[node name="phantom_1_45" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1008, 1072 )
+
+[node name="phantom_1_46" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1040, 1072 )
+
+[node name="phantom_1_47" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1072, 1072 )
+
+[node name="oneway_center_48" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1296, 1072 )
+
+[node name="oneway_center_49" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1072 )
+
+[node name="oneway_center_50" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1072 )
+
+[node name="oneway_center_51" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1072 )
+
+[node name="oneway_center_52" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 208, 1104 )
+
+[node name="oneway_center_53" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 240, 1104 )
+
+[node name="oneway_mid_left_54" parent="lower" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 272, 1104 )
+
+[node name="phantom_1_55" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 976, 1104 )
+
+[node name="phantom_1_56" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1008, 1104 )
+
+[node name="phantom_1_57" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1040, 1104 )
+
+[node name="phantom_1_58" parent="lower" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 1072, 1104 )
+
+[node name="oneway_mid_right_59" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1200, 1104 )
+
+[node name="oneway_center_60" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1232, 1104 )
+
+[node name="oneway_center_61" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1264, 1104 )
+
+[node name="oneway_center_62" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1296, 1104 )
+
+[node name="oneway_center_63" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1328, 1104 )
+
+[node name="oneway_center_64" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1360, 1104 )
+
+[node name="oneway_center_65" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1392, 1104 )
+
+[node name="oneway_mid_left_66" parent="lower" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1424, 1104 )
+
+[node name="oneway_center_67" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1104 )
+
+[node name="oneway_center_68" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1104 )
+
+[node name="oneway_center_69" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1104 )
+
+[node name="oneway_center_70" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1136 )
+
+[node name="oneway_center_71" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1136 )
+
+[node name="oneway_center_72" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1136 )
+
+[node name="oneway_mid_right_73" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1872, 1168 )
+
+[node name="oneway_center_74" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1168 )
+
+[node name="oneway_center_75" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1168 )
+
+[node name="oneway_center_76" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1168 )
+
+[node name="oneway_mid_right_77" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1872, 1200 )
+
+[node name="oneway_center_78" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1200 )
+
+[node name="oneway_center_79" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1200 )
+
+[node name="oneway_center_80" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1200 )
+
+[node name="oneway_mid_right_81" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1872, 1232 )
+
+[node name="oneway_center_82" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1232 )
+
+[node name="oneway_center_83" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1232 )
+
+[node name="oneway_center_84" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1232 )
+
+[node name="oneway_left_85" parent="lower" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 112, 1264 )
+
+[node name="oneway_mid_86" parent="lower" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 144, 1264 )
+
+[node name="oneway_mid_87" parent="lower" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 176, 1264 )
+
+[node name="oneway_mid_88" parent="lower" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 208, 1264 )
+
+[node name="oneway_mid_right_89" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1872, 1264 )
+
+[node name="oneway_center_90" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1264 )
+
+[node name="oneway_center_91" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1264 )
+
+[node name="oneway_center_92" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1264 )
+
+[node name="oneway_mid_right_93" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1872, 1296 )
+
+[node name="oneway_center_94" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1296 )
+
+[node name="oneway_center_95" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1296 )
+
+[node name="oneway_center_96" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1296 )
+
+[node name="oneway_mid_right_97" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1712, 1328 )
+
+[node name="oneway_center_98" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1744, 1328 )
+
+[node name="oneway_center_99" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1776, 1328 )
+
+[node name="oneway_center_100" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1808, 1328 )
+
+[node name="oneway_center_101" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1840, 1328 )
+
+[node name="oneway_center_102" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1872, 1328 )
+
+[node name="oneway_center_103" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1904, 1328 )
+
+[node name="oneway_center_104" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1936, 1328 )
+
+[node name="oneway_center_105" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1968, 1328 )
+
+[node name="oneway_mid_right_106" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 112, 1360 )
+
+[node name="oneway_center_107" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 144, 1360 )
+
+[node name="oneway_center_108" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 176, 1360 )
+
+[node name="oneway_center_109" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 208, 1360 )
+
+[node name="oneway_mid_left_110" parent="lower" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 240, 1360 )
+
+[node name="oneway_mid_right_111" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1072, 1360 )
+
+[node name="oneway_center_112" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1104, 1360 )
+
+[node name="oneway_center_113" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1136, 1360 )
+
+[node name="oneway_center_114" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1168, 1360 )
+
+[node name="oneway_mid_left_115" parent="lower" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1200, 1360 )
+
+[node name="spikes_116" parent="lower" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1264, 1360 )
+
+[node name="spikes_117" parent="lower" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1360, 1360 )
+
+[node name="spikes_118" parent="lower" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1456, 1360 )
+
+[node name="spikes_119" parent="lower" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1584, 1360 )
+
+[node name="oneway_mid_right_120" parent="lower" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1712, 1360 )
+
+[node name="oneway_center_121" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1744, 1360 )
+
+[node name="oneway_center_122" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1776, 1360 )
+
+[node name="oneway_center_123" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1808, 1360 )
+
+[node name="oneway_center_124" parent="lower" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1840, 1360 )
+
+[node name="center" type="Node" parent="."]
+
+[node name="diamond_red_1" parent="center" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 944, 80 )
+
+[node name="oneway_left_2" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1264, 80 )
+
+[node name="oneway_mid_3" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1296, 80 )
+
+[node name="oneway_mid_4" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1328, 80 )
+
+[node name="oneway_right_5" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1360, 80 )
+
+[node name="oneway_mid_right_6" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1264, 112 )
+
+[node name="oneway_center_7" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1296, 112 )
+
+[node name="oneway_center_8" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1328, 112 )
+
+[node name="oneway_mid_left_9" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1360, 112 )
+
+[node name="dirt_mid_10" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 16, 144 )
+
+[node name="dirt_mid_11" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 48, 144 )
+
+[node name="dirt_mid_12" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 80, 144 )
+
+[node name="dirt_mid_13" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 112, 144 )
+
+[node name="dirt_mid_14" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 144, 144 )
+
+[node name="dirt_right_15" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 176, 144 )
+
+[node name="lift_16" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 784, 144 )
+
+[node name="lift_17" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 816, 144 )
+
+[node name="grassstone_left_18" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 912, 144 )
+
+[node name="grassstone_mid_19" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 944, 144 )
+
+[node name="grassstone_mid_20" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 976, 144 )
+
+[node name="grassstone_right_21" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 1008, 144 )
+
+[node name="grassstone_left_22" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 1232, 144 )
+
+[node name="grassstone_mid_23" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1264, 144 )
+
+[node name="grassstone_mid_24" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1296, 144 )
+
+[node name="grassstone_mid_25" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1328, 144 )
+
+[node name="grassstone_mid_26" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1360, 144 )
+
+[node name="grassstone_right_27" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 1392, 144 )
+
+[node name="lift_28" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1488, 144 )
+
+[node name="lift_29" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1520, 144 )
+
+[node name="stone_30" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 176 )
+
+[node name="lift_31" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 368, 176 )
+
+[node name="lift_32" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 400, 176 )
+
+[node name="stone_33" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 976, 176 )
+
+[node name="spikes_34" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1008, 176 )
+
+[node name="spikes_35" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1040, 176 )
+
+[node name="spikes_36" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1072, 176 )
+
+[node name="spikes_37" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1104, 176 )
+
+[node name="spikes_38" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1136, 176 )
+
+[node name="spikes_39" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1168, 176 )
+
+[node name="spikes_40" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1200, 176 )
+
+[node name="spikes_41" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1232, 176 )
+
+[node name="stone_42" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1264, 176 )
+
+[node name="stone_43" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 208 )
+
+[node name="stone_44" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 976, 208 )
+
+[node name="stone_45" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1008, 208 )
+
+[node name="stone_46" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1040, 208 )
+
+[node name="stone_47" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1072, 208 )
+
+[node name="stone_48" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1104, 208 )
+
+[node name="stone_49" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1136, 208 )
+
+[node name="stone_50" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1168, 208 )
+
+[node name="stone_51" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1200, 208 )
+
+[node name="stone_52" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1232, 208 )
+
+[node name="stone_53" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1264, 208 )
+
+[node name="stone_54" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 240 )
+
+[node name="lift_55" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1552, 240 )
+
+[node name="lift_56" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1584, 240 )
+
+[node name="stone_57" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 272 )
+
+[node name="lift_58" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 432, 272 )
+
+[node name="lift_59" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 560, 272 )
+
+[node name="stone_60" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 304 )
+
+[node name="stone_61" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 336 )
+
+[node name="lift_62" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1616, 336 )
+
+[node name="lift_63" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1648, 336 )
+
+[node name="stone_64" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 368 )
+
+[node name="spikes_65" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 2000, 368 )
+
+[node name="stone_66" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 400 )
+
+[node name="stone_67" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 400 )
+
+[node name="stone_68" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 432 )
+
+[node name="dirt_left_69" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 112, 432 )
+
+[node name="dirt_mid_70" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 144, 432 )
+
+[node name="dirt_mid_71" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 176, 432 )
+
+[node name="dirt_mid_72" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 208, 432 )
+
+[node name="dirt_mid_73" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 240, 432 )
+
+[node name="dirt_mid_74" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 272, 432 )
+
+[node name="dirt_mid_75" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 304, 432 )
+
+[node name="dirt_right_76" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 336, 432 )
+
+[node name="oneway_left_77" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 912, 432 )
+
+[node name="oneway_mid_78" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 944, 432 )
+
+[node name="oneway_mid_79" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 976, 432 )
+
+[node name="oneway_right_80" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1008, 432 )
+
+[node name="spikes_81" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1168, 432 )
+
+[node name="lift_82" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1680, 432 )
+
+[node name="lift_83" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1712, 432 )
+
+[node name="grassstone_left_84" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 1776, 432 )
+
+[node name="grassstone_mid_85" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1808, 432 )
+
+[node name="grassstone_mid_86" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1840, 432 )
+
+[node name="grassstone_mid_87" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1872, 432 )
+
+[node name="grassstone_right_88" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 1904, 432 )
+
+[node name="stone_89" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 432 )
+
+[node name="stone_90" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 464 )
+
+[node name="stone_91" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 464 )
+
+[node name="oneway_mid_right_92" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 912, 464 )
+
+[node name="oneway_center_93" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 944, 464 )
+
+[node name="oneway_center_94" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 976, 464 )
+
+[node name="oneway_mid_left_95" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1008, 464 )
+
+[node name="grassstone_left_96" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 1136, 464 )
+
+[node name="grassstone_mid_97" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1168, 464 )
+
+[node name="grassstone_right_98" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 1200, 464 )
+
+[node name="stone_99" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 464 )
+
+[node name="stone_100" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 464 )
+
+[node name="stone_101" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 496 )
+
+[node name="stone_102" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 496 )
+
+[node name="grassstone_left_103" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 752, 496 )
+
+[node name="grassstone_mid_104" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 784, 496 )
+
+[node name="grassstone_right_105" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 816, 496 )
+
+[node name="oneway_mid_right_106" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 912, 496 )
+
+[node name="oneway_center_107" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 944, 496 )
+
+[node name="oneway_center_108" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 976, 496 )
+
+[node name="oneway_mid_left_109" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1008, 496 )
+
+[node name="stone_110" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 496 )
+
+[node name="stone_111" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 496 )
+
+[node name="stone_112" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 528 )
+
+[node name="spikes_113" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 48, 528 )
+
+[node name="spikes_114" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 80, 528 )
+
+[node name="stone_115" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 528 )
+
+[node name="grassstone_left_116" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 880, 528 )
+
+[node name="grassstone_mid_117" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 912, 528 )
+
+[node name="grassstone_mid_118" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 944, 528 )
+
+[node name="grassstone_mid_119" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 976, 528 )
+
+[node name="grassstone_mid_120" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1008, 528 )
+
+[node name="grassstone_right_121" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 1040, 528 )
+
+[node name="stone_122" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 528 )
+
+[node name="stone_123" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 528 )
+
+[node name="stone_124" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 560 )
+
+[node name="stone_125" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 560 )
+
+[node name="spikes_126" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 464, 560 )
+
+[node name="spikes_127" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 496, 560 )
+
+[node name="stone_128" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 560 )
+
+[node name="stone_129" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 560 )
+
+[node name="stone_130" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 592 )
+
+[node name="stone_131" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 592 )
+
+[node name="diamond_red_132" parent="center" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 368, 592 )
+
+[node name="stone_133" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 464, 592 )
+
+[node name="stone_134" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 496, 592 )
+
+[node name="stone_135" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 592 )
+
+[node name="stone_136" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 592 )
+
+[node name="stone_137" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 624 )
+
+[node name="stone_138" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 624 )
+
+[node name="grassstone_left_139" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 1232, 624 )
+
+[node name="grassstone_mid_140" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1264, 624 )
+
+[node name="grassstone_right_141" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 1296, 624 )
+
+[node name="meat_142" parent="center" instance=ExtResource( 40 )]
+
+transform/pos = Vector2( 1424, 624 )
+
+[node name="diamond_red_143" parent="center" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1552, 624 )
+
+[node name="stone_144" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 624 )
+
+[node name="stone_145" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 624 )
+
+[node name="stone_146" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 656 )
+
+[node name="spikes_147" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 80, 656 )
+
+[node name="spikes_148" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 112, 656 )
+
+[node name="stone_149" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 656 )
+
+[node name="spikes_150" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1424, 656 )
+
+[node name="spikes_151" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1456, 656 )
+
+[node name="spikes_152" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1488, 656 )
+
+[node name="spikes_153" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1520, 656 )
+
+[node name="stone_154" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 656 )
+
+[node name="stone_155" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 656 )
+
+[node name="stone_156" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 688 )
+
+[node name="stone_157" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 688 )
+
+[node name="grassstone_left_158" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 1392, 688 )
+
+[node name="grassstone_mid_159" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1424, 688 )
+
+[node name="grassstone_mid_160" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1456, 688 )
+
+[node name="grassstone_mid_161" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1488, 688 )
+
+[node name="grassstone_mid_162" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1520, 688 )
+
+[node name="grassstone_mid_163" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 1552, 688 )
+
+[node name="grassstone_right_164" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 1584, 688 )
+
+[node name="stone_165" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 688 )
+
+[node name="oneway_right_166" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1904, 688 )
+
+[node name="stone_167" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 688 )
+
+[node name="stone_168" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 720 )
+
+[node name="stone_169" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 720 )
+
+[node name="stone_170" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 720 )
+
+[node name="oneway_mid_left_171" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1904, 720 )
+
+[node name="stone_172" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 720 )
+
+[node name="stone_173" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 752 )
+
+[node name="stone_174" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 752 )
+
+[node name="oneway_left_175" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1680, 752 )
+
+[node name="oneway_right_176" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1712, 752 )
+
+[node name="stone_177" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 752 )
+
+[node name="oneway_mid_left_178" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1904, 752 )
+
+[node name="stone_179" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 752 )
+
+[node name="stone_180" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 784 )
+
+[node name="spikes_181" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 48, 784 )
+
+[node name="stone_182" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 784 )
+
+[node name="oneway_mid_right_183" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1680, 784 )
+
+[node name="oneway_mid_left_184" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1712, 784 )
+
+[node name="stone_185" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 784 )
+
+[node name="oneway_mid_left_186" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1904, 784 )
+
+[node name="oneway_left_187" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1968, 784 )
+
+[node name="stone_188" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 784 )
+
+[node name="stone_189" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 816 )
+
+[node name="stone_190" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 816 )
+
+[node name="oneway_mid_right_191" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1680, 816 )
+
+[node name="oneway_mid_left_192" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1712, 816 )
+
+[node name="stone_193" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 816 )
+
+[node name="oneway_mid_left_194" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1904, 816 )
+
+[node name="diamond_red_195" parent="center" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1936, 816 )
+
+[node name="oneway_mid_right_196" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1968, 816 )
+
+[node name="stone_197" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 816 )
+
+[node name="stone_198" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 848 )
+
+[node name="spikes_199" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 80, 848 )
+
+[node name="stone_200" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 848 )
+
+[node name="player_pos_201" parent="center" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 240, 848 )
+
+[node name="oneway_left_202" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1648, 848 )
+
+[node name="oneway_mid_203" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1680, 848 )
+
+[node name="oneway_mid_204" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1712, 848 )
+
+[node name="oneway_right_205" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1744, 848 )
+
+[node name="stone_206" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 848 )
+
+[node name="oneway_mid_left_207" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1904, 848 )
+
+[node name="oneway_mid_right_208" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1968, 848 )
+
+[node name="stone_209" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 848 )
+
+[node name="stone_210" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 880 )
+
+[node name="stone_211" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 880 )
+
+[node name="oneway_left_212" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 208, 880 )
+
+[node name="oneway_mid_213" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 240, 880 )
+
+[node name="oneway_mid_214" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 272, 880 )
+
+[node name="oneway_mid_215" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 304, 880 )
+
+[node name="oneway_right_216" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 336, 880 )
+
+[node name="bear_217" parent="center" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1392, 880 )
+
+[node name="oneway_mid_right_218" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1648, 880 )
+
+[node name="oneway_center_219" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1680, 880 )
+
+[node name="oneway_center_220" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1712, 880 )
+
+[node name="oneway_mid_left_221" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1744, 880 )
+
+[node name="stone_222" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 880 )
+
+[node name="oneway_mid_223" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1904, 880 )
+
+[node name="oneway_mid_224" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1936, 880 )
+
+[node name="oneway_mid_225" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1968, 880 )
+
+[node name="stone_226" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 880 )
+
+[node name="stone_227" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 912 )
+
+[node name="stone_228" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 912 )
+
+[node name="oneway_mid_right_229" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 208, 912 )
+
+[node name="oneway_center_230" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 240, 912 )
+
+[node name="oneway_center_231" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 272, 912 )
+
+[node name="oneway_center_232" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 304, 912 )
+
+[node name="oneway_mid_left_233" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 336, 912 )
+
+[node name="dirt_left_234" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 464, 912 )
+
+[node name="dirt_mid_235" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 496, 912 )
+
+[node name="dirt_right_236" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 528, 912 )
+
+[node name="oneway_left_237" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1264, 912 )
+
+[node name="oneway_mid_238" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1296, 912 )
+
+[node name="oneway_mid_239" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1328, 912 )
+
+[node name="oneway_mid_240" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1360, 912 )
+
+[node name="oneway_mid_241" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1392, 912 )
+
+[node name="oneway_right_242" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1424, 912 )
+
+[node name="oneway_mid_right_243" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1648, 912 )
+
+[node name="oneway_center_244" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1680, 912 )
+
+[node name="oneway_center_245" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1712, 912 )
+
+[node name="oneway_mid_left_246" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1744, 912 )
+
+[node name="stone_247" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 912 )
+
+[node name="stone_248" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 912 )
+
+[node name="stone_249" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 944 )
+
+[node name="stone_250" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 944 )
+
+[node name="bear_251" parent="center" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 176, 944 )
+
+[node name="lift_252" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 656, 944 )
+
+[node name="lift_253" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 688, 944 )
+
+[node name="lift_254" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 784, 944 )
+
+[node name="lift_255" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 816, 944 )
+
+[node name="spikes_256" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 912, 944 )
+
+[node name="spikes_257" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 944, 944 )
+
+[node name="stone_258" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 976, 944 )
+
+[node name="spikes_259" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1008, 944 )
+
+[node name="spikes_260" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1040, 944 )
+
+[node name="stone_261" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1072, 944 )
+
+[node name="spikes_262" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1104, 944 )
+
+[node name="spikes_263" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1136, 944 )
+
+[node name="oneway_mid_right_264" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1264, 944 )
+
+[node name="oneway_mid_right_265" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1296, 944 )
+
+[node name="oneway_center_266" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1328, 944 )
+
+[node name="oneway_center_267" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1360, 944 )
+
+[node name="oneway_center_268" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1392, 944 )
+
+[node name="oneway_mid_left_269" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1424, 944 )
+
+[node name="oneway_left_270" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1616, 944 )
+
+[node name="oneway_mid_271" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1648, 944 )
+
+[node name="oneway_mid_272" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1680, 944 )
+
+[node name="oneway_mid_273" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1712, 944 )
+
+[node name="oneway_mid_274" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1744, 944 )
+
+[node name="oneway_right_275" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1776, 944 )
+
+[node name="stone_276" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 944 )
+
+[node name="stone_277" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 944 )
+
+[node name="stone_278" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 976 )
+
+[node name="dirt_left_279" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 80, 976 )
+
+[node name="dirt_mid_280" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 112, 976 )
+
+[node name="dirt_right_281" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 144, 976 )
+
+[node name="stone_282" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 176, 976 )
+
+[node name="oneway_mid_283" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 208, 976 )
+
+[node name="dirt_left_284" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 240, 976 )
+
+[node name="dirt_mid_285" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 272, 976 )
+
+[node name="dirt_mid_286" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 304, 976 )
+
+[node name="dirt_mid_287" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 336, 976 )
+
+[node name="dirt_right_288" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 368, 976 )
+
+[node name="dirt_left_289" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 560, 976 )
+
+[node name="dirt_mid_290" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 592, 976 )
+
+[node name="dirt_right_291" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 624, 976 )
+
+[node name="stone_292" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 912, 976 )
+
+[node name="stone_293" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 944, 976 )
+
+[node name="stone_294" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 976, 976 )
+
+[node name="stone_295" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1008, 976 )
+
+[node name="stone_296" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1040, 976 )
+
+[node name="stone_297" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1072, 976 )
+
+[node name="stone_298" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1104, 976 )
+
+[node name="stone_299" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1136, 976 )
+
+[node name="oneway_left_300" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1200, 976 )
+
+[node name="oneway_mid_301" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1232, 976 )
+
+[node name="oneway_mid_302" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1264, 976 )
+
+[node name="oneway_right_303" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1296, 976 )
+
+[node name="oneway_center_304" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1328, 976 )
+
+[node name="oneway_center_305" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1360, 976 )
+
+[node name="oneway_center_306" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1392, 976 )
+
+[node name="oneway_mid_left_307" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1424, 976 )
+
+[node name="oneway_mid_right_308" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1616, 976 )
+
+[node name="oneway_center_309" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1648, 976 )
+
+[node name="oneway_center_310" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1680, 976 )
+
+[node name="oneway_center_311" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1712, 976 )
+
+[node name="oneway_center_312" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1744, 976 )
+
+[node name="oneway_mid_left_313" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1776, 976 )
+
+[node name="stone_314" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 976 )
+
+[node name="stone_315" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 976 )
+
+[node name="stone_316" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1008 )
+
+[node name="stone_317" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 176, 1008 )
+
+[node name="oneway_center_318" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 208, 1008 )
+
+[node name="stone_319" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 944, 1008 )
+
+[node name="stone_320" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1104, 1008 )
+
+[node name="oneway_mid_right_321" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1200, 1008 )
+
+[node name="oneway_center_322" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1232, 1008 )
+
+[node name="oneway_center_323" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1264, 1008 )
+
+[node name="oneway_center_324" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1328, 1008 )
+
+[node name="oneway_center_325" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1360, 1008 )
+
+[node name="oneway_center_326" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1392, 1008 )
+
+[node name="oneway_mid_left_327" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1424, 1008 )
+
+[node name="dirt_left_328" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1584, 1008 )
+
+[node name="dirt_mid_329" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1616, 1008 )
+
+[node name="dirt_mid_330" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1648, 1008 )
+
+[node name="dirt_mid_331" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1680, 1008 )
+
+[node name="dirt_mid_332" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1712, 1008 )
+
+[node name="dirt_mid_333" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1744, 1008 )
+
+[node name="dirt_mid_334" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1776, 1008 )
+
+[node name="dirt_right_335" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 1808, 1008 )
+
+[node name="stone_336" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 1008 )
+
+[node name="stone_337" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1008 )
+
+[node name="stone_338" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1040 )
+
+[node name="stone_339" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 176, 1040 )
+
+[node name="oneway_mid_340" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 208, 1040 )
+
+[node name="oneway_right_341" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 240, 1040 )
+
+[node name="stone_342" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 944, 1040 )
+
+[node name="stone_343" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1104, 1040 )
+
+[node name="oneway_mid_right_344" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1200, 1040 )
+
+[node name="oneway_center_345" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1232, 1040 )
+
+[node name="oneway_center_346" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1264, 1040 )
+
+[node name="oneway_left_347" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1328, 1040 )
+
+[node name="oneway_mid_348" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1360, 1040 )
+
+[node name="oneway_right_349" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1392, 1040 )
+
+[node name="oneway_mid_left_350" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1424, 1040 )
+
+[node name="stone_351" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 1040 )
+
+[node name="stone_352" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1040 )
+
+[node name="stone_353" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1072 )
+
+[node name="stone_354" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 176, 1072 )
+
+[node name="oneway_center_355" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 208, 1072 )
+
+[node name="oneway_center_356" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 240, 1072 )
+
+[node name="stone_357" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 944, 1072 )
+
+[node name="stone_358" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1104, 1072 )
+
+[node name="oneway_mid_right_359" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1200, 1072 )
+
+[node name="oneway_center_360" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1232, 1072 )
+
+[node name="oneway_center_361" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1264, 1072 )
+
+[node name="oneway_center_362" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1328, 1072 )
+
+[node name="oneway_center_363" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1360, 1072 )
+
+[node name="oneway_center_364" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1392, 1072 )
+
+[node name="oneway_mid_left_365" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1424, 1072 )
+
+[node name="stone_366" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 1072 )
+
+[node name="stone_367" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1072 )
+
+[node name="stone_368" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1104 )
+
+[node name="stone_369" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 176, 1104 )
+
+[node name="spikes_370" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 208, 1104 )
+
+[node name="spikes_371" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 240, 1104 )
+
+[node name="spikes_372" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 272, 1104 )
+
+[node name="spikes_373" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 304, 1104 )
+
+[node name="spikes_374" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 336, 1104 )
+
+[node name="spikes_375" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 368, 1104 )
+
+[node name="spikes_376" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 400, 1104 )
+
+[node name="spikes_377" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 432, 1104 )
+
+[node name="spikes_378" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 464, 1104 )
+
+[node name="spikes_379" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 496, 1104 )
+
+[node name="spikes_380" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 528, 1104 )
+
+[node name="spikes_381" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 560, 1104 )
+
+[node name="spikes_382" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 592, 1104 )
+
+[node name="spikes_383" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 624, 1104 )
+
+[node name="spikes_384" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 656, 1104 )
+
+[node name="spikes_385" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 688, 1104 )
+
+[node name="spikes_386" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 720, 1104 )
+
+[node name="spikes_387" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 752, 1104 )
+
+[node name="spikes_388" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 784, 1104 )
+
+[node name="spikes_389" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 816, 1104 )
+
+[node name="spikes_390" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 848, 1104 )
+
+[node name="spikes_391" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 880, 1104 )
+
+[node name="spikes_392" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 912, 1104 )
+
+[node name="stone_393" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 944, 1104 )
+
+[node name="stone_394" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1104, 1104 )
+
+[node name="spikes_395" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1136, 1104 )
+
+[node name="spikes_396" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1168, 1104 )
+
+[node name="spikes_397" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1200, 1104 )
+
+[node name="spikes_398" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1232, 1104 )
+
+[node name="spikes_399" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1264, 1104 )
+
+[node name="spikes_400" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1296, 1104 )
+
+[node name="spikes_401" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1328, 1104 )
+
+[node name="spikes_402" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1360, 1104 )
+
+[node name="spikes_403" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1392, 1104 )
+
+[node name="spikes_404" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1424, 1104 )
+
+[node name="spikes_405" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1456, 1104 )
+
+[node name="spikes_406" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1488, 1104 )
+
+[node name="spikes_407" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1520, 1104 )
+
+[node name="spikes_408" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1552, 1104 )
+
+[node name="spikes_409" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1584, 1104 )
+
+[node name="spikes_410" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1616, 1104 )
+
+[node name="spikes_411" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1648, 1104 )
+
+[node name="spikes_412" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1680, 1104 )
+
+[node name="spikes_413" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1712, 1104 )
+
+[node name="spikes_414" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1744, 1104 )
+
+[node name="spikes_415" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1776, 1104 )
+
+[node name="spikes_416" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1808, 1104 )
+
+[node name="spikes_417" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1840, 1104 )
+
+[node name="stone_418" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 1104 )
+
+[node name="stone_419" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1104 )
+
+[node name="stone_420" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1136 )
+
+[node name="oneway_right_421" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 48, 1136 )
+
+[node name="oneway_left_422" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 112, 1136 )
+
+[node name="oneway_mid_423" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 144, 1136 )
+
+[node name="stone_424" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 176, 1136 )
+
+[node name="stone_425" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 208, 1136 )
+
+[node name="stone_426" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 240, 1136 )
+
+[node name="stone_427" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 272, 1136 )
+
+[node name="stone_428" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 304, 1136 )
+
+[node name="stone_429" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 336, 1136 )
+
+[node name="stone_430" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 368, 1136 )
+
+[node name="stone_431" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 400, 1136 )
+
+[node name="stone_432" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 432, 1136 )
+
+[node name="stone_433" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 464, 1136 )
+
+[node name="stone_434" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 496, 1136 )
+
+[node name="stone_435" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 528, 1136 )
+
+[node name="stone_436" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 560, 1136 )
+
+[node name="stone_437" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 592, 1136 )
+
+[node name="stone_438" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 624, 1136 )
+
+[node name="stone_439" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 656, 1136 )
+
+[node name="stone_440" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 688, 1136 )
+
+[node name="stone_441" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 720, 1136 )
+
+[node name="stone_442" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 752, 1136 )
+
+[node name="stone_443" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 784, 1136 )
+
+[node name="stone_444" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 816, 1136 )
+
+[node name="stone_445" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 848, 1136 )
+
+[node name="stone_446" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 880, 1136 )
+
+[node name="stone_447" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 912, 1136 )
+
+[node name="stone_448" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 944, 1136 )
+
+[node name="stone_449" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 976, 1136 )
+
+[node name="stone_450" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1008, 1136 )
+
+[node name="stone_451" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1040, 1136 )
+
+[node name="stone_452" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1072, 1136 )
+
+[node name="stone_453" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1104, 1136 )
+
+[node name="stone_454" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1136, 1136 )
+
+[node name="stone_455" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1168, 1136 )
+
+[node name="stone_456" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1200, 1136 )
+
+[node name="stone_457" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1232, 1136 )
+
+[node name="stone_458" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1264, 1136 )
+
+[node name="stone_459" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1296, 1136 )
+
+[node name="stone_460" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1328, 1136 )
+
+[node name="stone_461" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1360, 1136 )
+
+[node name="stone_462" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1392, 1136 )
+
+[node name="stone_463" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1424, 1136 )
+
+[node name="stone_464" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1456, 1136 )
+
+[node name="stone_465" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1488, 1136 )
+
+[node name="stone_466" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1520, 1136 )
+
+[node name="stone_467" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1552, 1136 )
+
+[node name="stone_468" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1584, 1136 )
+
+[node name="stone_469" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1616, 1136 )
+
+[node name="stone_470" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1648, 1136 )
+
+[node name="stone_471" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1680, 1136 )
+
+[node name="stone_472" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1712, 1136 )
+
+[node name="stone_473" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1744, 1136 )
+
+[node name="stone_474" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1776, 1136 )
+
+[node name="stone_475" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1808, 1136 )
+
+[node name="stone_476" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1840, 1136 )
+
+[node name="stone_477" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 1136 )
+
+[node name="stone_478" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1136 )
+
+[node name="oneway_center_479" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 16, 1168 )
+
+[node name="oneway_mid_left_480" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 48, 1168 )
+
+[node name="oneway_mid_right_481" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 112, 1168 )
+
+[node name="oneway_center_482" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 144, 1168 )
+
+[node name="oneway_mid_left_483" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 176, 1168 )
+
+[node name="stone_484" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 336, 1168 )
+
+[node name="phantom_1_485" parent="center" instance=ExtResource( 27 )]
+
+transform/pos = Vector2( 368, 1168 )
+
+[node name="stone_486" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 400, 1168 )
+
+[node name="stone_487" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1296, 1168 )
+
+[node name="stone_488" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1168 )
+
+[node name="oneway_center_489" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 16, 1200 )
+
+[node name="oneway_mid_left_490" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 48, 1200 )
+
+[node name="oneway_mid_right_491" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 112, 1200 )
+
+[node name="oneway_center_492" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 144, 1200 )
+
+[node name="oneway_mid_left_493" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 176, 1200 )
+
+[node name="stone_494" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 368, 1200 )
+
+[node name="stone_495" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1296, 1200 )
+
+[node name="stone_496" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1200 )
+
+[node name="dirt_mid_497" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 16, 1232 )
+
+[node name="dirt_right_498" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 48, 1232 )
+
+[node name="oneway_mid_right_499" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 112, 1232 )
+
+[node name="oneway_center_500" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 144, 1232 )
+
+[node name="oneway_mid_left_501" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 176, 1232 )
+
+[node name="dirt_left_502" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 688, 1232 )
+
+[node name="dirt_mid_503" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 720, 1232 )
+
+[node name="dirt_right_504" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 752, 1232 )
+
+[node name="dirt_left_505" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 912, 1232 )
+
+[node name="dirt_mid_506" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 944, 1232 )
+
+[node name="dirt_right_507" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 976, 1232 )
+
+[node name="stone_508" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1296, 1232 )
+
+[node name="enemy_1_509" parent="center" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1424, 1232 )
+
+[node name="monkey_510" parent="center" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1520, 1232 )
+
+[node name="stone_511" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1232 )
+
+[node name="stone_512" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1264 )
+
+[node name="grassstone_left_513" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 112, 1264 )
+
+[node name="grassstone_right_514" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 144, 1264 )
+
+[node name="grassstone_left_515" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 208, 1264 )
+
+[node name="grassstone_mid_516" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 240, 1264 )
+
+[node name="grassstone_right_517" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 272, 1264 )
+
+[node name="lift_518" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 688, 1264 )
+
+[node name="lift_519" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 720, 1264 )
+
+[node name="lift_520" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 752, 1264 )
+
+[node name="lift_521" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 816, 1264 )
+
+[node name="lift_522" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 848, 1264 )
+
+[node name="lift_523" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 912, 1264 )
+
+[node name="lift_524" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 944, 1264 )
+
+[node name="lift_525" parent="center" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 976, 1264 )
+
+[node name="oneway_left_526" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1072, 1264 )
+
+[node name="oneway_mid_527" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1104, 1264 )
+
+[node name="oneway_mid_528" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1136, 1264 )
+
+[node name="oneway_mid_529" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1168, 1264 )
+
+[node name="oneway_right_530" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1200, 1264 )
+
+[node name="stone_531" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1296, 1264 )
+
+[node name="stone_532" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1328, 1264 )
+
+[node name="stone_533" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1360, 1264 )
+
+[node name="stone_534" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1392, 1264 )
+
+[node name="stone_535" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1424, 1264 )
+
+[node name="stone_536" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1456, 1264 )
+
+[node name="stone_537" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1488, 1264 )
+
+[node name="stone_538" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1520, 1264 )
+
+[node name="stone_539" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1552, 1264 )
+
+[node name="stone_540" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1264 )
+
+[node name="stone_541" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1296 )
+
+[node name="oneway_mid_right_542" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 112, 1296 )
+
+[node name="oneway_center_543" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 144, 1296 )
+
+[node name="oneway_center_544" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 176, 1296 )
+
+[node name="oneway_center_545" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 208, 1296 )
+
+[node name="oneway_mid_left_546" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 240, 1296 )
+
+[node name="spikes_547" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 336, 1296 )
+
+[node name="item_watermelon_548" parent="center" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 496, 1296 )
+
+[node name="item_watermelon_549" parent="center" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 528, 1296 )
+
+[node name="item_watermelon_550" parent="center" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 560, 1296 )
+
+[node name="item_watermelon_551" parent="center" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 592, 1296 )
+
+[node name="item_watermelon_552" parent="center" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 624, 1296 )
+
+[node name="dirt_left_553" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 784, 1296 )
+
+[node name="dirt_mid_554" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 816, 1296 )
+
+[node name="dirt_mid_555" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 848, 1296 )
+
+[node name="dirt_right_556" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 880, 1296 )
+
+[node name="oneway_mid_right_557" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1072, 1296 )
+
+[node name="oneway_center_558" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1104, 1296 )
+
+[node name="oneway_center_559" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1136, 1296 )
+
+[node name="oneway_center_560" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1168, 1296 )
+
+[node name="oneway_mid_left_561" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1200, 1296 )
+
+[node name="oneway_left_562" parent="center" instance=ExtResource( 19 )]
+
+transform/pos = Vector2( 1712, 1296 )
+
+[node name="oneway_mid_563" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1744, 1296 )
+
+[node name="oneway_mid_564" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1776, 1296 )
+
+[node name="oneway_mid_565" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1808, 1296 )
+
+[node name="oneway_mid_566" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1840, 1296 )
+
+[node name="oneway_mid_567" parent="center" instance=ExtResource( 20 )]
+
+transform/pos = Vector2( 1872, 1296 )
+
+[node name="oneway_right_568" parent="center" instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 1904, 1296 )
+
+[node name="stone_569" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1296 )
+
+[node name="stone_570" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1328 )
+
+[node name="oneway_mid_right_571" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 112, 1328 )
+
+[node name="oneway_center_572" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 144, 1328 )
+
+[node name="oneway_center_573" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 176, 1328 )
+
+[node name="oneway_center_574" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 208, 1328 )
+
+[node name="oneway_mid_left_575" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 240, 1328 )
+
+[node name="grassstone_left_576" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 304, 1328 )
+
+[node name="grassstone_mid_577" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 336, 1328 )
+
+[node name="grassstone_mid_578" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 368, 1328 )
+
+[node name="grassstone_mid_579" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 400, 1328 )
+
+[node name="grassstone_right_580" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 432, 1328 )
+
+[node name="grassstone_left_581" parent="center" instance=ExtResource( 24 )]
+
+transform/pos = Vector2( 496, 1328 )
+
+[node name="grassstone_mid_582" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 528, 1328 )
+
+[node name="grassstone_mid_583" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 560, 1328 )
+
+[node name="grassstone_mid_584" parent="center" instance=ExtResource( 25 )]
+
+transform/pos = Vector2( 592, 1328 )
+
+[node name="grassstone_right_585" parent="center" instance=ExtResource( 26 )]
+
+transform/pos = Vector2( 624, 1328 )
+
+[node name="oneway_mid_right_586" parent="center" instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 1072, 1328 )
+
+[node name="oneway_center_587" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1104, 1328 )
+
+[node name="oneway_center_588" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1136, 1328 )
+
+[node name="oneway_center_589" parent="center" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 1168, 1328 )
+
+[node name="oneway_mid_left_590" parent="center" instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 1200, 1328 )
+
+[node name="stone_591" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1328 )
+
+[node name="stone_592" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1360 )
+
+[node name="spikes_593" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 48, 1360 )
+
+[node name="spikes_594" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 80, 1360 )
+
+[node name="spikes_595" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 112, 1360 )
+
+[node name="spikes_596" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 144, 1360 )
+
+[node name="spikes_597" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 176, 1360 )
+
+[node name="spikes_598" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 208, 1360 )
+
+[node name="spikes_599" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 240, 1360 )
+
+[node name="spikes_600" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 272, 1360 )
+
+[node name="spikes_601" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 304, 1360 )
+
+[node name="spikes_602" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 336, 1360 )
+
+[node name="spikes_603" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 368, 1360 )
+
+[node name="spikes_604" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 400, 1360 )
+
+[node name="spikes_605" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 432, 1360 )
+
+[node name="stone_606" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 464, 1360 )
+
+[node name="spikes_607" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 496, 1360 )
+
+[node name="spikes_608" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 528, 1360 )
+
+[node name="spikes_609" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 560, 1360 )
+
+[node name="spikes_610" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 592, 1360 )
+
+[node name="spikes_611" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 624, 1360 )
+
+[node name="stone_612" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 656, 1360 )
+
+[node name="spikes_613" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 688, 1360 )
+
+[node name="spikes_614" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 720, 1360 )
+
+[node name="spikes_615" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 752, 1360 )
+
+[node name="spikes_616" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 784, 1360 )
+
+[node name="spikes_617" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 816, 1360 )
+
+[node name="spikes_618" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 848, 1360 )
+
+[node name="spikes_619" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 880, 1360 )
+
+[node name="spikes_620" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 912, 1360 )
+
+[node name="spikes_621" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 944, 1360 )
+
+[node name="spikes_622" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 976, 1360 )
+
+[node name="spikes_623" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1008, 1360 )
+
+[node name="spikes_624" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1040, 1360 )
+
+[node name="spikes_625" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1072, 1360 )
+
+[node name="spikes_626" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1104, 1360 )
+
+[node name="spikes_627" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1136, 1360 )
+
+[node name="spikes_628" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1168, 1360 )
+
+[node name="spikes_629" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1200, 1360 )
+
+[node name="spikes_630" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1232, 1360 )
+
+[node name="dirt_left_631" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1264, 1360 )
+
+[node name="dirt_mid_632" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1296, 1360 )
+
+[node name="dirt_mid_633" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1328, 1360 )
+
+[node name="dirt_right_634" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 1360, 1360 )
+
+[node name="spikes_635" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1392, 1360 )
+
+[node name="spikes_636" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1424, 1360 )
+
+[node name="dirt_left_637" parent="center" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1456, 1360 )
+
+[node name="dirt_mid_638" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1488, 1360 )
+
+[node name="dirt_mid_639" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1520, 1360 )
+
+[node name="dirt_mid_640" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1552, 1360 )
+
+[node name="dirt_right_641" parent="center" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 1584, 1360 )
+
+[node name="spikes_642" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1616, 1360 )
+
+[node name="spikes_643" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1648, 1360 )
+
+[node name="spikes_644" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1680, 1360 )
+
+[node name="spikes_645" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1712, 1360 )
+
+[node name="spikes_646" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1744, 1360 )
+
+[node name="spikes_647" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1776, 1360 )
+
+[node name="spikes_648" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1808, 1360 )
+
+[node name="spikes_649" parent="center" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1840, 1360 )
+
+[node name="dirt_mid_650" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1872, 1360 )
+
+[node name="dirt_mid_651" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1904, 1360 )
+
+[node name="dirt_mid_652" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1936, 1360 )
+
+[node name="dirt_mid_653" parent="center" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1968, 1360 )
+
+[node name="stone_654" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1360 )
+
+[node name="stone_655" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 16, 1392 )
+
+[node name="stone_656" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 48, 1392 )
+
+[node name="stone_657" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 80, 1392 )
+
+[node name="stone_658" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 112, 1392 )
+
+[node name="stone_659" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 144, 1392 )
+
+[node name="stone_660" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 176, 1392 )
+
+[node name="stone_661" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 208, 1392 )
+
+[node name="stone_662" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 240, 1392 )
+
+[node name="stone_663" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 272, 1392 )
+
+[node name="stone_664" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 304, 1392 )
+
+[node name="stone_665" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 336, 1392 )
+
+[node name="stone_666" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 368, 1392 )
+
+[node name="stone_667" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 400, 1392 )
+
+[node name="stone_668" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 432, 1392 )
+
+[node name="stone_669" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 464, 1392 )
+
+[node name="stone_670" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 496, 1392 )
+
+[node name="stone_671" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 528, 1392 )
+
+[node name="stone_672" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 560, 1392 )
+
+[node name="stone_673" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 592, 1392 )
+
+[node name="stone_674" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 624, 1392 )
+
+[node name="stone_675" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 656, 1392 )
+
+[node name="stone_676" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 688, 1392 )
+
+[node name="stone_677" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 720, 1392 )
+
+[node name="stone_678" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 752, 1392 )
+
+[node name="stone_679" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 784, 1392 )
+
+[node name="stone_680" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 816, 1392 )
+
+[node name="stone_681" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 848, 1392 )
+
+[node name="stone_682" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 880, 1392 )
+
+[node name="stone_683" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 912, 1392 )
+
+[node name="stone_684" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 944, 1392 )
+
+[node name="stone_685" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 976, 1392 )
+
+[node name="stone_686" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1008, 1392 )
+
+[node name="stone_687" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1040, 1392 )
+
+[node name="stone_688" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1072, 1392 )
+
+[node name="stone_689" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1104, 1392 )
+
+[node name="stone_690" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1136, 1392 )
+
+[node name="stone_691" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1168, 1392 )
+
+[node name="stone_692" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1200, 1392 )
+
+[node name="stone_693" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1232, 1392 )
+
+[node name="stone_694" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1264, 1392 )
+
+[node name="stone_695" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1296, 1392 )
+
+[node name="stone_696" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1328, 1392 )
+
+[node name="stone_697" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1360, 1392 )
+
+[node name="stone_698" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1392, 1392 )
+
+[node name="stone_699" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1424, 1392 )
+
+[node name="stone_700" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1456, 1392 )
+
+[node name="stone_701" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1488, 1392 )
+
+[node name="stone_702" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1520, 1392 )
+
+[node name="stone_703" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1552, 1392 )
+
+[node name="stone_704" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1584, 1392 )
+
+[node name="stone_705" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1616, 1392 )
+
+[node name="stone_706" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1648, 1392 )
+
+[node name="stone_707" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1680, 1392 )
+
+[node name="stone_708" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1712, 1392 )
+
+[node name="stone_709" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1744, 1392 )
+
+[node name="stone_710" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1776, 1392 )
+
+[node name="stone_711" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1808, 1392 )
+
+[node name="stone_712" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1840, 1392 )
+
+[node name="stone_713" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 1872, 1392 )
+
+[node name="random_dirt_714" parent="center" instance=ExtResource( 28 )]
+
+transform/pos = Vector2( 1904, 1392 )
+
+[node name="random_dirt_715" parent="center" instance=ExtResource( 28 )]
+
+transform/pos = Vector2( 1936, 1392 )
+
+[node name="random_dirt_716" parent="center" instance=ExtResource( 28 )]
+
+transform/pos = Vector2( 1968, 1392 )
+
+[node name="stone_717" parent="center" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 2000, 1392 )
+
+[node name="decor" type="Node" parent="."]
+
+[node name="decor_7_1" parent="decor" instance=ExtResource( 36 )]
+
+transform/pos = Vector2( 1328, 48 )
+
+[node name="decor_8_2" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 1712, 80 )
+
+[node name="decor_8_3" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 16, 112 )
+
+[node name="decor_2_4" parent="decor" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( 80, 112 )
+
+[node name="decor_7_5" parent="decor" instance=ExtResource( 36 )]
+
+transform/pos = Vector2( 144, 112 )
+
+[node name="decor_1_6" parent="decor" instance=ExtResource( 30 )]
+
+transform/pos = Vector2( 976, 112 )
+
+[node name="decor_8_7" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 1296, 112 )
+
+[node name="dirt_center_8" parent="decor" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 48, 208 )
+
+[node name="dirt_center_9" parent="decor" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 80, 208 )
+
+[node name="dirt_center_10" parent="decor" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 48, 240 )
+
+[node name="dirt_center_11" parent="decor" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 80, 240 )
+
+[node name="dirt_center_12" parent="decor" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 48, 272 )
+
+[node name="decor_8_13" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 144, 400 )
+
+[node name="decor_6_14" parent="decor" instance=ExtResource( 35 )]
+
+transform/pos = Vector2( 272, 400 )
+
+[node name="decor_3_15" parent="decor" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( 944, 400 )
+
+[node name="decor_3_16" parent="decor" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( 1840, 400 )
+
+[node name="decor_1_17" parent="decor" instance=ExtResource( 30 )]
+
+transform/pos = Vector2( 1872, 400 )
+
+[node name="decor_5_18" parent="decor" instance=ExtResource( 34 )]
+
+transform/pos = Vector2( 784, 464 )
+
+[node name="decor_2_19" parent="decor" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( 976, 496 )
+
+[node name="decor_8_20" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 1552, 656 )
+
+[node name="decor_7_21" parent="decor" instance=ExtResource( 36 )]
+
+transform/pos = Vector2( 1712, 816 )
+
+[node name="decor_7_22" parent="decor" instance=ExtResource( 36 )]
+
+transform/pos = Vector2( 272, 848 )
+
+[node name="decor_7_23" parent="decor" instance=ExtResource( 36 )]
+
+transform/pos = Vector2( 1968, 848 )
+
+[node name="decor_8_24" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 496, 880 )
+
+[node name="decor_2_25" parent="decor" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( 1328, 880 )
+
+[node name="decor_4_26" parent="decor" instance=ExtResource( 33 )]
+
+transform/pos = Vector2( 1072, 912 )
+
+[node name="decor_3_27" parent="decor" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( 1744, 912 )
+
+[node name="decor_2_28" parent="decor" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( 112, 944 )
+
+[node name="decor_3_29" parent="decor" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( 304, 944 )
+
+[node name="decor_1_30" parent="decor" instance=ExtResource( 30 )]
+
+transform/pos = Vector2( 1232, 944 )
+
+[node name="decor_3_31" parent="decor" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( 1680, 976 )
+
+[node name="decor_7_32" parent="decor" instance=ExtResource( 36 )]
+
+transform/pos = Vector2( 16, 1200 )
+
+[node name="decor_1_33" parent="decor" instance=ExtResource( 30 )]
+
+transform/pos = Vector2( 720, 1200 )
+
+[node name="decor_8_34" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 208, 1232 )
+
+[node name="decor_2_35" parent="decor" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( 1104, 1232 )
+
+[node name="decor_6_36" parent="decor" instance=ExtResource( 35 )]
+
+transform/pos = Vector2( 1424, 1232 )
+
+[node name="decor_8_37" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 1744, 1264 )
+
+[node name="decor_8_38" parent="decor" instance=ExtResource( 37 )]
+
+transform/pos = Vector2( 560, 1296 )
+
+[node name="decor_2_39" parent="decor" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( 1296, 1328 )
+
+[node name="decor_1_40" parent="decor" instance=ExtResource( 30 )]
+
+transform/pos = Vector2( 1936, 1328 )
+
+[node name="upper" type="Node" parent="."]
+
+[node name="item_watermelon_1" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1104, 48 )
+
+[node name="item_watermelon_2" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1136, 48 )
+
+[node name="item_watermelon_3" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1712, 48 )
+
+[node name="diamond_red_4" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 48, 80 )
+
+[node name="item_watermelon_5" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1040, 80 )
+
+[node name="item_watermelon_6" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1200, 80 )
+
+[node name="item_watermelon_7" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1680, 80 )
+
+[node name="item_watermelon_8" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1744, 80 )
+
+[node name="item_watermelon_9" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 784, 112 )
+
+[node name="item_watermelon_10" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 816, 112 )
+
+[node name="item_watermelon_11" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1008, 112 )
+
+[node name="item_watermelon_12" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1232, 112 )
+
+[node name="dirt_left_13" parent="upper" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1680, 112 )
+
+[node name="dirt_mid_14" parent="upper" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1712, 112 )
+
+[node name="dirt_right_15" parent="upper" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 1744, 112 )
+
+[node name="item_watermelon_16" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 368, 144 )
+
+[node name="diamond_red_17" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 400, 144 )
+
+[node name="item_watermelon_18" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 784, 144 )
+
+[node name="item_watermelon_19" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 816, 144 )
+
+[node name="item_watermelon_20" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1488, 144 )
+
+[node name="item_watermelon_21" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1520, 144 )
+
+[node name="item_watermelon_22" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1808, 144 )
+
+[node name="stone_23" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 48, 176 )
+
+[node name="stone_24" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 80, 176 )
+
+[node name="stone_25" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 112, 176 )
+
+[node name="diamond_red_26" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 368, 176 )
+
+[node name="item_watermelon_27" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 400, 176 )
+
+[node name="stone_28" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 112, 208 )
+
+[node name="stone_29" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 112, 240 )
+
+[node name="item_watermelon_30" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 432, 240 )
+
+[node name="item_watermelon_31" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 560, 240 )
+
+[node name="item_watermelon_32" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1840, 240 )
+
+[node name="stone_33" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 80, 272 )
+
+[node name="stone_34" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 112, 272 )
+
+[node name="item_watermelon_35" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 432, 272 )
+
+[node name="item_watermelon_36" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 560, 272 )
+
+[node name="stone_37" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 48, 304 )
+
+[node name="stone_38" parent="upper" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 80, 304 )
+
+[node name="meat_39" parent="upper" instance=ExtResource( 40 )]
+
+transform/pos = Vector2( 208, 304 )
+
+[node name="apple_pick_40" parent="upper" instance=ExtResource( 38 )]
+
+transform/pos = Vector2( 176, 336 )
+
+[node name="apple_pick_41" parent="upper" instance=ExtResource( 38 )]
+
+transform/pos = Vector2( 240, 336 )
+
+[node name="item_watermelon_42" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1840, 336 )
+
+[node name="item_watermelon_43" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 144, 368 )
+
+[node name="item_watermelon_44" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 208, 368 )
+
+[node name="item_watermelon_45" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 272, 368 )
+
+[node name="item_watermelon_46" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1808, 368 )
+
+[node name="item_watermelon_47" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1872, 368 )
+
+[node name="monkey_48" parent="upper" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 144, 400 )
+
+[node name="item_watermelon_49" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1776, 400 )
+
+[node name="item_watermelon_50" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1840, 400 )
+
+[node name="item_watermelon_51" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1904, 400 )
+
+[node name="diamond_red_52" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1136, 432 )
+
+[node name="item_watermelon_53" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1200, 432 )
+
+[node name="item_watermelon_54" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 112, 464 )
+
+[node name="lift_55" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1136, 464 )
+
+[node name="lift_56" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1168, 464 )
+
+[node name="lift_57" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1200, 464 )
+
+[node name="bear_58" parent="upper" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 912, 496 )
+
+[node name="item_watermelon_59" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1744, 496 )
+
+[node name="lift_60" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 48, 528 )
+
+[node name="lift_61" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 80, 528 )
+
+[node name="lift_62" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 688, 528 )
+
+[node name="item_watermelon_63" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 48, 560 )
+
+[node name="lift_64" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 464, 560 )
+
+[node name="lift_65" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 496, 560 )
+
+[node name="item_watermelon_66" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 48, 592 )
+
+[node name="lift_67" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 368, 592 )
+
+[node name="lift_68" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 400, 592 )
+
+[node name="diamond_red_69" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1232, 592 )
+
+[node name="spikes_70" parent="upper" instance=ExtResource( 23 )]
+
+transform/pos = Vector2( 1264, 592 )
+
+[node name="item_watermelon_71" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1296, 592 )
+
+[node name="item_watermelon_72" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1424, 592 )
+
+[node name="item_watermelon_73" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1488, 592 )
+
+[node name="lift_74" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1232, 624 )
+
+[node name="lift_75" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1264, 624 )
+
+[node name="lift_76" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1296, 624 )
+
+[node name="lift_77" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1968, 624 )
+
+[node name="lift_78" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 80, 656 )
+
+[node name="lift_79" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 112, 656 )
+
+[node name="item_watermelon_80" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 112, 688 )
+
+[node name="item_watermelon_81" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 112, 720 )
+
+[node name="lift_82" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 48, 784 )
+
+[node name="diamond_red_83" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 496, 816 )
+
+[node name="item_watermelon_84" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 912, 816 )
+
+[node name="item_watermelon_85" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 976, 816 )
+
+[node name="item_watermelon_86" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1040, 816 )
+
+[node name="item_watermelon_87" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1104, 816 )
+
+[node name="item_watermelon_88" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1168, 816 )
+
+[node name="item_watermelon_89" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1232, 816 )
+
+[node name="item_watermelon_90" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1296, 816 )
+
+[node name="item_watermelon_91" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1360, 816 )
+
+[node name="lift_92" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 80, 848 )
+
+[node name="item_watermelon_93" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 880, 848 )
+
+[node name="item_watermelon_94" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 944, 848 )
+
+[node name="item_watermelon_95" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1008, 848 )
+
+[node name="item_watermelon_96" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1072, 848 )
+
+[node name="item_watermelon_97" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1136, 848 )
+
+[node name="item_watermelon_98" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1200, 848 )
+
+[node name="item_watermelon_99" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1264, 848 )
+
+[node name="item_watermelon_100" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1328, 848 )
+
+[node name="meat_101" parent="upper" instance=ExtResource( 40 )]
+
+transform/pos = Vector2( 1392, 848 )
+
+[node name="item_watermelon_102" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1680, 880 )
+
+[node name="diamond_red_103" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 976, 912 )
+
+[node name="item_watermelon_104" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1712, 912 )
+
+[node name="diamond_red_105" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1360, 976 )
+
+[node name="item_watermelon_106" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1648, 976 )
+
+[node name="diamond_red_107" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1712, 976 )
+
+[node name="item_watermelon_108" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1744, 976 )
+
+[node name="meat_109" parent="upper" instance=ExtResource( 40 )]
+
+transform/pos = Vector2( 208, 1008 )
+
+[node name="item_watermelon_110" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 240, 1008 )
+
+[node name="item_watermelon_111" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 80, 1040 )
+
+[node name="diamond_red_112" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 112, 1040 )
+
+[node name="lift_113" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1936, 1040 )
+
+[node name="lift_114" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1968, 1040 )
+
+[node name="diamond_red_115" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 80, 1072 )
+
+[node name="item_watermelon_116" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 112, 1072 )
+
+[node name="item_watermelon_117" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 208, 1072 )
+
+[node name="item_watermelon_118" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 240, 1072 )
+
+[node name="lift_119" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1904, 1136 )
+
+[node name="diamond_red_120" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 496, 1168 )
+
+[node name="item_watermelon_121" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1360, 1168 )
+
+[node name="diamond_red_122" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1392, 1168 )
+
+[node name="item_watermelon_123" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1136, 1200 )
+
+[node name="item_watermelon_124" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1328, 1200 )
+
+[node name="diamond_red_125" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1360, 1200 )
+
+[node name="item_watermelon_126" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1392, 1200 )
+
+[node name="diamond_red_127" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 144, 1232 )
+
+[node name="diamond_red_128" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 1328, 1232 )
+
+[node name="item_watermelon_129" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1360, 1232 )
+
+[node name="meat_130" parent="upper" instance=ExtResource( 40 )]
+
+transform/pos = Vector2( 1808, 1232 )
+
+[node name="lift_131" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1936, 1232 )
+
+[node name="diamond_red_132" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 816, 1264 )
+
+[node name="diamond_red_133" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 848, 1264 )
+
+[node name="diamond_red_134" parent="upper" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 368, 1296 )
+
+[node name="item_watermelon_135" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1520, 1296 )
+
+[node name="meat_136" parent="upper" instance=ExtResource( 40 )]
+
+transform/pos = Vector2( 176, 1328 )
+
+[node name="apple_pick_137" parent="upper" instance=ExtResource( 38 )]
+
+transform/pos = Vector2( 208, 1328 )
+
+[node name="lift_138" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 304, 1328 )
+
+[node name="lift_139" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 368, 1328 )
+
+[node name="lift_140" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 400, 1328 )
+
+[node name="lift_141" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 432, 1328 )
+
+[node name="lift_142" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 496, 1328 )
+
+[node name="lift_143" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 528, 1328 )
+
+[node name="lift_144" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 560, 1328 )
+
+[node name="lift_145" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 592, 1328 )
+
+[node name="lift_146" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 624, 1328 )
+
+[node name="item_watermelon_147" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1488, 1328 )
+
+[node name="item_watermelon_148" parent="upper" instance=ExtResource( 41 )]
+
+transform/pos = Vector2( 1552, 1328 )
+
+[node name="lift_149" parent="upper" instance=ExtResource( 22 )]
+
+transform/pos = Vector2( 1968, 1328 )
+
+[node name="dirt_left_150" parent="upper" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1840, 1360 )
+
+[node name="world_end" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2016, 1408 )
+
