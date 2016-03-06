@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=1]
+[ext_resource path="res://scripts/game_won.gd" type="Script" id=1]
+[ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
+[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=3]
 
 [node name="game_won" type="Node2D"]
 
+script/script = ExtResource( 1 )
 __meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 320, 240 )
+texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 
@@ -13,8 +21,8 @@ margin/bottom = 480.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-custom_fonts/font = ExtResource( 1 )
-text = "Yaaay !!!\nYou completed all levels.\n\nFollow\nhttps://github.com/alketii/Herbi\nfor more levels and updates.\n\nThank you very much for playing."
+custom_fonts/font = ExtResource( 3 )
+text = "Yaaay !!!\nYou completed all levels.\n\nFor more information and updates visit\nhttp://kobuge-games.github.io/Herbi\n\nversion 0.9\n\nKOBGUE-GAMES | GodotEngine.org\n\nThank you very much for playing.\n\nPress Escape ..."
 align = 1
 valign = 1
 percent_visible = 1.0

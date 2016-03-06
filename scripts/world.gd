@@ -37,6 +37,7 @@ func add_life():
 	
 func remove_life():
 	if not shield:
+		get_node("/root/world/SamplePlayer2D").play("damage")
 		global.lives -= 1
 		shield = true
 		get_node("player").set_opacity(0.5)

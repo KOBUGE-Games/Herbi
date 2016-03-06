@@ -143,6 +143,7 @@ func _fixed_process(delta):
 		# Makes controls more snappy.
 		velocity.y = -JUMP_SPEED
 		jumping = true
+		get_node("/root/world/SamplePlayer2D").play("jump")
 	
 	on_air_time += delta
 	prev_jump_pressed = jump

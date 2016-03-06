@@ -1,6 +1,6 @@
 extends Node
 
-var debug = true
+var debug = false
 var level = 1
 var score = 0
 var lives = 3

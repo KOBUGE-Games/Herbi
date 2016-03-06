@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
-[ext_resource path="res://graphics/hud/bg.png" type="Texture" id=2]
-[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=3]
+[ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
+[ext_resource path="res://graphics/hud/bg.png" type="Texture" id=3]
+[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=4]
 
 [node name="menu" type="Node2D"]
 
@@ -14,17 +15,22 @@ __meta__ = { "__editor_plugin_screen__":"Script" }
 transform/pos = Vector2( 320, 240 )
 texture = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="."]
+[node name="logo" type="Sprite" parent="."]
 
-margin/left = 5.0
-margin/top = 157.0
-margin/right = 634.0
-margin/bottom = 366.0
+transform/pos = Vector2( 320, 60 )
+texture = ExtResource( 3 )
+
+[node name="intro" type="Label" parent="."]
+
+margin/left = 6.0
+margin/top = 133.0
+margin/right = 635.0
+margin/bottom = 456.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-custom_fonts/font = ExtResource( 3 )
-text = "SPACE = Start Game / Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit\n\nCoded by @alketii\nAudio by @ObaniGemini\n\nKOBGUE-GAMES | GodotEngine.org"
+custom_fonts/font = ExtResource( 4 )
+text = "SPACE = Start Game / Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit\n\nCoded by @alketii, @bojidar_bg\nAudio by @ObaniGemini\nLevels by everyone\n\nFor more information visit\nhttp://kobuge-games.github.io/Herbi\n\nversion 0.9\n\nKOBGUE-GAMES | GodotEngine.org"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -34,14 +40,13 @@ max_lines_visible = -1
 [node name="debug_info" type="Label" parent="."]
 
 visibility/visible = false
-margin/left = 5.0
-margin/top = 342.0
-margin/right = 634.0
-margin/bottom = 509.0
+margin/left = -223.0
+margin/top = -20.0
+margin/right = 406.0
+margin/bottom = 147.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-custom_fonts/font = ExtResource( 3 )
 text = "*** DEBUG MODE ***\nT = Load level_0.tscn\nD = Next Level\nA = Previous Level\nW = +1 Life\nS = -1 Life"
 align = 1
 valign = 1

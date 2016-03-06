@@ -42,17 +42,17 @@ samples/pop = { "db":0.0, "pitch":1.0, "sample":ExtResource( 25 ) }
 samples/damage = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
 samples/healthgain = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
 samples/melon3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
-samples/ennemy = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
-samples/diamond1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
-samples/diamond2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 13 ) }
-samples/melon1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
-samples/diamond3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
 samples/melon = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
 samples/1hp = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
 samples/pick = { "db":0.0, "pitch":1.0, "sample":ExtResource( 24 ) }
 samples/diamond4 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
 samples/killmonster = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
 samples/melon2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
+samples/ennemy = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
+samples/diamond1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
+samples/diamond2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 13 ) }
+samples/melon1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
+samples/diamond3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
 
 [node name="world" type="Node2D"]
 
