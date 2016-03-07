@@ -23,7 +23,7 @@ func _ready():
 	set_process_input(true)
 	
 func update_score(amount):
-	get_node("SamplePlayer2D").play("pop")
+	get_node("SamplePlayer").play("pop")
 	global.score += amount
 	if global.score == 50:
 		add_life()
@@ -32,17 +32,17 @@ func update_score(amount):
 	
 func add_life():
 	global.lives += 1
-	get_node("SamplePlayer2D").play("healthgain")
+	get_node("SamplePlayer").play("healthgain")
 	update_lifes()
 	
 func remove_life():
 	if not shield:
-		get_node("/root/world/SamplePlayer2D").play("damage")
+		get_node("/root/world/SamplePlayer").play("damage")
 		global.lives -= 1
 		shield = true
 		get_node("player").set_opacity(0.5)
 		get_node("shield").start()
-		get_node("SamplePlayer2D").play("damage")
+		get_node("SamplePlayer").play("damage")
 		update_lifes()
 	
 func update_lifes():
@@ -61,7 +61,7 @@ func add_diamond():
 	get_node("hud/diamonds").set_text("0/"+str(diamonds))
 	
 func collect_diamond():
-	get_node("SamplePlayer2D").play("pick")
+	get_node("SamplePlayer").play("pick")
 	collected_diamonds += 1
 	if collected_diamonds == diamonds:
 		if global.level == global.total_levels:

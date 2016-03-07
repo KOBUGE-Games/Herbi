@@ -77,7 +77,7 @@ func has_path_to_target(target, distance = 30):
 
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
-		get_node("/root/world/SamplePlayer2D").play("ennemy")
+		get_node("/root/world/SamplePlayer").play("ennemy")
 		player_vy = player.velocity.y
 		if player.get_pos().y+37 > get_pos().y and player_vy <= 0:
 			get_node("/root/world").remove_life()
