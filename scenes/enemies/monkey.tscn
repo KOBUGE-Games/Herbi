@@ -11,7 +11,7 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=2]
 
-frames = [ ExtResource( 2 ), ExtResource( 3 ) ]
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ) ], "loop":true, "name":"default", "speed":5.0 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -33,6 +33,7 @@ __meta__ = { "__editor_plugin_screen__":"Script" }
 [node name="sprites" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 2 )
+animation = "default"
 
 [node name="check_down" type="RayCast2D" parent="."]
 

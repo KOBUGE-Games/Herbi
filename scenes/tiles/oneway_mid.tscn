@@ -4,13 +4,13 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0
+custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
 [node name="oneway_mid" type="Sprite"]
 
 texture = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D", "__editor_plugin_states__":{ "2D":{ "ofs":Vector2( -58.2539, -43.8188 ), "snap_grid":true, "snap_offset":Vector2( 0, 0 ), "snap_pixel":false, "snap_relative":false, "snap_rotation":false, "snap_rotation_offset":0, "snap_rotation_step":0.261799, "snap_show_grid":true, "snap_step":Vector2( 32, 32 ), "zoom":2.78951 }, "3D":{ "ambient_light_color":Color( 0.15, 0.15, 0.15, 1 ), "default_light":true, "default_srgb":false, "deflight_rot_x":0.942478, "deflight_rot_y":0.628319, "fov":45, "show_grid":true, "show_origin":true, "viewport_mode":1, "viewports":[ { "distance":4, "listener":true, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 }, { "distance":4, "listener":false, "pos":Vector3( 0, 0, 0 ), "use_environment":false, "use_orthogonal":false, "x_rot":0, "y_rot":0 } ], "zfar":500, "znear":0.1 }, "Anim":{ "visible":false } }, "__editor_run_settings__":{ "custom_args":"-l $scene", "run_mode":0 } }
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -21,11 +21,11 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 one_way_collision/direction = Vector2( 0, 1 )
-one_way_collision/max_depth = 6
+one_way_collision/max_depth = 6.0
 constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0
-friction = 1
-bounce = 0
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 

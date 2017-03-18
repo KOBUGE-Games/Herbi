@@ -33,11 +33,11 @@ func _fixed_process(delta):
 		get_node("sprites").set_flip_h(walk_right)
 		walk_right = !walk_right
 
-func _on_Area2D_body_enter( body ):
+func _on_Area2D_body_enter(body):
 	if body.get_name() == "player":
-		get_node("/root/world/SamplePlayer").play("killmonster")
-		player_vy = player.velocity.y
-		if player.get_pos().y+37 > get_pos().y and player_vy <= 0:
-			get_node("/root/world").remove_life()
-		queue_free()
-		
+		if body.can_move:
+			get_node("/root/world/SamplePlayer").play("killmonster")
+			player_vy = player.velocity.y
+			if player.get_pos().y+37 > get_pos().y and player_vy <= 0:
+				get_node("/root/world").remove_life()
+			queue_free()

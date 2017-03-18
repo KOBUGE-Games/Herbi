@@ -12,9 +12,9 @@ func _ready():
 func _input(event):
 	if not event.is_echo() && event.is_pressed():
 		if event.is_action("jump"):
-			get_tree().change_scene("res://scenes/between.tscn")
+			get_node("Enter").play("enter")
 		elif event.is_action("restart"):
-			get_tree().change_scene("res://scenes/between.tscn")
+			get_node("Enter").play("enter")
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F3:
 			global.music = !global.music
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F9:
@@ -22,3 +22,7 @@ func _input(event):
 		elif event.type == InputEvent.KEY && event.scancode == KEY_T && global.debug:
 			global.level = 0
 			get_tree().change_scene("res://scenes/main.tscn")
+
+func _on_AnimationPlayer_finished():
+	if get_node("Enter").get_current_animation() == "enter":
+		get_tree().change_scene("res://scenes/main.tscn")

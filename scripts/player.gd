@@ -1,4 +1,3 @@
-
 extends KinematicBody2D
 
 # This is a simple collision demo showing how
@@ -27,6 +26,9 @@ var on_air_time = 100
 var jumping = false
 var dir_right = true
 
+var out = false
+var can_move = true
+
 var prev_jump_pressed = false
 var pApple = preload("res://scenes/items/apple.tscn")
 
@@ -36,35 +38,38 @@ func animation_walk():
 	else:
 		get_node("sprites").set_frame(1)
 
-
 func _fixed_process(delta):
 	# Create forces
 	var force = Vector2(0, GRAVITY)
+	can_move = get_parent().can_move
 	
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_pressed("jump")
 	
-	var stop = true
+	if abs(velocity.x) < WALK_MIN_SPEED:
+		get_node("sprites").set_frame(0)
 	
-	if walk_left and get_pos().x > 32:
-		if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
-			force.x -= WALK_FORCE
-			stop = false
-			if not jumping:
-				animation_walk()
-			get_node("sprites").set_flip_h(true)
-			dir_right = false
-
-	elif walk_right and get_pos().x < get_node("Camera2D").get_limit(MARGIN_RIGHT)-32:
-		if (velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED):
-			force.x += WALK_FORCE
-			stop = false
-			if not jumping:
-				animation_walk()
-			get_node("sprites").set_flip_h(false)
-			dir_right = true
-			
+	var stop = true
+	if can_move:
+		if walk_left and get_pos().x > 32:
+			if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
+				force.x -= WALK_FORCE
+				stop = false
+				if not jumping:
+					animation_walk()
+				get_node("sprites").set_flip_h(true)
+				dir_right = false
+		
+		elif walk_right and get_pos().x < get_node("Camera2D").get_limit(MARGIN_RIGHT)-32:
+			if (velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED):
+				force.x += WALK_FORCE
+				stop = false
+				if not jumping:
+					animation_walk()
+				get_node("sprites").set_flip_h(false)
+				dir_right = true
+		
 	else:
 		get_node("sprites").set_frame(0)
 	
@@ -138,7 +143,7 @@ func _fixed_process(delta):
 		# If falling, no longer jumping
 		jumping = false
 
-	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping):
+	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping and can_move):
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -JUMP_SPEED
@@ -148,12 +153,12 @@ func _fixed_process(delta):
 	on_air_time += delta
 	prev_jump_pressed = jump
 	
-	if get_pos().y > get_node("Camera2D").get_limit(MARGIN_BOTTOM)+32:
-		queue_free()
-		get_node("/root/world/").restart()
+	if get_pos().y > get_node("Camera2D").get_limit(MARGIN_BOTTOM)+32 and not out:
+		out = true
+		get_node("/root/world/").stop(true)
 
 func _input(event):
-	if not event.is_echo() && event.is_pressed():
+	if not event.is_echo() && event.is_pressed() and can_move:
 		if global.apples > 0 and event.is_action("throw"):
 			var apple = pApple.instance()
 			apple.set_pos(get_pos())

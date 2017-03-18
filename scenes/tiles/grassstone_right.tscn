@@ -9,9 +9,10 @@ extents = Vector2( 9, 16 )
 
 [node name="dirt_right" type="Sprite"]
 
+editor/display_folded = true
 transform/pos = Vector2( 80, 16 )
 texture = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D", "_editor_collapsed":true }
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

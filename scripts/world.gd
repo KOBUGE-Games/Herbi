@@ -1,5 +1,7 @@
 extends Node2D
 
+const level_announcer = preload("res://scenes/misc/level_announcer.tscn")
+
 var world_end
 var level = load("res://levels/level_"+str(global.level)+".tscn")
 var pLive = preload("res://scenes/hud/live.tscn")
@@ -9,8 +11,14 @@ var shield = false
 var start_score = 0
 var start_lives = 0
 var start_apples = 0
+var can_move = true
+var quit = false
+
+onready var Event = get_node("CanvasLayer/Event")
+onready var tween = get_node("hud/Tween")
 
 func _ready():
+	add_child(level_announcer.instance())
 	add_child(level.instance())
 	get_node("hud/items").set_text(str(global.score))
 	get_node("hud/apples").set_text(str(global.apples))
@@ -29,6 +37,7 @@ func update_score(amount):
 		add_life()
 		global.score = 0
 	get_node("hud/items").set_text(str(global.score))
+	hud_add_item(get_node("hud/sprite_items"))
 	
 func add_life():
 	global.lives += 1
@@ -36,12 +45,12 @@ func add_life():
 	update_lifes()
 	
 func remove_life():
-	if not shield:
+	if not shield and can_move:
 		get_node("/root/world/SamplePlayer").play("damage")
 		global.lives -= 1
 		shield = true
-		get_node("player").set_opacity(0.5)
 		get_node("shield").start()
+		get_node("player/Events").play("damage")
 		get_node("SamplePlayer").play("damage")
 		update_lifes()
 	
@@ -54,7 +63,7 @@ func update_lifes():
 			live.set_pos(Vector2(16+i*32,16))
 			get_node("hud/lives").add_child(live)
 	else:
-		restart()
+		stop(true)
 		
 func add_diamond():
 	diamonds += 1
@@ -68,34 +77,41 @@ func collect_diamond():
 			get_tree().change_scene("res://scenes/game_won.tscn")
 		else:
 			global.level += 1
-			get_tree().change_scene("res://scenes/between.tscn")
-		
+			stop()
+	
+	hud_add_item(get_node("hud/sprite_diamonds"))
 	get_node("hud/diamonds").set_text(str(collected_diamonds)+"/"+str(diamonds))
 
 func add_apple():
 	global.apples +=1
 	get_node("hud/apples").set_text(str(global.apples))
+	hud_add_item(get_node("hud/sprite_apples"))
 
 func remove_apple():
 	global.apples -=1
 	get_node("hud/apples").set_text(str(global.apples))
 
 func _on_shield_timeout():
-	get_node("player").set_opacity(1)
 	shield = false
 	
 func restart():
 		global.score = start_score
 		global.lives = start_lives
 		global.apples = start_apples
-		get_tree().change_scene("res://scenes/between.tscn")
-	
+		get_tree().reload_current_scene()
+		can_move = true
+
+func hud_add_item(item):
+	tween.interpolate_property(item, "transform/rot", 0, 360, 0.4, 1, 1)
+	tween.start()
+
 func _input(event):
 	if not event.is_echo() && event.is_pressed():
 		if event.is_action("ui_cancel"):
-			get_tree().change_scene("res://scenes/main_menu.tscn")
+			stop()
+			quit = true
 		elif event.is_action("restart"):
-			restart()
+			stop()
 		if event.type == InputEvent.KEY:
 			if event.scancode == KEY_F3:
 				global.music = !global.music
@@ -120,3 +136,21 @@ func _input(event):
 					add_life()
 				elif event.scancode == KEY_S:
 					remove_life()
+
+func stop(die=false):
+	var color
+	if die:
+		color = Color(1, 0, 0, 0)
+	else:
+		color = Color(0, 0, 0, 0)
+	tween.interpolate_property(get_node("CanvasLayer/Sprite"), "modulate", color, Color(0, 0, 0, 1), 0.3, 0, 1)
+	tween.start()
+	Event.play("stop")
+	can_move = false
+
+func _on_Die_finished():
+	if Event.get_current_animation() == "stop":
+		if quit:
+			get_tree().change_scene("res://scenes/main_menu.tscn")
+		else:
+			restart()

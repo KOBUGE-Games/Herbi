@@ -1,9 +1,39 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
 [ext_resource path="res://graphics/hud/bg.png" type="Texture" id=3]
-[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=4]
+[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://graphics/hud/square.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "enter"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("fade:modulate")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("logo:modulate")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Color( 1, 1, 1, 1 ), Color( 0, 1, 0, 0 ) ] }
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "start"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("fade:modulate")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 4, 1 ), "update":0, "values":[ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ] }
 
 [node name="menu" type="Node2D"]
 
@@ -22,15 +52,16 @@ texture = ExtResource( 3 )
 
 [node name="intro" type="Label" parent="."]
 
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = 6.0
 margin/top = 133.0
 margin/right = 635.0
 margin/bottom = 456.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
 custom_fonts/font = ExtResource( 4 )
-text = "SPACE = Start Game / Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit\n\nCoded by @alketii, @bojidar_bg\nAudio by @ObaniGemini\nLevels by everyone\n\nFor more information visit\nhttp://kobuge-games.github.io/Herbi\n\nversion 0.9\n\nKOBGUE-GAMES | GodotEngine.org"
+text = "SPACE = Start Game / Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Toggle Music\nF9 = Quit\n\nCoded by KOBUGE-Games\nInitial idea by @alketii\nLevels by everyone\n\nFor more information visit\nhttp://kobuge-games.github.io/Herbi\n\nversion 0.9\n\nKOBGUE-GAMES | GodotEngine.org"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -40,18 +71,41 @@ max_lines_visible = -1
 [node name="debug_info" type="Label" parent="."]
 
 visibility/visible = false
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
 margin/left = -223.0
 margin/top = -20.0
 margin/right = 406.0
 margin/bottom = 147.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
 text = "*** DEBUG MODE ***\nT = Load level_0.tscn\nD = Next Level\nA = Previous Level\nW = +1 Life\nS = -1 Life"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="fade" type="Sprite" parent="."]
+
+transform/scale = Vector2( 640, 480 )
+texture = ExtResource( 5 )
+centered = false
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Enter" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/enter = SubResource( 1 )
+anims/start = SubResource( 2 )
+next/start = ""
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "start"
+
+[connection signal="finished" from="Enter" to="." method="_on_AnimationPlayer_finished"]
 
 

@@ -1,47 +1,121 @@
-[gd_scene load_steps=21 format=1]
+[gd_scene load_steps=26 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
-[ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
-[ext_resource path="res://scripts/player.gd" type="Script" id=3]
-[ext_resource path="res://graphics/characters/dog/sprite_1.png" type="Texture" id=4]
-[ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=5]
-[ext_resource path="res://fonts/cave_story_32.fnt" type="Font" id=6]
-[ext_resource path="res://graphics/hud/diamond.png" type="Texture" id=7]
-[ext_resource path="res://graphics/items/apple_green.png" type="Texture" id=8]
-[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=9]
-[ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=10]
-[ext_resource path="res://audio/sounds/healthgain.wav" type="Sample" id=11]
-[ext_resource path="res://audio/sounds/jump.wav" type="Sample" id=12]
-[ext_resource path="res://audio/sounds/killmonster.wav" type="Sample" id=13]
-[ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=14]
-[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=15]
-[ext_resource path="res://audio/sounds/throw.wav" type="Sample" id=16]
-[ext_resource path="res://audio/sounds/win.wav" type="Sample" id=17]
+[ext_resource path="res://graphics/hud/bg.png" type="Texture" id=2]
+[ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=3]
+[ext_resource path="res://scripts/player.gd" type="Script" id=4]
+[ext_resource path="res://graphics/characters/dog/sprite_1.png" type="Texture" id=5]
+[ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=6]
+[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://graphics/items/watermelon.png" type="Texture" id=8]
+[ext_resource path="res://graphics/hud/diamond.png" type="Texture" id=9]
+[ext_resource path="res://graphics/items/apple_green.png" type="Texture" id=10]
+[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=11]
+[ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=12]
+[ext_resource path="res://audio/sounds/healthgain.wav" type="Sample" id=13]
+[ext_resource path="res://audio/sounds/jump.wav" type="Sample" id=14]
+[ext_resource path="res://audio/sounds/killmonster.wav" type="Sample" id=15]
+[ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=16]
+[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=17]
+[ext_resource path="res://audio/sounds/throw.wav" type="Sample" id=18]
+[ext_resource path="res://audio/sounds/win.wav" type="Sample" id=19]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Animation" id=1]
+
+resource/name = "enter"
+length = 0.6
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 0.25, 1 ), "update":0, "values":[ Vector2( 100, 100 ), Vector2( 1e-05, 1e-05 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 0.25, 1 ), "update":0, "values":[ Vector2( 320, 380 ), Vector2( 320, 240 ) ] }
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "stop"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ Vector2( 100, 100 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ Vector2( 320, 380 ) ] }
+
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 21 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=4]
 
-frames = [ ExtResource( 4 ), ExtResource( 5 ) ]
+animations = [ { "frames":[ ExtResource( 5 ), ExtResource( 6 ) ], "loop":true, "name":"default", "speed":5.0 } ]
 
-[sub_resource type="SampleLibrary" id=3]
+[sub_resource type="Animation" id=5]
 
-samples/jump = { "db":-7.0, "pitch":1.0, "sample":ExtResource( 12 ) }
-samples/throw = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
-samples/pop = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 15 ) }
-samples/win = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
-samples/pick = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 14 ) }
-samples/healthgain = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 11 ) }
-samples/killmonster = { "db":2.0, "pitch":1.0, "sample":ExtResource( 13 ) }
-samples/damage = { "db":-4.0, "pitch":1.0, "sample":ExtResource( 10 ) }
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprites:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.05, 0.1, 0.2, 0.3, 0.45, 0.6, 0.65, 0.7, 2 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), "update":1, "values":[ 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.7, 0.5, 1.0 ] }
+
+[sub_resource type="SampleLibrary" id=6]
+
+samples/damage = { "db":-4.0, "pitch":1.0, "sample":ExtResource( 12 ) }
+samples/healthgain = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 13 ) }
+samples/jump = { "db":-7.0, "pitch":1.0, "sample":ExtResource( 14 ) }
+samples/killmonster = { "db":2.0, "pitch":1.0, "sample":ExtResource( 15 ) }
+samples/pick = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 16 ) }
+samples/pop = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 17 ) }
+samples/throw = { "db":0.0, "pitch":1.0, "sample":ExtResource( 18 ) }
+samples/win = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
 
 [node name="world" type="Node2D"]
 
 script/script = ExtResource( 1 )
 __meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+
+transform/pos = Vector2( 320, 380 )
+transform/scale = Vector2( 100, 100 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Event" type="AnimationPlayer" parent="CanvasLayer"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/enter = SubResource( 1 )
+anims/stop = SubResource( 2 )
+next/enter = ""
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "enter"
 
 [node name="back" type="CanvasLayer" parent="."]
 
@@ -53,28 +127,29 @@ scale = Vector2( 1, 1 )
 [node name="bg" type="Sprite" parent="back"]
 
 transform/pos = Vector2( 320, 240 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="player" type="KinematicBody2D" parent="."]
 
 transform/pos = Vector2( 32, -32 )
 z/z = 1
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 3
 collision/mask = 0
 collision/margin = 0.08
-script/script = ExtResource( 3 )
+script/script = ExtResource( 4 )
 
 [node name="sprites" type="AnimatedSprite" parent="player"]
 
-frames = SubResource( 2 )
+frames = SubResource( 4 )
+animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
@@ -111,6 +186,17 @@ cast_to = Vector2( 0, 32 )
 layer_mask = 1
 type_mask = 15
 
+[node name="Events" type="AnimationPlayer" parent="player"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/damage = SubResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
 [node name="hud" type="CanvasLayer" parent="."]
 
 layer = 1
@@ -120,52 +206,61 @@ scale = Vector2( 1, 1 )
 
 [node name="items" type="Label" parent="hud"]
 
-margin/left = 532.0
-margin/top = 6.0
-margin/right = 629.0
-margin/bottom = 25.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-custom_fonts/font = ExtResource( 6 )
+size_flags/vertical = 0
+margin/left = 532.0
+margin/top = 11.0
+margin/right = 629.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 7 )
 text = "0"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="sprite_items" type="Sprite" parent="hud"]
+
+transform/pos = Vector2( 580, 18 )
+texture = ExtResource( 8 )
+
 [node name="lives" type="Node" parent="hud"]
-
-[node name="sprite_diamonds" type="Sprite" parent="hud"]
-
-transform/pos = Vector2( 228.352, 12.7723 )
-texture = ExtResource( 7 )
 
 [node name="diamonds" type="Label" parent="hud"]
 
-margin/left = 245.0
-margin/top = 5.0
-margin/right = 342.0
-margin/bottom = 24.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-custom_fonts/font = ExtResource( 6 )
+size_flags/vertical = 0
+margin/left = 245.0
+margin/top = 11.0
+margin/right = 342.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 7 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="sprite_diamonds" type="Sprite" parent="hud"]
+
+transform/pos = Vector2( 222, 20 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+
 [node name="apples" type="Label" parent="hud"]
 
-margin/left = 431.0
-margin/top = 5.0
-margin/right = 528.0
-margin/bottom = 24.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-custom_fonts/font = ExtResource( 6 )
+size_flags/vertical = 0
+margin/left = 432.0
+margin/top = 11.0
+margin/right = 529.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 7 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
@@ -173,15 +268,23 @@ max_lines_visible = -1
 
 [node name="sprite_apples" type="Sprite" parent="hud"]
 
-transform/pos = Vector2( 414.83, 13.3168 )
-texture = ExtResource( 8 )
+transform/pos = Vector2( 410, 18 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 10 )
+
+[node name="Tween" type="Tween" parent="hud"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 9 )
+stream/stream = ExtResource( 11 )
 stream/play = false
-stream/loop = true
-stream/volume_db = 0.0
+stream/loop = false
+stream/volume_db = -50.0
 stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
@@ -190,14 +293,14 @@ stream/buffering_ms = 500
 [node name="shield" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 2.5
+wait_time = 2.0
 one_shot = false
 autostart = false
 
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
-config/polyphony = 3
-config/samples = SubResource( 3 )
+config/polyphony = 5
+config/samples = SubResource( 6 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -210,6 +313,8 @@ default/filter/gain = 1.0
 default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
+
+[connection signal="finished" from="CanvasLayer/Event" to="." method="_on_Die_finished"]
 
 [connection signal="timeout" from="shield" to="." method="_on_shield_timeout"]
 
