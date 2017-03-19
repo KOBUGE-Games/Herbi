@@ -5,12 +5,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 16 )
+extents = Vector2( 8, 8 )
 
 [node name="dirt_mid" type="Sprite"]
 
-editor/display_folded = true
-transform/pos = Vector2( 48, 16 )
 texture = ExtResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

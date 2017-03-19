@@ -12,7 +12,7 @@ for xfile in os.listdir("."):
     if xfile.split(".")[-1] == "tmx":
         xfile = xfile.split(".")[0]
         if xfile != "blank_level" and xfile != "between":
-            process = subprocess.Popen('/home/alket/src/tiled/bin/tiled --export-map '+current_dir+xfile+'.tmx '+current_dir+xfile+'.json', shell=True, stdout=subprocess.PIPE)
+            process = subprocess.Popen('/path/to/tiled/binary --export-map '+current_dir+xfile+'.tmx '+current_dir+xfile+'.json', shell=True, stdout=subprocess.PIPE)
             process.wait()
             # Default values for args
             file_input = xfile+".json"

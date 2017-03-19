@@ -6,11 +6,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15, 15 )
+extents = Vector2( 8, 8 )
 
 [node name="item_watermelon" type="Node2D"]
 
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = {
+"__editor_plugin_screen__": "Script"
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 

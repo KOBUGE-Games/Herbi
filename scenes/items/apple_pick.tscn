@@ -6,18 +6,20 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 12, 13 )
+extents = Vector2( 7, 8 )
 
 [node name="apple_pick" type="Sprite"]
 
 texture = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = {
+"__editor_plugin_screen__": "Script"
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 1 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -27,6 +29,7 @@ script/script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
+transform/pos = Vector2( 0, 1 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

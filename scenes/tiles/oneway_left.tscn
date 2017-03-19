@@ -5,23 +5,25 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 7, 16 )
+extents = Vector2( 4, 8 )
 
 [node name="oneway_left" type="Sprite"]
 
 texture = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 9, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 4, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 one_way_collision/direction = Vector2( 0, 1 )
-one_way_collision/max_depth = 6.0
+one_way_collision/max_depth = 2.0
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -29,7 +31,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 
-transform/pos = Vector2( 9, 0 )
+transform/pos = Vector2( 4, 0 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

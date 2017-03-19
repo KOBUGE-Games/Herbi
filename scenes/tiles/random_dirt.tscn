@@ -10,16 +10,23 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 16 )
+extents = Vector2( 8, 8 )
 
 [sub_resource type="SpriteFrames" id=2]
 
-frames = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="random_dirt" type="Node2D"]
 
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
 frames = 4
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -44,5 +51,6 @@ _update_shape_index = 0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 2 )
+animation = "default"
 
 

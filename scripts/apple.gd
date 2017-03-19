@@ -7,10 +7,10 @@ func _ready():
 	add_to_group("apple")
 	if player_dir:
 		set_angular_velocity(20)
-		set_linear_velocity(Vector2(500,0))
+		set_linear_velocity(Vector2(320,0))
 	else:
 		set_angular_velocity(-20)
-		set_linear_velocity(Vector2(-500,0))
+		set_linear_velocity(Vector2(-320,0))
 
 func _on_Area2D_body_enter( body ):
 	if body.is_in_group("enemies"):

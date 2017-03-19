@@ -6,6 +6,8 @@
 
 transform/scale = Vector2( 1.6, 1.6 )
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = {
+"__editor_plugin_screen__": "Script"
+}
 
 
