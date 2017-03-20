@@ -15,7 +15,7 @@ func _ready():
 func _on_Area2D_body_enter( body ):
 	if body.is_in_group("enemies"):
 		queue_free()
-		body.queue_free()
+		body.kill_monster()
 
 func _on_Timeout_finished():
 	queue_free()

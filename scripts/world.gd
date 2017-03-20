@@ -105,11 +105,12 @@ func _on_shield_timeout():
 	shield = false
 
 func restart():
-		global.score = start_score
+	if global.lives < start_lives:
 		global.lives = start_lives
+	if global.apples < start_apples:
 		global.apples = start_apples
-		get_tree().reload_current_scene()
-		can_move = true
+	get_tree().reload_current_scene()
+	can_move = true
 
 func hud_add_item(item):
 	tween.interpolate_property(item, "transform/rot", 0, 360, 0.4, 1, 1)
@@ -131,7 +132,7 @@ func _input(event):
 					get_node("StreamPlayer").stop()
 			elif event.scancode == KEY_F9:
 				get_tree().quit()
-
+			
 			# DEBUG MODE
 			if global.debug:
 				if event.scancode == KEY_D:
