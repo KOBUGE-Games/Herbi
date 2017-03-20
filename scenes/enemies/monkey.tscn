@@ -7,21 +7,16 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9, 9 )
+extents = Vector2( 7, 9 )
 
 [sub_resource type="SpriteFrames" id=2]
 
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ) ], "loop":true, "name":"default", "speed":5.0 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11, 12 )
+extents = Vector2( 9, 10 )
 
 [node name="enemy_1" type="KinematicBody2D"]
 
@@ -33,9 +28,7 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "Script"
-}
+__meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="sprites" type="AnimatedSprite" parent="."]
 
@@ -88,6 +81,15 @@ cast_to = Vector2( -128, 0 )
 layer_mask = 2
 type_mask = 15
 
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.3
+one_shot = true
+autostart = false
+
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

@@ -4,8 +4,10 @@ var walk_right = true
 var speed = 1
 var run = 2
 var movement = speed
+var can_attack = true
+
 onready var player = get_node("/root/world/player")
-var player_vy = 0
+onready var sprites = get_node("sprites")
 
 func _ready():
 	add_to_group("enemies")
@@ -13,19 +15,21 @@ func _ready():
 	get_node("check_down").add_exception(self)
 	get_node("check_right").add_exception(self)
 	get_node("check_left").add_exception(self)
-	set_pos(Vector2(get_pos().x,get_pos().y))
+	set_pos(Vector2(get_pos().x,get_pos().y-1))
 
 func _fixed_process(delta):
 	#toggle direction
 	if !get_node("check_down").is_colliding():
-		get_node("sprites").set_flip_h(walk_right)
+		can_attack = false
+		get_node("Timer").start()
+		sprites.set_flip_h(walk_right)
 		walk_right = !walk_right
 		
 	#walk anim
 	if int(get_pos().x) % 50 < 25:
-		get_node("sprites").set_frame(0)
+		sprites.set_frame(0)
 	else:
-		get_node("sprites").set_frame(1)
+		sprites.set_frame(1)
 
 	#do movement
 	if walk_right:
@@ -35,31 +39,29 @@ func _fixed_process(delta):
 	
 	if get_node("check_right").is_colliding() and get_node("check_down").is_colliding():
 		var player = get_node("check_right").get_collider()
-		if player.get_name() == "player":
+		collision_check()
+		if player.get_name() == "player" and can_attack:
 			if player.can_move:
 				if has_path_to_target(player.get_pos()):
 					walk_right = true
 					movement = run
-					get_node("sprites").set_flip_h(!walk_right)
+					sprites.set_flip_h(!walk_right)
 		else:
 			movement = speed
-	
 	elif get_node("check_left").is_colliding() and get_node("check_down").is_colliding():
 		var player = get_node("check_left").get_collider()
-		if player.get_name() == "player":
+		collision_check()
+		if player.get_name() == "player" and can_attack:
 			if player.can_move:
 				if has_path_to_target(player.get_pos()):
 					walk_right = false
 					movement = run
-					get_node("sprites").set_flip_h(!walk_right)
+					sprites.set_flip_h(!walk_right)
 		else:
 			movement = speed
-	
 	else:
 		movement = speed
-		if is_colliding():
-			get_node("sprites").set_flip_h(walk_right)
-			walk_right = !walk_right
+		collision_check()
 
 func has_path_to_target(target, distance = 30):
 	var current = get_pos()
@@ -81,7 +83,16 @@ func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
 		if body.can_move:
 			get_node("/root/world/SamplePlayer").play("killmonster")
-			player_vy = player.velocity.y
-			if player.get_pos().y+16 > get_pos().y and player_vy <= 0:
+			if player.get_pos().y+16 > get_pos().y:
 				get_node("/root/world").remove_life()
 			queue_free()
+
+func collision_check():
+	if is_colliding():
+		can_attack = false
+		get_node("Timer").start()
+		sprites.set_flip_h(walk_right)
+		walk_right = !walk_right
+
+func _on_Timer_timeout():
+	can_attack = true

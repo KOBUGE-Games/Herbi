@@ -7,21 +7,16 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9, 9 )
+extents = Vector2( 9, 10 )
 
 [sub_resource type="SpriteFrames" id=2]
 
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ) ], "loop":true, "name":"default", "speed":5.0 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 12, 12 )
+extents = Vector2( 11, 11 )
 
 [node name="enemy_1" type="KinematicBody2D"]
 
@@ -33,10 +28,8 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "Script"
-}
-speed = 1
+__meta__ = { "__editor_plugin_screen__":"Script" }
+speed = 0.8
 
 [node name="sprites" type="AnimatedSprite" parent="."]
 
@@ -60,7 +53,6 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 

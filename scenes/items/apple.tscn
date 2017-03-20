@@ -18,12 +18,7 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visibility/self_opacity")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 1.8, 1.85, 1.9, 1.95, 2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1.0, 0.0, 1.0, 0.0, 1.0, 0.0 ]
-}
+tracks/0/keys = { "times":FloatArray( 0, 1.8, 1.85, 1.9, 1.95, 2 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1 ), "update":1, "values":[ 1.0, 0.0, 1.0, 0.0, 1.0, 0.0 ] }
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -41,7 +36,7 @@ collision/mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 1.0
+bounce = 0.7
 gravity_scale = 3.0
 custom_integrator = false
 continuous_cd = 0
@@ -51,12 +46,10 @@ sleeping = false
 can_sleep = true
 velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
-damp_override/linear = 0.0
-damp_override/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
 script/script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "2D"
-}
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="Sprite" type="Sprite" parent="."]
 

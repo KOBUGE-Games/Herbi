@@ -28,15 +28,21 @@ var dir_right = true
 
 var out = false
 var can_move = true
+var dead = false
 
 var prev_jump_pressed = false
 var pApple = preload("res://scenes/items/apple.tscn")
 
+var i = 0
+
+onready var sprites = get_node("sprites")
+onready var idle = get_node("Idle")
+
 func animation_walk():
 	if int(get_pos().x) % 50 < 25:
-		get_node("sprites").set_frame(0)
+		sprites.set_frame(0)
 	else:
-		get_node("sprites").set_frame(1)
+		sprites.set_frame(1)
 
 func _fixed_process(delta):
 	# Create forces
@@ -47,8 +53,13 @@ func _fixed_process(delta):
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_pressed("jump")
 	
-	if abs(velocity.x) < WALK_MIN_SPEED:
-		get_node("sprites").set_frame(0)
+	if abs(velocity.x) < WALK_MIN_SPEED and not jumping and not dead:
+		if !idle.is_connected("timeout", self, "Idle"):
+			idle.connect("timeout", self, "Idle")
+			Idle()
+	else:
+		if idle.is_connected("timeout", self, "Idle"):
+			idle.disconnect("timeout", self, "Idle")
 	
 	var stop = true
 	if can_move:
@@ -56,22 +67,22 @@ func _fixed_process(delta):
 			if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
 				force.x -= WALK_FORCE
 				stop = false
-				if not jumping:
+				if not jumping and not dead:
 					animation_walk()
-				get_node("sprites").set_flip_h(true)
+				sprites.set_flip_h(true)
 				dir_right = false
 		
 		elif walk_right and get_pos().x < get_node("Camera2D").get_limit(MARGIN_RIGHT)-16:
 			if (velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED):
 				force.x += WALK_FORCE
 				stop = false
-				if not jumping:
+				if not jumping and not dead:
 					animation_walk()
-				get_node("sprites").set_flip_h(false)
+				sprites.set_flip_h(false)
 				dir_right = true
-		
-	else:
-		get_node("sprites").set_frame(0)
+	
+	if dead:
+		sprites.set_frame(2)
 	
 	if (stop):
 		var vsign = sign(velocity.x)
@@ -142,12 +153,13 @@ func _fixed_process(delta):
 	if (jumping and velocity.y > 0):
 		# If falling, no longer jumping
 		jumping = false
-
+	
 	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping and can_move):
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
 		# Makes controls more snappy.
 		velocity.y = -JUMP_SPEED
 		jumping = true
+		sprites.set_frame(1)
 		get_node("/root/world/SamplePlayer").play("jump")
 	
 	on_air_time += delta
@@ -166,6 +178,15 @@ func _input(event):
 			apple.set_z(2)
 			get_parent().add_child(apple)
 			get_node("/root/world").remove_apple()
+
+func Idle():
+	if not jumping:
+		if i == 0:
+			i = 3
+		else:
+			i = 0
+		sprites.set_frame(i)
+		idle.start()
 
 func _ready():
 	get_node("check_right").add_exception(self)

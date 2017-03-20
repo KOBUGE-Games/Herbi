@@ -16,6 +16,7 @@ var quit = false
 
 onready var Event = get_node("CanvasLayer/Event")
 onready var tween = get_node("hud/Tween")
+onready var sampleplayer = get_node("SamplePlayer")
 
 onready var sprite_diamonds = get_node("hud/sprite_diamonds")
 onready var sprite_apples = get_node("hud/sprite_apples")
@@ -36,7 +37,7 @@ func _ready():
 	set_process_input(true)
 
 func update_score(amount):
-	get_node("SamplePlayer").play("pop")
+	sampleplayer.play("pop")
 	global.score += amount
 	if global.score == 50:
 		add_life()
@@ -47,17 +48,16 @@ func update_score(amount):
 
 func add_life():
 	global.lives += 1
-	get_node("SamplePlayer").play("healthgain")
+	sampleplayer.play("healthgain")
 	update_lifes()
 
 func remove_life():
 	if not shield and can_move:
-		get_node("/root/world/SamplePlayer").play("damage")
 		global.lives -= 1
 		shield = true
 		get_node("shield").start()
 		get_node("player/Events").play("damage")
-		get_node("SamplePlayer").play("damage")
+		sampleplayer.play("damage")
 		update_lifes()
 
 func update_lifes():
@@ -69,6 +69,7 @@ func update_lifes():
 			live.set_pos(Vector2(16+i*16,16))
 			get_node("hud/lives").add_child(live)
 	else:
+		get_node("player").dead = true
 		stop(true)
 
 func add_diamond():
@@ -76,7 +77,7 @@ func add_diamond():
 	get_node("hud/diamonds").set_text("0/"+str(diamonds))
 
 func collect_diamond():
-	get_node("SamplePlayer").play("pick")
+	sampleplayer.play("pick")
 	collected_diamonds += 1
 	if collected_diamonds == diamonds:
 		if global.level == global.total_levels:

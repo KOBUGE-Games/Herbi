@@ -7,23 +7,18 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 9 )
+extents = Vector2( 8, 10 )
 
 [sub_resource type="SpriteFrames" id=2]
 
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ) ], "loop":true, "name":"default", "speed":5.0 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11, 12 )
+extents = Vector2( 11, 11 )
 
-[node name="enemy_1" type="KinematicBody2D"]
+[node name="bear" type="KinematicBody2D"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -33,10 +28,8 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "2D"
-}
-speed = 2
+__meta__ = { "__editor_plugin_screen__":"2D" }
+speed = 1.8
 
 [node name="sprites" type="AnimatedSprite" parent="."]
 
@@ -54,7 +47,7 @@ type_mask = 15
 
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -63,7 +56,6 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
-transform/pos = Vector2( 0, 1 )
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0

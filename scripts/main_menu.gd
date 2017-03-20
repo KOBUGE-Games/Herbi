@@ -24,7 +24,7 @@ func _input(event):
 			get_node("Enter").play("enter")
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F3:
 			global.music = !global.music
-		elif event.type == InputEvent.KEY && event.scancode == KEY_F9:
+		elif event.type == InputEvent.KEY && event.scancode == KEY_F9 or event.is_action("ui_cancel"):
 			get_tree().quit()
 		elif event.type == InputEvent.KEY && event.scancode == KEY_T && global.debug:
 			global.level = 0
