@@ -16,7 +16,7 @@ animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ) ], "loop":true, "
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11, 11 )
+extents = Vector2( 11, 12 )
 
 [node name="bear" type="KinematicBody2D"]
 
