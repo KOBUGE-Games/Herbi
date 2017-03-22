@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-var init_posy
+var init_posy = 0.0
 var walk_right = true
+var checked = false
 export var speed = 1.0
 
 onready var player = get_node("/root/world/player")
@@ -12,11 +13,7 @@ onready var check_down = get_node("check_down")
 func _ready():
 	add_to_group("enemies")
 	check_down.add_exception(self)
-	if get_name().begins_with("bear"):
-		init_posy = -0.07
-	else:
-		init_posy = 0.5
-	set_pos(Vector2(get_pos().x,get_pos().y+init_posy))
+	set_pos(Vector2(get_pos().x,get_pos().y))
 	set_fixed_process(true)
 
 func _fixed_process(delta):

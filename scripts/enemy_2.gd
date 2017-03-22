@@ -19,7 +19,7 @@ func _ready():
 	check_down.add_exception(self)
 	check_right.add_exception(self)
 	check_left.add_exception(self)
-	set_pos(Vector2(get_pos().x,get_pos().y-1))
+	set_pos(Vector2(get_pos().x,get_pos().y))
 
 func _fixed_process(delta):
 	#toggle direction
