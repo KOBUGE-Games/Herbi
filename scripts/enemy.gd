@@ -13,7 +13,6 @@ onready var check_down = get_node("check_down")
 func _ready():
 	add_to_group("enemies")
 	check_down.add_exception(self)
-	set_pos(Vector2(get_pos().x,get_pos().y))
 	set_fixed_process(true)
 
 func _fixed_process(delta):
