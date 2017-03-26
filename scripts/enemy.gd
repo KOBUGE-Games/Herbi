@@ -22,7 +22,7 @@ func _fixed_process(delta):
 		walk_right = !walk_right
 		
 	#walk anim
-	if int(get_pos().x) % 50 < 25:
+	if (int(get_pos().x)*3)/2 % 50 < 25:
 		sprites.set_frame(0)
 	else:
 		sprites.set_frame(1)
@@ -40,7 +40,7 @@ func _fixed_process(delta):
 func _on_Area2D_body_enter(body):
 	if body.get_name() == "player":
 		if body.can_move:
-			if player.get_pos().y+16 > get_pos().y:
+			if player.get_pos().y+17 > get_pos().y:
 				get_node("/root/world").remove_life()
 			kill_monster()
 

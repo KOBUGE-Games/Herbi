@@ -6,13 +6,17 @@ var world_end
 var level = load("res://levels/level_"+str(global.level)+".tscn")
 var pLive = preload("res://scenes/hud/live.tscn")
 var diamonds = 0
-var collected_diamonds = 0
 var shield = false
 var start_score = 0
-var start_lives = 0
+var start_lives = 3
 var start_apples = 0
 var can_move = true
 var quit = false
+
+var collected_diamonds = 0
+var lives
+var apples
+var score
 
 onready var Event = get_node("CanvasLayer/Event")
 onready var tween = get_node("hud/Tween")
@@ -20,40 +24,40 @@ onready var sampleplayer = get_node("SamplePlayer")
 
 onready var sprite_diamonds = get_node("hud/sprite_diamonds")
 onready var sprite_apples = get_node("hud/sprite_apples")
-onready var sprite_items = get_node("hud/sprite_items")
+onready var sprite_score = get_node("hud/sprite_score")
 
 func _ready():
-	check_items()
+	score = global.score
+	lives = global.lives
+	if global.lives < start_lives:
+		lives = start_lives
+	apples = global.apples
 	add_child(level_announcer.instance())
 	add_child(level.instance())
-	get_node("hud/items").set_text(str(global.score))
-	get_node("hud/apples").set_text(str(global.apples))
-	update_lifes()
-	start_score = global.score
-	start_lives = global.lives
-	start_apples = global.apples
 	if global.music:
 		get_node("StreamPlayer").play()
+	update_lifes()
+	check_items("diamonds")
+	check_items("apples", apples)
+	check_items("score", score)
 	set_process_input(true)
 
 func update_score(amount):
-	sampleplayer.play("pop")
-	global.score += amount
-	if global.score == 50:
+	score += amount
+	if score == 50:
 		add_life()
-		global.score = 0
-	get_node("hud/items").set_text(str(global.score))
-	hud_add_item(sprite_items)
-	check_items()
+		score = 0
+	sampleplayer.play("pop")
+	check_items("score", score)
 
 func add_life():
-	global.lives += 1
+	lives += 1
 	sampleplayer.play("healthgain")
 	update_lifes()
 
 func remove_life():
 	if not shield and can_move:
-		global.lives -= 1
+		lives -= 1
 		shield = true
 		get_node("shield").start()
 		get_node("player/Events").play("damage")
@@ -61,10 +65,11 @@ func remove_life():
 		update_lifes()
 
 func update_lifes():
-	if global.lives > 0:
+	if lives > 0:
+### Update HUD
 		for el in get_node("hud/lives").get_children():
 			el.queue_free()
-		for i in range(global.lives):
+		for i in range(lives):
 			var live = pLive.instance()
 			live.set_pos(Vector2(16+i*16,16))
 			get_node("hud/lives").add_child(live)
@@ -73,8 +78,9 @@ func update_lifes():
 		stop(true)
 
 func add_diamond():
+### Add diamond at level load
 	diamonds += 1
-	get_node("hud/diamonds").set_text("0/"+str(diamonds))
+	check_items("diamonds")
 
 func collect_diamond():
 	sampleplayer.play("pick")
@@ -83,38 +89,30 @@ func collect_diamond():
 		if global.level == global.total_levels:
 			get_tree().change_scene("res://scenes/game_won.tscn")
 		else:
+### Next level
 			global.level += 1
 			stop()
-	
-	hud_add_item(sprite_diamonds)
-	check_items()
-	get_node("hud/diamonds").set_text(str(collected_diamonds)+"/"+str(diamonds))
+	check_items("diamonds")
 
 func add_apple():
-	global.apples +=1
-	get_node("hud/apples").set_text(str(global.apples))
-	hud_add_item(sprite_apples)
-	check_items()
+	apples += 1
+	check_items("apples", apples)
 
 func remove_apple():
-	global.apples -=1
-	get_node("hud/apples").set_text(str(global.apples))
-	check_items()
+	apples -= 1
+	check_items("apples", apples)
 
 func _on_shield_timeout():
+### Connected to a timer
 	shield = false
 
 func restart():
-	if global.lives < start_lives:
-		global.lives = start_lives
-	if global.apples < start_apples:
-		global.apples = start_apples
+### Do [restart/next] level, depending on if global.level was changed (look collect_diamond(), _on_Die_finished() and stop())
+	global.score = score
+	global.lives = lives
+	global.apples = apples
 	get_tree().reload_current_scene()
 	can_move = true
-
-func hud_add_item(item):
-	tween.interpolate_property(item, "transform/rot", 0, 360, 0.4, 1, 1)
-	tween.start()
 
 func _input(event):
 	if not event.is_echo() && event.is_pressed():
@@ -151,11 +149,15 @@ func _input(event):
 					add_apple()
 
 func stop(die=false):
+### Tweening color depending on [death/next level]
 	var color
 	if die:
 		color = Color(1, 0, 0, 0)
 	else:
 		color = Color(0, 0, 0, 0)
+### Play the animation :
+###  - tween to indicate the color (death/ next level)
+###  - animation to make the transition. It is connected to _on_Die_finished()
 	tween.interpolate_property(get_node("CanvasLayer/Sprite"), "modulate", color, Color(0, 0, 0, 1), 0.3, 0, 1)
 	tween.start()
 	Event.play("stop")
@@ -168,20 +170,29 @@ func _on_Die_finished():
 		else:
 			restart()
 
-func check_items():
+
+func check_items(item_name, item_num=0):
+### The color of HUD items : Grey color if 0 items (off_color), Normal color else.
 	var on_color = Color(1,1,1,1)
 	var off_color = Color(0.6,1,1,0.6)
 	if collected_diamonds > 0:
 		sprite_diamonds.set_modulate(on_color)
 	else:
 		sprite_diamonds.set_modulate(off_color)
-	
-	if global.apples > 0:
+	if apples > 0:
 		sprite_apples.set_modulate(on_color)
 	else:
 		sprite_apples.set_modulate(off_color)
-	
-	if global.score > 0:
-		sprite_items.set_modulate(on_color)
+	if score > 0:
+		sprite_score.set_modulate(on_color)
 	else:
-		sprite_items.set_modulate(off_color)
+		sprite_score.set_modulate(off_color)
+	
+### The rotating tween for HUD items
+	tween.interpolate_property(get_node(str("hud/sprite_", item_name)), "transform/rot", 0, 360, 0.4, 1, 1)
+	tween.start()
+	
+### The number of items
+	if item_name == "diamonds":
+		item_num = str(str(collected_diamonds), "/", str(diamonds))
+	get_node(str("hud/", item_name)).set_text(str(item_num))

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var walk_right = true
 var speed = 1
-var run = 2
+var run = 2.3
 var movement = speed
 var can_attack = true
 
@@ -29,7 +29,7 @@ func _fixed_process(delta):
 		walk_right = !walk_right
 	
 	#walk anim
-	if int(get_pos().x) % 50 < 25:
+	if (int(get_pos().x)*3)/2 % 50 < 25:
 		sprites.set_frame(0)
 	else:
 		sprites.set_frame(1)
@@ -85,7 +85,7 @@ func has_path_to_target(target, distance = 30):
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
 		if body.can_move:
-			if player.get_pos().y+16 > get_pos().y:
+			if player.get_pos().y+17 > get_pos().y:
 				get_node("/root/world").remove_life()
 			kill_monster()
 

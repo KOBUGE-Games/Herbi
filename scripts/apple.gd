@@ -6,10 +6,10 @@ func _ready():
 	get_node("/root/world/SamplePlayer").play("throw")
 	add_to_group("apple")
 	if player_dir:
-		set_angular_velocity(20)
+		set_angular_velocity(40)
 		set_linear_velocity(Vector2(320,0))
 	else:
-		set_angular_velocity(-20)
+		set_angular_velocity(-40)
 		set_linear_velocity(Vector2(-320,0))
 
 func _on_Area2D_body_enter( body ):

@@ -168,7 +168,7 @@ transform/pos = Vector2( 196, 10 )
 texture = ExtResource( 7 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 
-[node name="items" type="Label" parent="hud"]
+[node name="score" type="Label" parent="hud"]
 
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
@@ -185,7 +185,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="sprite_items" type="Sprite" parent="hud"]
+[node name="sprite_score" type="Sprite" parent="hud"]
 
 transform/pos = Vector2( 272, 11 )
 texture = ExtResource( 8 )

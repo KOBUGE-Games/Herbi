@@ -7,7 +7,7 @@ var lives = 3
 var apples = 3
 var music = true
 var sounds = true
-var total_levels = 10
+var total_levels = 9
 
 func _ready():
 	randomize()

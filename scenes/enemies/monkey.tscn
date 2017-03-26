@@ -70,14 +70,14 @@ _update_shape_index = 0
 [node name="check_right" type="RayCast2D" parent="."]
 
 enabled = true
-cast_to = Vector2( 128, 0 )
+cast_to = Vector2( 160, 0 )
 layer_mask = 2
 type_mask = 15
 
 [node name="check_left" type="RayCast2D" parent="."]
 
 enabled = true
-cast_to = Vector2( -128, 0 )
+cast_to = Vector2( -160, 0 )
 layer_mask = 2
 type_mask = 15
 

@@ -39,7 +39,7 @@ onready var sprites = get_node("sprites")
 onready var idle = get_node("Idle")
 
 func animation_walk():
-	if int(get_pos().x) % 50 < 25:
+	if (int(get_pos().x)*3)/2 % 50 < 25:
 		sprites.set_frame(0)
 	else:
 		sprites.set_frame(1)
@@ -144,9 +144,9 @@ func _fixed_process(delta):
 			floor_velocity = collider.get_constant_linear_velocity()
 	
 	#print(floor_velocity)
-	if (floor_velocity != Vector2()):
+	if (floor_velocity != Vector2() and floor_velocity.y > 0):
 		# If floor moves, move with floor
-		move(floor_velocity*delta)
+		move(floor_velocity*(delta/4))
 		if(is_colliding()):
 			revert_motion()
 	
@@ -171,7 +171,7 @@ func _fixed_process(delta):
 
 func _input(event):
 	if not event.is_echo() && event.is_pressed() and can_move:
-		if global.apples > 0 and event.is_action("throw"):
+		if get_parent().apples > 0 and event.is_action("throw"):
 			var apple = pApple.instance()
 			apple.set_pos(get_pos())
 			apple.add_collision_exception_with(self)

@@ -3,10 +3,10 @@
 [ext_resource path="res://scripts/apple.gd" type="Script" id=1]
 [ext_resource path="res://graphics/items/apple.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 1.0
-radius = 7.0
+custom_solver_bias = 0.0
+extents = Vector2( 6, 6 )
 
 [sub_resource type="Animation" id=2]
 
@@ -35,8 +35,8 @@ collision/layers = 1
 collision/mask = 1
 mode = 0
 mass = 1.0
-friction = 1.0
-bounce = 0.7
+friction = 0.8
+bounce = 0.3
 gravity_scale = 3.0
 custom_integrator = false
 continuous_cd = 0
@@ -88,6 +88,7 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="Area2D"]
 
+visibility/visible = false
 transform/pos = Vector2( 0, 1 )
 shape = SubResource( 3 )
 trigger = false
