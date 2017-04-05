@@ -10,9 +10,7 @@ extents = Vector2( 8, 8 )
 [node name="dirt_center" type="Sprite"]
 
 texture = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "2D"
-}
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

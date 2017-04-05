@@ -152,6 +152,7 @@ func stop(die=false):
 ### Tweening color depending on [death/next level]
 	var color
 	if die:
+		apples = 0
 		color = Color(1, 0, 0, 0)
 	else:
 		color = Color(0, 0, 0, 0)

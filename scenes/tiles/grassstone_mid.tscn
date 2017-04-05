@@ -1,23 +1,38 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=9 format=1]
 
-[ext_resource path="res://graphics/tiles/grassstone_2.png" type="Texture" id=1]
+[ext_resource path="res://scripts/random_tile.gd" type="Script" id=1]
+[ext_resource path="res://graphics/tiles/grassstone_mid.png" type="Texture" id=2]
+[ext_resource path="res://graphics/tiles/grassstone_mid2.png" type="Texture" id=3]
+[ext_resource path="res://graphics/tiles/grassstone_mid3.png" type="Texture" id=4]
+[ext_resource path="res://graphics/tiles/grassstone_mid4.png" type="Texture" id=5]
+[ext_resource path="res://graphics/tiles/grassstone_mid5.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="dirt_mid" type="Sprite"]
+[node name="dirt_mid" type="Node2D"]
 
-texture = ExtResource( 1 )
-__meta__ = {
-"__editor_plugin_screen__": "2D"
-}
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+frames = 5
+random_amount = 0
+random_tiles = 0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 1 )
+animation = "default"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -29,7 +44,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
