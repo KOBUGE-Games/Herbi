@@ -1,7 +1,7 @@
 extends Node
 
-var version = 0.9
 var debug = false
+var version = 0.9
 var level = 1
 var score = 0
 var lives = 3
@@ -10,5 +10,7 @@ var music = true
 var sounds = true
 var total_levels = 9
 
-func _ready():
-	randomize()
+var final_score = 0
+var apples_picked = 0
+var life_lost = 0
+var enemies_killed = 0

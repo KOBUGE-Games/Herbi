@@ -90,6 +90,7 @@ func _on_Area2D_body_enter( body ):
 			kill_monster()
 
 func kill_monster():
+	global.enemies_killed += 1
 	get_node("/root/world/SamplePlayer").play("killmonster")
 	queue_free()
 

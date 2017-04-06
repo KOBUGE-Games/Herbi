@@ -57,6 +57,7 @@ func add_life():
 
 func remove_life():
 	if not shield and can_move:
+		global.life_lost += 1
 		lives -= 1
 		shield = true
 		get_node("shield").start()
@@ -147,6 +148,9 @@ func _input(event):
 					remove_life()
 				elif event.scancode == KEY_Q:
 					add_apple()
+				elif event.scancode == KEY_E:
+					collect_diamond()
+
 
 func stop(die=false):
 ### Tweening color depending on [death/next level]
