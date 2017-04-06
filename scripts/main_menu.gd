@@ -1,10 +1,12 @@
 extends Node2D
 
-onready var falling1 = get_node("Falling1")
-onready var falling2 = get_node("Falling2")
-onready var falling3 = get_node("Falling3")
+onready var falling1 = get_node("Anims/Falling1")
+onready var falling2 = get_node("Anims/Falling2")
+onready var falling3 = get_node("Anims/Falling3")
 
 func _ready():
+	if global.music:
+		get_node("Buttons/music").set_pressed(true)
 	Falling1_start()
 	Falling2_start()
 	Falling3_start()
@@ -13,26 +15,42 @@ func _ready():
 	global.lives = 3
 	global.apples = 3
 	if global.debug:
-		get_node("debug_info").show()
+		get_node("Labels/debug_info").show()
+	get_node("Labels/version").set_text(str("version ", str(global.version)))
 	set_process_input(true)
 
 func _input(event):
 	if not event.is_echo() && event.is_pressed():
-		if event.is_action("jump"):
-			get_node("Enter").play("enter")
-		elif event.is_action("restart"):
-			get_node("Enter").play("enter")
+		if event.is_action("jump") or event.is_action("restart"):
+			play()
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F3:
-			global.music = !global.music
+			set_music()
+			get_node("Buttons/music").set_pressed(!get_node("Buttons/music").is_pressed())
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F9 or event.is_action("ui_cancel"):
-			get_tree().quit()
+			quit()
 		elif event.type == InputEvent.KEY && event.scancode == KEY_T && global.debug:
 			global.level = 0
 			get_tree().change_scene("res://scenes/main.tscn")
 
 func _on_AnimationPlayer_finished():
-	if get_node("Enter").get_current_animation() == "enter":
+	if get_node("Anims/Enter").get_current_animation() == "enter":
 		get_tree().change_scene("res://scenes/main.tscn")
+
+func set_music():
+	global.music = !global.music
+
+func play():
+	get_node("Anims/Enter").play("enter")
+	get_node("Buttons/play").set_disabled(true)
+
+func show_credits():
+	get_node("Anims/Credits").play("show")
+
+func hide_credits():
+	get_node("Anims/Credits").play("hide")
+
+func quit():
+	get_tree().quit()
 
 func Falling1_start():
 	falling1.get_animation("falling").track_set_key_value(0, 0, Vector2(rand_range(-120, 200), rand_range(-200, -100)))

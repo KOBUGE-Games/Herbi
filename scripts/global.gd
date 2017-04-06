@@ -1,5 +1,6 @@
 extends Node
 
+var version = 0.9
 var debug = false
 var level = 1
 var score = 0
