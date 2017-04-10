@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
@@ -6,9 +6,13 @@
 [ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=4]
 [ext_resource path="res://graphics/hud/music_button.png" type="Texture" id=5]
 [ext_resource path="res://graphics/hud/music_button_false.png" type="Texture" id=6]
-[ext_resource path="res://graphics/hud/button.png" type="Texture" id=7]
-[ext_resource path="res://graphics/hud/button_pressed.png" type="Texture" id=8]
-[ext_resource path="res://graphics/hud/square.png" type="Texture" id=9]
+[ext_resource path="res://graphics/hud/sound_button_bg.png" type="Texture" id=7]
+[ext_resource path="res://graphics/hud/sound_button.png" type="Texture" id=8]
+[ext_resource path="res://graphics/hud/sound_button_false.png" type="Texture" id=9]
+[ext_resource path="res://graphics/hud/button.png" type="Texture" id=10]
+[ext_resource path="res://graphics/hud/button_pressed.png" type="Texture" id=11]
+[ext_resource path="res://scenes/game_won.tscn" type="PackedScene" id=12]
+[ext_resource path="res://graphics/hud/square.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -38,12 +42,12 @@ length = 4.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../logos/logo1:transform/pos")
+tracks/0/path = NodePath("../Logos/logo1:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -100, -100 ), Vector2( 0, 0 ) ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../logos/logo1:transform/rot")
+tracks/1/path = NodePath("../Logos/logo1:transform/rot")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = { "times":FloatArray( 0, 4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 0.0 ] }
@@ -54,12 +58,12 @@ length = 5.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../logos/logo2:transform/pos")
+tracks/0/path = NodePath("../Logos/logo2:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 420, -100 ), Vector2( 320, 0 ) ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../logos/logo2:transform/rot")
+tracks/1/path = NodePath("../Logos/logo2:transform/rot")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = { "times":FloatArray( 0, 5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 0.0 ] }
@@ -70,12 +74,12 @@ length = 7.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../logos/logo3:transform/pos")
+tracks/0/path = NodePath("../Logos/logo3:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0, 7 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 160, -100 ), Vector2( 160, 0 ) ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../logos/logo3:transform/rot")
+tracks/1/path = NodePath("../Logos/logo3:transform/rot")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = { "times":FloatArray( 0, 7 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 0.0 ] }
@@ -194,20 +198,13 @@ tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = { "times":FloatArray( 0.2 ), "transitions":FloatArray( 1 ), "update":1, "values":[ true ] }
 
-[sub_resource type="StyleBoxEmpty" id=8]
+[sub_resource type="StyleBoxTexture" id=8]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-
-[sub_resource type="StyleBoxTexture" id=9]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -218,13 +215,13 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=9]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -245,28 +242,28 @@ __meta__ = { "__editor_plugin_screen__":"Script" }
 texture = ExtResource( 2 )
 centered = false
 
-[node name="logos" type="Node2D" parent="."]
+[node name="Logos" type="Node2D" parent="."]
 
 editor/display_folded = true
 
-[node name="logo" type="Sprite" parent="logos"]
+[node name="logo" type="Sprite" parent="Logos"]
 
 transform/pos = Vector2( 160, 30 )
 texture = ExtResource( 3 )
 
-[node name="logo1" type="Sprite" parent="logos"]
+[node name="logo1" type="Sprite" parent="Logos"]
 
 transform/pos = Vector2( -100, -100 )
 texture = ExtResource( 3 )
 modulate = Color( 1, 1, 1, 0.588235 )
 
-[node name="logo2" type="Sprite" parent="logos"]
+[node name="logo2" type="Sprite" parent="Logos"]
 
 transform/pos = Vector2( 420, -100 )
 texture = ExtResource( 3 )
 modulate = Color( 1, 1, 1, 0.588235 )
 
-[node name="logo3" type="Sprite" parent="logos"]
+[node name="logo3" type="Sprite" parent="Logos"]
 
 transform/pos = Vector2( 160, -100 )
 texture = ExtResource( 3 )
@@ -274,6 +271,7 @@ modulate = Color( 1, 1, 1, 0.588235 )
 
 [node name="Labels" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -307,19 +305,19 @@ max_lines_visible = -1
 
 [node name="keys" type="Label" parent="Labels"]
 
-rect/scale = Vector2( 0.5, 0.5 )
+rect/scale = Vector2( 0.4, 0.4 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 100.0
-margin/top = 63.0
-margin/right = 340.0
-margin/bottom = 170.0
+margin/left = 112.0
+margin/top = 64.0
+margin/right = 352.0
+margin/bottom = 193.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.196078, 0.196078, 0.196078, 1 )
 custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 1 )
-text = "SPACE = Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Enable music"
+text = "SPACE = Jump\nX = Throw Apple\nESCAPE = Main Menu\nF2 = Restart Level\nF3 = Enable music\nF4 = Enable Sound"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -434,6 +432,7 @@ autoplay = ""
 
 [node name="Buttons" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -445,22 +444,55 @@ margin/bottom = 40.0
 
 [node name="music" type="CheckBox" parent="Buttons"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 270.0
-margin/top = 19.0
-margin/right = 296.0
-margin/bottom = 42.0
+margin/top = 12.0
+margin/right = 308.0
+margin/bottom = 50.0
 custom_icons/checked = ExtResource( 5 )
 custom_icons/unchecked = ExtResource( 6 )
-custom_styles/pressed = SubResource( 8 )
 toggle_mode = true
+click_on_press = true
 enabled_focus_mode = 2
 shortcut = null
 flat = true
 align = 0
+
+[node name="Sprite" type="Sprite" parent="Buttons/music"]
+
+visibility/behind_parent = true
+texture = ExtResource( 7 )
+centered = false
+
+[node name="sound" type="CheckBox" parent="Buttons"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 270.0
+margin/top = 62.0
+margin/right = 308.0
+margin/bottom = 100.0
+custom_icons/checked = ExtResource( 8 )
+custom_icons/unchecked = ExtResource( 9 )
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+flat = true
+align = 0
+
+[node name="Sprite" type="Sprite" parent="Buttons/sound"]
+
+visibility/behind_parent = true
+texture = ExtResource( 7 )
+centered = false
 
 [node name="play" type="Button" parent="Buttons"]
 
@@ -474,15 +506,15 @@ margin/left = 80.0
 margin/top = 126.0
 margin/right = 240.0
 margin/bottom = 166.0
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
 toggle_mode = false
+click_on_press = true
 enabled_focus_mode = 2
 shortcut = null
 text = "Play"
@@ -501,14 +533,14 @@ margin/left = 60.0
 margin/top = 170.0
 margin/right = 220.0
 margin/bottom = 210.0
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
 toggle_mode = false
+click_on_press = true
 enabled_focus_mode = 2
 shortcut = null
 text = "Credits"
@@ -527,15 +559,15 @@ margin/left = 160.0
 margin/top = 170.0
 margin/right = 320.0
 margin/bottom = 210.0
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 0.156863, 0.117647, 1 )
 custom_colors/font_color_hover = Color( 1, 0.313726, 0.313726, 1 )
-custom_colors/font_color_pressed = Color( 0.588235, 0.196078, 0.196078, 1 )
 toggle_mode = false
+click_on_press = true
 enabled_focus_mode = 2
 shortcut = null
 text = "Exit"
@@ -543,7 +575,6 @@ flat = false
 
 [node name="leave" type="Button" parent="Buttons"]
 
-visibility/visible = false
 rect/min_size = Vector2( 160, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -554,25 +585,28 @@ margin/left = 80.0
 margin/top = 190.0
 margin/right = 240.0
 margin/bottom = 230.0
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
-disabled = true
 toggle_mode = false
+click_on_press = true
 enabled_focus_mode = 2
 shortcut = null
 text = "Leave"
 flat = false
 
+[node name="game_won" parent="." instance=ExtResource( 12 )]
+
+visibility/visible = false
+
 [node name="fade" type="Sprite" parent="."]
 
 transform/scale = Vector2( 320, 240 )
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 centered = false
 modulate = Color( 0, 0, 0, 1 )
 
@@ -586,11 +620,15 @@ modulate = Color( 0, 0, 0, 1 )
 
 [connection signal="pressed" from="Buttons/music" to="." method="set_music"]
 
+[connection signal="pressed" from="Buttons/sound" to="." method="set_sound"]
+
 [connection signal="pressed" from="Buttons/play" to="." method="play"]
 
 [connection signal="pressed" from="Buttons/credits" to="." method="show_credits"]
 
 [connection signal="pressed" from="Buttons/exit" to="." method="quit"]
+
+[connection signal="pressed" from="Buttons/leave" to="." method="show_menu"]
 
 [connection signal="pressed" from="Buttons/leave" to="." method="hide_credits"]
 

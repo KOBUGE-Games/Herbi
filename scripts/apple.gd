@@ -3,7 +3,6 @@ extends RigidBody2D
 onready var player_dir = get_node("/root/world/player").dir_right
 
 func _ready():
-	get_node("/root/world/SamplePlayer").play("throw")
 	add_to_group("apple")
 	if player_dir:
 		set_angular_velocity(40)

@@ -5,15 +5,26 @@ onready var falling2 = get_node("Anims/Falling2")
 onready var falling3 = get_node("Anims/Falling3")
 
 func _ready():
+	reset_global()
+	if global.finished:
+		get_node("Logos/logo").hide()
+		get_node("Labels").hide()
+		for node in get_node("Buttons").get_children():
+			if node.get_name() != "leave":
+				node.hide()
+				node.set_disabled(true)
+		get_node("game_won").show()
+	else:
+		get_node("game_won").hide()
+		get_node("Buttons/leave").set_disabled(true)
+		get_node("Buttons/leave").hide()
 	if global.music:
 		get_node("Buttons/music").set_pressed(true)
+	if global.sound:
+		get_node("Buttons/sound").set_pressed(true)
 	Falling1_start()
 	Falling2_start()
 	Falling3_start()
-	global.level = 1
-	global.score = 0
-	global.lives = 3
-	global.apples = 3
 	if global.debug:
 		get_node("Labels/debug_info").show()
 	get_node("Labels/version").set_text(str("version ", str(global.version)))
@@ -26,8 +37,14 @@ func _input(event):
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F3:
 			set_music()
 			get_node("Buttons/music").set_pressed(!get_node("Buttons/music").is_pressed())
+		elif event.type == InputEvent.KEY && event.scancode == KEY_F4:
+			set_sound()
+			get_node("Buttons/sound").set_pressed(!get_node("Buttons/sound").is_pressed())
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F9 or event.is_action("ui_cancel"):
-			quit()
+			if global.finished:
+				show_menu()
+			else:
+				quit()
 		elif event.type == InputEvent.KEY && event.scancode == KEY_T && global.debug:
 			global.level = 0
 			get_tree().change_scene("res://scenes/main.tscn")
@@ -39,6 +56,9 @@ func _on_AnimationPlayer_finished():
 func set_music():
 	global.music = !global.music
 
+func set_sound():
+	global.sound = !global.sound
+
 func play():
 	get_node("Anims/Enter").play("enter")
 	get_node("Buttons/play").set_disabled(true)
@@ -49,8 +69,33 @@ func show_credits():
 func hide_credits():
 	get_node("Anims/Credits").play("hide")
 
+func show_menu():
+	if global.finished:
+		get_node("game_won").hide()
+		get_node("Logos/logo").show()
+		get_node("Labels").show()
+		for node in get_node("Buttons").get_children():
+			if node.get_name() != "leave":
+				node.set_disabled(false)
+				node.show()
+			else:
+				node.hide()
+				node.set_disabled(true)
+		global.finished = false
+
 func quit():
 	get_tree().quit()
+
+func reset_global():
+	global.level = 1
+	global.score = 0
+	global.lives = 3
+	global.apples = 3
+	global.final_score = 0
+	global.apples_picked = 0
+	global.life_lost = 0
+	global.deaths = 0
+	global.enemies_killed = 0
 
 func Falling1_start():
 	falling1.get_animation("falling").track_set_key_value(0, 0, Vector2(rand_range(-120, 200), rand_range(-200, -100)))

@@ -1,92 +1,16 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://scripts/game_won.gd" type="Script" id=1]
-[ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
-[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://graphics/hud/button.png" type="Texture" id=4]
-[ext_resource path="res://graphics/hud/button_pressed.png" type="Texture" id=5]
-
-[sub_resource type="StyleBoxTexture" id=1]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 4 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=2]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 5 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=3]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 4 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=4]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 4 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
+[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=2]
 
 [node name="game_won" type="Node2D"]
 
 script/script = ExtResource( 1 )
 __meta__ = { "__editor_plugin_screen__":"Script" }
 
-[node name="Sprite" type="Sprite" parent="."]
-
-texture = ExtResource( 2 )
-centered = false
-
 [node name="Stats" type="Label" parent="."]
 
-rect/scale = Vector2( 0.5, 0.5 )
+rect/scale = Vector2( 0.4, 0.4 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -95,10 +19,10 @@ margin/left = 5.0
 margin/top = 5.0
 margin/right = 271.0
 margin/bottom = 75.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 0.862745, 0.392157, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.431373, 0.392157, 1 )
 custom_colors/font_color_shadow = Color( 0.392157, 0.392157, 0.392157, 1 )
-text = "Final Score = number\nApples picked = number\nLifes lost = number\nEnemies killed = number"
+text = "Final Score = number\nApples picked = number\nLifes lost = number\nTrials = number\nEnemies killed = number"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -114,7 +38,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 640.0
 margin/bottom = 480.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.705882, 0.862745, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.588235, 0.392157, 0.392157, 1 )
 text = "Yaaay !!!\nThe game is already over, you completed all the levels !\n\nIf you want to help us make it better, please visit\nhttps://github.com/KOBUGE-Games/Herbi\nMaybe we might then find a better ending \?\n\nThank you very much for playing\n\nversion 0.9\nHerbi on the loose\nKOBGUE-GAMES | GodotEngine.org"
@@ -123,31 +47,5 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
-[node name="leave" type="Button" parent="."]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 80.0
-margin/top = 192.0
-margin/right = 240.0
-margin/bottom = 232.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
-custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
-custom_colors/font_color_pressed = Color( 0.392157, 0.392157, 0.392157, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Leave"
-flat = false
-
-[connection signal="pressed" from="leave" to="." method="quit"]
 
 

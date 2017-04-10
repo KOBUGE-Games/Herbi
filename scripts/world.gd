@@ -29,9 +29,11 @@ onready var sprite_score = get_node("hud/sprite_score")
 func _ready():
 	score = global.score
 	lives = global.lives
-	if global.lives < start_lives:
+	if lives < start_lives:
 		lives = start_lives
 	apples = global.apples
+	start_lives = lives
+	start_apples = apples
 	add_child(level_announcer.instance())
 	add_child(level.instance())
 	if global.music:
@@ -42,17 +44,21 @@ func _ready():
 	check_items("score", score)
 	set_process_input(true)
 
+func play_sound(sample):
+	if global.sound:
+		sampleplayer.play(sample)
+
 func update_score(amount):
 	score += amount
 	if score == 50:
 		add_life()
 		score = 0
-	sampleplayer.play("pop")
+	play_sound("pop")
 	check_items("score", score)
 
 func add_life():
 	lives += 1
-	sampleplayer.play("healthgain")
+	play_sound("healthgain")
 	update_lifes()
 
 func remove_life():
@@ -62,7 +68,7 @@ func remove_life():
 		shield = true
 		get_node("shield").start()
 		get_node("player/Events").play("damage")
-		sampleplayer.play("damage")
+		play_sound("damage")
 		update_lifes()
 
 func update_lifes():
@@ -84,11 +90,12 @@ func add_diamond():
 	check_items("diamonds")
 
 func collect_diamond():
-	sampleplayer.play("pick")
+	play_sound("pick")
 	collected_diamonds += 1
 	if collected_diamonds == diamonds:
 		if global.level == global.total_levels:
-			get_tree().change_scene("res://scenes/game_won.tscn")
+			global.finished = true
+			get_tree().change_scene("res://scenes/main_menu.tscn")
 		else:
 ### Next level
 			global.level += 1
@@ -97,10 +104,12 @@ func collect_diamond():
 
 func add_apple():
 	apples += 1
+	play_sound("pop")
 	check_items("apples", apples)
 
 func remove_apple():
 	apples -= 1
+	play_sound("throw")
 	check_items("apples", apples)
 
 func _on_shield_timeout():
@@ -109,9 +118,6 @@ func _on_shield_timeout():
 
 func restart():
 ### Do [restart/next] level, depending on if global.level was changed (look collect_diamond(), _on_Die_finished() and stop())
-	global.score = score
-	global.lives = lives
-	global.apples = apples
 	get_tree().reload_current_scene()
 	can_move = true
 
@@ -121,7 +127,7 @@ func _input(event):
 			stop()
 			quit = true
 		elif event.is_action("restart"):
-			stop()
+			stop(true)
 		if event.type == InputEvent.KEY:
 			if event.scancode == KEY_F3:
 				global.music = !global.music
@@ -129,6 +135,8 @@ func _input(event):
 					get_node("StreamPlayer").play()
 				else:
 					get_node("StreamPlayer").stop()
+			if event.scancode == KEY_F4:
+				global.sound = !global.sound
 			elif event.scancode == KEY_F9:
 				get_tree().quit()
 			
@@ -156,9 +164,12 @@ func stop(die=false):
 ### Tweening color depending on [death/next level]
 	var color
 	if die:
-		apples = 0
+		global.deaths += 1
 		color = Color(1, 0, 0, 0)
 	else:
+		global.score = score
+		global.lives = lives
+		global.apples = apples
 		color = Color(0, 0, 0, 0)
 ### Play the animation :
 ###  - tween to indicate the color (death/ next level)
