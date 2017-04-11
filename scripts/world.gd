@@ -1,10 +1,10 @@
 extends Node2D
 
 const level_announcer = preload("res://scenes/misc/level_announcer.tscn")
+const pLive = preload("res://scenes/hud/live.tscn")
+var level = load("res://levels/level_"+str(global.level)+".tscn")
 
 var world_end
-var level = load("res://levels/level_"+str(global.level)+".tscn")
-var pLive = preload("res://scenes/hud/live.tscn")
 var diamonds = 0
 var shield = false
 var start_score = 0
@@ -12,6 +12,7 @@ var start_lives = 3
 var start_apples = 0
 var can_move = true
 var quit = false
+var dead = false
 
 var collected_diamonds = 0
 var lives
@@ -27,6 +28,14 @@ onready var sprite_apples = get_node("hud/sprite_apples")
 onready var sprite_score = get_node("hud/sprite_score")
 
 func _ready():
+	init_values()
+	add_child(level_announcer.instance())
+	add_child(level.instance())
+	if global.music:
+		get_node("StreamPlayer").play()
+	set_process_input(true)
+
+func init_values():
 	score = global.score
 	lives = global.lives
 	if lives < start_lives:
@@ -34,15 +43,10 @@ func _ready():
 	apples = global.apples
 	start_lives = lives
 	start_apples = apples
-	add_child(level_announcer.instance())
-	add_child(level.instance())
-	if global.music:
-		get_node("StreamPlayer").play()
 	update_lifes()
 	check_items("diamonds")
 	check_items("apples", apples)
 	check_items("score", score)
-	set_process_input(true)
 
 func play_sound(sample):
 	if global.sound:
@@ -93,13 +97,8 @@ func collect_diamond():
 	play_sound("pick")
 	collected_diamonds += 1
 	if collected_diamonds == diamonds:
-		if global.level == global.total_levels:
-			global.finished = true
-			get_tree().change_scene("res://scenes/main_menu.tscn")
-		else:
-### Next level
-			global.level += 1
-			stop()
+### launches next_level tween. For more, go to _on_Die_finished()
+		stop()
 	check_items("diamonds")
 
 func add_apple():
@@ -118,8 +117,8 @@ func _on_shield_timeout():
 
 func restart():
 ### Do [restart/next] level, depending on if global.level was changed (look collect_diamond(), _on_Die_finished() and stop())
-	get_tree().reload_current_scene()
 	can_move = true
+	get_tree().reload_current_scene()
 
 func _input(event):
 	if not event.is_echo() && event.is_pressed():
@@ -135,7 +134,7 @@ func _input(event):
 					get_node("StreamPlayer").play()
 				else:
 					get_node("StreamPlayer").stop()
-			if event.scancode == KEY_F4:
+			elif event.scancode == KEY_F4:
 				global.sound = !global.sound
 			elif event.scancode == KEY_F9:
 				get_tree().quit()
@@ -160,10 +159,11 @@ func _input(event):
 					collect_diamond()
 
 
-func stop(die=false):
+func stop(condition=false):
 ### Tweening color depending on [death/next level]
 	var color
-	if die:
+	if condition:
+		dead = condition
 		global.deaths += 1
 		color = Color(1, 0, 0, 0)
 	else:
@@ -184,7 +184,18 @@ func _on_Die_finished():
 		if quit:
 			get_tree().change_scene("res://scenes/main_menu.tscn")
 		else:
-			restart()
+### Changing level/ending the game
+### You can see you don't gain a level in collect_diamond().
+### That's because we used this location for a proper tweening
+			if not dead:
+				if global.level == global.total_levels:
+					global.finished = true
+					get_tree().change_scene("res://scenes/main_menu.tscn")
+				else:
+					global.level += 1
+					restart()
+			else:
+				restart()
 
 
 func check_items(item_name, item_num=0):

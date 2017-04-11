@@ -4,29 +4,19 @@ onready var falling1 = get_node("Anims/Falling1")
 onready var falling2 = get_node("Anims/Falling2")
 onready var falling3 = get_node("Anims/Falling3")
 
+onready var leave = get_node("Buttons/leave")
+onready var music = get_node("Buttons/music")
+onready var sound = get_node("Buttons/sound")
+onready var game_won = get_node("game_won")
+
 func _ready():
 	reset_global()
-	if global.finished:
-		get_node("Logos/logo").hide()
-		get_node("Labels").hide()
-		for node in get_node("Buttons").get_children():
-			if node.get_name() != "leave":
-				node.hide()
-				node.set_disabled(true)
-		get_node("game_won").show()
-	else:
-		get_node("game_won").hide()
-		get_node("Buttons/leave").set_disabled(true)
-		get_node("Buttons/leave").hide()
-	if global.music:
-		get_node("Buttons/music").set_pressed(true)
-	if global.sound:
-		get_node("Buttons/sound").set_pressed(true)
+	global_check()
+	
 	Falling1_start()
 	Falling2_start()
 	Falling3_start()
-	if global.debug:
-		get_node("Labels/debug_info").show()
+	
 	get_node("Labels/version").set_text(str("version ", str(global.version)))
 	set_process_input(true)
 
@@ -36,13 +26,13 @@ func _input(event):
 			play()
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F3:
 			set_music()
-			get_node("Buttons/music").set_pressed(!get_node("Buttons/music").is_pressed())
+			music.set_pressed(!music.is_pressed())
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F4:
 			set_sound()
-			get_node("Buttons/sound").set_pressed(!get_node("Buttons/sound").is_pressed())
+			sound.set_pressed(!sound.is_pressed())
 		elif event.type == InputEvent.KEY && event.scancode == KEY_F9 or event.is_action("ui_cancel"):
 			if global.finished:
-				show_menu()
+				hide_game_won()
 			else:
 				quit()
 		elif event.type == InputEvent.KEY && event.scancode == KEY_T && global.debug:
@@ -69,9 +59,38 @@ func show_credits():
 func hide_credits():
 	get_node("Anims/Credits").play("hide")
 
-func show_menu():
+
+func global_check():
 	if global.finished:
-		get_node("game_won").hide()
+		show_game_won()
+	else:
+		normal_state()
+	if global.music:
+		music.set_pressed(true)
+	if global.sound:
+		sound.set_pressed(true)
+	if global.debug:
+		get_node("Labels/debug_info").show()
+
+func normal_state():
+	game_won.hide()
+	leave.set_disabled(true)
+	leave.hide()
+
+func show_game_won():
+	get_node("Logos/logo").hide()
+	get_node("Labels").hide()
+	for node in get_node("Buttons").get_children():
+		if node.get_name() != "leave":
+			node.hide()
+			node.set_disabled(true)
+	game_won.show()
+	if global.sound:
+		game_won.get_node("SamplePlayer").play("win")
+
+func hide_game_won():
+	if global.finished:
+		game_won.hide()
 		get_node("Logos/logo").show()
 		get_node("Labels").show()
 		for node in get_node("Buttons").get_children():
@@ -82,6 +101,7 @@ func show_menu():
 				node.hide()
 				node.set_disabled(true)
 		global.finished = false
+
 
 func quit():
 	get_tree().quit()

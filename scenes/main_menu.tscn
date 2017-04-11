@@ -16,25 +16,25 @@
 
 [sub_resource type="Animation" id=1]
 
-length = 0.5
+length = 0.4
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../fade:modulate")
+tracks/0/path = NodePath("../fade:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ] }
+tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 0.5, 1 ), "update":0, "values":[ Vector2( -320, 0 ), Vector2( 0, 0 ) ] }
 
 [sub_resource type="Animation" id=2]
 
-length = 0.5
+length = 0.4
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../fade:modulate")
+tracks/0/path = NodePath("../fade:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 4, 1 ), "update":0, "values":[ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ] }
+tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 0.5, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( -320, 0 ) ] }
 
 [sub_resource type="Animation" id=3]
 
@@ -354,10 +354,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 2.0
-margin/top = 0.0
-margin/right = 237.0
-margin/bottom = 167.0
+margin/left = 0.0
+margin/top = 64.0
+margin/right = 235.0
+margin/bottom = 237.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.879765, 0.763726, 0, 0.590196 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.409804 )
@@ -475,10 +475,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 270.0
-margin/top = 62.0
-margin/right = 308.0
-margin/bottom = 100.0
+margin/left = 12.0
+margin/top = 12.0
+margin/right = 50.0
+margin/bottom = 50.0
 custom_icons/checked = ExtResource( 8 )
 custom_icons/unchecked = ExtResource( 9 )
 toggle_mode = true
@@ -628,8 +628,8 @@ modulate = Color( 0, 0, 0, 1 )
 
 [connection signal="pressed" from="Buttons/exit" to="." method="quit"]
 
-[connection signal="pressed" from="Buttons/leave" to="." method="show_menu"]
-
 [connection signal="pressed" from="Buttons/leave" to="." method="hide_credits"]
+
+[connection signal="pressed" from="Buttons/leave" to="." method="hide_game_won"]
 
 

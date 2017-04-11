@@ -1,13 +1,11 @@
 extends KinematicBody2D
 
-var init_posy = 0.0
 var walk_right = true
 var checked = false
 export var speed = 1.0
 
 onready var player = get_node("/root/world/player")
 onready var sprites = get_node("sprites")
-
 onready var check_down = get_node("check_down")
 
 func _ready():

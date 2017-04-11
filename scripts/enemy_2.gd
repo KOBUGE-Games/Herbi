@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
+const speed = 1
+const run = 2.3
 var walk_right = true
-var speed = 1
-var run = 2.3
 var movement = speed
 var can_attack = true
 
