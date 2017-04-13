@@ -167,7 +167,7 @@ func _fixed_process(delta):
 	
 	if get_pos().y > get_node("Camera2D").get_limit(MARGIN_BOTTOM)+32 and not out:
 		out = true
-		get_node("/root/world/").stop(true)
+		get_node("/root/world/").stop()
 
 func _input(event):
 	if not event.is_echo() && event.is_pressed() and can_move:

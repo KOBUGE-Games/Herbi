@@ -11,24 +11,25 @@ extents = Vector2( 7, 8 )
 [sub_resource type="Animation" id=2]
 
 resource/name = "idle"
-length = 4.5
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:transform/rot")
-tracks/0/interp = 1
+tracks/0/path = NodePath(".:transform/scale")
+tracks/0/interp = 0
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 1, 3.1, 3.5, 4.5 ), "transitions":FloatArray( -2, -2, 1, 0.25, 1 ), "update":0, "values":[ -20.0, 10.0, -20.0, -20.0, -380.0 ] }
+tracks/0/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ Vector2( 1.05, 1.05 ), Vector2( 0.95, 0.95 ) ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:transform/scale")
-tracks/1/interp = 1
+tracks/1/path = NodePath(".:transform/rot")
+tracks/1/interp = 0
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 0.6, 1, 1.9, 3.1, 3.5 ), "transitions":FloatArray( 2, 0.5, 2, 0.5, 0, 0.5 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ] }
+tracks/1/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ 0.0, 5.0 ] }
 
 [node name="apple_pick" type="Sprite"]
 
-transform/rot = -20.0
+transform/scale = Vector2( 1.05, 1.05 )
 texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
 __meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -41,7 +42,6 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
@@ -50,7 +50,7 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Idle" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
@@ -61,6 +61,6 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "idle"
 
-[connection signal="body_enter" from="Area2D" to="Area2D" method="_on_Area2D_body_enter"]
+[connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 
 

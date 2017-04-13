@@ -12,14 +12,14 @@ var start_lives = 3
 var start_apples = 0
 var can_move = true
 var quit = false
-var dead = false
+var can_quit = false
+var next_level = false
 
 var collected_diamonds = 0
 var lives
 var apples
 var score
 
-onready var Event = get_node("CanvasLayer/Event")
 onready var tween = get_node("hud/Tween")
 onready var sampleplayer = get_node("SamplePlayer")
 
@@ -27,12 +27,15 @@ onready var sprite_diamonds = get_node("hud/sprite_diamonds")
 onready var sprite_apples = get_node("hud/sprite_apples")
 onready var sprite_score = get_node("hud/sprite_score")
 
+onready var transition = get_node("transition")
+
 func _ready():
 	init_values()
 	add_child(level_announcer.instance())
 	add_child(level.instance())
 	if global.music:
 		get_node("StreamPlayer").play()
+	transition.start((randi() % 2), false, (randi() % 2))
 	set_process_input(true)
 
 func init_values():
@@ -54,7 +57,7 @@ func play_sound(sample):
 
 func update_score(amount):
 	score += amount
-	if score == 50:
+	if score >= 250:
 		add_life()
 		score = 0
 	play_sound("pop")
@@ -86,7 +89,7 @@ func update_lifes():
 			get_node("hud/lives").add_child(live)
 	else:
 		get_node("player").dead = true
-		stop(true)
+		stop()
 
 func add_diamond():
 ### Add diamond at level load
@@ -98,7 +101,7 @@ func collect_diamond():
 	collected_diamonds += 1
 	if collected_diamonds == diamonds:
 ### launches next_level tween. For more, go to _on_Die_finished()
-		stop()
+		stop(true)
 	check_items("diamonds")
 
 func add_apple():
@@ -122,11 +125,13 @@ func restart():
 
 func _input(event):
 	if not event.is_echo() && event.is_pressed():
-		if event.is_action("ui_cancel"):
-			stop()
-			quit = true
-		elif event.is_action("restart"):
-			stop(true)
+		if can_quit:
+			if event.is_action("ui_cancel"):
+				quit = true
+				stop()
+			elif event.is_action("restart"):
+				get_node("player").dead = true
+				stop()
 		if event.type == InputEvent.KEY:
 			if event.scancode == KEY_F3:
 				global.music = !global.music
@@ -136,8 +141,6 @@ func _input(event):
 					get_node("StreamPlayer").stop()
 			elif event.scancode == KEY_F4:
 				global.sound = !global.sound
-			elif event.scancode == KEY_F9:
-				get_tree().quit()
 			
 			# DEBUG MODE
 			if global.debug:
@@ -157,45 +160,44 @@ func _input(event):
 					add_apple()
 				elif event.scancode == KEY_E:
 					collect_diamond()
+				elif event.scancode == KEY_F9:
+					get_tree().quit()
 
 
 func stop(condition=false):
 ### Tweening color depending on [death/next level]
-	var color
 	if condition:
-		dead = condition
-		global.deaths += 1
-		color = Color(1, 0, 0, 0)
-	else:
+		next_level = condition
 		global.score = score
 		global.lives = lives
 		global.apples = apples
-		color = Color(0, 0, 0, 0)
+	else:
+		if not quit:
+			global.deaths += 1
+			get_node("hud/death").set_modulate(Color(1,0.5,0.5,0.2))
 ### Play the animation :
 ###  - tween to indicate the color (death/ next level)
 ###  - animation to make the transition. It is connected to _on_Die_finished()
-	tween.interpolate_property(get_node("CanvasLayer/Sprite"), "modulate", color, Color(0, 0, 0, 1), 0.3, 0, 1)
-	tween.start()
-	Event.play("stop")
+	transition.connect("finished_anim", self, "change_level")
+	transition.start((randi() % 2), true, (randi() % 2))
 	can_move = false
 
-func _on_Die_finished():
-	if Event.get_current_animation() == "stop":
-		if quit:
-			get_tree().change_scene("res://scenes/main_menu.tscn")
-		else:
+func change_level():
+	if quit:
+		get_tree().change_scene("res://scenes/main_menu.tscn")
+	else:
 ### Changing level/ending the game
 ### You can see you don't gain a level in collect_diamond().
 ### That's because we used this location for a proper tweening
-			if not dead:
-				if global.level == global.total_levels:
-					global.finished = true
-					get_tree().change_scene("res://scenes/main_menu.tscn")
-				else:
-					global.level += 1
-					restart()
+		if next_level:
+			if global.level == global.total_levels:
+				global.finished = true
+				get_tree().change_scene("res://scenes/main_menu.tscn")
 			else:
+				global.level += 1
 				restart()
+		else:
+			restart()
 
 
 func check_items(item_name, item_num=0):

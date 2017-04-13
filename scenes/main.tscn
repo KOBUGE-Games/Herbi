@@ -1,99 +1,43 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
-[ext_resource path="res://graphics/hud/bg.png" type="Texture" id=2]
+[ext_resource path="res://scenes/misc/level_transition.tscn" type="PackedScene" id=2]
 [ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=3]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=5]
 [ext_resource path="res://graphics/items/diamond_red.png" type="Texture" id=6]
 [ext_resource path="res://graphics/items/apple.png" type="Texture" id=7]
 [ext_resource path="res://graphics/items/watermelon.png" type="Texture" id=8]
-[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=9]
-[ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=10]
-[ext_resource path="res://audio/sounds/healthgain.wav" type="Sample" id=11]
-[ext_resource path="res://audio/sounds/jump.wav" type="Sample" id=12]
-[ext_resource path="res://audio/sounds/killmonster.wav" type="Sample" id=13]
-[ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=14]
-[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=15]
-[ext_resource path="res://audio/sounds/throw.wav" type="Sample" id=16]
+[ext_resource path="res://graphics/hud/square.png" type="Texture" id=9]
+[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=11]
+[ext_resource path="res://audio/sounds/healthgain.wav" type="Sample" id=12]
+[ext_resource path="res://audio/sounds/jump.wav" type="Sample" id=13]
+[ext_resource path="res://audio/sounds/killmonster.wav" type="Sample" id=14]
+[ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=15]
+[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=16]
+[ext_resource path="res://audio/sounds/throw.wav" type="Sample" id=17]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="SampleLibrary" id=1]
 
-resource/name = "enter"
-length = 0.6
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:transform/scale")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 0.25, 1 ), "update":0, "values":[ Vector2( 100, 100 ), Vector2( 1e-05, 1e-05 ) ] }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:transform/pos")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 0.6 ), "transitions":FloatArray( 0.25, 1 ), "update":0, "values":[ Vector2( 160, 190 ), Vector2( 160, 120 ) ] }
-
-[sub_resource type="Animation" id=2]
-
-resource/name = "stop"
-length = 0.3
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:transform/scale")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ Vector2( 100, 100 ) ] }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:transform/pos")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ Vector2( 160, 240 ) ] }
-
-[sub_resource type="SampleLibrary" id=3]
-
-samples/damage = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 10 ) }
-samples/healthgain = { "db":0.0, "pitch":1.0, "sample":ExtResource( 11 ) }
-samples/jump = { "db":-5.0, "pitch":1.0, "sample":ExtResource( 12 ) }
-samples/killmonster = { "db":4.0, "pitch":1.0, "sample":ExtResource( 13 ) }
-samples/pick = { "db":-1.0, "pitch":1.0, "sample":ExtResource( 14 ) }
-samples/pop = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
-samples/throw = { "db":2.0, "pitch":1.0, "sample":ExtResource( 16 ) }
+samples/damage = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 11 ) }
+samples/healthgain = { "db":0.0, "pitch":1.0, "sample":ExtResource( 12 ) }
+samples/jump = { "db":-5.0, "pitch":1.0, "sample":ExtResource( 13 ) }
+samples/killmonster = { "db":4.0, "pitch":1.0, "sample":ExtResource( 14 ) }
+samples/pick = { "db":-1.0, "pitch":1.0, "sample":ExtResource( 15 ) }
+samples/pop = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
+samples/throw = { "db":2.0, "pitch":1.0, "sample":ExtResource( 17 ) }
 
 [node name="world" type="Node2D"]
 
 script/script = ExtResource( 1 )
 __meta__ = { "__editor_plugin_screen__":"Script" }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-layer = 2
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-
-[node name="Sprite" type="Sprite" parent="CanvasLayer"]
-
-transform/pos = Vector2( 160, 190 )
-transform/scale = Vector2( 100, 100 )
-texture = ExtResource( 2 )
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="Event" type="AnimationPlayer" parent="CanvasLayer"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/enter = SubResource( 1 )
-anims/stop = SubResource( 2 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = "enter"
+[node name="transition" parent="." instance=ExtResource( 2 )]
 
 [node name="back" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = -10
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -191,9 +135,16 @@ transform/pos = Vector2( 272, 11 )
 texture = ExtResource( 8 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 
+[node name="death" type="Sprite" parent="hud"]
+
+transform/scale = Vector2( 320, 240 )
+texture = ExtResource( 9 )
+centered = false
+modulate = Color( 1, 0.25, 0.25, 0 )
+
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 9 )
+stream/stream = ExtResource( 10 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 0.0
@@ -212,7 +163,7 @@ autostart = false
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 5
-config/samples = SubResource( 3 )
+config/samples = SubResource( 1 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -225,8 +176,6 @@ default/filter/gain = 1.0
 default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
-
-[connection signal="finished" from="CanvasLayer/Event" to="." method="_on_Die_finished"]
 
 [connection signal="timeout" from="shield" to="." method="_on_shield_timeout"]
 

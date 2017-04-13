@@ -1,5 +1,7 @@
 extends Node2D
 
+var can_quit = false
+
 onready var falling1 = get_node("Anims/Falling1")
 onready var falling2 = get_node("Anims/Falling2")
 onready var falling3 = get_node("Anims/Falling3")
@@ -8,6 +10,8 @@ onready var leave = get_node("Buttons/leave")
 onready var music = get_node("Buttons/music")
 onready var sound = get_node("Buttons/sound")
 onready var game_won = get_node("game_won")
+
+onready var transition = get_node("transition")
 
 func _ready():
 	reset_global()
@@ -18,26 +22,33 @@ func _ready():
 	Falling3_start()
 	
 	get_node("Labels/version").set_text(str("version ", str(global.version)))
+	transition.start(1)
+	transition.connect("finished_anim", get_node("Buttons/play"), "set_disabled", [false], 4)
 	set_process_input(true)
 
 func _input(event):
 	if not event.is_echo() && event.is_pressed():
-		if event.is_action("jump") or event.is_action("restart"):
-			play()
-		elif event.type == InputEvent.KEY && event.scancode == KEY_F3:
-			set_music()
-			music.set_pressed(!music.is_pressed())
-		elif event.type == InputEvent.KEY && event.scancode == KEY_F4:
-			set_sound()
-			sound.set_pressed(!sound.is_pressed())
-		elif event.type == InputEvent.KEY && event.scancode == KEY_F9 or event.is_action("ui_cancel"):
-			if global.finished:
-				hide_game_won()
-			else:
-				quit()
-		elif event.type == InputEvent.KEY && event.scancode == KEY_T && global.debug:
-			global.level = 0
-			get_tree().change_scene("res://scenes/main.tscn")
+		if can_quit:
+			if event.is_action("ui_cancel"):
+				if global.finished:
+					hide_game_won()
+				else:
+					quit()
+			elif event.is_action("jump") or event.is_action("restart"):
+				play()
+		if event.type == InputEvent.KEY:
+			if event.scancode == KEY_F3:
+				set_music()
+				music.set_pressed(!music.is_pressed())
+			elif event.scancode == KEY_F4:
+				set_sound()
+				sound.set_pressed(!sound.is_pressed())
+			if global.debug:
+				if event.scancode == KEY_T:
+					global.level = 0
+					get_tree().change_scene("res://scenes/main.tscn")
+				elif event.scancode == KEY_F9:
+					get_tree().quit()
 
 func _on_AnimationPlayer_finished():
 	if get_node("Anims/Enter").get_current_animation() == "enter":
@@ -49,9 +60,19 @@ func set_music():
 func set_sound():
 	global.sound = !global.sound
 
+func button_disable():
+	for button in get_node("Buttons").get_children():
+		button.set_disabled(true)
+
 func play():
-	get_node("Anims/Enter").play("enter")
-	get_node("Buttons/play").set_disabled(true)
+	button_disable()
+	transition.start(1, true)
+	transition.connect("finished_anim", get_tree(), "change_scene", ["res://scenes/main.tscn"], 4)
+
+func quit():
+	button_disable()
+	transition.start(1, true)
+	transition.connect("finished_anim", get_tree(), "quit")
 
 func show_credits():
 	get_node("Anims/Credits").play("show")
@@ -102,9 +123,6 @@ func hide_game_won():
 				node.set_disabled(true)
 		global.finished = false
 
-
-func quit():
-	get_tree().quit()
 
 func reset_global():
 	global.level = 1
