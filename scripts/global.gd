@@ -17,3 +17,6 @@ var deaths = 0
 var enemies_killed = 0
 
 var finished = false
+
+func _ready():
+	randomize()

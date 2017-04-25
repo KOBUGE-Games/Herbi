@@ -32,7 +32,7 @@ func init_pos(param):
 			b = 280
 		elif param == 1:
 			b = 200
-	while i < 8:
+	for i in range(8):
 		i += 1
 		if param == 0:
 			get_node(str("bar", str(i))).set_pos(Vector2(b, 0))
@@ -52,7 +52,7 @@ func show_elements(yes=true, mode=0):
 		if yes:
 			get_node(str("bar", str(i))).show()
 			if mode == 1:
-				print("I don't work properly")
+				print("level_transition.gd : I don't work properly")
 				get_node(str("bar", str(j))).show()
 		else:
 			get_node(str("bar", str(i))).hide()

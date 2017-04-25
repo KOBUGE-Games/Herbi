@@ -127,18 +127,14 @@ func _input(event):
 	if not event.is_echo() && event.is_pressed():
 		if can_quit:
 			if event.is_action("ui_cancel"):
-				quit = true
-				stop()
+				get_node("hud/menu").show()
 			elif event.is_action("restart"):
 				get_node("player").dead = true
 				stop()
 		if event.type == InputEvent.KEY:
 			if event.scancode == KEY_F3:
 				global.music = !global.music
-				if global.music:
-					get_node("StreamPlayer").play()
-				else:
-					get_node("StreamPlayer").stop()
+				check_music()
 			elif event.scancode == KEY_F4:
 				global.sound = !global.sound
 			
@@ -198,6 +194,13 @@ func change_level():
 				restart()
 		else:
 			restart()
+
+
+func check_music():
+	if global.music:
+		get_node("StreamPlayer").play()
+	else:
+		get_node("StreamPlayer").stop()
 
 
 func check_items(item_name, item_num=0):
