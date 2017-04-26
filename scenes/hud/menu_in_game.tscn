@@ -99,6 +99,7 @@ margin/bottom = 16.0
 [node name="Sprite" type="Sprite" parent="Control"]
 
 editor/display_folded = true
+visibility/opacity = 0.9
 transform/pos = Vector2( -32, -192 )
 transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
@@ -169,7 +170,7 @@ flat = false
 
 [node name="Button" type="Button" parent="Control"]
 
-visibility/opacity = 0.3
+visibility/opacity = 0.5
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2

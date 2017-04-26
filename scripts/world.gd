@@ -85,11 +85,20 @@ func remove_life():
 func update_lifes():
 	if lives > 0:
 ### Update HUD
-		for el in get_node("hud/lives").get_children():
-			el.queue_free()
-		for i in range(lives):
+		for node in get_node("hud/lives").get_children():
+			if node extends Sprite:
+				node.queue_free()
+		if lives < 4:
+			get_node("hud/lives/Label").hide()
+			for i in range(lives):
+				var live = pLive.instance()
+				live.set_pos(Vector2(16+i*18,16))
+				get_node("hud/lives").add_child(live)
+		else:
 			var live = pLive.instance()
-			live.set_pos(Vector2(16+i*16,16))
+			live.set_pos(Vector2(16,16))
+			get_node("hud/lives/Label").set_text(str("x ",str(lives)))
+			get_node("hud/lives/Label").show()
 			get_node("hud/lives").add_child(live)
 	else:
 		get_node("player").dead = true
@@ -178,7 +187,7 @@ func stop(condition=false):
 ### Play the animation :
 ###  - tween to indicate the color (death/ next level)
 ###  - animation to make the transition. It is connected to _on_Die_finished()
-	transition.connect("finished_anim", self, "change_level")
+	transition.connect("finished_anim", self, "change_level", Array(), 4)
 	transition.start((randi() % 2), true, (randi() % 2))
 	can_move = false
 
@@ -237,5 +246,6 @@ func init_clouds():
 	var amount = (randi() % 3) + 3
 	for i in range(amount):
 		var cloud = p_clouds.instance()
+		cloud.get_node("AnimatedSprite/AnimationPlayer").set_speed(rand_range(0.5,1))
 		cloud.set_pos(Vector2(randi() % int(OS.get_video_mode_size().x),randi() % int(OS.get_video_mode_size().y)))
-		get_node("clouds").add_child(cloud)
+		get_node("clouds").add_child(cloud) 
