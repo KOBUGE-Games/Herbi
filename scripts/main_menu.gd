@@ -14,6 +14,7 @@ onready var game_won = get_node("game_won")
 onready var transition = get_node("transition")
 
 func _ready():
+	OS.set_window_size(Vector2(640,480))
 	reset_global()
 	global_check()
 	

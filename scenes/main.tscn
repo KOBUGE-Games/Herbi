@@ -71,6 +71,13 @@ __meta__ = {
 "__editor_plugin_screen__": "Script"
 }
 
+[node name="clouds" type="CanvasLayer" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
 [node name="transition" parent="." instance=ExtResource( 2 )]
 
 [node name="back" type="CanvasLayer" parent="."]
@@ -111,10 +118,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 112.0
-margin/top = 6.0
-margin/right = 128.0
-margin/bottom = 25.0
+margin/left = 100.0
+margin/top = 10.0
+margin/right = 116.0
+margin/bottom = 29.0
 custom_fonts/font = ExtResource( 5 )
 text = "0"
 percent_visible = 1.0
@@ -123,7 +130,7 @@ max_lines_visible = -1
 
 [node name="sprite_diamonds" type="Sprite" parent="hud"]
 
-transform/pos = Vector2( 100, 12 )
+transform/pos = Vector2( 88, 16 )
 texture = ExtResource( 6 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 
@@ -134,10 +141,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 206.0
-margin/top = 6.0
-margin/right = 222.0
-margin/bottom = 25.0
+margin/left = 212.0
+margin/top = 10.0
+margin/right = 228.0
+margin/bottom = 29.0
 custom_fonts/font = ExtResource( 5 )
 text = "0"
 percent_visible = 1.0
@@ -146,7 +153,7 @@ max_lines_visible = -1
 
 [node name="sprite_apples" type="Sprite" parent="hud"]
 
-transform/pos = Vector2( 196, 10 )
+transform/pos = Vector2( 202, 14 )
 texture = ExtResource( 7 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 
@@ -158,9 +165,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 284.0
-margin/top = 6.0
+margin/top = 10.0
 margin/right = 300.0
-margin/bottom = 25.0
+margin/bottom = 29.0
 custom_fonts/font = ExtResource( 5 )
 text = "0"
 percent_visible = 1.0
@@ -169,7 +176,7 @@ max_lines_visible = -1
 
 [node name="sprite_score" type="Sprite" parent="hud"]
 
-transform/pos = Vector2( 272, 11 )
+transform/pos = Vector2( 272, 15 )
 texture = ExtResource( 8 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 

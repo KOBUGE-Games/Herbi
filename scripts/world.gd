@@ -2,6 +2,7 @@ extends Node2D
 
 const level_announcer = preload("res://scenes/misc/level_announcer.tscn")
 const pLive = preload("res://scenes/hud/live.tscn")
+const p_clouds = preload("res://scenes/misc/clouds.tscn")
 var level = load("res://levels/level_"+str(global.level)+".tscn")
 
 var world_end
@@ -28,14 +29,17 @@ onready var sprite_apples = get_node("hud/sprite_apples")
 onready var sprite_score = get_node("hud/sprite_score")
 
 onready var transition = get_node("transition")
+var window_size = Vector2(0,0)
 
 func _ready():
+	randomize()
 	init_values()
 	add_child(level_announcer.instance())
 	add_child(level.instance())
 	if global.music:
 		get_node("StreamPlayer").play()
 	transition.start((randi() % 2), false, (randi() % 2))
+	init_clouds()
 	set_process_input(true)
 
 func init_values():
@@ -228,3 +232,10 @@ func check_items(item_name, item_num=0):
 	if item_name == "diamonds":
 		item_num = str(str(collected_diamonds), "/", str(diamonds))
 	get_node(str("hud/", item_name)).set_text(str(item_num))
+
+func init_clouds():
+	var amount = (randi() % 3) + 3
+	for i in range(amount):
+		var cloud = p_clouds.instance()
+		cloud.set_pos(Vector2(randi() % int(OS.get_video_mode_size().x),randi() % int(OS.get_video_mode_size().y)))
+		get_node("clouds").add_child(cloud)
