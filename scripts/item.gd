@@ -4,6 +4,7 @@ export var score = 5
 onready var timer = get_node("Timer")
 
 func _ready():
+	get_node("Sprite").set_frame(randi() % 3)
 	timer.set_wait_time(rand_range(0,0.5))
 	timer.start()
 	timer.connect("timeout", get_node("Idle"), "play", ["idle"])
