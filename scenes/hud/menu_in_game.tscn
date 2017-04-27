@@ -99,7 +99,6 @@ margin/bottom = 16.0
 [node name="Sprite" type="Sprite" parent="Control"]
 
 editor/display_folded = true
-visibility/opacity = 0.9
 transform/pos = Vector2( -32, -192 )
 transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )

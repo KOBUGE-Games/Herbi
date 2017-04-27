@@ -31,10 +31,10 @@ tracks/0/path = NodePath("sprites:visibility/self_opacity")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.05, 0.1, 0.2, 0.3, 0.45, 0.6, 0.65, 0.7, 2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.45, 0.6, 0.8, 2 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.7, 0.5, 1.0 ]
+"values": [ 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.5, 1.0 ]
 }
 
 [node name="player" type="KinematicBody2D"]

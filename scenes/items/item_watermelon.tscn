@@ -23,7 +23,7 @@ extents = Vector2( 8, 8 )
 
 length = 0.8
 loop = true
-step = 0.1
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:transform/scale")
 tracks/0/interp = 0
