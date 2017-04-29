@@ -246,6 +246,5 @@ func init_clouds():
 	var amount = (randi() % 3) + 3
 	for i in range(amount):
 		var cloud = p_clouds.instance()
-		cloud.get_node("AnimatedSprite/AnimationPlayer").set_speed(rand_range(0.5,1))
-		cloud.set_pos(Vector2(randi() % int(OS.get_video_mode_size().x),randi() % int(OS.get_video_mode_size().y)))
+		cloud.set_pos(Vector2(randi() % 300,randi() % 230))
 		get_node("clouds").add_child(cloud) 

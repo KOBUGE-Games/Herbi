@@ -18,10 +18,6 @@ func _ready():
 	reset_global()
 	global_check()
 	
-	Falling1_start()
-	Falling2_start()
-	Falling3_start()
-	
 	get_node("Labels/version").set_text(str("version ", str(global.version)))
 	transition.start(1)
 	transition.connect("finished_anim", get_node("Buttons/play"), "set_disabled", [false], 4)

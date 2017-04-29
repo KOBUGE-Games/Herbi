@@ -1,92 +1,23 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
-[ext_resource path="res://graphics/hud/bg.png" type="Texture" id=3]
-[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=4]
-[ext_resource path="res://scenes/hud/buttons/music.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/hud/buttons/sound.tscn" type="PackedScene" id=6]
-[ext_resource path="res://graphics/hud/button.png" type="Texture" id=7]
-[ext_resource path="res://scenes/game_won.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/misc/level_transition.tscn" type="PackedScene" id=9]
-
-[sub_resource type="Animation" id=1]
-
-length = 4.0
-loop = false
-step = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Logos/logo1:transform/pos")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 4 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -100, -100 ), Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Logos/logo1:transform/rot")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0, 4 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-
-[sub_resource type="Animation" id=2]
-
-length = 5.0
-loop = false
-step = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Logos/logo2:transform/pos")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 5 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 420, -100 ), Vector2( 320, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Logos/logo2:transform/rot")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0, 5 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-
-[sub_resource type="Animation" id=3]
-
-length = 7.0
-loop = false
-step = 7.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Logos/logo3:transform/pos")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 7 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 160, -100 ), Vector2( 160, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Logos/logo3:transform/rot")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0, 7 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
+[ext_resource path="res://graphics/hud/title/herbi.png" type="Texture" id=3]
+[ext_resource path="res://graphics/hud/title/on.png" type="Texture" id=4]
+[ext_resource path="res://graphics/hud/title/t.png" type="Texture" id=5]
+[ext_resource path="res://graphics/hud/title/h.png" type="Texture" id=6]
+[ext_resource path="res://graphics/hud/title/e.png" type="Texture" id=7]
+[ext_resource path="res://graphics/hud/title/loose.png" type="Texture" id=8]
+[ext_resource path="res://scenes/misc/clouds.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/tiles/stone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/tiles/oneway_mid.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/tiles/oneway_center.tscn" type="PackedScene" id=12]
+[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=13]
+[ext_resource path="res://scenes/hud/buttons/music.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/hud/buttons/sound.tscn" type="PackedScene" id=15]
+[ext_resource path="res://graphics/hud/button.png" type="Texture" id=16]
+[ext_resource path="res://scenes/game_won.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/misc/level_transition.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=4]
 
@@ -302,13 +233,100 @@ tracks/9/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=7]
+
+resource/name = "idle"
+length = 4.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Title/herbi:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, -14 ), Vector2( 0, -18 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Title/on:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0.1, 0.3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -60, 14 ), Vector2( -56, 14 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Title/t:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0.3, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -26, 8 ), Vector2( -26, 12 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Title/h:transform/pos")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -13, 8 ), Vector2( -13, 12 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Title/e:transform/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0.5, 0.7 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 10 ), Vector2( 1, 14 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../Title/loose:transform/pos")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0.7, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 49, 12 ), Vector2( 45, 12 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Labels/version:rect/scale")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0.9, 1.1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.45, 0.45 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Labels/version:rect/rotation")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0.9, 1.1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 3.0, 0.0 ]
+}
+
 [sub_resource type="StyleBoxTexture" id=6]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 16 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -326,37 +344,358 @@ __meta__ = {
 "__editor_plugin_screen__": "Script"
 }
 
-[node name="bg" type="Sprite" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="bg" type="Sprite" parent="ParallaxBackground"]
 
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Logos" type="Node2D" parent="."]
+[node name="Title" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 160, 40 )
+
+[node name="herbi" type="Sprite" parent="Title"]
+
+transform/pos = Vector2( 0, -18 )
+texture = ExtResource( 3 )
+
+[node name="on" type="Sprite" parent="Title"]
+
+transform/pos = Vector2( -56, 14 )
+texture = ExtResource( 4 )
+
+[node name="t" type="Sprite" parent="Title"]
+
+transform/pos = Vector2( -26, 12 )
+texture = ExtResource( 5 )
+
+[node name="h" type="Sprite" parent="Title"]
+
+transform/pos = Vector2( -13, 12 )
+texture = ExtResource( 6 )
+
+[node name="e" type="Sprite" parent="Title"]
+
+transform/pos = Vector2( 1, 14 )
+texture = ExtResource( 7 )
+
+[node name="loose" type="Sprite" parent="Title"]
+
+transform/pos = Vector2( 45, 12 )
+texture = ExtResource( 8 )
+
+[node name="clouds" type="Node2D" parent="."]
 
 editor/display_folded = true
 
-[node name="logo" type="Sprite" parent="Logos"]
+[node name="clouds" parent="clouds" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( 160, 30 )
-texture = ExtResource( 3 )
+transform/pos = Vector2( 20, 56 )
 
-[node name="logo1" type="Sprite" parent="Logos"]
+[node name="clouds1" parent="clouds" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( -100, -100 )
-texture = ExtResource( 3 )
-modulate = Color( 1, 1, 1, 0.588235 )
+transform/pos = Vector2( 220, 82 )
 
-[node name="logo2" type="Sprite" parent="Logos"]
+[node name="clouds2" parent="clouds" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( 420, -100 )
-texture = ExtResource( 3 )
-modulate = Color( 1, 1, 1, 0.588235 )
+transform/pos = Vector2( 46, 158 )
 
-[node name="logo3" type="Sprite" parent="Logos"]
+[node name="menu_level" type="Node2D" parent="."]
 
-transform/pos = Vector2( 160, -100 )
-texture = ExtResource( 3 )
-modulate = Color( 1, 1, 1, 0.588235 )
+editor/display_folded = true
+
+[node name="layer1" type="Node2D" parent="menu_level"]
+
+editor/display_folded = true
+
+[node name="stone" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 8 )
+
+[node name="stone1" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 24 )
+
+[node name="stone2" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 40 )
+
+[node name="stone3" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 56 )
+
+[node name="stone4" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 72 )
+
+[node name="stone5" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 88 )
+
+[node name="stone6" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 104 )
+
+[node name="stone7" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 120 )
+
+[node name="stone8" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 136 )
+
+[node name="stone9" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 152 )
+
+[node name="stone10" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 168 )
+
+[node name="stone11" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 184 )
+
+[node name="stone12" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 200 )
+
+[node name="stone13" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 216 )
+
+[node name="stone14" parent="menu_level/layer1" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 232 )
+
+[node name="layer2" type="Node2D" parent="menu_level"]
+
+editor/display_folded = true
+transform/pos = Vector2( 304, 0 )
+
+[node name="stone" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 8 )
+
+[node name="stone1" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 24 )
+
+[node name="stone2" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 40 )
+
+[node name="stone3" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 56 )
+
+[node name="stone4" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 72 )
+
+[node name="stone5" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 88 )
+
+[node name="stone6" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 104 )
+
+[node name="stone7" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 120 )
+
+[node name="stone8" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 136 )
+
+[node name="stone9" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 152 )
+
+[node name="stone10" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 168 )
+
+[node name="stone11" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 184 )
+
+[node name="stone12" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 200 )
+
+[node name="stone13" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 216 )
+
+[node name="stone14" parent="menu_level/layer2" instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 8, 232 )
+
+[node name="layer3" type="Node2D" parent="menu_level"]
+
+editor/display_folded = true
+
+[node name="oneway_mid" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 24, 216 )
+
+[node name="oneway_mid1" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 40, 216 )
+
+[node name="oneway_mid2" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 56, 216 )
+
+[node name="oneway_mid3" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 72, 216 )
+
+[node name="oneway_mid4" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 88, 216 )
+
+[node name="oneway_mid5" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 104, 216 )
+
+[node name="oneway_mid6" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 120, 216 )
+
+[node name="oneway_mid7" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 136, 216 )
+
+[node name="oneway_mid8" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 152, 216 )
+
+[node name="oneway_mid9" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 168, 216 )
+
+[node name="oneway_mid10" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 184, 216 )
+
+[node name="oneway_mid11" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 200, 216 )
+
+[node name="oneway_mid12" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 216, 216 )
+
+[node name="oneway_mid13" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 232, 216 )
+
+[node name="oneway_mid14" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 248, 216 )
+
+[node name="oneway_mid15" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 264, 216 )
+
+[node name="oneway_mid16" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 280, 216 )
+
+[node name="oneway_mid17" parent="menu_level/layer3" instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 296, 216 )
+
+[node name="layer4" type="Node2D" parent="menu_level"]
+
+[node name="oneway_center" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 24, 232 )
+
+[node name="oneway_center1" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 40, 232 )
+
+[node name="oneway_center2" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 56, 232 )
+
+[node name="oneway_center3" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 72, 232 )
+
+[node name="oneway_center4" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 88, 232 )
+
+[node name="oneway_center5" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 104, 232 )
+
+[node name="oneway_center6" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 120, 232 )
+
+[node name="oneway_center7" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 136, 232 )
+
+[node name="oneway_center8" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 152, 232 )
+
+[node name="oneway_center9" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 168, 232 )
+
+[node name="oneway_center10" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 184, 232 )
+
+[node name="oneway_center11" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 200, 232 )
+
+[node name="oneway_center12" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 216, 232 )
+
+[node name="oneway_center13" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 232, 232 )
+
+[node name="oneway_center14" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 248, 232 )
+
+[node name="oneway_center15" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 264, 232 )
+
+[node name="oneway_center16" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 280, 232 )
+
+[node name="oneway_center17" parent="menu_level/layer4" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 296, 232 )
 
 [node name="Labels" type="Control" parent="."]
 
@@ -370,54 +709,6 @@ margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
 
-[node name="version" type="Label" parent="Labels"]
-
-rect/rotation = 25.0
-rect/scale = Vector2( 0.5, 0.5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 190.0
-margin/top = 65.0
-margin/right = 366.0
-margin/bottom = 84.0
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0.862745, 0.784314, 0.784314, 1 )
-custom_colors/font_color_shadow = Color( 0.196078, 0.196078, 0.196078, 1 )
-text = "version number"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="keys" type="Label" parent="Labels"]
-
-rect/scale = Vector2( 0.4, 0.4 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 112.0
-margin/top = 64.0
-margin/right = 352.0
-margin/bottom = 193.0
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0.196078, 0.196078, 0.196078, 1 )
-custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 1 )
-text = "SPACE = Jump
-X = Throw Apple
-ESCAPE = Main Menu
-F2 = Restart Level
-F3 = Enable music
-F4 = Enable Sound"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="credits" type="Label" parent="Labels"]
 
 visibility/visible = false
@@ -430,7 +721,7 @@ margin/left = 10.0
 margin/top = 53.0
 margin/right = 610.0
 margin/bottom = 336.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color = Color( 0.196078, 0.196078, 0.196078, 1 )
 custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 1 )
 text = "Coded by KOBUGE-Games, from an idea of @alketii
@@ -450,6 +741,32 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="keys" type="Label" parent="Labels"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 112.0
+margin/top = 68.0
+margin/right = 352.0
+margin/bottom = 197.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.196078, 0.196078, 0.196078, 1 )
+custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 1 )
+text = "SPACE = Jump
+X = Throw Apple
+ESCAPE = Main Menu
+F2 = Restart Level
+F3 = Enable music
+F4 = Enable Sound"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="debug_info" type="Label" parent="Labels"]
 
 visibility/visible = false
@@ -462,7 +779,7 @@ margin/left = 0.0
 margin/top = 64.0
 margin/right = 235.0
 margin/bottom = 237.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color = Color( 0.879765, 0.763726, 0, 0.590196 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.409804 )
 text = "\\\\\\ DEBUG MODE ///
@@ -479,42 +796,28 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="version" type="Label" parent="Labels"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 210.0
+margin/top = 60.0
+margin/right = 386.0
+margin/bottom = 79.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.862745, 0.784314, 0.784314, 1 )
+custom_colors/font_color_shadow = Color( 0.196078, 0.196078, 0.196078, 1 )
+text = "version number"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="Anims" type="Node" parent="."]
-
-editor/display_folded = true
-
-[node name="Falling1" type="AnimationPlayer" parent="Anims"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/falling = SubResource( 1 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = ""
-
-[node name="Falling2" type="AnimationPlayer" parent="Anims"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/falling = SubResource( 2 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = ""
-
-[node name="Falling3" type="AnimationPlayer" parent="Anims"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/falling = SubResource( 3 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = ""
 
 [node name="Credits" type="AnimationPlayer" parent="Anims"]
 
@@ -528,6 +831,17 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
+[node name="Title" type="AnimationPlayer" parent="Anims"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/idle = SubResource( 7 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "idle"
+
 [node name="Buttons" type="Control" parent="."]
 
 editor/display_folded = true
@@ -537,12 +851,12 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 40.0
+margin/right = 0.0
+margin/bottom = 0.0
 
-[node name="music" parent="Buttons" instance=ExtResource( 5 )]
+[node name="music" parent="Buttons" instance=ExtResource( 14 )]
 
-[node name="sound" parent="Buttons" instance=ExtResource( 6 )]
+[node name="sound" parent="Buttons" instance=ExtResource( 15 )]
 
 [node name="play" type="Button" parent="Buttons"]
 
@@ -559,7 +873,7 @@ margin/bottom = 166.0
 custom_styles/hover = SubResource( 6 )
 custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
@@ -586,7 +900,7 @@ margin/bottom = 210.0
 custom_styles/hover = SubResource( 6 )
 custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
@@ -613,7 +927,7 @@ margin/bottom = 210.0
 custom_styles/hover = SubResource( 6 )
 custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 1, 0.156863, 0.113725, 1 )
 custom_colors/font_color = Color( 1, 0.156863, 0.117647, 1 )
 custom_colors/font_color_hover = Color( 1, 0.313726, 0.313726, 1 )
@@ -640,7 +954,7 @@ margin/bottom = 230.0
 custom_styles/hover = SubResource( 6 )
 custom_styles/disabled = SubResource( 6 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
@@ -652,15 +966,11 @@ shortcut = null
 text = "Leave"
 flat = false
 
-[node name="game_won" parent="." instance=ExtResource( 8 )]
+[node name="game_won" parent="." instance=ExtResource( 17 )]
 
-[node name="transition" parent="." instance=ExtResource( 9 )]
+visibility/visible = false
 
-[connection signal="finished" from="Anims/Falling1" to="." method="Falling1_start"]
-
-[connection signal="finished" from="Anims/Falling2" to="." method="Falling2_start"]
-
-[connection signal="finished" from="Anims/Falling3" to="." method="Falling3_start"]
+[node name="transition" parent="." instance=ExtResource( 18 )]
 
 [connection signal="pressed" from="Buttons/music" to="." method="set_music"]
 
