@@ -170,14 +170,16 @@ func _fixed_process(delta):
 		get_node("/root/world/").stop()
 
 func _input(event):
-	if not event.is_echo() && event.is_pressed() and can_move:
-		if get_parent().apples > 0 and event.is_action("throw"):
-			var apple = pApple.instance()
-			apple.set_pos(get_pos())
-			apple.add_collision_exception_with(self)
-			apple.set_z(2)
-			get_parent().add_child(apple)
-			get_node("/root/world").remove_apple()
+	if event.is_action_pressed("fullscreen"):
+		OS.set_window_fullscreen(!OS.is_window_fullscreen())
+	
+	if get_parent().apples > 0 and event.is_action_pressed("throw") and can_move:
+		var apple = pApple.instance()
+		apple.set_pos(get_pos())
+		apple.add_collision_exception_with(self)
+		apple.set_z(2)
+		get_parent().add_child(apple)
+		get_node("/root/world").remove_apple()
 
 func Idle():
 	if not jumping:

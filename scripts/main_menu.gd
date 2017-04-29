@@ -28,15 +28,21 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if not event.is_echo() && event.is_pressed():
-		if can_quit:
-			if event.is_action("ui_cancel"):
-				if global.finished:
-					hide_game_won()
-				else:
-					quit()
-			elif event.is_action("jump") or event.is_action("restart"):
+	if event.is_action_pressed("fullscreen"):
+		OS.set_window_fullscreen(!OS.is_window_fullscreen())
+	
+	if can_quit:
+		if event.is_action_pressed("ui_cancel"):
+			if global.finished:
+				hide_game_won()
+			else:
+				quit()
+		elif event.is_action_pressed("jump") or event.is_action_pressed("restart"):
+			if global.finished:
+				hide_game_won()
+			else:
 				play()
+		
 		if event.type == InputEvent.KEY:
 			if event.scancode == KEY_F3:
 				set_music()
