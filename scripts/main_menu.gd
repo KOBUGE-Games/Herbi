@@ -102,7 +102,7 @@ func normal_state():
 	leave.hide()
 
 func show_game_won():
-	get_node("Logos/logo").hide()
+	get_node("Title").hide()
 	get_node("Labels").hide()
 	for node in get_node("Buttons").get_children():
 		if node.get_name() != "leave":
@@ -115,7 +115,7 @@ func show_game_won():
 func hide_game_won():
 	if global.finished:
 		game_won.hide()
-		get_node("Logos/logo").show()
+		get_node("Title").show()
 		get_node("Labels").show()
 		for node in get_node("Buttons").get_children():
 			if node.get_name() != "leave":

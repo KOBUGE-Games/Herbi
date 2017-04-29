@@ -14,10 +14,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
+radius = 11.0
 
 [sub_resource type="Animation" id=3]
 

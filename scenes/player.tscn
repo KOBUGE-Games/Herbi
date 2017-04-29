@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 5, 10 )
+extents = Vector2( 5, 9 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -42,7 +42,7 @@ tracks/0/keys = {
 z/z = 1
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 1, 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1, 2 )
 shapes/0/trigger = false
 collision/layers = 3
 collision/mask = 0
@@ -56,7 +56,7 @@ animation = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 1, 1 )
+transform/pos = Vector2( 1, 2 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
