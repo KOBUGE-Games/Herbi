@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://scenes/misc/level_transition.tscn" type="PackedScene" id=2]
@@ -8,16 +8,15 @@
 [ext_resource path="res://graphics/items/diamond_red.png" type="Texture" id=6]
 [ext_resource path="res://graphics/items/apple.png" type="Texture" id=7]
 [ext_resource path="res://graphics/items/watermelon.png" type="Texture" id=8]
-[ext_resource path="res://graphics/hud/square.png" type="Texture" id=9]
-[ext_resource path="res://scenes/hud/menu_in_game.tscn" type="PackedScene" id=10]
-[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=11]
-[ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=12]
-[ext_resource path="res://audio/sounds/healthgain.wav" type="Sample" id=13]
-[ext_resource path="res://audio/sounds/jump.wav" type="Sample" id=14]
-[ext_resource path="res://audio/sounds/killmonster.wav" type="Sample" id=15]
-[ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=16]
-[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=17]
-[ext_resource path="res://audio/sounds/throw.wav" type="Sample" id=18]
+[ext_resource path="res://scenes/hud/menu_in_game.tscn" type="PackedScene" id=9]
+[ext_resource path="res://audio/musics/music_1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=11]
+[ext_resource path="res://audio/sounds/healthgain.wav" type="Sample" id=12]
+[ext_resource path="res://audio/sounds/jump.wav" type="Sample" id=13]
+[ext_resource path="res://audio/sounds/killmonster.wav" type="Sample" id=14]
+[ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=15]
+[ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=16]
+[ext_resource path="res://audio/sounds/throw.wav" type="Sample" id=17]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -25,43 +24,43 @@ samples/damage = {
 "db": -2.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 12 )
+"sample": ExtResource( 11 )
 }
 samples/healthgain = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 13 )
+"sample": ExtResource( 12 )
 }
 samples/jump = {
 "db": -5.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 14 )
+"sample": ExtResource( 13 )
 }
 samples/killmonster = {
 "db": 4.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 15 )
+"sample": ExtResource( 14 )
 }
 samples/pick = {
 "db": -1.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 16 )
+"sample": ExtResource( 15 )
 }
 samples/pop = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 17 )
+"sample": ExtResource( 16 )
 }
 samples/throw = {
 "db": 2.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 18 )
+"sample": ExtResource( 17 )
 }
 
 [node name="world" type="Node2D"]
@@ -97,7 +96,6 @@ centered = false
 
 [node name="hud" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -209,18 +207,11 @@ transform/scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 8 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 
-[node name="death" type="Sprite" parent="hud"]
-
-transform/scale = Vector2( 320, 240 )
-texture = ExtResource( 9 )
-centered = false
-modulate = Color( 1, 0.25, 0.25, 0 )
-
-[node name="menu" parent="hud" instance=ExtResource( 10 )]
+[node name="menu" parent="hud" instance=ExtResource( 9 )]
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 11 )
+stream/stream = ExtResource( 10 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 0.0

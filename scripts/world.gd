@@ -21,6 +21,8 @@ var lives
 var apples
 var score
 
+var last_checkpoint = Vector2()
+
 onready var tween = get_node("hud/Tween")
 onready var sampleplayer = get_node("SamplePlayer")
 
@@ -29,10 +31,11 @@ onready var sprite_apples = get_node("hud/sprite_apples")
 onready var sprite_score = get_node("hud/sprite_score")
 
 onready var transition = get_node("transition")
+
+onready var player = get_node("player")
 var window_size = Vector2(0,0)
 
 func _ready():
-	randomize()
 	init_values()
 	add_child(level_announcer.instance())
 	add_child(level.instance())
@@ -41,6 +44,7 @@ func _ready():
 	transition.start((randi() % 2), false, (randi() % 2))
 	init_clouds()
 	set_process_input(true)
+	last_checkpoint = player.get_pos()
 
 func init_values():
 	score = global.score
@@ -101,7 +105,7 @@ func update_lifes():
 			get_node("hud/lives/Label").show()
 			get_node("hud/lives").add_child(live)
 	else:
-		get_node("player").dead = true
+		player.dead = true
 		stop()
 
 func add_diamond():
@@ -134,7 +138,13 @@ func _on_shield_timeout():
 func restart():
 ### Do [restart/next] level, depending on if global.level was changed (look collect_diamond(), _on_Die_finished() and stop())
 	can_move = true
-	get_tree().reload_current_scene()
+	if collected_diamonds != diamonds:
+		player.set_pos(last_checkpoint)
+		player.dead = false
+		init_values()
+		transition.start((randi() % 2), false, (randi() % 2))
+	else:
+		get_tree().reload_current_scene()
 
 func _input(event):
 	if not event.is_echo() && event.is_pressed():
@@ -142,7 +152,7 @@ func _input(event):
 			if event.is_action("ui_cancel"):
 				get_node("hud/menu").show()
 			elif event.is_action("restart"):
-				get_node("player").dead = true
+				player.dead = true
 				stop()
 		if event.type == InputEvent.KEY:
 			if event.scancode == KEY_F3:
@@ -183,7 +193,6 @@ func stop(condition=false):
 	else:
 		if not quit:
 			global.deaths += 1
-			get_node("hud/death").set_modulate(Color(1,0.5,0.5,0.2))
 ### Play the animation :
 ###  - tween to indicate the color (death/ next level)
 ###  - animation to make the transition. It is connected to _on_Die_finished()

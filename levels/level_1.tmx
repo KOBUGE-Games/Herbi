@@ -95,19 +95,19 @@
    <properties>
     <property name="scene" value="res://scenes/tiles/grassstone_left.tscn"/>
    </properties>
-   <image width="16" height="16" source="../graphics/tiles/grassstone_1.png"/>
+   <image width="16" height="16" source="../graphics/tiles/grassstone_left.png"/>
   </tile>
   <tile id="23">
    <properties>
     <property name="scene" value="res://scenes/tiles/grassstone_mid.tscn"/>
    </properties>
-   <image width="16" height="16" source="../graphics/tiles/grassstone_2.png"/>
+   <image width="16" height="16" source="../graphics/tiles/grassstone_mid.png"/>
   </tile>
   <tile id="24">
    <properties>
     <property name="scene" value="res://scenes/tiles/grassstone_right.tscn"/>
    </properties>
-   <image width="16" height="16" source="../graphics/tiles/grassstone_3.png"/>
+   <image width="16" height="16" source="../graphics/tiles/grassstone_right.png"/>
   </tile>
   <tile id="25">
    <properties>
@@ -125,7 +125,7 @@
    <properties>
     <property name="scene" value="res://scenes/tiles/stone.tscn"/>
    </properties>
-   <image width="16" height="16" source="../graphics/tiles/stone_1.png"/>
+   <image width="16" height="16" source="../graphics/tiles/stone1.png"/>
   </tile>
   <tile id="28">
    <properties>
@@ -253,12 +253,12 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,38,0,0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,40,40,40,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,18,19,19,19,19,19,20,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,40,0,0,1,40,0,0,0,40,0,0,0,40,0,0,0,40,0,
+0,0,40,0,1,0,40,0,0,0,40,0,0,0,40,0,0,0,40,0,
 23,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,25,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>

@@ -1123,247 +1123,251 @@ transform/pos = Vector2( 376, 120 )
 
 transform/pos = Vector2( 440, 120 )
 
-[node name="stone_30" parent="second" instance=ExtResource( 29 )]
+[node name="diamond_red_30" parent="second" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 520, 136 )
+
+[node name="stone_31" parent="second" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 312, 152 )
 
-[node name="lift_31" parent="second" instance=ExtResource( 22 )]
+[node name="lift_32" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 168, 168 )
 
-[node name="lift_32" parent="second" instance=ExtResource( 22 )]
+[node name="lift_33" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 184, 168 )
 
-[node name="lift_33" parent="second" instance=ExtResource( 22 )]
+[node name="lift_34" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 328, 184 )
 
-[node name="lift_34" parent="second" instance=ExtResource( 22 )]
+[node name="lift_35" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 344, 184 )
 
-[node name="lift_35" parent="second" instance=ExtResource( 22 )]
+[node name="lift_36" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 360, 184 )
 
-[node name="lift_36" parent="second" instance=ExtResource( 22 )]
+[node name="lift_37" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 376, 184 )
 
-[node name="lift_37" parent="second" instance=ExtResource( 22 )]
+[node name="lift_38" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 440, 184 )
 
-[node name="lift_38" parent="second" instance=ExtResource( 22 )]
+[node name="lift_39" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 456, 184 )
 
-[node name="lift_39" parent="second" instance=ExtResource( 22 )]
+[node name="lift_40" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 472, 184 )
 
-[node name="lift_40" parent="second" instance=ExtResource( 22 )]
+[node name="lift_41" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 488, 184 )
 
-[node name="item_watermelon_41" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_42" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 168, 200 )
 
-[node name="item_watermelon_42" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_43" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 184, 200 )
 
-[node name="item_watermelon_43" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_44" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 328, 216 )
 
-[node name="item_watermelon_44" parent="second" instance=ExtResource( 41 )]
+[node name="diamond_red_45" parent="second" instance=ExtResource( 39 )]
 
 transform/pos = Vector2( 344, 216 )
 
-[node name="item_watermelon_45" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_46" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 360, 216 )
 
-[node name="spikes_46" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_47" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 632, 216 )
 
-[node name="item_watermelon_47" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_48" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 312, 232 )
 
-[node name="item_watermelon_48" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_49" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 328, 232 )
 
-[node name="item_watermelon_49" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_50" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 344, 232 )
 
-[node name="item_watermelon_50" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_51" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 360, 232 )
 
-[node name="item_watermelon_51" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_52" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 376, 232 )
 
-[node name="spikes_52" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_53" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 616, 232 )
 
-[node name="item_watermelon_53" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_54" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 152, 248 )
 
-[node name="item_watermelon_54" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_55" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 168, 248 )
 
-[node name="spikes_55" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_56" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 600, 248 )
 
-[node name="item_watermelon_56" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_57" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 56, 264 )
 
-[node name="lift_57" parent="second" instance=ExtResource( 22 )]
+[node name="lift_58" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 536, 264 )
 
-[node name="lift_58" parent="second" instance=ExtResource( 22 )]
+[node name="lift_59" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 552, 264 )
 
-[node name="lift_59" parent="second" instance=ExtResource( 22 )]
+[node name="lift_60" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 568, 264 )
 
-[node name="lift_60" parent="second" instance=ExtResource( 22 )]
+[node name="lift_61" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 584, 264 )
 
-[node name="item_watermelon_61" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_62" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 40, 280 )
 
-[node name="item_watermelon_62" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_63" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 56, 280 )
 
-[node name="item_watermelon_63" parent="second" instance=ExtResource( 41 )]
+[node name="item_watermelon_64" parent="second" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 72, 280 )
 
-[node name="decor_4_64" parent="second" instance=ExtResource( 33 )]
+[node name="decor_4_65" parent="second" instance=ExtResource( 33 )]
 
 transform/pos = Vector2( 88, 280 )
 
-[node name="spikes_65" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_66" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 568, 280 )
 
-[node name="spikes_66" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_67" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 8, 296 )
 
-[node name="spikes_67" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_68" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 104, 296 )
 
-[node name="spikes_68" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_69" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 120, 296 )
 
-[node name="spikes_69" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_70" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 136, 296 )
 
-[node name="spikes_70" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_71" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 152, 296 )
 
-[node name="spikes_71" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_72" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 168, 296 )
 
-[node name="spikes_72" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_73" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 184, 296 )
 
-[node name="spikes_73" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_74" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 200, 296 )
 
-[node name="spikes_74" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_75" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 216, 296 )
 
-[node name="spikes_75" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_76" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 232, 296 )
 
-[node name="spikes_76" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_77" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 248, 296 )
 
-[node name="spikes_77" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_78" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 264, 296 )
 
-[node name="spikes_78" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_79" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 280, 296 )
 
-[node name="spikes_79" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_80" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 296, 296 )
 
-[node name="spikes_80" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_81" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 392, 296 )
 
-[node name="lift_81" parent="second" instance=ExtResource( 22 )]
+[node name="lift_82" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 408, 296 )
 
-[node name="lift_82" parent="second" instance=ExtResource( 22 )]
+[node name="lift_83" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 424, 296 )
 
-[node name="lift_83" parent="second" instance=ExtResource( 22 )]
+[node name="lift_84" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 440, 296 )
 
-[node name="lift_84" parent="second" instance=ExtResource( 22 )]
+[node name="lift_85" parent="second" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 456, 296 )
 
-[node name="spikes_85" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_86" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 472, 296 )
 
-[node name="spikes_86" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_87" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 488, 296 )
 
-[node name="spikes_87" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_88" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 504, 296 )
 
-[node name="spikes_88" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_89" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 520, 296 )
 
-[node name="spikes_89" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_90" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 536, 296 )
 
-[node name="spikes_90" parent="second" instance=ExtResource( 23 )]
+[node name="spikes_91" parent="second" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 552, 296 )
 
@@ -1381,763 +1385,759 @@ transform/pos = Vector2( 520, 8 )
 
 transform/pos = Vector2( 552, 8 )
 
-[node name="diamond_red_4" parent="front" instance=ExtResource( 39 )]
-
-transform/pos = Vector2( 184, 24 )
-
-[node name="item_watermelon_5" parent="front" instance=ExtResource( 41 )]
+[node name="item_watermelon_4" parent="front" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 584, 24 )
 
-[node name="diamond_red_6" parent="front" instance=ExtResource( 39 )]
-
-transform/pos = Vector2( 616, 24 )
-
-[node name="player_pos_7" parent="front" instance=ExtResource( 2 )]
+[node name="player_pos_5" parent="front" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 24, 40 )
 
-[node name="enemy_1_8" parent="front" instance=ExtResource( 3 )]
+[node name="enemy_1_6" parent="front" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 184, 40 )
 
-[node name="bear_9" parent="front" instance=ExtResource( 4 )]
+[node name="bear_7" parent="front" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 360, 40 )
 
-[node name="spikes_10" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_8" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 488, 40 )
 
-[node name="spikes_11" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_9" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 504, 40 )
 
-[node name="spikes_12" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_10" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 520, 40 )
 
-[node name="spikes_13" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_11" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 536, 40 )
 
-[node name="spikes_14" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_12" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 552, 40 )
 
-[node name="grassstone_mid_15" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_13" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 8, 56 )
 
-[node name="grassstone_mid_16" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_14" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 24, 56 )
 
-[node name="grassstone_mid_17" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_15" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 40, 56 )
 
-[node name="grassstone_mid_18" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_16" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 56, 56 )
 
-[node name="grassstone_mid_19" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_17" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 72, 56 )
 
-[node name="grassstone_mid_20" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_18" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 88, 56 )
 
-[node name="grassstone_right_21" parent="front" instance=ExtResource( 26 )]
+[node name="grassstone_right_19" parent="front" instance=ExtResource( 26 )]
 
 transform/pos = Vector2( 104, 56 )
 
-[node name="dirt_left_22" parent="front" instance=ExtResource( 8 )]
+[node name="dirt_left_20" parent="front" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 152, 56 )
 
-[node name="dirt_mid_23" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_21" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 168, 56 )
 
-[node name="dirt_mid_24" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_22" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 184, 56 )
 
-[node name="dirt_mid_25" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_23" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 200, 56 )
 
-[node name="dirt_right_26" parent="front" instance=ExtResource( 10 )]
+[node name="dirt_right_24" parent="front" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 216, 56 )
 
-[node name="grassstone_left_27" parent="front" instance=ExtResource( 24 )]
+[node name="grassstone_left_25" parent="front" instance=ExtResource( 24 )]
 
 transform/pos = Vector2( 248, 56 )
 
-[node name="grassstone_mid_28" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_26" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 264, 56 )
 
-[node name="grassstone_mid_29" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_27" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 280, 56 )
 
-[node name="grassstone_mid_30" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_28" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 296, 56 )
 
-[node name="grassstone_mid_31" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_29" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 312, 56 )
 
-[node name="grassstone_mid_32" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_30" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 328, 56 )
 
-[node name="grassstone_mid_33" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_31" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 344, 56 )
 
-[node name="grassstone_mid_34" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_32" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 360, 56 )
 
-[node name="grassstone_mid_35" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_33" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 376, 56 )
 
-[node name="grassstone_mid_36" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_34" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 392, 56 )
 
-[node name="grassstone_mid_37" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_35" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 408, 56 )
 
-[node name="grassstone_mid_38" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_36" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 424, 56 )
 
-[node name="grassstone_mid_39" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_37" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 440, 56 )
 
-[node name="grassstone_mid_40" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_38" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 456, 56 )
 
-[node name="grassstone_right_41" parent="front" instance=ExtResource( 26 )]
+[node name="grassstone_right_39" parent="front" instance=ExtResource( 26 )]
 
 transform/pos = Vector2( 472, 56 )
 
-[node name="grassstone_left_42" parent="front" instance=ExtResource( 24 )]
+[node name="grassstone_left_40" parent="front" instance=ExtResource( 24 )]
 
 transform/pos = Vector2( 568, 56 )
 
-[node name="grassstone_right_43" parent="front" instance=ExtResource( 26 )]
+[node name="grassstone_right_41" parent="front" instance=ExtResource( 26 )]
 
 transform/pos = Vector2( 584, 56 )
 
-[node name="item_watermelon_44" parent="front" instance=ExtResource( 41 )]
+[node name="item_watermelon_42" parent="front" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 616, 56 )
 
-[node name="stone_45" parent="front" instance=ExtResource( 29 )]
+[node name="stone_43" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 104, 72 )
 
-[node name="stone_46" parent="front" instance=ExtResource( 29 )]
+[node name="stone_44" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 120, 72 )
 
-[node name="stone_47" parent="front" instance=ExtResource( 29 )]
+[node name="stone_45" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 136, 72 )
 
-[node name="stone_48" parent="front" instance=ExtResource( 29 )]
+[node name="stone_46" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 152, 72 )
 
-[node name="stone_49" parent="front" instance=ExtResource( 29 )]
+[node name="stone_47" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 216, 72 )
 
-[node name="stone_50" parent="front" instance=ExtResource( 29 )]
+[node name="stone_48" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 232, 72 )
 
-[node name="stone_51" parent="front" instance=ExtResource( 29 )]
+[node name="stone_49" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 248, 72 )
 
-[node name="apple_pick_52" parent="front" instance=ExtResource( 38 )]
+[node name="apple_pick_50" parent="front" instance=ExtResource( 38 )]
 
 transform/pos = Vector2( 488, 72 )
 
-[node name="bear_53" parent="front" instance=ExtResource( 4 )]
+[node name="diamond_red_51" parent="front" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 616, 72 )
+
+[node name="bear_52" parent="front" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 568, 88 )
 
-[node name="item_watermelon_54" parent="front" instance=ExtResource( 41 )]
+[node name="item_watermelon_53" parent="front" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 632, 88 )
 
-[node name="diamond_red_55" parent="front" instance=ExtResource( 39 )]
+[node name="diamond_red_54" parent="front" instance=ExtResource( 39 )]
 
 transform/pos = Vector2( 56, 104 )
 
-[node name="apple_pick_56" parent="front" instance=ExtResource( 38 )]
+[node name="apple_pick_55" parent="front" instance=ExtResource( 38 )]
 
 transform/pos = Vector2( 104, 104 )
 
-[node name="dirt_left_57" parent="front" instance=ExtResource( 8 )]
+[node name="dirt_left_56" parent="front" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 504, 104 )
 
-[node name="dirt_mid_58" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_57" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 520, 104 )
 
-[node name="dirt_mid_59" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_58" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 536, 104 )
 
-[node name="dirt_mid_60" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_59" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 552, 104 )
 
-[node name="dirt_mid_61" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_60" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 568, 104 )
 
-[node name="dirt_mid_62" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_61" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 584, 104 )
 
-[node name="dirt_mid_63" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_62" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 600, 104 )
 
-[node name="dirt_mid_64" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_63" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 616, 104 )
 
-[node name="dirt_mid_65" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_64" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 632, 104 )
 
-[node name="item_watermelon_66" parent="front" instance=ExtResource( 41 )]
+[node name="item_watermelon_65" parent="front" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 40, 120 )
 
-[node name="enemy_1_67" parent="front" instance=ExtResource( 3 )]
+[node name="enemy_1_66" parent="front" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 56, 120 )
 
-[node name="item_watermelon_68" parent="front" instance=ExtResource( 41 )]
+[node name="item_watermelon_67" parent="front" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 72, 120 )
 
-[node name="meat_69" parent="front" instance=ExtResource( 40 )]
+[node name="meat_68" parent="front" instance=ExtResource( 40 )]
 
 transform/pos = Vector2( 280, 120 )
 
-[node name="stone_70" parent="front" instance=ExtResource( 29 )]
+[node name="stone_69" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 504, 120 )
 
-[node name="oneway_left_71" parent="front" instance=ExtResource( 19 )]
+[node name="oneway_left_70" parent="front" instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 24, 136 )
 
-[node name="oneway_mid_72" parent="front" instance=ExtResource( 20 )]
+[node name="oneway_mid_71" parent="front" instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 40, 136 )
 
-[node name="oneway_mid_73" parent="front" instance=ExtResource( 20 )]
+[node name="oneway_mid_72" parent="front" instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 56, 136 )
 
-[node name="oneway_mid_74" parent="front" instance=ExtResource( 20 )]
+[node name="oneway_mid_73" parent="front" instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 72, 136 )
 
-[node name="oneway_right_75" parent="front" instance=ExtResource( 21 )]
+[node name="oneway_right_74" parent="front" instance=ExtResource( 21 )]
 
 transform/pos = Vector2( 88, 136 )
 
-[node name="stone_76" parent="front" instance=ExtResource( 29 )]
+[node name="stone_75" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 504, 136 )
 
-[node name="diamond_red_77" parent="front" instance=ExtResource( 39 )]
-
-transform/pos = Vector2( 536, 136 )
-
-[node name="grassstone_left_78" parent="front" instance=ExtResource( 24 )]
+[node name="grassstone_left_76" parent="front" instance=ExtResource( 24 )]
 
 transform/pos = Vector2( 264, 152 )
 
-[node name="grassstone_mid_79" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_77" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 280, 152 )
 
-[node name="grassstone_mid_80" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_78" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 296, 152 )
 
-[node name="grassstone_right_81" parent="front" instance=ExtResource( 26 )]
+[node name="grassstone_right_79" parent="front" instance=ExtResource( 26 )]
 
 transform/pos = Vector2( 312, 152 )
 
-[node name="stone_82" parent="front" instance=ExtResource( 29 )]
+[node name="stone_80" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 504, 152 )
 
-[node name="meat_83" parent="front" instance=ExtResource( 40 )]
+[node name="meat_81" parent="front" instance=ExtResource( 40 )]
 
 transform/pos = Vector2( 600, 152 )
 
-[node name="apple_pick_84" parent="front" instance=ExtResource( 38 )]
+[node name="apple_pick_82" parent="front" instance=ExtResource( 38 )]
 
 transform/pos = Vector2( 24, 168 )
 
-[node name="stone_85" parent="front" instance=ExtResource( 29 )]
+[node name="stone_83" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 312, 168 )
 
-[node name="spikes_86" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_84" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 328, 168 )
 
-[node name="spikes_87" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_85" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 344, 168 )
 
-[node name="spikes_88" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_86" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 360, 168 )
 
-[node name="spikes_89" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_87" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 376, 168 )
 
-[node name="spikes_90" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_88" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 392, 168 )
 
-[node name="spikes_91" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_89" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 408, 168 )
 
-[node name="spikes_92" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_90" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 424, 168 )
 
-[node name="spikes_93" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_91" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 440, 168 )
 
-[node name="spikes_94" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_92" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 456, 168 )
 
-[node name="spikes_95" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_93" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 472, 168 )
 
-[node name="spikes_96" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_94" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 488, 168 )
 
-[node name="stone_97" parent="front" instance=ExtResource( 29 )]
+[node name="stone_95" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 504, 168 )
 
-[node name="stone_98" parent="front" instance=ExtResource( 29 )]
+[node name="stone_96" parent="front" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 520, 168 )
+
+[node name="stone_97" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 312, 184 )
 
-[node name="stone_99" parent="front" instance=ExtResource( 29 )]
+[node name="stone_98" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 328, 184 )
 
-[node name="stone_100" parent="front" instance=ExtResource( 29 )]
+[node name="stone_99" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 344, 184 )
 
-[node name="stone_101" parent="front" instance=ExtResource( 29 )]
+[node name="stone_100" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 360, 184 )
 
-[node name="stone_102" parent="front" instance=ExtResource( 29 )]
+[node name="stone_101" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 376, 184 )
 
-[node name="stone_103" parent="front" instance=ExtResource( 29 )]
+[node name="stone_102" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 392, 184 )
 
-[node name="stone_104" parent="front" instance=ExtResource( 29 )]
+[node name="stone_103" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 408, 184 )
 
-[node name="stone_105" parent="front" instance=ExtResource( 29 )]
+[node name="stone_104" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 424, 184 )
 
-[node name="stone_106" parent="front" instance=ExtResource( 29 )]
+[node name="stone_105" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 440, 184 )
 
-[node name="stone_107" parent="front" instance=ExtResource( 29 )]
+[node name="stone_106" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 456, 184 )
 
-[node name="stone_108" parent="front" instance=ExtResource( 29 )]
+[node name="stone_107" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 472, 184 )
 
-[node name="stone_109" parent="front" instance=ExtResource( 29 )]
+[node name="stone_108" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 488, 184 )
 
-[node name="stone_110" parent="front" instance=ExtResource( 29 )]
+[node name="stone_109" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 504, 184 )
 
-[node name="apple_pick_111" parent="front" instance=ExtResource( 38 )]
+[node name="apple_pick_110" parent="front" instance=ExtResource( 38 )]
 
 transform/pos = Vector2( 40, 216 )
 
-[node name="oneway_left_112" parent="front" instance=ExtResource( 19 )]
+[node name="oneway_left_111" parent="front" instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 152, 216 )
 
-[node name="oneway_mid_113" parent="front" instance=ExtResource( 20 )]
+[node name="oneway_mid_112" parent="front" instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 168, 216 )
 
-[node name="oneway_mid_114" parent="front" instance=ExtResource( 20 )]
+[node name="oneway_mid_113" parent="front" instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 184, 216 )
 
-[node name="oneway_right_115" parent="front" instance=ExtResource( 21 )]
+[node name="oneway_right_114" parent="front" instance=ExtResource( 21 )]
 
 transform/pos = Vector2( 200, 216 )
 
-[node name="bear_116" parent="front" instance=ExtResource( 4 )]
+[node name="bear_115" parent="front" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 344, 232 )
 
-[node name="stone_117" parent="front" instance=ExtResource( 29 )]
+[node name="stone_116" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 632, 232 )
 
-[node name="stone_118" parent="front" instance=ExtResource( 29 )]
+[node name="stone_117" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 312, 248 )
 
-[node name="stone_119" parent="front" instance=ExtResource( 29 )]
+[node name="stone_118" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 328, 248 )
 
-[node name="stone_120" parent="front" instance=ExtResource( 29 )]
+[node name="stone_119" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 344, 248 )
 
-[node name="stone_121" parent="front" instance=ExtResource( 29 )]
+[node name="stone_120" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 360, 248 )
 
-[node name="stone_122" parent="front" instance=ExtResource( 29 )]
+[node name="stone_121" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 376, 248 )
 
-[node name="stone_123" parent="front" instance=ExtResource( 29 )]
+[node name="stone_122" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 616, 248 )
 
-[node name="stone_124" parent="front" instance=ExtResource( 29 )]
+[node name="stone_123" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 632, 248 )
 
-[node name="grassstone_left_125" parent="front" instance=ExtResource( 24 )]
+[node name="grassstone_left_124" parent="front" instance=ExtResource( 24 )]
 
 transform/pos = Vector2( 136, 264 )
 
-[node name="grassstone_mid_126" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_125" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 152, 264 )
 
-[node name="grassstone_mid_127" parent="front" instance=ExtResource( 25 )]
+[node name="grassstone_mid_126" parent="front" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 168, 264 )
 
-[node name="grassstone_right_128" parent="front" instance=ExtResource( 26 )]
+[node name="grassstone_right_127" parent="front" instance=ExtResource( 26 )]
 
 transform/pos = Vector2( 184, 264 )
 
-[node name="stone_129" parent="front" instance=ExtResource( 29 )]
+[node name="stone_128" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 312, 264 )
 
-[node name="stone_130" parent="front" instance=ExtResource( 29 )]
+[node name="stone_129" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 376, 264 )
 
-[node name="spikes_131" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_130" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 584, 264 )
 
-[node name="stone_132" parent="front" instance=ExtResource( 29 )]
+[node name="stone_131" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 600, 264 )
 
-[node name="stone_133" parent="front" instance=ExtResource( 29 )]
+[node name="stone_132" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 616, 264 )
 
-[node name="stone_134" parent="front" instance=ExtResource( 29 )]
+[node name="stone_133" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 632, 264 )
 
-[node name="bear_135" parent="front" instance=ExtResource( 4 )]
+[node name="bear_134" parent="front" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 56, 280 )
 
-[node name="stone_136" parent="front" instance=ExtResource( 29 )]
+[node name="stone_135" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 312, 280 )
 
-[node name="stone_137" parent="front" instance=ExtResource( 29 )]
+[node name="stone_136" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 376, 280 )
 
-[node name="stone_138" parent="front" instance=ExtResource( 29 )]
+[node name="stone_137" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 584, 280 )
 
-[node name="stone_139" parent="front" instance=ExtResource( 29 )]
+[node name="stone_138" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 600, 280 )
 
-[node name="stone_140" parent="front" instance=ExtResource( 29 )]
+[node name="stone_139" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 632, 280 )
 
-[node name="dirt_left_141" parent="front" instance=ExtResource( 8 )]
+[node name="dirt_left_140" parent="front" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 8, 296 )
 
-[node name="dirt_mid_142" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_141" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 24, 296 )
 
-[node name="dirt_mid_143" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_142" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 40, 296 )
 
-[node name="dirt_mid_144" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_143" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 56, 296 )
 
-[node name="dirt_mid_145" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_144" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 72, 296 )
 
-[node name="dirt_mid_146" parent="front" instance=ExtResource( 9 )]
+[node name="dirt_mid_145" parent="front" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 88, 296 )
 
-[node name="dirt_right_147" parent="front" instance=ExtResource( 10 )]
+[node name="dirt_right_146" parent="front" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 104, 296 )
 
-[node name="stone_148" parent="front" instance=ExtResource( 29 )]
+[node name="stone_147" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 312, 296 )
 
-[node name="stone_149" parent="front" instance=ExtResource( 29 )]
+[node name="stone_148" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 376, 296 )
 
-[node name="spikes_150" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_149" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 408, 296 )
 
-[node name="spikes_151" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_150" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 424, 296 )
 
-[node name="spikes_152" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_151" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 440, 296 )
 
-[node name="spikes_153" parent="front" instance=ExtResource( 23 )]
+[node name="spikes_152" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 456, 296 )
 
-[node name="stone_154" parent="front" instance=ExtResource( 29 )]
+[node name="stone_153" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 568, 296 )
 
-[node name="stone_155" parent="front" instance=ExtResource( 29 )]
+[node name="stone_154" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 584, 296 )
 
-[node name="stone_156" parent="front" instance=ExtResource( 29 )]
+[node name="stone_155" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 632, 296 )
 
-[node name="stone_157" parent="front" instance=ExtResource( 29 )]
+[node name="stone_156" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 8, 312 )
 
-[node name="stone_158" parent="front" instance=ExtResource( 29 )]
+[node name="stone_157" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 24, 312 )
 
-[node name="stone_159" parent="front" instance=ExtResource( 29 )]
+[node name="stone_158" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 40, 312 )
 
-[node name="stone_160" parent="front" instance=ExtResource( 29 )]
+[node name="stone_159" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 56, 312 )
 
-[node name="stone_161" parent="front" instance=ExtResource( 29 )]
+[node name="stone_160" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 72, 312 )
 
-[node name="stone_162" parent="front" instance=ExtResource( 29 )]
+[node name="stone_161" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 88, 312 )
 
-[node name="stone_163" parent="front" instance=ExtResource( 29 )]
+[node name="stone_162" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 104, 312 )
 
-[node name="stone_164" parent="front" instance=ExtResource( 29 )]
+[node name="stone_163" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 120, 312 )
 
-[node name="stone_165" parent="front" instance=ExtResource( 29 )]
+[node name="stone_164" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 136, 312 )
 
-[node name="stone_166" parent="front" instance=ExtResource( 29 )]
+[node name="stone_165" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 152, 312 )
 
-[node name="stone_167" parent="front" instance=ExtResource( 29 )]
+[node name="stone_166" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 168, 312 )
 
-[node name="stone_168" parent="front" instance=ExtResource( 29 )]
+[node name="stone_167" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 184, 312 )
 
-[node name="stone_169" parent="front" instance=ExtResource( 29 )]
+[node name="stone_168" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 200, 312 )
 
-[node name="stone_170" parent="front" instance=ExtResource( 29 )]
+[node name="stone_169" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 216, 312 )
 
-[node name="stone_171" parent="front" instance=ExtResource( 29 )]
+[node name="stone_170" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 232, 312 )
 
-[node name="stone_172" parent="front" instance=ExtResource( 29 )]
+[node name="stone_171" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 248, 312 )
 
-[node name="stone_173" parent="front" instance=ExtResource( 29 )]
+[node name="stone_172" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 264, 312 )
 
-[node name="stone_174" parent="front" instance=ExtResource( 29 )]
+[node name="stone_173" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 280, 312 )
 
-[node name="stone_175" parent="front" instance=ExtResource( 29 )]
+[node name="stone_174" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 296, 312 )
 
-[node name="stone_176" parent="front" instance=ExtResource( 29 )]
+[node name="stone_175" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 312, 312 )
 
-[node name="stone_177" parent="front" instance=ExtResource( 29 )]
+[node name="stone_176" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 376, 312 )
 
-[node name="stone_178" parent="front" instance=ExtResource( 29 )]
+[node name="stone_177" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 392, 312 )
 
-[node name="stone_179" parent="front" instance=ExtResource( 29 )]
+[node name="stone_178" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 408, 312 )
 
-[node name="stone_180" parent="front" instance=ExtResource( 29 )]
+[node name="stone_179" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 424, 312 )
 
-[node name="stone_181" parent="front" instance=ExtResource( 29 )]
+[node name="stone_180" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 440, 312 )
 
-[node name="stone_182" parent="front" instance=ExtResource( 29 )]
+[node name="stone_181" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 456, 312 )
 
-[node name="stone_183" parent="front" instance=ExtResource( 29 )]
+[node name="stone_182" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 472, 312 )
 
-[node name="stone_184" parent="front" instance=ExtResource( 29 )]
+[node name="stone_183" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 488, 312 )
 
-[node name="stone_185" parent="front" instance=ExtResource( 29 )]
+[node name="stone_184" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 504, 312 )
 
-[node name="stone_186" parent="front" instance=ExtResource( 29 )]
+[node name="stone_185" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 520, 312 )
 
-[node name="stone_187" parent="front" instance=ExtResource( 29 )]
+[node name="stone_186" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 536, 312 )
 
-[node name="stone_188" parent="front" instance=ExtResource( 29 )]
+[node name="stone_187" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 552, 312 )
 
-[node name="stone_189" parent="front" instance=ExtResource( 29 )]
+[node name="stone_188" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 568, 312 )
 
-[node name="stone_190" parent="front" instance=ExtResource( 29 )]
+[node name="stone_189" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 584, 312 )
 
-[node name="stone_191" parent="front" instance=ExtResource( 29 )]
+[node name="stone_190" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 600, 312 )
 
-[node name="stone_192" parent="front" instance=ExtResource( 29 )]
+[node name="stone_191" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 616, 312 )
 
-[node name="stone_193" parent="front" instance=ExtResource( 29 )]
+[node name="stone_192" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 632, 312 )
 

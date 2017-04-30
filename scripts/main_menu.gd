@@ -2,10 +2,6 @@ extends Node2D
 
 var can_quit = false
 
-onready var falling1 = get_node("Anims/Falling1")
-onready var falling2 = get_node("Anims/Falling2")
-onready var falling3 = get_node("Anims/Falling3")
-
 onready var leave = get_node("Buttons/leave")
 onready var music = get_node("Buttons/music")
 onready var sound = get_node("Buttons/sound")
@@ -126,7 +122,6 @@ func hide_game_won():
 				node.set_disabled(true)
 		global.finished = false
 
-
 func reset_global():
 	global.level = 1
 	global.score = 0
@@ -137,24 +132,3 @@ func reset_global():
 	global.life_lost = 0
 	global.deaths = 0
 	global.enemies_killed = 0
-
-func Falling1_start():
-	falling1.get_animation("falling").track_set_key_value(0, 0, Vector2(rand_range(-120, 200), rand_range(-200, -100)))
-	falling1.get_animation("falling").track_set_key_value(0, 1, Vector2(rand_range(100, 420), rand_range(300, 400)))
-	falling1.get_animation("falling").track_set_key_value(1, 0, rand_range(0, 360))
-	falling1.get_animation("falling").track_set_key_value(1, 1, rand_range(0, 720))
-	falling1.play("falling")
-
-func Falling2_start():
-	falling2.get_animation("falling").track_set_key_value(0, 0, Vector2(rand_range(-100, 220), rand_range(-200, -100)))
-	falling2.get_animation("falling").track_set_key_value(0, 1, Vector2(rand_range(0, 320), rand_range(300, 400)))
-	falling2.get_animation("falling").track_set_key_value(1, 0, rand_range(0, -360))
-	falling2.get_animation("falling").track_set_key_value(1, 1, rand_range(0, -720))
-	falling2.play("falling")
-
-func Falling3_start():
-	falling3.get_animation("falling").track_set_key_value(0, 0, Vector2(rand_range(0, 320), rand_range(-200, -100)))
-	falling3.get_animation("falling").track_set_key_value(0, 1, Vector2(rand_range(0, 320), rand_range(300, 400)))
-	falling3.get_animation("falling").track_set_key_value(1, 0, rand_range(180, -180))
-	falling3.get_animation("falling").track_set_key_value(1, 1, rand_range(360, -360))
-	falling3.play("falling")

@@ -982,8 +982,8 @@ visibility/visible = false
 
 [connection signal="pressed" from="Buttons/exit" to="." method="quit"]
 
-[connection signal="pressed" from="Buttons/leave" to="." method="hide_game_won"]
-
 [connection signal="pressed" from="Buttons/leave" to="." method="hide_credits"]
+
+[connection signal="pressed" from="Buttons/leave" to="." method="hide_game_won"]
 
 
