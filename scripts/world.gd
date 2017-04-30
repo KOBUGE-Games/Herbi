@@ -243,7 +243,7 @@ func check_items(item_name, item_num=0):
 	get_node(str("hud/", item_name)).set_text(str(item_num))
 
 func init_clouds():
-	var amount = (randi() % 3) + 3
+	var amount = (randi() % 2) + 2
 	for i in range(amount):
 		var cloud = p_clouds.instance()
 		cloud.set_pos(Vector2(randi() % 300,randi() % 230))

@@ -10,9 +10,11 @@ extents = Vector2( 4, 8 )
 [node name="oneway_left" type="Sprite"]
 
 texture = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="oneway" type="StaticBody2D" parent="."]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -27,7 +29,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oneway"]
 
 transform/pos = Vector2( -4, 0 )
 shape = SubResource( 1 )

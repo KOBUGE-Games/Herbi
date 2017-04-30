@@ -19,7 +19,7 @@
 [ext_resource path="res://scenes/game_won.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/misc/level_transition.tscn" type="PackedScene" id=18]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 
 resource/name = "hide"
 length = 0.2
@@ -126,7 +126,7 @@ tracks/9/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 
 resource/name = "show"
 length = 0.2
@@ -233,7 +233,7 @@ tracks/9/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 
 resource/name = "idle"
 length = 4.0
@@ -320,7 +320,7 @@ tracks/7/keys = {
 "values": [ 3.0, 0.0 ]
 }
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=4]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -824,8 +824,8 @@ max_lines_visible = -1
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/hide = SubResource( 4 )
-anims/show = SubResource( 5 )
+anims/hide = SubResource( 1 )
+anims/show = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -836,7 +836,7 @@ autoplay = ""
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/idle = SubResource( 7 )
+anims/idle = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -870,9 +870,9 @@ margin/left = 80.0
 margin/top = 126.0
 margin/right = 240.0
 margin/bottom = 166.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
@@ -897,9 +897,9 @@ margin/left = 60.0
 margin/top = 170.0
 margin/right = 220.0
 margin/bottom = 210.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
@@ -924,9 +924,9 @@ margin/left = 160.0
 margin/top = 170.0
 margin/right = 320.0
 margin/bottom = 210.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 1, 0.156863, 0.113725, 1 )
 custom_colors/font_color = Color( 1, 0.156863, 0.117647, 1 )
@@ -951,9 +951,9 @@ margin/left = 80.0
 margin/top = 190.0
 margin/right = 240.0
 margin/bottom = 230.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )

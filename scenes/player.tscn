@@ -80,20 +80,6 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="check_right" type="RayCast2D" parent="."]
-
-enabled = true
-cast_to = Vector2( 16, 0 )
-layer_mask = 1
-type_mask = 15
-
-[node name="check_down" type="RayCast2D" parent="."]
-
-enabled = true
-cast_to = Vector2( 0, 32 )
-layer_mask = 1
-type_mask = 15
-
 [node name="Events" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
@@ -111,5 +97,43 @@ process_mode = 1
 wait_time = 0.4
 one_shot = true
 autostart = false
+
+[node name="check_up" type="Node2D" parent="."]
+
+[node name="check_up1" type="RayCast2D" parent="check_up"]
+
+transform/pos = Vector2( 4, 0 )
+enabled = true
+cast_to = Vector2( 0, -7 )
+layer_mask = 1
+type_mask = 15
+
+[node name="check_up2" type="RayCast2D" parent="check_up"]
+
+transform/pos = Vector2( -2, 0 )
+enabled = true
+cast_to = Vector2( 0, -7 )
+layer_mask = 1
+type_mask = 15
+
+[node name="check_down" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="check_down1" type="RayCast2D" parent="check_down"]
+
+transform/pos = Vector2( 5, 0 )
+enabled = true
+cast_to = Vector2( 0, 14 )
+layer_mask = 1
+type_mask = 15
+
+[node name="check_down2" type="RayCast2D" parent="check_down"]
+
+transform/pos = Vector2( -3, 0 )
+enabled = true
+cast_to = Vector2( 0, 14 )
+layer_mask = 1
+type_mask = 15
 
 

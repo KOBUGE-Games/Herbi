@@ -104,7 +104,6 @@ func _fixed_process(delta):
 	motion = move(motion)
 	
 	var floor_velocity = Vector2()
-	var down_ray = get_node("check_down")
 	
 	if is_colliding():
 		# You can check which tile was collision against with this
@@ -138,10 +137,15 @@ func _fixed_process(delta):
 			# Then move again
 			move(motion)
 	
-	elif(down_ray.is_colliding()):
-		var collider = down_ray.get_collider()
-		if collider != null and collider extends StaticBody2D:
-			floor_velocity = collider.get_constant_linear_velocity()
+	for down_ray in get_node("check_down").get_children():
+		if down_ray.is_colliding():
+			var collider = down_ray.get_collider()
+			if collider != null and collider extends StaticBody2D:
+				floor_velocity = collider.get_constant_linear_velocity()
+			for up_ray in get_node("check_up").get_children():
+				if up_ray.is_colliding() and not up_ray.get_collider().get_name() == "oneway" and up_ray.get_collider() extends StaticBody2D:
+					get_parent().remove_life()
+					break
 	
 	#print(floor_velocity)
 	if (floor_velocity != Vector2() and floor_velocity.y > 0):
@@ -191,7 +195,9 @@ func Idle():
 		idle.start()
 
 func _ready():
-	get_node("check_right").add_exception(self)
-	get_node("check_down").add_exception(self)
+	for ray in get_node("check_up").get_children():
+		ray.add_exception(self)
+	for ray in get_node("check_down").get_children():
+		ray.add_exception(self)
 	set_fixed_process(true)
 	set_process_input(true)
