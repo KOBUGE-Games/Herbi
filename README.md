@@ -1,6 +1,6 @@
-# Herbi - On the loose
+# Herbi - On the loose : 1.0-dev
 
-A retro platformer in which you have to collect all diamonds presented in levels
+A retro platformer about collecting diamonds
 
 ![](https://github.com/KOBUGE-Games/Herbi/blob/master/splash.png)
 

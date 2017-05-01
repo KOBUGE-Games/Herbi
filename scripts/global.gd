@@ -20,3 +20,4 @@ var finished = false
 
 func _ready():
 	randomize()
+	OS.set_window_size(Vector2(640,480))
