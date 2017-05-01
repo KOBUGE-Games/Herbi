@@ -13,8 +13,10 @@ func _ready():
 
 func show():
 	if shown:
+		world.can_move = true
 		animation_player.play("hide")
 	else:
+		world.can_move = false
 		animation_player.play("show")
 	shown = !shown
 

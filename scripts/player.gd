@@ -30,7 +30,7 @@ var out = false
 var can_move = true
 var dead = false
 
-var prev_jump_pressed = false
+var jump_cooldown = 0.0
 var pApple = preload("res://scenes/items/apple.tscn")
 
 var i = 0
@@ -157,16 +157,17 @@ func _fixed_process(delta):
 		# If falling, no longer jumping
 		jumping = false
 	
-	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping and can_move):
-		# Jump must also be allowed to happen if the character left the floor a little bit ago.
-		# Makes controls more snappy.
-		velocity.y = -JUMP_SPEED
-		jumping = true
-		sprites.set_frame(1)
-		get_parent().play_sound("jump")
+	if (on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and can_move and not jumping and jump_cooldown > 0.2):
+			# Jump must also be allowed to happen if the character left the floor a little bit ago.
+			# Makes controls more snappy.
+			jump_cooldown = 0.0
+			velocity.y = -JUMP_SPEED
+			jumping = true
+			sprites.set_frame(1)
+			get_parent().play_sound("jump")
 	
 	on_air_time += delta
-	prev_jump_pressed = jump
+	jump_cooldown += delta
 	
 	if get_pos().y > get_node("Camera2D").get_limit(MARGIN_BOTTOM)+32 and not out:
 		out = true
