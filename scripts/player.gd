@@ -143,8 +143,9 @@ func _fixed_process(delta):
 			if collider != null and collider extends StaticBody2D:
 				floor_velocity = collider.get_constant_linear_velocity()
 			for up_ray in get_node("check_up").get_children():
-				if up_ray.is_colliding() and not up_ray.get_collider().get_name() == "oneway" and up_ray.get_collider() extends StaticBody2D:
-					get_parent().remove_life()
+				if up_ray.is_colliding() and up_ray.get_collider():
+					if not up_ray.get_collider().get_name() == "oneway" and up_ray.get_collider() extends StaticBody2D:
+						get_parent().remove_life()
 	
 	if (floor_velocity != Vector2() and floor_velocity.y > 0):
 		# If floor moves, move with floor

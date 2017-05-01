@@ -22,7 +22,7 @@ var apples
 var score
 
 var last_checkpoint = Vector2()
-var spawn
+var respawned = true
 
 onready var tween = get_node("hud/Tween")
 onready var sampleplayer = get_node("SamplePlayer")
@@ -37,15 +37,14 @@ onready var player = get_node("player")
 var window_size = Vector2(0,0)
 
 func _ready():
-	spawn = player.get_pos()
-	last_checkpoint = spawn
+	init_values()
+	init_clouds()
 	if global.music:
 		get_node("StreamPlayer").play()
 	transition.start((randi() % 2), false, (randi() % 2))
-	init_values()
-	init_clouds()
 	add_child(level_announcer.instance())
 	add_child(level.instance())
+	last_checkpoint = player.get_pos()
 	set_process_input(true)
 
 func init_values():
@@ -54,7 +53,8 @@ func init_values():
 	if lives < 3:
 		lives = 3
 	apples = global.apples
-	if last_checkpoint == spawn:
+	if respawned:
+		respawned = false
 		start_lives = lives
 		start_apples = apples
 		start_score = score
