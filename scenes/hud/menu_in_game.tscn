@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://scripts/menu_in_game.gd" type="Script" id=1]
 [ext_resource path="res://graphics/hud/menu_ingame_out.png" type="Texture" id=2]
@@ -31,6 +31,23 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
+texture = ExtResource( 5 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
 texture = ExtResource( 7 )
 margin/left = 0.0
 margin/right = 0.0
@@ -42,9 +59,8 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource/name = "hide"
 length = 0.4
 loop = false
 step = 0.1
@@ -59,9 +75,8 @@ tracks/0/keys = {
 "values": [ Vector2( -32, 0 ), Vector2( -32, -48 ), Vector2( -32, -96 ), Vector2( -32, -144 ), Vector2( -32, -192 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource/name = "show"
 length = 0.4
 loop = false
 step = 0.1
@@ -98,7 +113,6 @@ margin/bottom = 16.0
 
 [node name="Sprite" type="Sprite" parent="Control"]
 
-editor/display_folded = true
 transform/pos = Vector2( -32, -192 )
 transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
@@ -157,6 +171,7 @@ margin/top = 68.0
 margin/right = 144.0
 margin/bottom = 100.0
 custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
 custom_styles/disabled = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = ExtResource( 6 )
@@ -178,9 +193,9 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 64.0
 margin/bottom = 16.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -192,8 +207,8 @@ flat = false
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/hide = SubResource( 3 )
-anims/show = SubResource( 4 )
+anims/hide = SubResource( 4 )
+anims/show = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

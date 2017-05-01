@@ -22,6 +22,7 @@ var apples
 var score
 
 var last_checkpoint = Vector2()
+var spawn
 
 onready var tween = get_node("hud/Tween")
 onready var sampleplayer = get_node("SamplePlayer")
@@ -36,24 +37,27 @@ onready var player = get_node("player")
 var window_size = Vector2(0,0)
 
 func _ready():
-	init_values()
-	add_child(level_announcer.instance())
-	add_child(level.instance())
+	spawn = player.get_pos()
+	last_checkpoint = spawn
 	if global.music:
 		get_node("StreamPlayer").play()
 	transition.start((randi() % 2), false, (randi() % 2))
+	init_values()
 	init_clouds()
+	add_child(level_announcer.instance())
+	add_child(level.instance())
 	set_process_input(true)
-	last_checkpoint = player.get_pos()
 
 func init_values():
 	score = global.score
 	lives = global.lives
-	if lives < start_lives:
-		lives = start_lives
+	if lives < 3:
+		lives = 3
 	apples = global.apples
-	start_lives = lives
-	start_apples = apples
+	if last_checkpoint == spawn:
+		start_lives = lives
+		start_apples = apples
+		start_score = score
 	update_lifes()
 	check_items("diamonds")
 	check_items("apples", apples)
@@ -119,6 +123,7 @@ func collect_diamond():
 	if collected_diamonds == diamonds:
 ### launches next_level tween. For more, go to _on_Die_finished()
 		stop(true)
+	update_values()
 	check_items("diamonds")
 
 func add_apple():
@@ -136,45 +141,34 @@ func _on_shield_timeout():
 	shield = false
 
 func restart():
-### Do [restart/next] level, depending on if global.level was changed (look collect_diamond(), _on_Die_finished() and stop())
+### Does [restart/next] level, depending on if global.level was changed (look collect_diamond(), _on_Die_finished() and stop())
 	can_move = true
-	if collected_diamonds != diamonds:
+	if player.dead:
 		player.set_pos(last_checkpoint)
 		player.dead = false
+		player.out = false
+		get_node("hud/menu").disable(false)
 		init_values()
 		transition.start((randi() % 2), false, (randi() % 2))
 	else:
 		get_tree().reload_current_scene()
 
 func _input(event):
-	if not event.is_echo() && event.is_pressed():
-		if can_quit:
-			if event.is_action("ui_cancel"):
-				get_node("hud/menu").show()
-			elif event.is_action("restart"):
-				player.dead = true
-				stop()
-		if event.type == InputEvent.KEY:
-			if event.scancode == KEY_F3:
-				global.music = !global.music
-				check_music()
-			elif event.scancode == KEY_F4:
-				global.sound = !global.sound
-			
+	if event.type == InputEvent.KEY:
+		if event.scancode == KEY_S:
+			remove_life()
+		if not event.is_echo() && event.is_pressed():
 			# DEBUG MODE
 			if global.debug:
 				if event.scancode == KEY_D:
 					if global.level < global.total_levels:
-						global.level += 1
-						get_tree().change_scene("res://scenes/main.tscn")
+						stop(true)
 				elif event.scancode == KEY_A:
 					if global.level > 1:
 						global.level -= 1
 						get_tree().change_scene("res://scenes/main.tscn")
 				elif event.scancode == KEY_W:
 					add_life()
-				elif event.scancode == KEY_S:
-					remove_life()
 				elif event.scancode == KEY_Q:
 					add_apple()
 				elif event.scancode == KEY_E:
@@ -182,14 +176,16 @@ func _input(event):
 				elif event.scancode == KEY_F9:
 					get_tree().quit()
 
+func update_values():
+	global.score = score
+	global.lives = lives
+	global.apples = apples
 
 func stop(condition=false):
 ### Tweening color depending on [death/next level]
 	if condition:
+		update_values()
 		next_level = condition
-		global.score = score
-		global.lives = lives
-		global.apples = apples
 	else:
 		if not quit:
 			global.deaths += 1

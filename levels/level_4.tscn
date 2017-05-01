@@ -1329,13 +1329,13 @@ transform/pos = Vector2( 600, 328 )
 
 transform/pos = Vector2( 616, 328 )
 
-[node name="item_watermelon_134" parent="front" instance=ExtResource( 41 )]
+[node name="diamond_red_134" parent="front" instance=ExtResource( 39 )]
+
+transform/pos = Vector2( 72, 344 )
+
+[node name="item_watermelon_135" parent="front" instance=ExtResource( 41 )]
 
 transform/pos = Vector2( 152, 344 )
-
-[node name="diamond_red_135" parent="front" instance=ExtResource( 39 )]
-
-transform/pos = Vector2( 216, 344 )
 
 [node name="bear_136" parent="front" instance=ExtResource( 4 )]
 

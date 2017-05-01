@@ -145,9 +145,7 @@ func _fixed_process(delta):
 			for up_ray in get_node("check_up").get_children():
 				if up_ray.is_colliding() and not up_ray.get_collider().get_name() == "oneway" and up_ray.get_collider() extends StaticBody2D:
 					get_parent().remove_life()
-					break
 	
-	#print(floor_velocity)
 	if (floor_velocity != Vector2() and floor_velocity.y > 0):
 		# If floor moves, move with floor
 		move(floor_velocity*(delta/4))
@@ -171,6 +169,7 @@ func _fixed_process(delta):
 	
 	if get_pos().y > get_node("Camera2D").get_limit(MARGIN_BOTTOM)+32 and not out:
 		out = true
+		dead = true
 		get_node("/root/world/").stop()
 
 func _input(event):
