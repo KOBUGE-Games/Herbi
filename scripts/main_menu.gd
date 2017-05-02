@@ -10,6 +10,8 @@ onready var game_won = get_node("game_won")
 onready var transition = get_node("transition")
 
 func _ready():
+	for button in get_node("Buttons").get_children():
+		button.connect("pressed", global, "play_sound", ["click"])
 	if music.is_playing():
 		music.stop()
 	reset_global()
@@ -106,8 +108,8 @@ func show_game_won():
 			node.hide()
 			node.set_disabled(true)
 	game_won.show()
-	if global.sound:
-		game_won.get_node("SamplePlayer").play("win")
+	if global.is_sound:
+		global.play_sound("win")
 
 func hide_game_won():
 	if global.finished:

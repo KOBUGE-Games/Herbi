@@ -1,6 +1,6 @@
 extends Node
 
-const debug = false
+const debug = true
 const version = 0.9
 const total_levels = 9
 var level = 1

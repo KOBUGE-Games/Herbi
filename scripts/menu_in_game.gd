@@ -7,6 +7,9 @@ onready var sound_button = get_node("Control/Sprite/sound")
 var shown = false
 
 func _ready():
+	for button in get_node("Control/Sprite").get_children():
+		button.connect("pressed", global, "play_sound", ["click"])
+	get_node("Control/Button").connect("pressed", global, "play_sound", ["click"])
 	music_button.set_pressed(global.is_music)
 	sound_button.set_pressed(global.is_sound)
 	set_process_input(true)

@@ -155,10 +155,10 @@ func _input(event):
 		if not event.is_echo() && event.is_pressed():
 			# DEBUG MODE
 			if global.debug:
-				if event.scancode == KEY_D:
+				if event.scancode == KEY_D and not next_level:
 					if global.level < global.total_levels:
 						stop(true)
-				elif event.scancode == KEY_A:
+				elif event.scancode == KEY_A and not next_level:
 					if global.level > 1:
 						global.level -= 1
 						get_tree().change_scene("res://scenes/main.tscn")
