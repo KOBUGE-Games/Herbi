@@ -44,5 +44,5 @@ func _on_Area2D_body_enter(body):
 
 func kill_monster():
 	global.enemies_killed += 1
-	get_node("/root/world/").play_sound("killmonster")
+	global.play_sound("killmonster")
 	queue_free()

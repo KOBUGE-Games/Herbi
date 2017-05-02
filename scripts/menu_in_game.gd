@@ -1,14 +1,14 @@
 extends CanvasLayer
 
-onready var world = get_node("../../")
+onready var world = get_node("/root/world")
 onready var animation_player = get_node("AnimationPlayer")
-onready var music = get_node("Control/Sprite/music")
-onready var sound = get_node("Control/Sprite/sound")
+onready var music_button = get_node("Control/Sprite/music")
+onready var sound_button = get_node("Control/Sprite/sound")
 var shown = false
 
 func _ready():
-	music.set_pressed(global.music)
-	sound.set_pressed(global.sound)
+	music_button.set_pressed(global.is_music)
+	sound_button.set_pressed(global.is_sound)
 	set_process_input(true)
 
 func show():
@@ -21,10 +21,10 @@ func show():
 	shown = !shown
 
 func set_sound():
-	global.sound = !global.sound
+	global.is_sound = !global.is_sound
 
 func set_music():
-	global.music = !global.music
+	global.is_music = !global.is_music
 	world.check_music()
 
 func restart():
@@ -55,7 +55,7 @@ func _input(event):
 		if event.type == InputEvent.KEY:
 			if event.scancode == KEY_F3:
 				set_music()
-				music.set_pressed(!music.is_pressed())
+				music_button.set_pressed(!music_button.is_pressed())
 			elif event.scancode == KEY_F4:
 				set_sound()
-				sound.set_pressed(!sound.is_pressed())
+				sound_button.set_pressed(!sound_button.is_pressed())

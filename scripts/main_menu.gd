@@ -3,13 +3,15 @@ extends Node2D
 var can_quit = false
 
 onready var leave = get_node("Buttons/leave")
-onready var music = get_node("Buttons/music")
-onready var sound = get_node("Buttons/sound")
+onready var music_button = get_node("Buttons/music")
+onready var sound_button = get_node("Buttons/sound")
 onready var game_won = get_node("game_won")
 
 onready var transition = get_node("transition")
 
 func _ready():
+	if music.is_playing():
+		music.stop()
 	reset_global()
 	global_check()
 	
@@ -37,10 +39,10 @@ func _input(event):
 		if event.type == InputEvent.KEY:
 			if event.scancode == KEY_F3:
 				set_music()
-				music.set_pressed(!music.is_pressed())
+				music_button.set_pressed(!music_button.is_pressed())
 			elif event.scancode == KEY_F4:
 				set_sound()
-				sound.set_pressed(!sound.is_pressed())
+				sound_button.set_pressed(!sound_button.is_pressed())
 			if global.debug:
 				if event.scancode == KEY_T:
 					global.level = 0
@@ -53,10 +55,10 @@ func _on_AnimationPlayer_finished():
 		get_tree().change_scene("res://scenes/main.tscn")
 
 func set_music():
-	global.music = !global.music
+	global.is_music = !global.is_music
 
 func set_sound():
-	global.sound = !global.sound
+	global.is_sound = !global.is_sound
 
 func button_disable():
 	for button in get_node("Buttons").get_children():
@@ -84,10 +86,10 @@ func global_check():
 		show_game_won()
 	else:
 		normal_state()
-	if global.music:
-		music.set_pressed(true)
-	if global.sound:
-		sound.set_pressed(true)
+	if global.is_music:
+		music_button.set_pressed(true)
+	if global.is_sound:
+		sound_button.set_pressed(true)
 	if global.debug:
 		get_node("Labels/debug_info").show()
 

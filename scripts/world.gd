@@ -25,7 +25,6 @@ var last_checkpoint = Vector2()
 var respawned = true
 
 onready var tween = get_node("hud/Tween")
-onready var sampleplayer = get_node("SamplePlayer")
 
 onready var sprite_diamonds = get_node("hud/sprite_diamonds")
 onready var sprite_apples = get_node("hud/sprite_apples")
@@ -39,8 +38,8 @@ var window_size = Vector2(0,0)
 func _ready():
 	init_values()
 	init_clouds()
-	if global.music:
-		get_node("StreamPlayer").play()
+	if global.is_music and not music.is_playing():
+		music.play()
 	transition.start((randi() % 2), false, (randi() % 2))
 	add_child(level_announcer.instance())
 	add_child(level.instance())
@@ -63,21 +62,17 @@ func init_values():
 	check_items("apples", apples)
 	check_items("score", score)
 
-func play_sound(sample):
-	if global.sound:
-		sampleplayer.play(sample)
-
 func update_score(amount):
 	score += amount
 	if score >= 250:
 		add_life()
 		score = 0
-	play_sound("pop")
+	global.play_sound("pop")
 	check_items("score", score)
 
 func add_life():
 	lives += 1
-	play_sound("healthgain")
+	global.play_sound("healthgain")
 	update_lifes()
 
 func remove_life():
@@ -87,7 +82,7 @@ func remove_life():
 		shield = true
 		get_node("shield").start()
 		get_node("player/Events").play("damage")
-		play_sound("damage")
+		global.play_sound("damage")
 		update_lifes()
 
 func update_lifes():
@@ -118,22 +113,22 @@ func add_diamond():
 	check_items("diamonds")
 
 func collect_diamond():
-	play_sound("pick")
 	collected_diamonds += 1
 	if collected_diamonds == diamonds:
 ### launches next_level tween. For more, go to _on_Die_finished()
 		stop(true)
 	update_values()
+	global.play_sound("pick")
 	check_items("diamonds")
 
 func add_apple():
 	apples += 1
-	play_sound("pop")
+	global.play_sound("pop")
 	check_items("apples", apples)
 
 func remove_apple():
 	apples -= 1
-	play_sound("throw")
+	global.play_sound("throw")
 	check_items("apples", apples)
 
 func _on_shield_timeout():
@@ -215,10 +210,10 @@ func change_level():
 
 
 func check_music():
-	if global.music:
-		get_node("StreamPlayer").play()
+	if global.is_music:
+		music.play()
 	else:
-		get_node("StreamPlayer").stop()
+		music.stop()
 
 
 func check_items(item_name, item_num=0):

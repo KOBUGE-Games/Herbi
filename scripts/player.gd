@@ -164,7 +164,7 @@ func _fixed_process(delta):
 			velocity.y = -JUMP_SPEED
 			jumping = true
 			sprites.set_frame(1)
-			get_parent().play_sound("jump")
+			global.play_sound("jump")
 	
 	on_air_time += delta
 	jump_cooldown += delta
