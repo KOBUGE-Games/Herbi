@@ -46,6 +46,7 @@ func init_pos(param):
 
 func show_elements(yes=true, mode=0):
 	if i < ratio:
+		global.play_sound("frp")
 		i += 1
 		if mode == 1:
 			j -= 1
@@ -76,14 +77,16 @@ func start(param, no=false, mode=0):
 			get_node("bg").hide()
 		i = 0
 		ratio = 8
+		if param == 1:
+			ratio = 6
 		if mode == 1:
-			timer.set_wait_time(0.07)
+			timer.set_wait_time(0.15)
 			j = 9
 			ratio = 4
 			if param == 1:
 				ratio = 3
 				j = 7
 		else:
-			timer.set_wait_time(0.05)
+			timer.set_wait_time(0.1)
 		timer.start()
 		timer.connect("timeout", self, "show_elements", [no, mode])

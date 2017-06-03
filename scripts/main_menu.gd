@@ -82,7 +82,6 @@ func show_credits():
 func hide_credits():
 	get_node("Anims/Credits").play("hide")
 
-
 func global_check():
 	if global.finished:
 		show_game_won()
@@ -108,7 +107,7 @@ func show_game_won():
 			node.hide()
 			node.set_disabled(true)
 	game_won.show()
-	if global.is_sound:
+	if global.is_music:
 		global.play_sound("win")
 
 func hide_game_won():

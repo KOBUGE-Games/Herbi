@@ -699,7 +699,6 @@ transform/pos = Vector2( 296, 232 )
 
 [node name="Labels" type="Control" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -712,15 +711,15 @@ margin/bottom = 40.0
 [node name="credits" type="Label" parent="Labels"]
 
 visibility/visible = false
-rect/scale = Vector2( 0.5, 0.5 )
+rect/scale = Vector2( 0.45, 0.45 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 10.0
-margin/top = 53.0
-margin/right = 610.0
-margin/bottom = 336.0
+margin/left = 25.0
+margin/top = 62.0
+margin/right = 625.0
+margin/bottom = 345.0
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color = Color( 0.196078, 0.196078, 0.196078, 1 )
 custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 1 )
@@ -818,6 +817,8 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Anims" type="Node" parent="."]
+
+editor/display_folded = true
 
 [node name="Credits" type="AnimationPlayer" parent="Anims"]
 

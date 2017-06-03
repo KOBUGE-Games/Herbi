@@ -1,6 +1,6 @@
 extends Node
 
-const debug = true
+const debug = false
 const version = 0.9
 const total_levels = 9
 var level = 1
@@ -25,4 +25,3 @@ func _ready():
 func play_sound(sample):
 	if is_sound:
 		sound.play(sample)
-	

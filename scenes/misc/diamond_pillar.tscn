@@ -23,6 +23,7 @@ tracks/0/keys = {
 
 visibility/opacity = 0.9
 texture = ExtResource( 1 )
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 
 [node name="pillar_anim" type="AnimationPlayer" parent="."]
 
