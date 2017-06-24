@@ -26,8 +26,8 @@ func _ready():
 func _input(event):
 	if can_quit:
 		if event.is_action_pressed("ui_cancel"):
-			if global.finished:
-				hide_game_won()
+			if get_node("Buttons/leave").is_visible():
+				hide_tab()
 			else:
 				quit()
 		elif event.is_action_pressed("jump"):
@@ -49,18 +49,20 @@ func _on_AnimationPlayer_finished():
 		get_tree().change_scene("res://scenes/misc/keys_info.tscn")
 
 func set_music():
-	global.is_music = !global.is_music
+	save_manager.config.music = !save_manager.config.music
 
 func set_sound():
-	global.is_sound = !global.is_sound
+	save_manager.config.sound = !save_manager.config.sound
 
 func set_fullscreen():
 	if OS.is_window_fullscreen():
 		OS.set_window_fullscreen(false)
 		get_node("Buttons/fullscreen").set_pressed(false)
+		save_manager.config.fullscreen = false
 	else:
 		OS.set_window_fullscreen(true)
 		get_node("Buttons/fullscreen").set_pressed(true)
+		save_manager.config.fullscreen = true
 
 func button_disable():
 	for button in get_node("Buttons").get_children():
@@ -74,7 +76,7 @@ func play():
 func quit():
 	button_disable()
 	transition.start(1, true)
-	transition.connect("finished_anim", get_tree(), "quit")
+	transition.connect("finished_anim", save_manager, "_notification", [MainLoop.NOTIFICATION_WM_QUIT_REQUEST])
 
 func show_credits():
 	credits_shown = true
@@ -99,6 +101,7 @@ func hide_tab():
 	else:
 		if credits_shown:
 			get_node("Anims/Tabs").play("hide_credits")
+			credits_shown = false
 		else:
 			get_node("Anims/Tabs").play("hide_options")
 
@@ -107,11 +110,11 @@ func global_check():
 		show_game_won()
 	else:
 		normal_state()
-	if global.is_music:
+	if save_manager.config.music:
 		music_button.set_pressed(true)
-	if global.is_sound:
+	if save_manager.config.sound:
 		sound_button.set_pressed(true)
-	get_node("Buttons/fullscreen").set_pressed(OS.is_window_fullscreen())
+	get_node("Buttons/fullscreen").set_pressed(save_manager.config.fullscreen)
 	if global.debug:
 		get_node("Labels/debug_info").show()
 
@@ -128,7 +131,7 @@ func show_game_won():
 			node.hide()
 			node.set_disabled(true)
 	game_won.show()
-	if global.is_music:
+	if save_manager.config.music:
 		global.play_sound("win")
 
 func reset_global():

@@ -10,8 +10,8 @@ func _ready():
 	for button in get_node("Control/Sprite").get_children():
 		button.connect("pressed", global, "play_sound", ["click"])
 	get_node("Control/Button").connect("pressed", global, "play_sound", ["click"])
-	music_button.set_pressed(global.is_music)
-	sound_button.set_pressed(global.is_sound)
+	music_button.set_pressed(save_manager.config.music)
+	sound_button.set_pressed(save_manager.config.sound)
 	set_process_input(true)
 
 func show():
@@ -24,10 +24,10 @@ func show():
 	shown = !shown
 
 func set_sound():
-	global.is_sound = !global.is_sound
+	save_manager.config.sound = !save_manager.config.sound
 
 func set_music():
-	global.is_music = !global.is_music
+	save_manager.config.music = !save_manager.config.music
 	world.check_music()
 
 func restart():

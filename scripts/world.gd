@@ -38,7 +38,7 @@ var window_size = Vector2(0,0)
 func _ready():
 	init_values()
 	init_clouds()
-	if global.is_music and not music.is_playing():
+	if save_manager.config.music and not music.is_playing():
 		music.play()
 	transition.start((randi() % 2), false, (randi() % 2))
 	add_child(level_announcer.instance())
@@ -210,7 +210,7 @@ func change_level():
 
 
 func check_music():
-	if global.is_music:
+	if save_manager.config.music:
 		music.play()
 	else:
 		music.stop()

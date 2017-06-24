@@ -7,8 +7,6 @@ var level = 1
 var score = 0
 var lives = 3
 var apples = 3
-var is_music = true
-var is_sound = true
 
 var final_score = 0
 var apples_picked = 0
@@ -21,7 +19,9 @@ var finished = false
 func _ready():
 	randomize()
 	OS.set_window_size(Vector2(640,480))
+	if save_manager.config.fullscreen:
+		OS.set_window_fullscreen(true)
 
 func play_sound(sample):
-	if is_sound:
+	if save_manager.config.sound:
 		sound.play(sample)
