@@ -28,6 +28,7 @@ var dir_right = true
 
 var out = false
 var can_move = true
+var crounch = false
 var dead = false
 
 var jump_cooldown = 0.0
@@ -53,7 +54,7 @@ func _fixed_process(delta):
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_pressed("jump")
 	
-	if abs(velocity.x) < WALK_MIN_SPEED and not jumping and not dead:
+	if abs(velocity.x) < WALK_MIN_SPEED and not jumping and not dead and not crounch:
 		if !idle.is_connected("timeout", self, "Idle"):
 			idle.connect("timeout", self, "Idle")
 			Idle()
@@ -62,7 +63,7 @@ func _fixed_process(delta):
 			idle.disconnect("timeout", self, "Idle")
 	
 	var stop = true
-	if can_move:
+	if can_move and not crounch:
 		if walk_left and get_pos().x > 16:
 			if (velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED):
 				force.x -= WALK_FORCE
@@ -175,8 +176,11 @@ func _fixed_process(delta):
 		get_node("/root/world/").stop()
 
 func _input(event):
-	if event.is_action_pressed("fullscreen"):
-		OS.set_window_fullscreen(!OS.is_window_fullscreen())
+	if event.is_action_pressed("down") and not jumping:
+		crounch = true
+		sprites.set_frame(5)
+	elif event.is_action_released("down"):
+		crounch = false
 	
 	if get_parent().apples > 0 and event.is_action_pressed("throw") and can_move:
 		var apple = pApple.instance()

@@ -52,13 +52,3 @@ func _input(event):
 	if world.can_quit:
 		if event.is_action_pressed("ui_cancel"):
 			show()
-		elif event.is_action_pressed("restart"):
-			restart()
-	if not event.is_echo() && event.is_pressed():
-		if event.type == InputEvent.KEY:
-			if event.scancode == KEY_F3:
-				set_music()
-				music_button.set_pressed(!music_button.is_pressed())
-			elif event.scancode == KEY_F4:
-				set_sound()
-				sound_button.set_pressed(!sound_button.is_pressed())

@@ -1,6 +1,7 @@
 extends Node2D
 
 var can_quit = false
+var credits_shown = false
 
 onready var leave = get_node("Buttons/leave")
 onready var music_button = get_node("Buttons/music")
@@ -23,44 +24,43 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.is_action_pressed("fullscreen"):
-		OS.set_window_fullscreen(!OS.is_window_fullscreen())
-	
 	if can_quit:
 		if event.is_action_pressed("ui_cancel"):
 			if global.finished:
 				hide_game_won()
 			else:
 				quit()
-		elif event.is_action_pressed("jump") or event.is_action_pressed("restart"):
+		elif event.is_action_pressed("jump"):
 			if global.finished:
-				hide_game_won()
+				hide_tab()
 			else:
 				play()
 		
 		if event.type == InputEvent.KEY:
-			if event.scancode == KEY_F3:
-				set_music()
-				music_button.set_pressed(!music_button.is_pressed())
-			elif event.scancode == KEY_F4:
-				set_sound()
-				sound_button.set_pressed(!sound_button.is_pressed())
 			if global.debug:
 				if event.scancode == KEY_T:
 					global.level = 0
-					get_tree().change_scene("res://scenes/main.tscn")
+					get_tree().change_scene("res://scenes/misc/keys_info.tscn")
 				elif event.scancode == KEY_F9:
 					get_tree().quit()
 
 func _on_AnimationPlayer_finished():
 	if get_node("Anims/Enter").get_current_animation() == "enter":
-		get_tree().change_scene("res://scenes/main.tscn")
+		get_tree().change_scene("res://scenes/misc/keys_info.tscn")
 
 func set_music():
 	global.is_music = !global.is_music
 
 func set_sound():
 	global.is_sound = !global.is_sound
+
+func set_fullscreen():
+	if OS.is_window_fullscreen():
+		OS.set_window_fullscreen(false)
+		get_node("Buttons/fullscreen").set_pressed(false)
+	else:
+		OS.set_window_fullscreen(true)
+		get_node("Buttons/fullscreen").set_pressed(true)
 
 func button_disable():
 	for button in get_node("Buttons").get_children():
@@ -69,7 +69,7 @@ func button_disable():
 func play():
 	button_disable()
 	transition.start(1, true)
-	transition.connect("finished_anim", get_tree(), "change_scene", ["res://scenes/main.tscn"], 4)
+	transition.connect("finished_anim", get_tree(), "change_scene", ["res://scenes/misc/keys_info.tscn"], 4)
 
 func quit():
 	button_disable()
@@ -77,10 +77,30 @@ func quit():
 	transition.connect("finished_anim", get_tree(), "quit")
 
 func show_credits():
-	get_node("Anims/Credits").play("show")
+	credits_shown = true
+	get_node("Anims/Tabs").play("show_credits")
 
-func hide_credits():
-	get_node("Anims/Credits").play("hide")
+func show_options():
+	get_node("Anims/Tabs").play("show_options")
+
+func hide_tab():
+	if global.finished:
+		game_won.hide()
+		get_node("Title").show()
+		get_node("Labels").show()
+		for node in get_node("Buttons").get_children():
+			if node.get_name() == "leave" or node extends CheckBox:
+				node.set_disabled(true)
+				node.hide()
+			else:
+				node.set_disabled(false)
+				node.show()
+		global.finished = false
+	else:
+		if credits_shown:
+			get_node("Anims/Tabs").play("hide_credits")
+		else:
+			get_node("Anims/Tabs").play("hide_options")
 
 func global_check():
 	if global.finished:
@@ -91,6 +111,7 @@ func global_check():
 		music_button.set_pressed(true)
 	if global.is_sound:
 		sound_button.set_pressed(true)
+	get_node("Buttons/fullscreen").set_pressed(OS.is_window_fullscreen())
 	if global.debug:
 		get_node("Labels/debug_info").show()
 
@@ -109,20 +130,6 @@ func show_game_won():
 	game_won.show()
 	if global.is_music:
 		global.play_sound("win")
-
-func hide_game_won():
-	if global.finished:
-		game_won.hide()
-		get_node("Title").show()
-		get_node("Labels").show()
-		for node in get_node("Buttons").get_children():
-			if node.get_name() != "leave":
-				node.set_disabled(false)
-				node.show()
-			else:
-				node.hide()
-				node.set_disabled(true)
-		global.finished = false
 
 func reset_global():
 	global.level = 1

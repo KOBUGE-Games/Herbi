@@ -150,20 +150,20 @@ func restart():
 
 func _input(event):
 	if event.type == InputEvent.KEY:
-		if event.scancode == KEY_S:
-			remove_life()
 		if not event.is_echo() && event.is_pressed():
 			# DEBUG MODE
 			if global.debug:
-				if event.scancode == KEY_D and not next_level:
-					if global.level < global.total_levels:
-						stop(true)
+				if event.scancode == KEY_W:
+					add_life()
 				elif event.scancode == KEY_A and not next_level:
 					if global.level > 1:
 						global.level -= 1
 						get_tree().change_scene("res://scenes/main.tscn")
-				elif event.scancode == KEY_W:
-					add_life()
+				elif event.scancode == KEY_S:
+					remove_life()
+				elif event.scancode == KEY_D and not next_level:
+					if global.level < global.total_levels:
+						stop(true)
 				elif event.scancode == KEY_Q:
 					add_apple()
 				elif event.scancode == KEY_E:

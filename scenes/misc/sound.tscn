@@ -76,7 +76,7 @@ samples/win = {
 
 [node name="SamplePlayer" type="SamplePlayer"]
 
-config/polyphony = 6
+config/polyphony = 12
 config/samples = SubResource( 1 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
