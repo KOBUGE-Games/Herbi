@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=27 format=1]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
@@ -673,7 +673,34 @@ tracks/7/keys = {
 "values": [ 3.0, 0.0 ]
 }
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="Animation" id=6]
+
+resource/name = "after_win"
+length = 0.2
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Buttons/play:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.784314, 0.784314, 1 ), Color( 0.784314, 0.392157, 0.392157, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Buttons/play:custom_colors/font_color_hover")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.784314, 0.784314, 1 ), Color( 0.784314, 0.392157, 0.392157, 1 ) ]
+}
+
+[sub_resource type="StyleBoxTexture" id=7]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1096,18 +1123,18 @@ max_lines_visible = -1
 [node name="debug_info" type="Label" parent="Labels"]
 
 visibility/visible = false
-rect/scale = Vector2( 0.4, 0.4 )
+rect/scale = Vector2( 0.45, 0.45 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 64.0
-margin/right = 235.0
-margin/bottom = 237.0
+margin/left = 16.0
+margin/top = 0.0
+margin/right = 251.0
+margin/bottom = 173.0
 custom_fonts/font = ExtResource( 13 )
-custom_colors/font_color = Color( 0.879765, 0.763726, 0, 0.590196 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0.409804 )
+custom_colors/font_color = Color( 1, 0.9, 0, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
 text = "\\\\\\ DEBUG MODE ///
 T = Load level_0.tscn
 D = Next Level
@@ -1145,6 +1172,8 @@ max_lines_visible = -1
 
 [node name="Anims" type="Node" parent="."]
 
+editor/display_folded = true
+
 [node name="Tabs" type="AnimationPlayer" parent="Anims"]
 
 playback/process_mode = 1
@@ -1170,8 +1199,20 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "idle"
 
+[node name="Events" type="AnimationPlayer" parent="Anims"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/after_win = SubResource( 6 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "idle"
+
 [node name="Buttons" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1220,12 +1261,13 @@ margin/left = 80.0
 margin/top = 84.0
 margin/right = 240.0
 margin/bottom = 124.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+custom_colors/font_color_hover = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
 toggle_mode = false
 click_on_press = true
@@ -1247,9 +1289,9 @@ margin/left = 60.0
 margin/top = 128.0
 margin/right = 220.0
 margin/bottom = 168.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
@@ -1274,9 +1316,9 @@ margin/left = 160.0
 margin/top = 128.0
 margin/right = 320.0
 margin/bottom = 168.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
@@ -1301,9 +1343,9 @@ margin/left = 80.0
 margin/top = 156.0
 margin/right = 240.0
 margin/bottom = 191.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 1, 0.156863, 0.113725, 1 )
 custom_colors/font_color = Color( 1, 0.156863, 0.117647, 1 )
@@ -1327,9 +1369,9 @@ margin/left = 80.0
 margin/top = 190.0
 margin/right = 240.0
 margin/bottom = 230.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )

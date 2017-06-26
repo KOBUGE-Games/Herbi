@@ -1,8 +1,8 @@
 extends Node
 
-const debug = false
 const version = 0.9
 const total_levels = 9
+var debug = false
 var level = 1
 var score = 0
 var lives = 3
@@ -21,6 +21,8 @@ func _ready():
 	OS.set_window_size(Vector2(640,480))
 	if save_manager.config.fullscreen:
 		OS.set_window_fullscreen(true)
+	if save_manager.progression.first_contact:
+		debug = true
 
 func play_sound(sample):
 	if save_manager.config.sound:

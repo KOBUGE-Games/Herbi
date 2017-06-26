@@ -7,7 +7,8 @@ const default_config = {
 }
 
 const starting_state = {
-	first_finish = false
+	first_finish = false,
+	first_contact = false
 }
 
 var config = {}
@@ -23,7 +24,7 @@ func _notification(what):
 
 func load_game():
 	var f = File.new()
-	var err = f.open_encrypted_with_pass("res://save/saved_game.bin", File.READ, "Herbi")
+	var err = f.open_encrypted_with_pass("res://save/saved_game.save", File.READ, "Herbi")
 	
 	if !err:
 		config = f.get_var()
@@ -49,7 +50,7 @@ func load_game():
 
 func save_game():
 	var f = File.new()
-	var err = f.open_encrypted_with_pass("res://save/saved_game.bin", File.WRITE, "Herbi")
+	var err = f.open_encrypted_with_pass("res://save/saved_game.save", File.WRITE, "Herbi")
 	f.store_var(config)
 	f.store_var(progression)
 	f.close()

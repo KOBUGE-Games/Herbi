@@ -8,7 +8,7 @@ func _input(event):
 		start()
 
 func start():
-	if get_name() == "Keys":
+	if get_name() == "keys":
 		get_tree().change_scene("res://scenes/main.tscn")
 	else:
 		get_tree().change_scene("res://scenes/main_menu.tscn")

@@ -117,6 +117,8 @@ func global_check():
 	get_node("Buttons/fullscreen").set_pressed(save_manager.config.fullscreen)
 	if global.debug:
 		get_node("Labels/debug_info").show()
+	if save_manager.progression.first_finish and not save_manager.progression.first_contact:
+		get_node("Anims/Events").play("after_win")
 
 func normal_state():
 	game_won.hide()
@@ -124,6 +126,7 @@ func normal_state():
 	leave.hide()
 
 func show_game_won():
+	save_manager.progression.first_finish = true
 	get_node("Title").hide()
 	get_node("Labels").hide()
 	for node in get_node("Buttons").get_children():
@@ -131,7 +134,7 @@ func show_game_won():
 			node.hide()
 			node.set_disabled(true)
 	game_won.show()
-	if save_manager.config.music:
+	if save_manager.config.sound:
 		global.play_sound("win")
 
 func reset_global():

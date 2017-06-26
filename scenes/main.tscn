@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://scripts/world.gd" type="Script" id=1]
-[ext_resource path="res://scenes/misc/level_transition.tscn" type="PackedScene" id=2]
-[ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=3]
-[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=5]
-[ext_resource path="res://graphics/items/diamond_red.png" type="Texture" id=6]
-[ext_resource path="res://graphics/items/apple.png" type="Texture" id=7]
-[ext_resource path="res://graphics/items/watermelon.png" type="Texture" id=8]
-[ext_resource path="res://scenes/hud/menu_in_game.tscn" type="PackedScene" id=9]
+[ext_resource path="res://graphics/backgrounds/fallback.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://graphics/items/diamond_red.png" type="Texture" id=5]
+[ext_resource path="res://graphics/items/apple.png" type="Texture" id=6]
+[ext_resource path="res://graphics/items/watermelon.png" type="Texture" id=7]
+[ext_resource path="res://scenes/hud/menu_in_game.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/events_checking.gd" type="Script" id=9]
+[ext_resource path="res://scripts/event_items.gd" type="Script" id=10]
+[ext_resource path="res://scenes/misc/level_transition.tscn" type="PackedScene" id=11]
 
 [node name="world" type="Node2D"]
 
@@ -24,22 +26,20 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="transition" parent="." instance=ExtResource( 2 )]
-
 [node name="back" type="CanvasLayer" parent="."]
 
 editor/display_folded = true
-layer = -10
+layer = -3
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
 [node name="bg" type="Sprite" parent="back"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 centered = false
 
-[node name="player" parent="." instance=ExtResource( 4 )]
+[node name="player" parent="." instance=ExtResource( 3 )]
 
 [node name="hud" type="CanvasLayer" parent="."]
 
@@ -65,7 +65,7 @@ margin/left = 28.0
 margin/top = 10.0
 margin/right = 68.0
 margin/bottom = 29.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 0.392157 )
 text = "x 0"
 percent_visible = 1.0
@@ -90,7 +90,7 @@ margin/left = 28.0
 margin/top = 26.0
 margin/right = 44.0
 margin/bottom = 45.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 0.392157 )
 text = "0"
 percent_visible = 1.0
@@ -101,7 +101,7 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 16, 32 )
 transform/scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 
 [node name="apples" type="Label" parent="hud"]
@@ -115,7 +115,7 @@ margin/left = 288.0
 margin/top = 28.0
 margin/right = 304.0
 margin/bottom = 47.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 0.392157 )
 text = "0"
 percent_visible = 1.0
@@ -126,7 +126,7 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 274, 32 )
 transform/scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 
 [node name="score" type="Label" parent="hud"]
@@ -141,7 +141,7 @@ margin/left = 288.0
 margin/top = 10.0
 margin/right = 336.0
 margin/bottom = 30.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0.588235, 0.588235, 0.588235, 0.392157 )
 text = "0"
 percent_visible = 1.0
@@ -152,10 +152,10 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 274, 16 )
 transform/scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 modulate = Color( 0.588235, 1, 1, 0.588235 )
 
-[node name="menu" parent="hud" instance=ExtResource( 9 )]
+[node name="menu" parent="hud" instance=ExtResource( 8 )]
 
 [node name="shield" type="Timer" parent="."]
 
@@ -163,6 +163,20 @@ process_mode = 1
 wait_time = 2.0
 one_shot = false
 autostart = false
+
+[node name="events" type="CanvasLayer" parent="."]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+script/script = ExtResource( 9 )
+
+[node name="event" type="Node2D" parent="events"]
+
+script/script = ExtResource( 10 )
+
+[node name="transition" parent="." instance=ExtResource( 11 )]
 
 [connection signal="timeout" from="shield" to="." method="_on_shield_timeout"]
 

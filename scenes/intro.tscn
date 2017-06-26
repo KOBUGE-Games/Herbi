@@ -17,50 +17,50 @@ tracks/0/path = NodePath("Sprite 2:visibility/visible")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0.4, 3 ),
-"transitions": FloatArray( 1, 1 ),
+"times": FloatArray( 0, 0.4, 3 ),
+"transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite3:visibility/visible")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0.4, 3 ),
-"transitions": FloatArray( 1, 1 ),
+"times": FloatArray( 0, 0.4, 3 ),
+"transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Label:visibility/visible")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0.7, 3 ),
-"transitions": FloatArray( 1, 1 ),
+"times": FloatArray( 0, 0.7, 3 ),
+"transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Label1:visibility/visible")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0.8, 3 ),
-"transitions": FloatArray( 1, 1 ),
+"times": FloatArray( 0, 0.8, 3 ),
+"transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Label2:visibility/visible")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 1.2, 3 ),
-"transitions": FloatArray( 1, 1 ),
+"times": FloatArray( 0, 1.2, 3 ),
+"transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
 }
 tracks/5/type = "method"
 tracks/5/path = NodePath(".")

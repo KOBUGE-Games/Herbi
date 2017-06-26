@@ -193,7 +193,7 @@ func _input(event):
 func Idle():
 	if not jumping:
 		if i == 0:
-			i = 3
+			i = randi()% 2 + 3
 		else:
 			i = 0
 		sprites.set_frame(i)

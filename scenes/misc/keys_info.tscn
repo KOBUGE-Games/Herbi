@@ -25,33 +25,33 @@ tracks/1/path = NodePath("Label1:visibility/visible")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0.2 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Label2:visibility/visible")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0.4 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Label3:visibility/visible")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 1 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 
-[node name="Keys" type="Node2D"]
+[node name="keys" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
@@ -64,7 +64,6 @@ modulate = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
 
-visibility/visible = false
 rect/min_size = Vector2( 533, 20 )
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
@@ -84,7 +83,6 @@ max_lines_visible = -1
 
 [node name="Label1" type="Label" parent="."]
 
-visibility/visible = false
 rect/min_size = Vector2( 533, 20 )
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
@@ -104,7 +102,6 @@ max_lines_visible = -1
 
 [node name="Label2" type="Label" parent="."]
 
-visibility/visible = false
 rect/min_size = Vector2( 533, 20 )
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
@@ -124,7 +121,6 @@ max_lines_visible = -1
 
 [node name="Label3" type="Label" parent="."]
 
-visibility/visible = false
 rect/min_size = Vector2( 533, 20 )
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
