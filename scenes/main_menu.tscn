@@ -1079,6 +1079,7 @@ transform/pos = Vector2( 296, 232 )
 
 [node name="Labels" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1237,6 +1238,7 @@ autoplay = "idle"
 
 [node name="Buttons" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1292,7 +1294,7 @@ custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color_hover = Color( 0.784314, 0.784314, 0.784314, 1 )
-custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
+custom_colors/font_color_pressed = Color( 0.784314, 0.784314, 0.784314, 1 )
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -1401,7 +1403,8 @@ custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
-custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
+custom_colors/font_color_hover = Color( 0.784314, 0.784314, 0.784314, 1 )
+custom_colors/font_color_pressed = Color( 0.784314, 0.784314, 0.784314, 1 )
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2

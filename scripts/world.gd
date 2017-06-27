@@ -74,9 +74,10 @@ func update_score(amount):
 	check_items("score", score)
 
 func add_life():
-	lives += 1
-	global.play_sound("healthgain")
-	update_lifes()
+	if lives < 66: #Needs some devilish easter-egg
+		lives += 1
+		global.play_sound("healthgain")
+		update_lifes()
 
 func remove_life():
 	if not shield and can_move:
@@ -125,9 +126,10 @@ func collect_diamond():
 	check_items("diamonds")
 
 func add_apple():
-	apples += 1
-	global.play_sound("pop")
-	check_items("apples", apples)
+	if apples < 66: #Needs some devilish easter-egg there too
+		apples += 1
+		global.play_sound("pop")
+		check_items("apples", apples)
 
 func remove_apple():
 	apples -= 1
@@ -165,8 +167,9 @@ func _input(event):
 				elif event.scancode == KEY_S:
 					remove_life()
 				elif event.scancode == KEY_D and not next_level:
-					if global.level < global.total_levels:
+					if global.level <= global.total_levels:
 						stop(true)
+						save_manager.temporary_events.debug_next_level = true
 				elif event.scancode == KEY_Q:
 					add_apple()
 				elif event.scancode == KEY_E:

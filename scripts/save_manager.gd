@@ -6,9 +6,14 @@ const default_config = {
 	fullscreen = false
 }
 
-const starting_state = {
+const events = {
 	first_finish = false,
-	first_contact = false
+	first_contact = false,
+	next_level_error = false
+}
+
+var temporary_events = {
+	debug_next_level = false
 }
 
 var config = {}
@@ -38,11 +43,11 @@ func load_game():
 				config[option] = default_config[option]
 	
 	if progression == null:
-		progression = starting_state
+		progression = events
 	else:
-		for option in starting_state:
+		for option in events:
 			if !progression.has(option):
-				progression[option] = starting_state[option]
+				progression[option] = events[option]
 	
 	f.close()
 	print(config)
