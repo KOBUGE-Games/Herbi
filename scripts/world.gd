@@ -4,6 +4,7 @@ const level_announcer = preload("res://scenes/misc/level_announcer.tscn")
 const pLive = preload("res://scenes/hud/live.tscn")
 const p_clouds = preload("res://scenes/misc/clouds.tscn")
 var level = load("res://levels/level_"+str(global.level)+".tscn")
+var level_node
 
 var world_end
 var diamonds = 0
@@ -23,6 +24,7 @@ var score
 
 var last_checkpoint = Vector2()
 var respawned = true
+var hidden_bg = false
 
 onready var tween = get_node("hud/Tween")
 
@@ -42,7 +44,8 @@ func _ready():
 		music.play()
 	transition.start((randi() % 2), false, (randi() % 2))
 	add_child(level_announcer.instance())
-	add_child(level.instance())
+	level_node = level.instance()
+	add_child(level_node)
 	last_checkpoint = player.get_pos()
 	set_process_input(true)
 
@@ -168,8 +171,9 @@ func _input(event):
 					add_apple()
 				elif event.scancode == KEY_E:
 					collect_diamond()
-				elif event.scancode == KEY_F9:
-					get_tree().quit()
+				elif event.scancode == KEY_H:
+					hidden_bg = !hidden_bg
+					hide_back(hidden_bg)
 
 func update_values():
 	global.score = score
@@ -247,4 +251,11 @@ func init_clouds():
 	for i in range(amount):
 		var cloud = p_clouds.instance()
 		cloud.set_pos(Vector2(randi() % 300,randi() % 230))
-		get_node("clouds").add_child(cloud) 
+		get_node("clouds").add_child(cloud)
+
+func hide_back(param=false):
+	for child in level_node.get_node("back").get_children():
+		if param == false:
+			child.show()
+		else:
+			child.hide()

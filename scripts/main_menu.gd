@@ -116,6 +116,7 @@ func global_check():
 		sound_button.set_pressed(true)
 	get_node("Buttons/fullscreen").set_pressed(save_manager.config.fullscreen)
 	if global.debug:
+		get_node("Labels/debug_keys").show()
 		get_node("Labels/debug_info").show()
 	if save_manager.progression.first_finish and not save_manager.progression.first_contact:
 		get_node("Anims/Events").play("after_win")

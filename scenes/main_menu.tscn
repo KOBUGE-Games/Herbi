@@ -1120,9 +1120,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="debug_info" type="Label" parent="Labels"]
+[node name="debug_keys" type="Label" parent="Labels"]
 
-visibility/visible = false
 rect/scale = Vector2( 0.45, 0.45 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -1130,20 +1129,46 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 16.0
 margin/top = 0.0
-margin/right = 251.0
+margin/right = 48.0
+margin/bottom = 173.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 1, 0.156863, 0.117647, 0.784314 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
+text = "T =
+D =
+A =
+W =
+S =
+Q =
+E =
+H ="
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_info" type="Label" parent="Labels"]
+
+rect/scale = Vector2( 0.45, 0.45 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 32.0
+margin/top = 0.0
+margin/right = 231.0
 margin/bottom = 173.0
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color = Color( 1, 0.9, 0, 0.8 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
-text = "\\\\\\ DEBUG MODE ///
-T = Load level_0.tscn
-D = Next Level
-A = Previous Level
-W = +1 Life
-S = -1 Life
-Q = +1 apple
-E = +1 diamond"
-align = 1
+text = "Level_0.tscn
+Next Level
+Previous Level
++1 Life
+-1 Life
++1 apple
++1 diamond
+Hide background"
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1212,7 +1237,6 @@ autoplay = "idle"
 
 [node name="Buttons" type="Control" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1295,7 +1319,8 @@ custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
-custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
+custom_colors/font_color_hover = Color( 0.784314, 0.784314, 0.784314, 1 )
+custom_colors/font_color_pressed = Color( 0.784314, 0.784314, 0.784314, 1 )
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
@@ -1322,7 +1347,8 @@ custom_styles/normal = SubResource( 7 )
 custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.784314, 0.784314, 1 )
 custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
-custom_colors/font_color_pressed = Color( 0.588235, 0.588235, 0.588235, 1 )
+custom_colors/font_color_hover = Color( 0.784314, 0.784314, 0.784314, 1 )
+custom_colors/font_color_pressed = Color( 0.784314, 0.784314, 0.784314, 1 )
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
