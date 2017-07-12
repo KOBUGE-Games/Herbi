@@ -1,6 +1,6 @@
 extends Position2D
 
-onready var camera = get_node("/root/world/player/Camera2D")
+onready var camera = get_node("/root/world").player.get_node("Camera2D")
 
 func _ready():
 	camera.set_limit(MARGIN_RIGHT, get_pos().x)

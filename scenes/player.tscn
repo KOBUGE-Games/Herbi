@@ -2,10 +2,10 @@
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://graphics/characters/dog/sprite_1.png" type="Texture" id=2]
-[ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=3]
-[ext_resource path="res://graphics/characters/dog/sprite_3.png" type="Texture" id=4]
-[ext_resource path="res://graphics/characters/dog/sprite_4.png" type="Texture" id=5]
-[ext_resource path="res://graphics/characters/dog/sprite_5.png" type="Texture" id=6]
+[ext_resource path="res://graphics/characters/dog/sprite_4.png" type="Texture" id=3]
+[ext_resource path="res://graphics/characters/dog/sprite_5.png" type="Texture" id=4]
+[ext_resource path="res://graphics/characters/dog/sprite_2.png" type="Texture" id=5]
+[ext_resource path="res://graphics/characters/dog/sprite_3.png" type="Texture" id=6]
 [ext_resource path="res://graphics/characters/dog/sprite_6.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -119,13 +119,11 @@ type_mask = 15
 
 [node name="check_down" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="check_down1" type="RayCast2D" parent="check_down"]
 
 transform/pos = Vector2( 5, 0 )
 enabled = true
-cast_to = Vector2( 0, 14 )
+cast_to = Vector2( 0, 12 )
 layer_mask = 1
 type_mask = 15
 
@@ -133,7 +131,7 @@ type_mask = 15
 
 transform/pos = Vector2( -3, 0 )
 enabled = true
-cast_to = Vector2( 0, 14 )
+cast_to = Vector2( 0, 12 )
 layer_mask = 1
 type_mask = 15
 

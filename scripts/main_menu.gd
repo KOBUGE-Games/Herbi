@@ -140,6 +140,7 @@ func show_game_won():
 
 func reset_global():
 	global.level = 1
+	global.level_name = "level_"
 	global.score = 0
 	global.lives = 3
 	global.apples = 3

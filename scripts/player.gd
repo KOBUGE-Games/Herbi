@@ -36,6 +36,7 @@ var pApple = preload("res://scenes/items/apple.tscn")
 
 var i = 0
 
+onready var world = get_node("/root/world")
 onready var sprites = get_node("sprites")
 onready var idle = get_node("Idle")
 
@@ -43,12 +44,12 @@ func animation_walk():
 	if (int(get_pos().x)*3)/2 % 50 < 25:
 		sprites.set_frame(0)
 	else:
-		sprites.set_frame(1)
+		sprites.set_frame(3)
 
 func _fixed_process(delta):
 	# Create forces
 	var force = Vector2(0, GRAVITY)
-	can_move = get_parent().can_move
+	can_move = world.can_move
 	
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
@@ -83,7 +84,7 @@ func _fixed_process(delta):
 				dir_right = true
 	
 	if dead:
-		sprites.set_frame(2)
+		sprites.set_frame(4)
 	
 	if (stop):
 		var vsign = sign(velocity.x)
@@ -100,7 +101,6 @@ func _fixed_process(delta):
 	
 	# Integrate velocity into motion and move
 	var motion = velocity*delta
-	
 	# Move and consume motion
 	motion = move(motion)
 	
@@ -146,9 +146,9 @@ func _fixed_process(delta):
 			for up_ray in get_node("check_up").get_children():
 				if up_ray.is_colliding() and up_ray.get_collider():
 					if not up_ray.get_collider().get_name() == "oneway" and up_ray.get_collider() extends StaticBody2D:
-						get_parent().remove_life()
+						world.remove_life()
 	
-	if (floor_velocity != Vector2() and floor_velocity.y > 0):
+	if (floor_velocity != Vector2() and floor_velocity.y > 0): #floor velocity is set in lifts animation_player
 		# If floor moves, move with floor
 		move(floor_velocity*(delta/4))
 		if(is_colliding()):
@@ -164,7 +164,7 @@ func _fixed_process(delta):
 			jump_cooldown = 0.0
 			velocity.y = -JUMP_SPEED
 			jumping = true
-			sprites.set_frame(1)
+			sprites.set_frame(3)
 			global.play_sound("jump")
 	
 	on_air_time += delta
@@ -173,7 +173,7 @@ func _fixed_process(delta):
 	if get_pos().y > get_node("Camera2D").get_limit(MARGIN_BOTTOM)+32 and not out:
 		out = true
 		dead = true
-		get_node("/root/world/").stop()
+		world.stop()
 
 func _input(event):
 	if event.is_action_pressed("down") and not jumping:
@@ -182,19 +182,18 @@ func _input(event):
 	elif event.is_action_released("down"):
 		crounch = false
 	
-	if get_parent().apples > 0 and event.is_action_pressed("throw") and can_move:
+	if world.apples > 0 and event.is_action_pressed("throw") and can_move:
 		var apple = pApple.instance()
 		apple.set_pos(get_pos())
 		apple.add_collision_exception_with(self)
 		apple.set_z(2)
-		get_parent().add_child(apple)
-		get_node("/root/world").remove_apple()
+		world.add_child(apple)
+		world.remove_apple()
 
 func Idle():
 	if not jumping:
-		if i == 0:
-			i = randi()% 2 + 3
-		else:
+		i += randi()%2 + 1
+		if i >= 3:
 			i = 0
 		sprites.set_frame(i)
 		idle.start()

@@ -1079,7 +1079,6 @@ transform/pos = Vector2( 296, 232 )
 
 [node name="Labels" type="Control" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1121,60 +1120,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="debug_keys" type="Label" parent="Labels"]
-
-rect/scale = Vector2( 0.45, 0.45 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 16.0
-margin/top = 0.0
-margin/right = 48.0
-margin/bottom = 173.0
-custom_fonts/font = ExtResource( 13 )
-custom_colors/font_color = Color( 1, 0.156863, 0.117647, 0.784314 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
-text = "T =
-D =
-A =
-W =
-S =
-Q =
-E =
-H ="
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="debug_info" type="Label" parent="Labels"]
-
-rect/scale = Vector2( 0.45, 0.45 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 32.0
-margin/top = 0.0
-margin/right = 231.0
-margin/bottom = 173.0
-custom_fonts/font = ExtResource( 13 )
-custom_colors/font_color = Color( 1, 0.9, 0, 0.8 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
-text = "Level_0.tscn
-Next Level
-Previous Level
-+1 Life
--1 Life
-+1 apple
-+1 diamond
-Hide background"
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="version" type="Label" parent="Labels"]
 
 rect/scale = Vector2( 0.5, 0.5 )
@@ -1192,6 +1137,154 @@ custom_colors/font_color_shadow = Color( 0.196078, 0.196078, 0.196078, 1 )
 text = "version number"
 align = 1
 valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_keys" type="Control" parent="Labels"]
+
+editor/display_folded = true
+visibility/visible = false
+rect/min_size = Vector2( 640, 180 )
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 8.0
+margin/right = 640.0
+margin/bottom = 188.0
+
+[node name="debug_keys" type="Label" parent="Labels/debug_keys"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 30.0
+margin/bottom = 41.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 1, 0.156863, 0.117647, 0.784314 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
+text = "T =
+H ="
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_keys1" type="Label" parent="Labels/debug_keys"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 230.0
+margin/top = 0.0
+margin/right = 262.0
+margin/bottom = 85.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 1, 0.156863, 0.117647, 0.784314 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
+text = "W =
+A =
+D =
+S ="
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_keys2" type="Label" parent="Labels/debug_keys"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 462.0
+margin/top = 0.0
+margin/right = 494.0
+margin/bottom = 41.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 1, 0.156863, 0.117647, 0.784314 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
+text = "Q =
+E ="
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_info" type="Control" parent="Labels"]
+
+editor/display_folded = true
+visibility/visible = false
+rect/min_size = Vector2( 608, 180 )
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 16.0
+margin/top = 8.0
+margin/right = 624.0
+margin/bottom = 188.0
+
+[node name="debug_info" type="Label" parent="Labels/debug_info"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 192.0
+margin/bottom = 41.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 1, 0.9, 0, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
+text = "Level_0.tscn
+Hide background"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_info1" type="Label" parent="Labels/debug_info"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 232.0
+margin/top = 0.0
+margin/right = 428.0
+margin/bottom = 85.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 1, 0.9, 0, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
+text = "Previous Level     
++1 Life
+Next Level
+-1 Life"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="debug_info2" type="Label" parent="Labels/debug_info"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 468.0
+margin/top = 0.0
+margin/right = 594.0
+margin/bottom = 41.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 1, 0.9, 0, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.5 )
+text = "+1 apple
++1 diamond"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

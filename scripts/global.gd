@@ -3,7 +3,7 @@ extends Node
 const version = 0.9
 const total_levels = 9
 var debug = false
-var level = 1
+
 var score = 0
 var lives = 3
 var apples = 3
@@ -13,6 +13,9 @@ var apples_picked = 0
 var life_lost = 0
 var deaths = 0
 var enemies_killed = 0
+
+var level_name = "level_"
+var level = 1
 
 var finished = false
 

@@ -18,7 +18,7 @@ func _fixed_process(delta):
 	if !check_down.is_colliding():
 		sprites.set_flip_h(walk_right)
 		walk_right = !walk_right
-		
+	
 	#walk anim
 	if (int(get_pos().x)*3)/2 % 50 < 25:
 		sprites.set_frame(0)

@@ -9,11 +9,13 @@ const default_config = {
 const events = {
 	first_finish = false,
 	first_contact = false,
-	next_level_error = false
+	level_error_message = false,
+	devel_4_message = false
 }
 
-var temporary_events = {
-	debug_next_level = false
+var temporary_events = { ### Events that aren't saved
+	debug_next_level = false,
+	level_error = false
 }
 
 var config = {}
@@ -29,7 +31,7 @@ func _notification(what):
 
 func load_game():
 	var f = File.new()
-	var err = f.open_encrypted_with_pass("res://save/saved_game.save", File.READ, "Herbi")
+	var err = f.open_encrypted_with_pass("res://Herbi.save", File.READ, "Herbi")
 	
 	if !err:
 		config = f.get_var()
@@ -55,7 +57,7 @@ func load_game():
 
 func save_game():
 	var f = File.new()
-	var err = f.open_encrypted_with_pass("res://save/saved_game.save", File.WRITE, "Herbi")
+	var err = f.open_encrypted_with_pass("res://Herbi.save", File.WRITE, "Herbi")
 	f.store_var(config)
 	f.store_var(progression)
 	f.close()

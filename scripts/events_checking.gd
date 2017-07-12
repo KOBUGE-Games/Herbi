@@ -15,6 +15,14 @@ var text7 = ["I forgot to tell you"]
 var text8 = ["If you start going around the debug stuff"]
 var text9 = ["The systems might not be as before", "So think about how to use your new powers"]
 
+var text10 = ["so far so good,","this is what I have done so far"]
+var text11 = ["I had not really any idea", "of what to do,", "so I started experimenting stuff"]
+var text12 = ["I don't really know", "why I'm telling this,", "but anyway", "..."]
+var text13 = ["..."]
+var text14 = ["By the way, there was an", "old loading screen"]
+var text15 = ["It looked a bit like this"]
+
+
 var can_skip = false
 
 onready var world = get_node("/root/world")
@@ -26,9 +34,18 @@ func _ready():
 	set_process_input(true)
 	if global.level == 1 and save_manager.progression.first_finish and not save_manager.progression.first_contact:
 		write_texts([text1, text2, text3, text4, text5], [100, 100, 80, 100, 80])
-	if global.level == 1 and save_manager.temporary_events.debug_next_level and not save_manager.progression.next_level_error:
-		write_texts([text7, text8, text9],[110, 110, 100])
-		connect("text_finished", self, "event_error", [], 4)
+	
+	if not save_manager.progression.level_error_message:
+		if(save_manager.temporary_events.debug_next_level and global.level == 1) or save_manager.temporary_events.level_error:
+			write_texts([text7, text8, text9],[110, 110, 100])
+			yield(self, "text_finished")
+			save_manager.progression.level_error_message = true
+	
+	if global.level == 4 and global.level_name == "devel_" and not save_manager.progression.devel_4_message:
+		write_texts([text10, text11, text12, text13, text14, text15], [100, 90, 80, 110, 100, 110])
+		yield(self, "text_finished")
+		save_manager.progression.devel_4_message = true
+	
 	save_manager.temporary_events.debug_next_level = false
 
 func write_texts(texts_array, texts_pos_array):
@@ -55,6 +72,3 @@ func event_yes():
 func event_no():
 	event.destroy()
 	write_texts([text6], [70])
-
-func event_error():
-	save_manager.progression.next_level_error = true

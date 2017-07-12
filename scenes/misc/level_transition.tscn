@@ -13,78 +13,18 @@ script/script = ExtResource( 1 )
 
 [node name="bg" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/scale = Vector2( 320, 240 )
 texture = ExtResource( 2 )
 centered = false
 modulate = Color( 0, 0, 0, 1 )
 
-[node name="bar1" type="Sprite" parent="."]
-
-transform/scale = Vector2( 80, 240 )
-texture = ExtResource( 2 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="bar2" type="Sprite" parent="."]
-
-transform/pos = Vector2( 80, 0 )
-transform/scale = Vector2( 80, 240 )
-texture = ExtResource( 2 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="bar3" type="Sprite" parent="."]
-
-transform/pos = Vector2( 160, 0 )
-transform/scale = Vector2( 80, 240 )
-texture = ExtResource( 2 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="bar4" type="Sprite" parent="."]
-
-transform/pos = Vector2( 240, 0 )
-transform/scale = Vector2( 80, 240 )
-texture = ExtResource( 2 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="bar5" type="Sprite" parent="."]
-
-transform/pos = Vector2( 240, 0 )
-transform/scale = Vector2( 80, 240 )
-texture = ExtResource( 2 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="bar6" type="Sprite" parent="."]
-
-transform/pos = Vector2( 240, 0 )
-transform/scale = Vector2( 80, 240 )
-texture = ExtResource( 2 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="bar7" type="Sprite" parent="."]
-
-transform/pos = Vector2( 240, 0 )
-transform/scale = Vector2( 80, 240 )
-texture = ExtResource( 2 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
-
-[node name="bar8" type="Sprite" parent="."]
-
-transform/pos = Vector2( 240, 0 )
-transform/scale = Vector2( 80, 240 )
-texture = ExtResource( 2 )
-centered = false
-modulate = Color( 0, 0, 0, 1 )
+[node name="bars" type="Node2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 0.05
+wait_time = 0.1
 one_shot = true
 autostart = false
 

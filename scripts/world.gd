@@ -3,7 +3,8 @@ extends Node2D
 const level_announcer = preload("res://scenes/misc/level_announcer.tscn")
 const pLive = preload("res://scenes/hud/live.tscn")
 const p_clouds = preload("res://scenes/misc/clouds.tscn")
-var level = load("res://levels/level_"+str(global.level)+".tscn")
+
+var level = load("res://levels/"+global.level_name+str(global.level)+".tscn")
 var level_node
 
 var world_end
@@ -44,8 +45,15 @@ func _ready():
 		music.play()
 	transition.start((randi() % 2), false, (randi() % 2))
 	add_child(level_announcer.instance())
-	level_node = level.instance()
-	add_child(level_node)
+	if level != null:
+		if global.level > 1: #works for level 1 and 0
+			save_manager.temporary_events.level_error = false
+		level_node = level.instance()
+		add_child(level_node)
+	else:
+		save_manager.temporary_events.level_error = true
+		print("level_error")
+		get_tree().change_scene("res://scenes/main_menu.tscn")
 	last_checkpoint = player.get_pos()
 	set_process_input(true)
 
@@ -183,7 +191,7 @@ func update_values():
 	global.lives = lives
 	global.apples = apples
 
-func stop(condition=false):
+func stop(condition=false, level_name='', cave=false):
 ### Tweening color depending on [death/next level]
 	if condition:
 		update_values()
@@ -194,26 +202,33 @@ func stop(condition=false):
 ### Play the animation :
 ###  - tween to indicate the color (death/ next level)
 ###  - animation to make the transition. It is connected to _on_Die_finished()
-	transition.connect("finished_anim", self, "change_level", Array(), 4)
-	transition.start((randi() % 2), true, (randi() % 2))
+	transition.connect("finished_anim", self, "change_level", [level_name], 4)
+	if cave:
+		transition.start(2, true, 0)
+	else:
+		transition.start((randi() % 2), true, (randi() % 2))
 	can_move = false
 
-func change_level():
+func change_level(level_name):
 	if quit:
 		get_tree().change_scene("res://scenes/main_menu.tscn")
 	else:
 ### Changing level/ending the game
 ### You can see you don't gain a level in collect_diamond().
 ### That's because we used this location for a proper tweening
-		if next_level:
-			if global.level == global.total_levels:
-				global.finished = true
-				get_tree().change_scene("res://scenes/main_menu.tscn")
-			else:
-				global.level += 1
-				restart()
-		else:
+		if level_name != '':
+			global.level_name = level_name
 			restart()
+		else:
+			if next_level:
+				if global.level == global.total_levels:
+					global.finished = true
+					get_tree().change_scene("res://scenes/main_menu.tscn")
+				else:
+					global.level += 1
+					restart()
+			else:
+				restart()
 
 
 func check_music():
