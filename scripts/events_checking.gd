@@ -49,6 +49,7 @@ func _ready():
 	save_manager.temporary_events.debug_next_level = false
 
 func write_texts(texts_array, texts_pos_array):
+	world.writing = true
 	for i in range(texts_array.size()):
 		can_skip = false
 		world.can_move = false
@@ -57,6 +58,7 @@ func write_texts(texts_array, texts_pos_array):
 		event.destroy()
 		if i == (texts_array.size() - 1):
 			emit_signal("text_finished")
+			global.can_quit = true
 
 func _input(event):
 	if event.is_action_pressed("jump") and can_skip:

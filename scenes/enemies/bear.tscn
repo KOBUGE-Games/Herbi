@@ -36,7 +36,7 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
-speed = 1.9
+speed = 2.0
 
 [node name="sprites" type="AnimatedSprite" parent="."]
 

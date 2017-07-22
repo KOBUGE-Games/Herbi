@@ -49,6 +49,6 @@ func disable(param=true):
 		button.set_disabled(param)
 
 func _input(event):
-	if world.can_quit:
+	if global.can_quit:
 		if event.is_action_pressed("ui_cancel"):
 			show()

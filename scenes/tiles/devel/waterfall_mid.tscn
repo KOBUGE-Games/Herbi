@@ -1,0 +1,47 @@
+[gd_scene load_steps=19 format=1]
+
+[ext_resource path="res://scripts/random_tile.gd" type="Script" id=1]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_01.png" type="Texture" id=2]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_02.png" type="Texture" id=3]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_03.png" type="Texture" id=4]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_04.png" type="Texture" id=5]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_05.png" type="Texture" id=6]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_06.png" type="Texture" id=7]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_07.png" type="Texture" id=8]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_08.png" type="Texture" id=9]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_09.png" type="Texture" id=10]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_10.png" type="Texture" id=11]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_11.png" type="Texture" id=12]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_12.png" type="Texture" id=13]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_13.png" type="Texture" id=14]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_14.png" type="Texture" id=15]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_15.png" type="Texture" id=16]
+[ext_resource path="res://graphics/tiles/devel/waterfall_anim/waterfall_16.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[node name="waterfall" type="Node2D"]
+
+script/script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+frames = 1
+random_amount = 0
+random_tiles = 0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 1 )
+animation = "default"
+frame = 9
+playing = true
+
+

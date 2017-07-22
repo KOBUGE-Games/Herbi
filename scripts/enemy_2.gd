@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
 const speed = 1
-const run = 2.3
-var walk_right = true
+const run = 2.25
+
 var movement = speed
+var walk_right = true
 var can_attack = true
 
 onready var player = get_node("/root/world/player")
@@ -41,27 +42,23 @@ func _fixed_process(delta):
 		move(Vector2(-movement,0))
 	
 	if check_right.is_colliding() and check_down.is_colliding():
-		var player = check_right.get_collider()
+		var body = check_right.get_collider()
 		collision_check()
-		if player.get_name() == "player" and can_attack:
-			if player.can_move:
-				if has_path_to_target(player.get_pos()):
+		if body.get_name() == "player" and can_attack:
+			if body.can_move:
+				if has_path_to_target(body.get_pos()):
 					walk_right = true
 					movement = run
 					sprites.set_flip_h(!walk_right)
-		else:
-			movement = speed
 	elif check_left.is_colliding() and check_down.is_colliding():
-		var player = check_left.get_collider()
+		var body = check_left.get_collider()
 		collision_check()
-		if player.get_name() == "player" and can_attack:
-			if player.can_move:
-				if has_path_to_target(player.get_pos()):
+		if body.get_name() == "player" and can_attack:
+			if body.can_move:
+				if has_path_to_target(body.get_pos()):
 					walk_right = false
 					movement = run
 					sprites.set_flip_h(!walk_right)
-		else:
-			movement = speed
 	else:
 		movement = speed
 		collision_check()
@@ -85,7 +82,7 @@ func has_path_to_target(target, distance = 30):
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
 		if body.can_move:
-			if player.get_pos().y+17 > get_pos().y:
+			if player.get_pos().y+18 > get_pos().y:
 				get_node("/root/world").remove_life()
 			kill_monster()
 

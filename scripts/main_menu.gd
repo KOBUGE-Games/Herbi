@@ -1,6 +1,5 @@
 extends Node2D
 
-var can_quit = false
 var credits_shown = false
 
 onready var leave = get_node("Buttons/leave")
@@ -13,18 +12,24 @@ onready var transition = get_node("transition")
 func _ready():
 	for button in get_node("Buttons").get_children():
 		button.connect("pressed", global, "play_sound", ["click"])
+		button.connect("pressed", save_manager, "save_game")
 	if music.is_playing():
 		music.stop()
 	reset_global()
 	global_check()
 	
-	get_node("Labels/version").set_text(str("version ", str(global.version)))
+	if global.debug:
+		global.version = "DEBUG MODE"
+		get_node("Labels/version").set("custom_colors/font_color", Color(1, 0, 0, 0.875))
+		get_node("Labels/version").set("custom_colors/font_color_shadow", Color(0, 0, 0))
+	get_node("Labels/version").set_text(global.version)
+	
 	transition.start(1)
 	transition.connect("finished_anim", get_node("Buttons/play"), "set_disabled", [false], 4)
 	set_process_input(true)
 
 func _input(event):
-	if can_quit:
+	if global.can_quit:
 		if event.is_action_pressed("ui_cancel"):
 			if get_node("Buttons/leave").is_visible():
 				hide_tab()
@@ -76,7 +81,7 @@ func play():
 func quit():
 	button_disable()
 	transition.start(1, true)
-	transition.connect("finished_anim", save_manager, "_notification", [MainLoop.NOTIFICATION_WM_QUIT_REQUEST])
+	transition.connect("finished_anim", global, "quit")
 
 func show_credits():
 	credits_shown = true

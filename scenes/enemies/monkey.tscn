@@ -42,13 +42,6 @@ __meta__ = {
 frames = SubResource( 2 )
 animation = "default"
 
-[node name="check_down" type="RayCast2D" parent="."]
-
-enabled = true
-cast_to = Vector2( 0, 16 )
-layer_mask = 1
-type_mask = 15
-
 [node name="Area2D" type="Area2D" parent="."]
 
 input/pickable = true
@@ -74,19 +67,26 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
+[node name="check_down" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, 16 )
+layer_mask = 1
+type_mask = 15
+
 [node name="check_right" type="RayCast2D" parent="."]
 
 enabled = true
 cast_to = Vector2( 160, 0 )
 layer_mask = 2
-type_mask = 15
+type_mask = 2
 
 [node name="check_left" type="RayCast2D" parent="."]
 
 enabled = true
 cast_to = Vector2( -160, 0 )
 layer_mask = 2
-type_mask = 15
+type_mask = 2
 
 [node name="Timer" type="Timer" parent="."]
 

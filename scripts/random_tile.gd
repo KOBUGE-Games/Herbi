@@ -18,6 +18,8 @@ func _ready():
 	
 	get_node("AnimatedSprite").set_frame(random)
 
+###################### ROCK PLATFORM SPECIFIC ######################
+
 func detect(body):
 	if body.get_name() == "player":
 		play_anim()
@@ -29,6 +31,9 @@ func play_anim():
 			detect_other(get_node("AnimatedSprite/rock_lift/rays/left"))
 		if get_node("AnimatedSprite/rock_lift/rays/right").get_collider() != null and not except_right:
 			detect_other(get_node("AnimatedSprite/rock_lift/rays/right"))
+
+### Except avoids the node on the side stated to check again for the collider
+### This avoids unfinite checkings
 
 func detect_other(ray):
 	var collider = ray.get_collider()

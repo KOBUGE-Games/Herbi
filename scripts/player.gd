@@ -15,7 +15,7 @@ const WALK_FORCE = 600
 const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 110
 const STOP_FORCE = 650
-const JUMP_SPEED = 160
+const JUMP_SPEED = 164
 const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 0.5 # One pixel per second

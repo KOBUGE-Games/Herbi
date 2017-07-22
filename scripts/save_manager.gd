@@ -26,8 +26,7 @@ func _ready():
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		save_game()
-		get_tree().quit()
+		global.quit()
 
 func load_game():
 	var f = File.new()

@@ -1,12 +1,13 @@
 extends CanvasLayer
 
-signal finished_anim()
+signal finished_anim
 
 var i
 var j
 var ratio
 
 const bar_class = preload("res://scenes/misc/bar.tscn")
+
 onready var timer = get_node("Timer")
 
 var bars = []
@@ -90,10 +91,11 @@ func show_elements(showing=true, mode=0, param=0):
 			
 		timer.disconnect("timeout", self, "show_elements")
 		emit_signal("finished_anim")
-		get_parent().can_quit = true
+		if not get_parent().get_name() == "world" or not get_parent().writing:
+			global.can_quit = true
 
 func start(param, showing=false, mode=0):
-	get_parent().can_quit = false
+	global.can_quit = false
 	if not [0, 1, 2].has(param):
 		print("wrong value")
 	else:

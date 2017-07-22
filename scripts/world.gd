@@ -15,7 +15,6 @@ var start_lives = 3
 var start_apples = 0
 var can_move = true
 var quit = false
-var can_quit = false
 var next_level = false
 
 var collected_diamonds = 0
@@ -26,6 +25,7 @@ var score
 var last_checkpoint = Vector2()
 var respawned = true
 var hidden_bg = false
+var writing = false
 
 onready var tween = get_node("hud/Tween")
 
@@ -165,13 +165,12 @@ func _input(event):
 	if event.type == InputEvent.KEY:
 		if not event.is_echo() && event.is_pressed():
 			# DEBUG MODE
-			if global.debug:
+			if global.debug and global.can_quit:
 				if event.scancode == KEY_W:
 					add_life()
 				elif event.scancode == KEY_A and not next_level:
-					if global.level > 1:
-						global.level -= 1
-						get_tree().change_scene("res://scenes/main.tscn")
+					global.level -= 1
+					stop(false)
 				elif event.scancode == KEY_S:
 					remove_life()
 				elif event.scancode == KEY_D and not next_level:

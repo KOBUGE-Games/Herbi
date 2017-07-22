@@ -6,6 +6,7 @@ signal finished_writing
 const font = preload("res://fonts/cave_story_32.fnt")
 const button_res = preload("res://scenes/hud/button.tscn")
 
+var text_lenght
 var timer
 var i
 
@@ -17,6 +18,10 @@ var i
 #	"button indeed",
 #	"button not at all"
 #]
+
+func _input(event):
+	if event.is_action_pressed("jump"):
+		i = text_lenght
 
 func new_line(text, pos): ### Create the text line
 	var label = Label.new()
@@ -31,19 +36,22 @@ func new_line(text, pos): ### Create the text line
 	
 	var text_timer = Timer.new()
 	text_timer.set_one_shot(1)
-	text_timer.set_wait_time(0.02)
+	text_timer.set_wait_time(0.03125)
 	add_child(text_timer)
 	
+	text_lenght = text.length()
 	i = 0
 	text_timer.connect("timeout", self, "write_next", [text, label, text_timer])
 	text_timer.start()
+	set_process_input(true)
 
 func write_next(text, label, text_timer):
 	i += 1
 	label.set_text(text.substr(0, i))
 	text_timer.start()
 	
-	if i >= text.length():
+	if i >= text_lenght:
+		set_process_input(false)
 		text_timer.queue_free()
 		emit_signal("finished_line")
 
