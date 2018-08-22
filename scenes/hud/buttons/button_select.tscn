@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scripts/misc/button_select.gd" type="Script" id=1]
+
+[node name="button_select" type="CanvasLayer"]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+script/script = ExtResource( 1 )
+
+

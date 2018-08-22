@@ -1,0 +1,46 @@
+Hey !\
+Stop !\
+|
+What are you hoping\
+doing those levels again and again ?\
+|
+Oh right, you probably\
+followed that flickering button\
+but you know, all of that\
+was totally scripted\
+|
+Anyway, I'd like to show you\
+something pretty interesting\
+|
+Do you want to check it out ?\
+BUTTON yes event_yes\
+BUTTON no event_no\
+|
+Alright, I might ask you later\
+\
+Have fun\
+\
+Or try to\
+|
+I forgot to tell you\
+|
+If you start going around the debug stuff\
+|
+The systems might not be as before\
+So think about how to use your new powers\
+|
+Glad you did it\
+|
+Now, you're gonna enter\
+another dimension of\
+what this place is\
+|
+I don't really have\
+much more to tell you about\
+|
+...\
+|
+There was an old\
+loading screen\
+|
+It looked a bit this way

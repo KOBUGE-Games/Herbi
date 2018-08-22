@@ -16,10 +16,11 @@ onready var check_left = get_node("check_left")
 
 func _ready():
 	add_to_group("enemies")
-	set_fixed_process(true)
 	check_down.add_exception(self)
 	check_right.add_exception(self)
 	check_left.add_exception(self)
+	walk_right = bool(randi()% 2)
+	set_fixed_process(true)
 
 func _fixed_process(delta):
 	#toggle direction
@@ -81,8 +82,8 @@ func has_path_to_target(target, distance = 30):
 
 func _on_Area2D_body_enter( body ):
 	if body.get_name() == "player":
-		if body.can_move:
-			if player.get_pos().y+18 > get_pos().y:
+		if not body.dead and not body.shape.is_trigger():
+			if body.get_pos().y+18 > get_pos().y:
 				get_node("/root/world").remove_life()
 			kill_monster()
 

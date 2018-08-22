@@ -1,16 +1,24 @@
-extends CanvasLayer
+extends Node2D
 
 signal finished_anim
+
+var playing = false
 
 var i
 var j
 var ratio
+var side = 0 #used only for CAVE param
+var stored_rects = []
 
 const bar_class = preload("res://scenes/misc/bar.tscn")
-
 onready var timer = get_node("Timer")
-
 var bars = []
+
+enum {
+	VERTICAL = 0,
+	HORIZONTAL = 1,
+	CAVE = 2
+}
 
 ###### a procedural animation script
 ### param == 0: vertical
@@ -60,17 +68,50 @@ func init_pos(param, showing):
 
 func show_elements(showing=true, mode=0, param=0):
 	if i < ratio:
-		if param == 2: ### Cave transition
-			i += 1
-			if showing:
-				bars[0].set_opacity(i/4.0)
+		if param == CAVE: ### Cave transition
+#			i += 1
+#			if showing:
+#				bars[0].set_opacity(i/4.0)
+#			else:
+#				bars[0].set_opacity(1 - i/4)
+#			bars[0].show()
+
+			side += 1
+			if side > 4:
+				side = 1
+				i += 1
+
+			var x_side
+			var y_side
+			if side == 1:
+				y_side = -1
+				x_side = -1
+			elif side == 2:
+				y_side = -1
+				x_side = 1
+			elif side == 3:
+				y_side = 1
+				x_side = 1
+			elif side == 4:
+				y_side = 1
+				x_side = -1
+
+			var anchor1 = Vector2(160+40*(ratio-i)*x_side, 120+30*(ratio-i)*y_side)
+			var anchor2 = Vector2()
+			if [1,3].has(side):
+				anchor2 = Vector2(320*(-x_side), 30*(-y_side))
+			elif [2,4].has(side):
+				anchor2 = Vector2(40*(-x_side), 240*(-y_side))
 			else:
-				bars[0].set_opacity(1 - i/4)
-			bars[0].show()
+				print("what the fuck did you do wrong with that value m8")
+
+			stored_rects.append([anchor1, anchor2])
+			update()
+
 		else:
 			if mode == 1:
 				j -= 1
-			
+
 			if showing:
 				bars[i].show()
 				if mode == 1:
@@ -86,42 +127,60 @@ func show_elements(showing=true, mode=0, param=0):
 		if showing:
 			get_node("bg").show()
 		bars.clear()
+		stored_rects.clear()
+		update()
 		for node in get_node("bars").get_children():
 			node.queue_free()
-			
-		timer.disconnect("timeout", self, "show_elements")
-		emit_signal("finished_anim")
-		if not get_parent().get_name() == "world" or not get_parent().writing:
-			global.can_quit = true
 
-func start(param, showing=false, mode=0):
-	global.can_quit = false
-	if not [0, 1, 2].has(param):
-		print("wrong value")
-	else:
-		init_pos(param, showing)
-		if not showing:
-			get_node("bg").hide()
-		
-		i = 0
-		ratio = 8
-		if param == 2:
-			ratio = 4
-			timer.set_wait_time(0.2)
+		timer.disconnect("timeout", self, "show_elements")
+		if not get_parent().get_name() == "world" or not events_texts.writing:
+			global.can_quit = true
+		playing = false
+		emit_signal("finished_anim")
+
+func start(param, showing=false, mode=0, connects=[]):
+	if not playing:
+		stored_rects.clear()
+		global.can_quit = false
+		playing = true
+		if not [0, 1, 2].has(param):
+			print("wrong parameter for transition")
 		else:
-			if param == 1:
-				ratio = 6
-			
-			if mode == 1:
-				timer.set_wait_time(0.15)
-				if param == 0:
-					j = 8
-					ratio = 4
-				else:
-					ratio = 3
-					j = 6
-			else:
+			init_pos(param, showing)
+			if not showing:
+				get_node("bg").hide()
+
+			i = 0
+			ratio = 8
+			if param == CAVE:
+				ratio = 4
 				timer.set_wait_time(0.1)
-		
-		timer.start()
-		timer.connect("timeout", self, "show_elements", [showing, mode, param])
+			else:
+				if param == HORIZONTAL:
+					ratio = 6
+
+				if mode == 1:
+					timer.set_wait_time(0.15)
+					if param == 0:
+						j = 8
+						ratio = 4
+					else:
+						ratio = 3
+						j = 6
+				else:
+					timer.set_wait_time(0.1)
+
+			timer.start()
+			timer.connect("timeout", self, "show_elements", [showing, mode, param])
+			if connects != []:
+				connect("finished_anim", connects[0], connects[1], connects[2], 4)
+
+func queue_transition(param, showing=false, mode=0, connects=[]):
+	if playing and not is_connected("finished_anim", self, "start"):
+		connect("finished_anim", self, "start", [param, showing, mode, connects], 4)
+	else:
+		start(param, showing, mode, connects)
+
+func _draw():
+	for rect in stored_rects:
+		draw_rect(Rect2(rect[0], rect[1]), Color(0,0,0))

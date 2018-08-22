@@ -1,3 +1,5 @@
+##!/bin/python2.7
+
 """
 tmx2tscn
 Copyright: Alket Rexhepi - https://github.com/alketii
@@ -7,15 +9,17 @@ WARNING: This script is modified to better fit Herbie - On the loose
 import sys, json, os, subprocess
 
 current_dir = os.getcwd()+"/"
-
+PATH = '/home/keprohm/Bureau/Tiled/Tiled-0.18.2-x86_64.AppImage'
 exceptions = ["blank_level", "level_0", "devel_1", "devel_3", "devel_4"]
+
+
 
 
 for xfile in os.listdir("."):
     if xfile.split(".")[-1] == "tmx":
         xfile = xfile.split(".")[0]
         if not xfile in exceptions:
-            process = subprocess.Popen('/path/to/tiled/binary --export-map '+current_dir+xfile+'.tmx '+current_dir+xfile+'.json', shell=True, stdout=subprocess.PIPE)
+            process = subprocess.Popen(PATH+' --export-map '+current_dir+xfile+'.tmx '+current_dir+xfile+'.json', shell=True, stdout=subprocess.PIPE)
             process.wait()
             # Default values for args
             file_input = xfile+".json"
@@ -98,4 +102,4 @@ for xfile in os.listdir("."):
             f.close()
             os.remove(xfile+".json")
 
-            print xfile+" done."
+            print(xfile+" done")

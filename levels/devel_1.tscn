@@ -11,7 +11,6 @@
 [ext_resource path="res://scenes/misc/devel_loader.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/misc/world_end.tscn" type="PackedScene" id=10]
 
-
 [node name="level" type="Node2D"]
 
 __meta__ = {

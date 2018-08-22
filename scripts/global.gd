@@ -31,9 +31,35 @@ func _ready():
 	if save_manager.progression.first_contact:
 		debug = true
 
+func queue_music(sample, next_sample):
+	if save_manager.config.music and not music.get_node(sample).is_playing():
+		stop_music()
+		music.get_node(sample).play()
+		music.get_node(sample).connect("finished", self, "play_music", [next_sample])
+
 func play_sound(sample):
 	if save_manager.config.sound:
 		sound.play(sample)
+
+func play_music(sample):
+	if save_manager.config.music and not music.get_node(sample).is_playing():
+		stop_music()
+		music.get_node(sample).set_loop(true)
+		music.get_node(sample).play()
+
+func stop_music():
+	for player in music.get_children():
+		if player.is_playing():
+			player.set_loop(false)
+			if not player.is_in_group("ambiences") or margin_right != 0:
+				player.stop()
+
+func new_timer(time):
+	var timer = Timer.new()
+	timer.set_name("Timer")
+	timer.set_wait_time(time)
+	timer.set_one_shot(1)
+	return timer
 
 func quit():
 	save_manager.save_game()

@@ -35,7 +35,9 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1.1, 1.1, 1.1, 1 ) ]
 }
 
-[node name="diamond_red" type="Node2D"]
+[node name="diamond_red" type="Node2D" groups=[
+"objectives",
+]]
 
 script/script = ExtResource( 1 )
 __meta__ = {

@@ -23,6 +23,6 @@ func _on_Area2D_body_enter( body ):
 		if world.lives < 3:
 			for i in range(3-world.lives):
 				world.add_life()
-		world.last_checkpoint = get_pos()
+		world.player.last_checkpoint = get_pos()
 		world.collect_diamond()
 		queue_free()

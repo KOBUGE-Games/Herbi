@@ -33,6 +33,18 @@ func save():
 	save_manager.progression.parse_json(str("{"+text+"}"))# add the missing synthax elements
 	save_manager.save_game()
 	print(save_manager.progression)
+	
+	var launched_ready = false
+	
+	for node in get_node("/root/").get_children():
+		if not launched_ready:
+			events_texts.update()
+			if node.get_name() == "world":
+				launched_ready = true
+				get_tree().change_scene("res://scenes/main.tscn")
+			else:
+				launched_ready = true
+				get_tree().change_scene("res://scenes/main_menu.tscn")
 
 func _input(event):
 	if event.is_action_pressed("debug"):

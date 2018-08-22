@@ -22,10 +22,7 @@ var lives
 var apples
 var score
 
-var last_checkpoint = Vector2()
-var respawned = true
 var hidden_bg = false
-var writing = false
 
 onready var tween = get_node("hud/Tween")
 
@@ -33,7 +30,7 @@ onready var sprite_diamonds = get_node("hud/sprite_diamonds")
 onready var sprite_apples = get_node("hud/sprite_apples")
 onready var sprite_score = get_node("hud/sprite_score")
 
-onready var transition = get_node("transition")
+onready var transition = get_node("transition/Node2D")
 
 onready var player = get_node("player")
 var window_size = Vector2(0,0)
@@ -41,9 +38,7 @@ var window_size = Vector2(0,0)
 func _ready():
 	init_values()
 	init_clouds()
-	if save_manager.config.music and not music.is_playing():
-		music.play()
-	transition.start((randi() % 2), false, (randi() % 2))
+	transition.queue_transition((randi() % 2), false, (randi() % 2))
 	add_child(level_announcer.instance())
 	if level != null:
 		if global.level > 1: #works for level 1 and 0
@@ -54,21 +49,24 @@ func _ready():
 		save_manager.temporary_events.level_error = true
 		print("level_error")
 		get_tree().change_scene("res://scenes/main_menu.tscn")
-	last_checkpoint = player.get_pos()
-	set_process_input(true)
+	player.last_checkpoint = player.get_pos()
 
 func init_values():
 	score = global.score
+	apples = global.apples
 	lives = global.lives
 	if lives < 3:
 		lives = 3
-	apples = global.apples
-	if respawned:
-		respawned = false
-		start_lives = lives
-		start_apples = apples
-		start_score = score
+	
+	start_lives = lives
+	start_apples = apples
+	start_score = score
+	
 	update_lifes()
+	
+	background.update_state()
+	get_node("/root/events_texts").update()
+	
 	check_items("diamonds")
 	check_items("apples", apples)
 	check_items("score", score)
@@ -88,7 +86,7 @@ func add_life():
 		update_lifes()
 
 func remove_life():
-	if not shield and can_move:
+	if not shield and not quit:
 		global.life_lost += 1
 		lives -= 1
 		shield = true
@@ -123,6 +121,8 @@ func add_diamond():
 ### Add diamond at level load
 	diamonds += 1
 	check_items("diamonds")
+	if not is_processing():
+		set_process(true)
 
 func collect_diamond():
 	collected_diamonds += 1
@@ -152,38 +152,13 @@ func restart():
 ### Does [restart/next] level, depending on if global.level was changed (look collect_diamond(), _on_Die_finished() and stop())
 	can_move = true
 	if player.dead:
-		player.set_pos(last_checkpoint)
-		player.dead = false
-		player.out = false
+		player.respawn()
 		get_node("hud/menu").disable(false)
 		init_values()
-		transition.start((randi() % 2), false, (randi() % 2))
+		transition.queue_transition((randi() % 2), false, (randi() % 2))
 	else:
 		get_tree().reload_current_scene()
 
-func _input(event):
-	if event.type == InputEvent.KEY:
-		if not event.is_echo() && event.is_pressed():
-			# DEBUG MODE
-			if global.debug and global.can_quit:
-				if event.scancode == KEY_W:
-					add_life()
-				elif event.scancode == KEY_A and not next_level:
-					global.level -= 1
-					stop(false)
-				elif event.scancode == KEY_S:
-					remove_life()
-				elif event.scancode == KEY_D and not next_level:
-					if global.level <= global.total_levels:
-						stop(true)
-						save_manager.temporary_events.debug_next_level = true
-				elif event.scancode == KEY_Q:
-					add_apple()
-				elif event.scancode == KEY_E:
-					collect_diamond()
-				elif event.scancode == KEY_H:
-					hidden_bg = !hidden_bg
-					hide_back(hidden_bg)
 
 func update_values():
 	global.score = score
@@ -192,6 +167,9 @@ func update_values():
 
 func stop(condition=false, level_name='', cave=false):
 ### Tweening color depending on [death/next level]
+	if events_texts.writing:
+		events_texts.abort = true
+		events_texts.emit_signal("continue_dialog")
 	if condition:
 		update_values()
 		next_level = condition
@@ -201,11 +179,11 @@ func stop(condition=false, level_name='', cave=false):
 ### Play the animation :
 ###  - tween to indicate the color (death/ next level)
 ###  - animation to make the transition. It is connected to _on_Die_finished()
-	transition.connect("finished_anim", self, "change_level", [level_name], 4)
+	var connections = [self, "change_level", [level_name]]
 	if cave:
-		transition.start(2, true, 0)
+		transition.queue_transition(2, true, 0, connections)
 	else:
-		transition.start((randi() % 2), true, (randi() % 2))
+		transition.queue_transition((randi() % 2), true, (randi() % 2), connections)
 	can_move = false
 
 func change_level(level_name):
@@ -228,13 +206,6 @@ func change_level(level_name):
 					restart()
 			else:
 				restart()
-
-
-func check_music():
-	if save_manager.config.music:
-		music.play()
-	else:
-		music.stop()
 
 
 func check_items(item_name, item_num=0):

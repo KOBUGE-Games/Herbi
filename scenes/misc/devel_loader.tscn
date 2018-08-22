@@ -1,18 +1,27 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://scripts/devel_loader.gd" type="Script" id=1]
 [ext_resource path="res://graphics/misc/fault1.png" type="Texture" id=2]
-[ext_resource path="res://graphics/misc/fault2.png" type="Texture" id=3]
+[ext_resource path="res://graphics/misc/fault10.png" type="Texture" id=3]
+[ext_resource path="res://graphics/misc/fault11.png" type="Texture" id=4]
+[ext_resource path="res://graphics/misc/fault2.png" type="Texture" id=5]
+[ext_resource path="res://graphics/misc/fault3.png" type="Texture" id=6]
+[ext_resource path="res://graphics/misc/fault4.png" type="Texture" id=7]
+[ext_resource path="res://graphics/misc/fault5.png" type="Texture" id=8]
+[ext_resource path="res://graphics/misc/fault6.png" type="Texture" id=9]
+[ext_resource path="res://graphics/misc/fault7.png" type="Texture" id=10]
+[ext_resource path="res://graphics/misc/fault8.png" type="Texture" id=11]
+[ext_resource path="res://graphics/misc/fault9.png" type="Texture" id=12]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 13, 10 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -21,7 +30,7 @@ animations = [ {
 [node name="devel_loader" type="Area2D"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 6 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -29,17 +38,19 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
+level = 0
+name = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 transform/pos = Vector2( 0, 6 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "default"
 
 [connection signal="body_enter" from="." to="." method="load_devel"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://audio/sounds/click.wav" type="Sample" id=1]
 [ext_resource path="res://audio/sounds/damage.wav" type="Sample" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://audio/sounds/pick.wav" type="Sample" id=7]
 [ext_resource path="res://audio/sounds/pop.wav" type="Sample" id=8]
 [ext_resource path="res://audio/sounds/throw.wav" type="Sample" id=9]
-[ext_resource path="res://audio/sounds/win.wav" type="Sample" id=10]
+[ext_resource path="res://audio/sounds/tic.wav" type="Sample" id=10]
+[ext_resource path="res://audio/sounds/win.wav" type="Sample" id=11]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -67,11 +68,17 @@ samples/throw = {
 "priority": 0,
 "sample": ExtResource( 9 )
 }
+samples/tic = {
+"db": -20.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
 samples/win = {
 "db": -2.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 10 )
+"sample": ExtResource( 11 )
 }
 
 [node name="SamplePlayer" type="SamplePlayer"]

@@ -12,6 +12,8 @@ func _ready():
 		get_node("check_down").add_exception(self)
 	else:
 		add_to_group("flying")
+	
+	walk_right = bool(randi()% 2)
 	set_fixed_process(true)
 
 func _fixed_process(delta):
@@ -46,7 +48,7 @@ func _fixed_process(delta):
 
 func _on_Area2D_body_enter(body):
 	if body.get_name() == "player":
-		if body.can_move:
+		if not body.dead and not body.shape.is_trigger():
 			var add = 18
 			if is_in_group("flying"):
 				add = 16

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal buttons_updated
+
 var credits_shown = false
 
 onready var leave = get_node("Buttons/leave")
@@ -7,47 +9,42 @@ onready var music_button = get_node("Buttons/music")
 onready var sound_button = get_node("Buttons/sound")
 onready var game_won = get_node("game_won")
 
-onready var transition = get_node("transition")
+onready var transition = get_node("transition/Node2D")
+onready var button_select = get_node("button_select/Node2D")
 
 func _ready():
 	for button in get_node("Buttons").get_children():
 		button.connect("pressed", global, "play_sound", ["click"])
 		button.connect("pressed", save_manager, "save_game")
-	if music.is_playing():
-		music.stop()
+	
+	music_button.connect("pressed", self, "set_music")
+	sound_button.connect("pressed", self, "set_sound")
+	get_node("Buttons/fullscreen").connect("pressed", self, "set_fullscreen")
+	get_node("Buttons/play").connect("pressed", self, "play")
+	get_node("Buttons/options").connect("pressed", self, "show_options")
+	get_node("Buttons/credits").connect("pressed", self, "show_credits")
+	get_node("Buttons/exit").connect("pressed", self, "quit")
+	leave.connect("pressed", self, "hide_tab")
+
 	reset_global()
 	global_check()
-	
+
 	if global.debug:
 		global.version = "DEBUG MODE"
 		get_node("Labels/version").set("custom_colors/font_color", Color(1, 0, 0, 0.875))
-		get_node("Labels/version").set("custom_colors/font_color_shadow", Color(0, 0, 0))
 	get_node("Labels/version").set_text(global.version)
 	
-	transition.start(1)
-	transition.connect("finished_anim", get_node("Buttons/play"), "set_disabled", [false], 4)
+	transition.queue_transition(HORIZONTAL)
 	set_process_input(true)
 
+
 func _input(event):
-	if global.can_quit:
-		if event.is_action_pressed("ui_cancel"):
-			if get_node("Buttons/leave").is_visible():
-				hide_tab()
-			else:
-				quit()
-		elif event.is_action_pressed("jump"):
-			if global.finished:
-				hide_tab()
-			else:
-				play()
-		
-		if event.type == InputEvent.KEY:
-			if global.debug:
-				if event.scancode == KEY_T:
-					global.level = 0
-					get_tree().change_scene("res://scenes/misc/keys_info.tscn")
-				elif event.scancode == KEY_F9:
-					get_tree().quit()
+	if event.is_action_pressed("ui_cancel") and global.can_quit:
+		if get_node("Buttons/leave").is_visible():
+			hide_tab()
+		else:
+			quit()
+
 
 func _on_AnimationPlayer_finished():
 	if get_node("Anims/Enter").get_current_animation() == "enter":
@@ -69,19 +66,11 @@ func set_fullscreen():
 		get_node("Buttons/fullscreen").set_pressed(true)
 		save_manager.config.fullscreen = true
 
-func button_disable():
-	for button in get_node("Buttons").get_children():
-		button.set_disabled(true)
-
 func play():
-	button_disable()
-	transition.start(1, true)
-	transition.connect("finished_anim", get_tree(), "change_scene", ["res://scenes/misc/keys_info.tscn"], 4)
+	transition.start(HORIZONTAL, true, 0, [get_tree(), "change_scene", ["res://scenes/misc/keys_info.tscn"]])
 
 func quit():
-	button_disable()
-	transition.start(1, true)
-	transition.connect("finished_anim", global, "quit")
+	transition.start(HORIZONTAL, true, 0, [global, "quit", []])
 
 func show_credits():
 	credits_shown = true
@@ -97,11 +86,10 @@ func hide_tab():
 		get_node("Labels").show()
 		for node in get_node("Buttons").get_children():
 			if node.get_name() == "leave" or node extends CheckBox:
-				node.set_disabled(true)
 				node.hide()
 			else:
-				node.set_disabled(false)
 				node.show()
+		button_select.set_active(null, true)
 		global.finished = false
 	else:
 		if credits_shown:
@@ -111,6 +99,7 @@ func hide_tab():
 			get_node("Anims/Tabs").play("hide_options")
 
 func global_check():
+	global.stop_music()
 	if global.finished:
 		show_game_won()
 	else:
@@ -123,12 +112,15 @@ func global_check():
 	if global.debug:
 		get_node("Labels/debug_keys").show()
 		get_node("Labels/debug_info").show()
-	if save_manager.progression.first_finish and not save_manager.progression.first_contact:
-		get_node("Anims/Events").play("after_win")
+
+	button_select.buttons_dir = get_node("Buttons")
+	button_select.set_active(null, true)
+
+	get_node("Anims/Tabs").connect("animation_started", button_select, "set_active", [false])
+	get_node("Anims/Tabs").connect("finished", button_select, "set_active", [null, true])
 
 func normal_state():
 	game_won.hide()
-	leave.set_disabled(true)
 	leave.hide()
 
 func show_game_won():
@@ -138,12 +130,14 @@ func show_game_won():
 	for node in get_node("Buttons").get_children():
 		if node.get_name() != "leave":
 			node.hide()
-			node.set_disabled(true)
+		else:
+			node.show()
 	game_won.show()
 	if save_manager.config.sound:
 		global.play_sound("win")
 
 func reset_global():
+	events_texts.in_game = false
 	global.level = 1
 	global.level_name = "level_"
 	global.score = 0
@@ -154,3 +148,20 @@ func reset_global():
 	global.life_lost = 0
 	global.deaths = 0
 	global.enemies_killed = 0
+	global.margin_right = 0
+	background.update_state()
+	get_node("Buttons/play").color = Color(255, 255, 255)
+	button_anim1()
+
+func button_anim1():
+	if save_manager.progression.first_finish and not save_manager.progression.first_contact:
+		var timer = global.new_timer(0.1)
+		add_child(timer)
+		timer.connect("timeout", get_node("Timer"), "queue_free")
+		timer.connect("timeout", self, "button_anim1")
+		if get_node("Buttons/play").color == Color(255, 255, 255):
+			get_node("Buttons/play").color = Color(255, 0, 0)
+		else:
+			get_node("Buttons/play").color = Color(255, 255, 255)
+		get_node("Buttons/play").update_state()
+		timer.start()

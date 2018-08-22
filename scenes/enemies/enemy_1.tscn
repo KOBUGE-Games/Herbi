@@ -21,7 +21,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11, 11 )
+extents = Vector2( 12, 12 )
 
 [node name="enemy_1" type="KinematicBody2D"]
 
@@ -54,7 +54,7 @@ type_mask = 15
 
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 1, 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -63,7 +63,7 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
-transform/pos = Vector2( 1, 1 )
+transform/pos = Vector2( 1, 0 )
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0

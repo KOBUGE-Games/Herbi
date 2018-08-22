@@ -777,7 +777,7 @@ transform/pos = Vector2( 120, 376 )
 
 transform/pos = Vector2( 200, 376 )
 
-[node name="spikes_90" parent="second" instance=ExtResource( 23 )]
+[node name="stone_90" parent="second" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 328, 376 )
 
@@ -1439,15 +1439,15 @@ transform/pos = Vector2( 344, 376 )
 
 transform/pos = Vector2( 360, 376 )
 
-[node name="spikes_161" parent="front" instance=ExtResource( 23 )]
+[node name="stone_161" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 376, 376 )
 
-[node name="spikes_162" parent="front" instance=ExtResource( 23 )]
+[node name="stone_162" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 392, 376 )
 
-[node name="spikes_163" parent="front" instance=ExtResource( 23 )]
+[node name="stone_163" parent="front" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 408, 376 )
 
@@ -1455,7 +1455,7 @@ transform/pos = Vector2( 408, 376 )
 
 transform/pos = Vector2( 424, 376 )
 
-[node name="stone_165" parent="front" instance=ExtResource( 29 )]
+[node name="spikes_165" parent="front" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 440, 376 )
 

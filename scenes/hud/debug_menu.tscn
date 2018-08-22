@@ -79,6 +79,7 @@ margin/bottom = 420.0
 
 [node name="options" type="ScrollContainer" parent="."]
 
+editor/display_folded = true
 rect/min_size = Vector2( 240, 360 )
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = false

@@ -1,65 +1,12 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://scripts/menu_in_game.gd" type="Script" id=1]
 [ext_resource path="res://graphics/hud/menu_ingame_out.png" type="Texture" id=2]
 [ext_resource path="res://scenes/hud/buttons/music.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/hud/buttons/sound.tscn" type="PackedScene" id=4]
-[ext_resource path="res://graphics/hud/button.png" type="Texture" id=5]
-[ext_resource path="res://fonts/cave_story_32.fnt" type="BitmapFont" id=6]
-[ext_resource path="res://graphics/hud/menu_ingame.png" type="Texture" id=7]
+[ext_resource path="res://scenes/hud/buttons/button.tscn" type="PackedScene" id=5]
 
-[sub_resource type="StyleBoxTexture" id=1]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 5 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=2]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 5 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=3]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 7 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 
 length = 0.4
 loop = false
@@ -75,7 +22,7 @@ tracks/0/keys = {
 "values": [ Vector2( -32, 0 ), Vector2( -32, -48 ), Vector2( -32, -96 ), Vector2( -32, -144 ), Vector2( -32, -192 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 
 length = 0.4
 loop = false
@@ -93,7 +40,7 @@ tracks/0/keys = {
 
 [node name="menu" type="CanvasLayer"]
 
-layer = 1
+layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
@@ -125,6 +72,7 @@ margin/left = 24.0
 margin/top = 16.0
 margin/right = 62.0
 margin/bottom = 54.0
+disabled = true
 
 [node name="sound" parent="Control/Sprite" instance=ExtResource( 4 )]
 
@@ -133,95 +81,30 @@ margin/left = 24.0
 margin/top = 40.0
 margin/right = 62.0
 margin/bottom = 78.0
+disabled = true
 
-[node name="Exit" type="Button" parent="Control/Sprite"]
+[node name="restart" parent="Control/Sprite" instance=ExtResource( 5 )]
 
-rect/scale = Vector2( 0.25, 0.25 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 16.0
-margin/top = 80.0
-margin/right = 144.0
-margin/bottom = 112.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color_disabled = Color( 1, 0.156863, 0.109804, 1 )
-custom_colors/font_color = Color( 1, 0.156863, 0.109804, 1 )
-custom_colors/font_color_hover = Color( 1, 0.313726, 0.313726, 1 )
-toggle_mode = false
-click_on_press = true
-enabled_focus_mode = 2
-shortcut = null
-text = "Exit"
-flat = false
+transform/pos = Vector2( 16, 68 )
+color = Color( 0.898039, 0.898039, 0.898039, 1 )
+name = "Restart"
 
-[node name="Restart" type="Button" parent="Control/Sprite"]
+[node name="exit" parent="Control/Sprite" instance=ExtResource( 5 )]
 
-rect/scale = Vector2( 0.25, 0.25 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 16.0
-margin/top = 68.0
-margin/right = 144.0
-margin/bottom = 100.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 6 )
-toggle_mode = false
-click_on_press = true
-enabled_focus_mode = 2
-shortcut = null
-text = "Restart"
-flat = false
-
-[node name="Button" type="Button" parent="Control"]
-
-visibility/opacity = 0.5
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 64.0
-margin/bottom = 16.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
-toggle_mode = false
-click_on_press = true
-enabled_focus_mode = 2
-shortcut = null
-flat = false
+transform/pos = Vector2( 16, 80 )
+color = Color( 0.9, 0, 0, 1 )
+name = "Exit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/hide = SubResource( 4 )
-anims/show = SubResource( 5 )
+anims/hide = SubResource( 1 )
+anims/show = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
-
-[connection signal="pressed" from="Control/Sprite/music" to="." method="set_music"]
-
-[connection signal="pressed" from="Control/Sprite/sound" to="." method="set_sound"]
-
-[connection signal="pressed" from="Control/Sprite/Exit" to="." method="quit"]
-
-[connection signal="pressed" from="Control/Sprite/Restart" to="." method="restart"]
-
-[connection signal="pressed" from="Control/Button" to="." method="show"]
 
 
