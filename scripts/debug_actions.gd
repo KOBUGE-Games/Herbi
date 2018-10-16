@@ -4,7 +4,7 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.type == InputEvent.KEY and event.is_pressed() and global.debug and global.can_quit and not get_node("/root/debug_menu").shown:
+	if event.type == InputEvent.KEY and event.is_pressed() and save_manager.progression.debug and global.can_quit and not get_node("/root/debug_menu").shown:
 		if event.scancode == KEY_T:
 			global.level = 0
 			global.level_name = "level_"

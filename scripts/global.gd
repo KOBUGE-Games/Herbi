@@ -1,9 +1,9 @@
 extends Node
 
+const real_debug = true
 const total_levels = 9 # Number of levels before triggering "finished"
 
 var version = "version 0.9"
-var debug = false # Enabling debug mode in-game
 
 var score = 0 # fruits score
 var lives = 3
@@ -28,8 +28,6 @@ func _ready():
 	OS.set_window_size(Vector2(640,480))
 	if save_manager.config.fullscreen:
 		OS.set_window_fullscreen(true)
-	if save_manager.progression.first_contact:
-		debug = true
 
 func queue_music(sample, next_sample):
 	if save_manager.config.music and not music.get_node(sample).is_playing():

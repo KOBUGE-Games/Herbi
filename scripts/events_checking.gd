@@ -45,10 +45,7 @@ func check_music():
 		global.stop_music()
 
 func update():
-	global.debug = false
 	abort = false
-	if save_manager.progression.first_finish and save_manager.progression.first_contact:
-		global.debug = true
 
 	if event.is_connected("finished_writing", self, "set"):
 		event.disconnect("finished_writing", self, "set")
@@ -66,7 +63,7 @@ func update():
 		check_music()
 		event.connect("finished_writing", self, "set", ["can_skip", true])
 		set_process_input(true)
-		if global.level == 1 and save_manager.progression.first_finish and not save_manager.progression.first_contact:
+		if global.level == 1 and save_manager.progression.first_finish and not save_manager.progression.debug:
 			shouldnt_move = true
 			write_texts([text1, text2, text3, text4, text5], [100, 100, 80, 100, 80])
 			yield(self, "text_finished")
@@ -131,7 +128,7 @@ func _input(event):
 
 func event_yes():
 	event.destroy()
-	save_manager.progression.first_contact = true
+	save_manager.progression.debug = true
 	world.quit = true
 	world.stop()
 

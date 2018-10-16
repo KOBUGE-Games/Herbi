@@ -29,7 +29,7 @@ func _ready():
 	reset_global()
 	global_check()
 
-	if global.debug:
+	if save_manager.progression.debug:
 		global.version = "DEBUG MODE"
 		get_node("Labels/version").set("custom_colors/font_color", Color(1, 0, 0, 0.875))
 	get_node("Labels/version").set_text(global.version)
@@ -109,7 +109,7 @@ func global_check():
 	if save_manager.config.sound:
 		sound_button.set_pressed(true)
 	get_node("Buttons/fullscreen").set_pressed(save_manager.config.fullscreen)
-	if global.debug:
+	if save_manager.progression.debug:
 		get_node("Labels/debug_keys").show()
 		get_node("Labels/debug_info").show()
 
@@ -154,7 +154,7 @@ func reset_global():
 	button_anim1()
 
 func button_anim1():
-	if save_manager.progression.first_finish and not save_manager.progression.first_contact:
+	if save_manager.progression.first_finish and not save_manager.progression.debug:
 		var timer = global.new_timer(0.1)
 		add_child(timer)
 		timer.connect("timeout", get_node("Timer"), "queue_free")

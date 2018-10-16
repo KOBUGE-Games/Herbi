@@ -8,7 +8,7 @@ const default_config = {
 
 const events = {
 	first_finish = false,
-	first_contact = false,
+	debug = false,
 	level_error_message = false,
 	devel_4_message = false
 }
@@ -49,6 +49,9 @@ func load_game():
 		for option in events:
 			if !progression.has(option):
 				progression[option] = events[option]
+		for option in progression:
+			if !events.has(option):
+				progression.erase(option)
 	
 	f.close()
 	print(config)

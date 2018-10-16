@@ -4,6 +4,8 @@ var shown = false
 var checkboxes = []
 
 func _ready():
+	if not global.real_debug:
+		queue_free()
 	show(shown)
 	set_process_input(true)
 	### Creation of the events menu
