@@ -1,4 +1,4 @@
-##!/bin/python2.7
+#!/usr/bin/python3
 
 """
 tmx2tscn
@@ -9,7 +9,7 @@ WARNING: This script is modified to better fit Herbie - On the loose
 import sys, json, os, subprocess
 
 current_dir = os.getcwd()+"/"
-PATH = '/home/keprohm/Bureau/Tiled/Tiled-0.18.2-x86_64.AppImage'
+PATH = '~/PATH'
 exceptions = ["blank_level", "level_0", "devel_1", "devel_3", "devel_4"]
 
 

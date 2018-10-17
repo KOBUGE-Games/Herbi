@@ -24,11 +24,15 @@ func _ready():
 	get_node("Buttons/options").connect("pressed", self, "show_options")
 	get_node("Buttons/credits").connect("pressed", self, "show_credits")
 	get_node("Buttons/exit").connect("pressed", self, "quit")
+	get_node("Buttons/devel_4").connect("pressed", self, "devel_4")
 	leave.connect("pressed", self, "hide_tab")
-
+	
+	if save_manager.progression.devel_4_message:
+		get_node("Buttons/devel_4").show()
+	
 	reset_global()
 	global_check()
-
+	
 	if save_manager.progression.debug:
 		global.version = "DEBUG MODE"
 		get_node("Labels/version").set("custom_colors/font_color", Color(1, 0, 0, 0.875))
@@ -57,16 +61,17 @@ func set_sound():
 	save_manager.config.sound = !save_manager.config.sound
 
 func set_fullscreen():
-	if OS.is_window_fullscreen():
-		OS.set_window_fullscreen(false)
-		get_node("Buttons/fullscreen").set_pressed(false)
-		save_manager.config.fullscreen = false
-	else:
-		OS.set_window_fullscreen(true)
-		get_node("Buttons/fullscreen").set_pressed(true)
-		save_manager.config.fullscreen = true
+	var f = !OS.is_window_fullscreen()
+	OS.set_window_fullscreen(f)
+	get_node("Buttons/fullscreen").set_pressed(f)
+	save_manager.config.fullscreen = f
 
 func play():
+	transition.start(HORIZONTAL, true, 0, [get_tree(), "change_scene", ["res://scenes/misc/keys_info.tscn"]])
+
+func devel_4():
+	global.level_name = "devel_"
+	global.level = 4
 	transition.start(HORIZONTAL, true, 0, [get_tree(), "change_scene", ["res://scenes/misc/keys_info.tscn"]])
 
 func quit():
@@ -85,7 +90,7 @@ func hide_tab():
 		get_node("Title").show()
 		get_node("Labels").show()
 		for node in get_node("Buttons").get_children():
-			if node.get_name() == "leave" or node extends CheckBox:
+			if node.get_name() == "leave" or node.get_name() in ["music", "sound", "fullscreen"]:
 				node.hide()
 			else:
 				node.show()
@@ -128,7 +133,7 @@ func show_game_won():
 	get_node("Title").hide()
 	get_node("Labels").hide()
 	for node in get_node("Buttons").get_children():
-		if node.get_name() != "leave":
+		if not node.get_name() in ["leave", "devel_4"]:
 			node.hide()
 		else:
 			node.show()
