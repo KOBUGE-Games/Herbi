@@ -30,8 +30,8 @@ func _ready():
 	if save_manager.progression.devel_4_message:
 		get_node("Buttons/devel_4").show()
 	
-	reset_global()
 	global_check()
+	reset_global()
 	
 	if save_manager.progression.debug:
 		global.version = "DEBUG MODE"
@@ -90,10 +90,13 @@ func hide_tab():
 		get_node("Title").show()
 		get_node("Labels").show()
 		for node in get_node("Buttons").get_children():
-			if node.get_name() == "leave" or node.get_name() in ["music", "sound", "fullscreen"]:
+			if node.get_name() in ["devel_4", "leave", "music", "sound", "fullscreen"]:
 				node.hide()
 			else:
 				node.show()
+		
+		if save_manager.progression.devel_4_message:
+			get_node("Buttons/devel_4").show()
 		button_select.set_active(null, true)
 		global.finished = false
 	else:
@@ -135,8 +138,8 @@ func show_game_won():
 	for node in get_node("Buttons").get_children():
 		if not node.get_name() in ["leave", "devel_4"]:
 			node.hide()
-		else:
-			node.show()
+	
+	get_node("Buttons/leave").show()
 	game_won.show()
 	if save_manager.config.sound:
 		global.play_sound("win")
